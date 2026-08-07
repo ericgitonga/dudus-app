@@ -6,6 +6,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.2.0] - 2026-08-07
+
+### Added
+
+- Card browser: the home page now lists all 31 species from the bundled card index, sorted
+  alphabetically, with a live search box that filters by common name and an explicit empty
+  state when nothing matches. Works fully offline (the index is imported at build time, no
+  fetch). Covered by `e2e/test_card_browser.py` (closes #4)
+
+tag: `v0.2.0`
+
 ## [0.1.1] - 2026-08-07
 
 ### Added
