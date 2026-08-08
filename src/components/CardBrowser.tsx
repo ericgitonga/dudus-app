@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Card } from "@/types/card";
 import NotYetResearched from "@/components/NotYetResearched";
 
@@ -52,16 +53,29 @@ export default function CardBrowser({ cards }: { cards: Card[] }) {
               <li key={card.id} className="py-3">
                 <Link
                   href={`/dudus/${card.id}`}
-                  className="block hover:opacity-70"
+                  className="flex items-center gap-3 hover:opacity-70"
                 >
-                  <div className="font-medium">{card.common_name}</div>
-                  {card.scientific_name && (
-                    <div className="text-sm italic text-zinc-600 dark:text-zinc-400">
-                      {card.scientific_name}
+                  {card.photo_ref && (
+                    <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md">
+                      <Image
+                        src={card.photo_ref}
+                        alt={card.common_name}
+                        fill
+                        className="object-cover"
+                        sizes="48px"
+                      />
                     </div>
                   )}
-                  <div className="text-xs text-zinc-500 dark:text-zinc-500">
-                    {taxonomyLine || `Taxonomy confirmed to ${card.taxon_rank} level only`}
+                  <div>
+                    <div className="font-medium">{card.common_name}</div>
+                    {card.scientific_name && (
+                      <div className="text-sm italic text-zinc-600 dark:text-zinc-400">
+                        {card.scientific_name}
+                      </div>
+                    )}
+                    <div className="text-xs text-zinc-500 dark:text-zinc-500">
+                      {taxonomyLine || `Taxonomy confirmed to ${card.taxon_rank} level only`}
+                    </div>
                   </div>
                 </Link>
               </li>

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import cards from "@/data/card_index.json";
 import type { Card } from "@/types/card";
 
@@ -44,6 +45,19 @@ export default async function DuduPage({
         <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-500">
           {taxonomyLine || `Taxonomy confirmed to ${card.taxon_rank} level only`}
         </p>
+
+        {card.photo_ref && (
+          <div className="relative mt-4 aspect-[3/2] w-full overflow-hidden rounded-lg">
+            <Image
+              data-testid="dudu-photo"
+              src={card.photo_ref}
+              alt={card.common_name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 672px) 100vw, 672px"
+            />
+          </div>
+        )}
 
         <div className="mt-8 flex flex-col gap-6">
           {card.sections.map((section) => (
