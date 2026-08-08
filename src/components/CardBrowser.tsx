@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import type { Card } from "@/types/card";
 
 export default function CardBrowser({ cards }: { cards: Card[] }) {
@@ -50,15 +51,20 @@ export default function CardBrowser({ cards }: { cards: Card[] }) {
               .join(" · ");
             return (
               <li key={card.id} className="py-3">
-                <div className="font-medium">{card.common_name}</div>
-                {card.scientific_name && (
-                  <div className="text-sm italic text-zinc-600 dark:text-zinc-400">
-                    {card.scientific_name}
+                <Link
+                  href={`/species/${card.id}`}
+                  className="block hover:opacity-70"
+                >
+                  <div className="font-medium">{card.common_name}</div>
+                  {card.scientific_name && (
+                    <div className="text-sm italic text-zinc-600 dark:text-zinc-400">
+                      {card.scientific_name}
+                    </div>
+                  )}
+                  <div className="text-xs text-zinc-500 dark:text-zinc-500">
+                    {taxonomyLine || `Taxonomy confirmed to ${card.taxon_rank} level only`}
                   </div>
-                )}
-                <div className="text-xs text-zinc-500 dark:text-zinc-500">
-                  {taxonomyLine || `Taxonomy confirmed to ${card.taxon_rank} level only`}
-                </div>
+                </Link>
               </li>
             );
           })}

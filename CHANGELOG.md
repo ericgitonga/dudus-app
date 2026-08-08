@@ -6,6 +6,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.3.0] - 2026-08-07
+
+### Added
+
+- Card detail view: `/species/[id]` statically renders a species' taxonomy and its full,
+  unmodified list of sections exactly as they exist in the card index — no compression, no
+  fixed field set. All sections shown at once (no accordion/progressive disclosure): verified
+  against the richest 9-section card and it reads comfortably as a single scroll, so the extra
+  interaction cost of collapsing sections wasn't justified. Card browser list items now link to
+  their detail page. Unknown ids 404 cleanly. Covered by `e2e/test_species_detail.py` (closes #5)
+
+tag: `v0.3.0`
+
 ## [0.2.0] - 2026-08-07
 
 ### Added
