@@ -6,6 +6,24 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.3.1] - 2026-08-08
+
+### Removed
+
+- 18 species withdrawn from the site (moved to `Dudus/Not to use/` in the source library):
+  Amegilla Bee (card: Blue-Banded Bee), Antlions, Banana Fly, Biting Midges, Fringed-Sucker
+  Clinger, Giant Water Bugs, Marsh Beetles, Mealybugs, Pond Skaters, Saucer Bug, Stout
+  Backswimmer, Tiger Crane Flies, True Stoneflies, Water Boatman, Water-penny Beetles, Water
+  Scavenger Beetles, Water Scorpions, Wheel Bug. 13 species remain (closes #14)
+
+### Changed
+
+- e2e suite no longer hardcodes a total species count or specific species names — every
+  assertion is now derived from the actual bundled `card_index.json` at test time, so the suite
+  survives future species being added or withdrawn without needing hand-editing
+
+tag: `v0.3.1`
+
 ## [0.3.0] - 2026-08-07
 
 ### Added
