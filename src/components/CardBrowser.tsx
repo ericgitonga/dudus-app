@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { Card } from "@/types/card";
+import NotYetResearched from "@/components/NotYetResearched";
 
 export default function CardBrowser({ cards }: { cards: Card[] }) {
   const [query, setQuery] = useState("");
@@ -25,7 +26,7 @@ export default function CardBrowser({ cards }: { cards: Card[] }) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search by common name…"
-        aria-label="Search species by common name"
+        aria-label="Search dudus by common name"
         className="w-full rounded-lg border border-black/10 dark:border-white/20 bg-transparent px-4 py-2 text-base outline-none focus:ring-2 focus:ring-foreground/30"
       />
 
@@ -33,13 +34,11 @@ export default function CardBrowser({ cards }: { cards: Card[] }) {
         data-testid="result-count"
         className="mt-3 text-sm text-zinc-500 dark:text-zinc-400"
       >
-        {filtered.length} of {cards.length} species
+        {filtered.length} of {cards.length} dudus
       </p>
 
       {filtered.length === 0 ? (
-        <p data-testid="no-results" className="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
-          No species match &quot;{query}&quot;.
-        </p>
+        <NotYetResearched query={query} onClear={() => setQuery("")} />
       ) : (
         <ul
           data-testid="card-list"
@@ -52,7 +51,7 @@ export default function CardBrowser({ cards }: { cards: Card[] }) {
             return (
               <li key={card.id} className="py-3">
                 <Link
-                  href={`/species/${card.id}`}
+                  href={`/dudus/${card.id}`}
                   className="block hover:opacity-70"
                 >
                   <div className="font-medium">{card.common_name}</div>

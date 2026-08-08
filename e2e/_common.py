@@ -22,8 +22,8 @@ from playwright.sync_api import sync_playwright
 
 BASE_URL = os.environ.get("BASE_URL", "http://localhost:3000").rstrip("/")
 
-# The live card count changes over time (species get added/withdrawn) — specs must never
-# hardcode a total or a specific species name/count. Load the actual bundled data instead, so
+# The live card count changes over time (dudus get added/withdrawn) — specs must never
+# hardcode a total or a specific dudu's name/count. Load the actual bundled data instead, so
 # every assertion is derived from whatever's really in the index at test time.
 CARDS = json.loads(
     (Path(__file__).parent.parent / "src" / "data" / "card_index.json").read_text()

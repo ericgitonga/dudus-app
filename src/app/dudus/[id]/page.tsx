@@ -9,7 +9,7 @@ export function generateStaticParams() {
   return allCards.map((card) => ({ id: card.id }));
 }
 
-export default async function SpeciesPage({
+export default async function DuduPage({
   params,
 }: {
   params: Promise<{ id: string }>;
@@ -23,14 +23,14 @@ export default async function SpeciesPage({
   return (
     <div className="flex flex-col flex-1 items-center bg-zinc-50 dark:bg-black">
       <main
-        data-testid="species-detail"
+        data-testid="dudu-detail"
         className="flex flex-1 w-full max-w-2xl flex-col items-stretch py-16 px-6 bg-white dark:bg-black"
       >
         <Link
           href="/"
           className="text-sm text-zinc-500 dark:text-zinc-400 hover:underline"
         >
-          ← All species
+          ← All dudus
         </Link>
 
         <h1 className="mt-4 text-2xl font-semibold tracking-tight">
