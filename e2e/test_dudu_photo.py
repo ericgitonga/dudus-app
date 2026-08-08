@@ -36,7 +36,7 @@ def test_dudu_without_photo_renders_no_photo_element():
 def test_browser_list_shows_thumbnail_for_photographed_dudu():
     card = next(c for c in CARDS if c["photo_ref"])
     with browser_page() as page:
-        page.goto("/")
+        page.goto("/search")
         page.fill(
             'input[aria-label="Search dudus by common name"]',
             card["common_name"],

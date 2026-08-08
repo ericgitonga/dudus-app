@@ -40,7 +40,7 @@ def test_unknown_dudu_id_404s():
 
 def test_browser_link_navigates_to_its_own_detail_page():
     with browser_page() as page:
-        page.goto("/")
+        page.goto("/search")
         page.wait_for_selector('[data-testid="card-list"]')
         page.click('[data-testid="card-list"] a >> nth=0')
         page.wait_for_selector('[data-testid="dudu-detail"]')

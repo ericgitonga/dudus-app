@@ -6,6 +6,35 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.6.0] - 2026-08-08
+
+### Added
+
+- Browse-by-order grid view is now the home page (`/`): dudus grouped by taxonomic order, each
+  order's dudus in their own responsive photo grid, modelled on `umoja-voices`' songs grid.
+  Orders are derived from the bundled card index at render time — only orders with at least one
+  dudu appear, and a new order shows up automatically the moment a dudu with that order is
+  added, no code change needed. A fallback "Order not yet identified" bucket exists for any card
+  missing an `order` value, though none currently need it (closes #19)
+- The former home page's search/flat-list view moved to `/search`, with a breadcrumb back to
+  home, so browse-by-order and search-by-name are now two distinct, equally-reachable ways to
+  find a dudu rather than one replacing the other
+
+### Changed
+
+- The whole site now has one consistent, always-light look (matching the browse-by-order page's
+  styling) instead of switching to a dark theme under the OS's `prefers-color-scheme` — the
+  entomology-report imagery and taxonomy text read better against a fixed light background than
+  adapting per visitor
+
+### Fixed
+
+- Aedes Mosquitoes and Crane Flies were missing an `order` value in the card index; both are
+  Diptera. Fixing this in the source library removed the last 2 cards that would have needed
+  the "Order not yet identified" fallback bucket above
+
+tag: `v0.6.0`
+
 ## [0.5.0] - 2026-08-08
 
 ### Added

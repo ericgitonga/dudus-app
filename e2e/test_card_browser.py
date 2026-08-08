@@ -1,4 +1,5 @@
-"""Golden path for the card browser (issue #4): full list renders, search filters correctly.
+"""Golden path for the card browser (issue #4), now at /search: full list renders, search
+filters correctly, breadcrumb goes back home.
 
 Nothing here hardcodes a total count or a specific dudu — the card set changes over time (dudus
 get added or withdrawn, as in issue #14), so every expectation is derived from CARDS (the actual
@@ -11,15 +12,15 @@ actually rendered/filtered on screen. An unscoped body-text assertion here would
 every dudu, whether or not it's actually shown.
 """
 
-from _common import CARDS, browser_page
+from _common import BASE_URL, CARDS, browser_page
 
 TOTAL = len(CARDS)
 
 
 def test_full_list_renders():
     with browser_page() as page:
-        page.goto("/")
-        page.wait_for_selector("text=Dudus")
+        page.goto("/search")
+        page.wait_for_selector('[data-testid="result-count"]')
         assert f"{TOTAL} of {TOTAL} dudus" in page.text_content(
             '[data-testid="result-count"]'
         )
@@ -37,7 +38,7 @@ def test_search_filters_to_matching_subset():
     not_expected = [c for c in CARDS if c not in expected]
 
     with browser_page() as page:
-        page.goto("/")
+        page.goto("/search")
         page.fill('input[aria-label="Search dudus by common name"]', query)
         page.wait_for_selector(f"text={len(expected)} of {TOTAL} dudus")
         list_text = page.text_content('[data-testid="card-list"]')
@@ -49,7 +50,7 @@ def test_search_filters_to_matching_subset():
 
 def test_search_no_match_shows_not_yet_researched_state():
     with browser_page() as page:
-        page.goto("/")
+        page.goto("/search")
         page.fill(
             'input[aria-label="Search dudus by common name"]', "zzzznomatchxyz"
         )
@@ -65,7 +66,7 @@ def test_search_no_match_shows_not_yet_researched_state():
 
 def test_no_match_clear_button_returns_to_full_list():
     with browser_page() as page:
-        page.goto("/")
+        page.goto("/search")
         page.fill(
             'input[aria-label="Search dudus by common name"]', "zzzznomatchxyz"
         )
@@ -77,11 +78,20 @@ def test_no_match_clear_button_returns_to_full_list():
         )
 
 
+def test_breadcrumb_links_back_home():
+    with browser_page() as page:
+        page.goto("/search")
+        page.click('[data-testid="breadcrumb-home"]')
+        page.wait_for_selector('[data-testid="browse-page"]')
+        assert page.url.rstrip("/") == BASE_URL
+
+
 TESTS = [
     test_full_list_renders,
     test_search_filters_to_matching_subset,
     test_search_no_match_shows_not_yet_researched_state,
     test_no_match_clear_button_returns_to_full_list,
+    test_breadcrumb_links_back_home,
 ]
 
 if __name__ == "__main__":
