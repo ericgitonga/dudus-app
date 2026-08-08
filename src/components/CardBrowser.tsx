@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { Card } from "@/types/card";
+import NotYetResearched from "@/components/NotYetResearched";
 
 export default function CardBrowser({ cards }: { cards: Card[] }) {
   const [query, setQuery] = useState("");
@@ -37,9 +38,7 @@ export default function CardBrowser({ cards }: { cards: Card[] }) {
       </p>
 
       {filtered.length === 0 ? (
-        <p data-testid="no-results" className="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
-          No species match &quot;{query}&quot;.
-        </p>
+        <NotYetResearched query={query} onClear={() => setQuery("")} />
       ) : (
         <ul
           data-testid="card-list"

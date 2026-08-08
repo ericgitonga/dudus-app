@@ -47,20 +47,41 @@ def test_search_filters_to_matching_subset():
             assert card["common_name"] not in list_text
 
 
-def test_search_no_match_shows_empty_state():
+def test_search_no_match_shows_not_yet_researched_state():
     with browser_page() as page:
         page.goto("/")
         page.fill(
             'input[aria-label="Search species by common name"]', "zzzznomatchxyz"
         )
-        page.wait_for_selector('[data-testid="no-results"]')
-        assert "No species match" in page.text_content('[data-testid="no-results"]')
+        empty_state = page.locator('[data-testid="not-yet-researched"]')
+        empty_state.wait_for()
+        text = empty_state.text_content()
+        # Distinct from "we don't know" / a dead end — issue #6's actual requirement, not just
+        # "some empty state exists."
+        assert "zzzznomatchxyz" in text
+        assert "isn't in the library yet" in text
+        assert "library is still growing" in text
+
+
+def test_no_match_clear_button_returns_to_full_list():
+    with browser_page() as page:
+        page.goto("/")
+        page.fill(
+            'input[aria-label="Search species by common name"]', "zzzznomatchxyz"
+        )
+        page.locator('[data-testid="not-yet-researched"]').wait_for()
+        page.click('[data-testid="not-yet-researched"] button')
+        page.wait_for_selector('[data-testid="card-list"]')
+        assert f"{TOTAL} of {TOTAL} species" in page.text_content(
+            '[data-testid="result-count"]'
+        )
 
 
 TESTS = [
     test_full_list_renders,
     test_search_filters_to_matching_subset,
-    test_search_no_match_shows_empty_state,
+    test_search_no_match_shows_not_yet_researched_state,
+    test_no_match_clear_button_returns_to_full_list,
 ]
 
 if __name__ == "__main__":

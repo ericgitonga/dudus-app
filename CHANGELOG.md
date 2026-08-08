@@ -6,7 +6,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
-## [0.3.1] - 2026-08-08
+## [0.4.0] - 2026-08-08
+
+### Added
+
+- "Not yet researched" empty state (`NotYetResearched` component): when a search matches no
+  species, the app now says so with copy distinct from a dead end — "isn't in the library yet...
+  the library is still growing" — rather than a generic "no results," plus a working "Browse all
+  species" fallback that clears the search. Built as a reusable component so the future
+  photo-based lookup (#7-#9) can reuse the same messaging rather than duplicating it. Covered by
+  two new e2e specs (closes #6)
+
+tag: `v0.4.0`
 
 ### Removed
 
