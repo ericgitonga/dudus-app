@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { stripPhotoMetadata } from "@/lib/stripPhotoMetadata";
+
 /**
  * In-app photo capture (issue #7). Uses accept="image/*" capture="environment" so mobile
  * browsers open the camera directly rather than the gallery — the honest limitation, agreed
@@ -11,18 +13,20 @@ import { useState } from "react";
  *
  * Deliberately does nothing with the captured photo beyond a local preview — no upload, no
  * network call, nothing leaves the device. That's not a gap to fill in here: taxon-guessing
- * (#8) and index-matching (#9) are separate tickets, and geotag/EXIF handling (#10) has to be
- * settled before this photo ever gets processed, not folded in ad hoc.
+ * (#8) and index-matching (#9) are separate tickets. Every captured photo is stripped of
+ * EXIF/geotag metadata (#10) before it's ever held as state or displayed, so no downstream
+ * consumer of this component can accidentally see or forward the original.
  */
 export default function PhotoCapture() {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  async function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
+    const clean = await stripPhotoMetadata(file);
     setPreviewUrl((prev) => {
       if (prev) URL.revokeObjectURL(prev);
-      return URL.createObjectURL(file);
+      return URL.createObjectURL(clean);
     });
   }
 

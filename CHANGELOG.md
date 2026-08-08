@@ -6,6 +6,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.6.1] - 2026-08-08
+
+### Security
+
+- Every photo captured via `/identify` is now decoded and re-encoded onto a canvas before it's
+  held as state or previewed, stripping all EXIF metadata — including any GPS geotag — since
+  canvas output carries no metadata channel. Applies regardless of what tags the original photo
+  carried; nothing about the original file is kept around after capture (closes #10)
+
+tag: `v0.6.1`
+
 ## [0.6.0] - 2026-08-08
 
 ### Added
