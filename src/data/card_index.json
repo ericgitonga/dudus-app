@@ -41,7 +41,7 @@
       "technical": "Picasso Bug/pb-web.pdf",
       "lay": "Picasso Bug/pb-web-la.pdf"
     },
-    "photo_ref": "Picasso Bug/picasso bug.jpg",
+    "photo_ref": "/photos/picasso-bug.jpg",
     "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
     "reviewed_at": "2026-08-07"
   },
@@ -417,7 +417,7 @@
       "technical": "Aedes Mosquitoes/am-web.pdf",
       "lay": "Aedes Mosquitoes/am-web-la.pdf"
     },
-    "photo_ref": "Aedes Mosquitoes/107.jpg",
+    "photo_ref": "/photos/aedes-mosquitoes.jpg",
     "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
     "reviewed_at": "2026-08-07"
   },
@@ -477,7 +477,7 @@
         "Armoured Katydid/ak-web-la.pdf"
       ]
     },
-    "photo_ref": "Armoured Katydid/Cricket.png",
+    "photo_ref": "/photos/armoured-katydid.png",
     "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
     "reviewed_at": "2026-08-07"
   },
@@ -523,7 +523,7 @@
       "technical": "Click Beetles/clb-web.pdf",
       "lay": "Click Beetles/clb-web-la.pdf"
     },
-    "photo_ref": "Click Beetles/083.jpg",
+    "photo_ref": "/photos/click-beetles.jpg",
     "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
     "reviewed_at": "2026-08-07"
   },
@@ -569,7 +569,7 @@
       "technical": "Crane Flies/cf.pdf",
       "lay": "Crane Flies/cf-la.pdf"
     },
-    "photo_ref": "Crane Flies/164.jpg",
+    "photo_ref": "/photos/crane-flies.jpg",
     "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
     "reviewed_at": "2026-08-07"
   },
@@ -615,7 +615,7 @@
       "technical": "Orchard Orbweaver/oow-web.pdf",
       "lay": "Orchard Orbweaver/oow-web-la.pdf"
     },
-    "photo_ref": "Orchard Orbweaver/224.jpg",
+    "photo_ref": "/photos/orchard-orbweaver.jpg",
     "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
     "reviewed_at": "2026-08-07"
   }
