@@ -22,14 +22,14 @@ export default async function DuduPage({
   const taxonomyLine = [card.family, card.order].filter(Boolean).join(" · ");
 
   return (
-    <div className="flex flex-col flex-1 items-center bg-zinc-50 dark:bg-black">
+    <div className="flex flex-col flex-1 items-center bg-zinc-50">
       <main
         data-testid="dudu-detail"
-        className="flex flex-1 w-full max-w-2xl flex-col items-stretch py-16 px-6 bg-white dark:bg-black"
+        className="flex flex-1 w-full max-w-2xl flex-col items-stretch py-16 px-6 bg-white"
       >
         <Link
           href="/"
-          className="text-sm text-zinc-500 dark:text-zinc-400 hover:underline"
+          className="text-sm text-zinc-500 hover:underline"
         >
           ← All dudus
         </Link>
@@ -38,11 +38,11 @@ export default async function DuduPage({
           {card.common_name}
         </h1>
         {card.scientific_name && (
-          <p className="mt-1 italic text-zinc-600 dark:text-zinc-400">
+          <p className="mt-1 italic text-zinc-600">
             {card.scientific_name}
           </p>
         )}
-        <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-500">
+        <p className="mt-1 text-sm text-zinc-500">
           {taxonomyLine || `Taxonomy confirmed to ${card.taxon_rank} level only`}
         </p>
 
@@ -63,7 +63,7 @@ export default async function DuduPage({
           {card.sections.map((section) => (
             <section key={section.heading}>
               <h2 className="text-lg font-medium">{section.heading}</h2>
-              <p className="mt-1 text-zinc-700 dark:text-zinc-300">
+              <p className="mt-1 text-zinc-700">
                 {section.body}
               </p>
             </section>

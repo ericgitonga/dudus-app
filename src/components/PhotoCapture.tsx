@@ -30,7 +30,7 @@ export default function PhotoCapture() {
     <div data-testid="photo-capture">
       <label
         htmlFor="specimen-photo"
-        className="inline-block cursor-pointer rounded-lg border border-black/10 dark:border-white/20 px-4 py-2 text-sm font-medium hover:opacity-70"
+        className="inline-block cursor-pointer rounded-lg border border-black/10 px-4 py-2 text-sm font-medium hover:opacity-70"
       >
         Take a photo
       </label>
@@ -53,7 +53,7 @@ export default function PhotoCapture() {
             alt="Captured specimen"
             className="max-w-full rounded-lg"
           />
-          <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+          <p className="mt-2 text-sm text-zinc-500">
             Identification isn&apos;t wired up yet — this just proves capture works.
           </p>
         </div>

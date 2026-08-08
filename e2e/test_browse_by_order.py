@@ -1,9 +1,9 @@
-"""Golden path for the /browse grid view: dudus grouped by order, breadcrumb back home, and
-grid cards linking to their detail page. Every assertion is derived from the actual bundled
-card index at test time — orders and counts are never hardcoded (see _common.py).
+"""Golden path for the home page's browse-by-order grid: dudus grouped by order, grid cards
+linking to their detail page. Every assertion is derived from the actual bundled card index at
+test time — orders and counts are never hardcoded (see _common.py).
 """
 
-from _common import BASE_URL, CARDS, browser_page
+from _common import CARDS, browser_page
 
 UNCLASSIFIED_LABEL = "Order not yet identified"
 
@@ -14,7 +14,7 @@ def _orders_present():
 
 def test_only_orders_present_in_data_are_listed():
     with browser_page() as page:
-        page.goto("/browse")
+        page.goto("/")
         page.wait_for_selector('[data-testid="order-group"]')
         rendered = set(
             page.locator('[data-testid="order-group"]').evaluate_all(
@@ -29,7 +29,7 @@ def test_order_group_contains_exactly_its_own_dudus():
     expected = {c["id"] for c in CARDS if c["order"] == order}
     not_expected = {c["id"] for c in CARDS if c["order"] != order}
     with browser_page() as page:
-        page.goto("/browse")
+        page.goto("/")
         group = page.locator(f'[data-testid="order-group"][data-order="{order}"]')
         group.wait_for()
         ids = set(
@@ -47,7 +47,7 @@ def test_unclassified_cards_grouped_under_fallback():
         print("SKIP test_unclassified_cards_grouped_under_fallback: every card has an order")
         return
     with browser_page() as page:
-        page.goto("/browse")
+        page.goto("/")
         group = page.locator(f'[data-testid="order-group"][data-order="{UNCLASSIFIED_LABEL}"]')
         group.wait_for()
         ids = set(
@@ -58,18 +58,10 @@ def test_unclassified_cards_grouped_under_fallback():
         assert ids == unclassified
 
 
-def test_breadcrumb_links_back_home():
-    with browser_page() as page:
-        page.goto("/browse")
-        page.click('[data-testid="breadcrumb-home"]')
-        page.wait_for_selector('[data-testid="card-list"]')
-        assert page.url.rstrip("/") == BASE_URL
-
-
 def test_grid_card_links_to_its_detail_page():
     card = CARDS[0]
     with browser_page() as page:
-        page.goto("/browse")
+        page.goto("/")
         page.click(f'[data-testid="grid-card"][data-dudu-id="{card["id"]}"]')
         page.wait_for_selector('[data-testid="dudu-detail"]')
         assert page.url.rstrip("/").endswith(f"/dudus/{card['id']}")
@@ -79,7 +71,6 @@ TESTS = [
     test_only_orders_present_in_data_are_listed,
     test_order_group_contains_exactly_its_own_dudus,
     test_unclassified_cards_grouped_under_fallback,
-    test_breadcrumb_links_back_home,
     test_grid_card_links_to_its_detail_page,
 ]
 

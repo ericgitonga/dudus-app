@@ -23,14 +23,14 @@ export default function NotYetResearched({
 }) {
   return (
     <div data-testid="not-yet-researched" className="mt-6">
-      <p className="text-sm text-zinc-700 dark:text-zinc-300">
+      <p className="text-sm text-zinc-700">
         {query ? (
           <>&quot;{query}&quot; isn&apos;t in the library yet.</>
         ) : (
           <>This one isn&apos;t in the library yet.</>
         )}
       </p>
-      <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+      <p className="mt-1 text-sm text-zinc-500">
         That doesn&apos;t mean it isn&apos;t a real dudu — the library is still growing, one
         researched dudu at a time.
       </p>
