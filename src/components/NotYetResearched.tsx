@@ -32,7 +32,7 @@ export default function NotYetResearched({
       </p>
       <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
         That doesn&apos;t mean it isn&apos;t a real dudu — the library is still growing, one
-        researched species at a time.
+        researched dudu at a time.
       </p>
       {onClear ? (
         <button
@@ -40,11 +40,11 @@ export default function NotYetResearched({
           onClick={onClear}
           className="mt-3 text-sm font-medium underline"
         >
-          ← Browse all species
+          ← Browse all dudus
         </button>
       ) : (
         <Link href="/" className="mt-3 inline-block text-sm font-medium underline">
-          ← Browse all species
+          ← Browse all dudus
         </Link>
       )}
     </div>

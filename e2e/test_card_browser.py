@@ -1,14 +1,14 @@
 """Golden path for the card browser (issue #4): full list renders, search filters correctly.
 
-Nothing here hardcodes a total count or a specific species — the card set changes over time
-(species get added or withdrawn, as in issue #14), so every expectation is derived from CARDS
-(the actual bundled data, loaded in _common.py) at test time.
+Nothing here hardcodes a total count or a specific dudu — the card set changes over time (dudus
+get added or withdrawn, as in issue #14), so every expectation is derived from CARDS (the actual
+bundled data, loaded in _common.py) at test time.
 
 Locators are scoped to specific data-testid elements, never page.text_content("body") — the
 body's textContent includes Next.js's inline RSC hydration payload (a <script> tag serializing
-the full card list for the client), which contains every species name regardless of what's
+the full card list for the client), which contains every dudu's name regardless of what's
 actually rendered/filtered on screen. An unscoped body-text assertion here would always find
-every species, whether or not it's actually shown.
+every dudu, whether or not it's actually shown.
 """
 
 from _common import CARDS, browser_page
@@ -20,7 +20,7 @@ def test_full_list_renders():
     with browser_page() as page:
         page.goto("/")
         page.wait_for_selector("text=Dudus")
-        assert f"{TOTAL} of {TOTAL} species" in page.text_content(
+        assert f"{TOTAL} of {TOTAL} dudus" in page.text_content(
             '[data-testid="result-count"]'
         )
         list_text = page.text_content('[data-testid="card-list"]')
@@ -38,8 +38,8 @@ def test_search_filters_to_matching_subset():
 
     with browser_page() as page:
         page.goto("/")
-        page.fill('input[aria-label="Search species by common name"]', query)
-        page.wait_for_selector(f"text={len(expected)} of {TOTAL} species")
+        page.fill('input[aria-label="Search dudus by common name"]', query)
+        page.wait_for_selector(f"text={len(expected)} of {TOTAL} dudus")
         list_text = page.text_content('[data-testid="card-list"]')
         for card in expected:
             assert card["common_name"] in list_text
@@ -51,7 +51,7 @@ def test_search_no_match_shows_not_yet_researched_state():
     with browser_page() as page:
         page.goto("/")
         page.fill(
-            'input[aria-label="Search species by common name"]', "zzzznomatchxyz"
+            'input[aria-label="Search dudus by common name"]', "zzzznomatchxyz"
         )
         empty_state = page.locator('[data-testid="not-yet-researched"]')
         empty_state.wait_for()
@@ -67,12 +67,12 @@ def test_no_match_clear_button_returns_to_full_list():
     with browser_page() as page:
         page.goto("/")
         page.fill(
-            'input[aria-label="Search species by common name"]', "zzzznomatchxyz"
+            'input[aria-label="Search dudus by common name"]', "zzzznomatchxyz"
         )
         page.locator('[data-testid="not-yet-researched"]').wait_for()
         page.click('[data-testid="not-yet-researched"] button')
         page.wait_for_selector('[data-testid="card-list"]')
-        assert f"{TOTAL} of {TOTAL} species" in page.text_content(
+        assert f"{TOTAL} of {TOTAL} dudus" in page.text_content(
             '[data-testid="result-count"]'
         )
 

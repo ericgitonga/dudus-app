@@ -26,7 +26,7 @@ export default function CardBrowser({ cards }: { cards: Card[] }) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search by common name…"
-        aria-label="Search species by common name"
+        aria-label="Search dudus by common name"
         className="w-full rounded-lg border border-black/10 dark:border-white/20 bg-transparent px-4 py-2 text-base outline-none focus:ring-2 focus:ring-foreground/30"
       />
 
@@ -34,7 +34,7 @@ export default function CardBrowser({ cards }: { cards: Card[] }) {
         data-testid="result-count"
         className="mt-3 text-sm text-zinc-500 dark:text-zinc-400"
       >
-        {filtered.length} of {cards.length} species
+        {filtered.length} of {cards.length} dudus
       </p>
 
       {filtered.length === 0 ? (
@@ -51,7 +51,7 @@ export default function CardBrowser({ cards }: { cards: Card[] }) {
             return (
               <li key={card.id} className="py-3">
                 <Link
-                  href={`/species/${card.id}`}
+                  href={`/dudus/${card.id}`}
                   className="block hover:opacity-70"
                 >
                   <div className="font-medium">{card.common_name}</div>
