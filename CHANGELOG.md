@@ -18,10 +18,15 @@ behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
   Desktop browsers fall back to a normal file picker (gallery included) since `capture` is
   mobile-only — a known, discussed tradeoff of the simpler option over a full custom
   getUserMedia viewfinder (closes #7)
-- Existing reference photos wired up for the 6 dudus that already had one (folded in per the
-  user): copied into `public/photos/`, rendered on the detail page and as a browser-list
-  thumbnail. `photo_ref` now points at the app-servable path rather than the old source-library
-  path (closes #7)
+- Existing reference photos wired up for the dudus that had one (folded in per the user):
+  copied into `public/photos/`, rendered on the detail page and as a browser-list thumbnail.
+  `photo_ref` now points at the app-servable path rather than the old source-library path. The
+  user has since photographed the remaining dudus too, so all 11 now have one (closes #7)
+
+### Removed
+
+- Robber Flies and Whirligig Beetles withdrawn from the site (moved to `Dudus/Not to use/` in
+  the source library, alongside the earlier round of 18). 11 dudus remain
 
 tag: `v0.5.0`
 
