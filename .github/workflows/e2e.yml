@@ -41,7 +41,7 @@ jobs:
 
       - name: Install Playwright (Python)
         run: |
-          pip install playwright
+          pip install playwright pillow
           playwright install --with-deps chromium
 
       - name: Run E2E suite
