@@ -6,6 +6,21 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.6.0] - 2026-08-08
+
+### Added
+
+- Browse-by-order grid view (`/browse`): dudus grouped by taxonomic order, each order's dudus in
+  their own responsive photo grid, modelled on `umoja-voices`' songs grid. Orders are derived
+  from the bundled card index at render time — only orders with at least one dudu appear, and a
+  new order shows up automatically the moment a dudu with that order is added, no code change
+  needed. The 2 cards currently missing an `order` value (a card-index data gap, not fixed by
+  this ticket) group under a fallback "Order not yet identified" bucket rather than being
+  dropped. Light background throughout (unlike the rest of the app's light/dark theming), with
+  breadcrumbs back to the home page. Linked from home alongside "Identify a dudu" (closes #19)
+
+tag: `v0.6.0`
+
 ## [0.5.0] - 2026-08-08
 
 ### Added
