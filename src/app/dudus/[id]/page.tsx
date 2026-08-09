@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import cards from "@/data/card_index.json";
 import type { Card } from "@/types/card";
+import { UNCLASSIFIED_LABEL, orderSlug } from "@/lib/orders";
 
 const allCards = cards as Card[];
 
@@ -20,6 +21,7 @@ export default async function DuduPage({
   if (!card) notFound();
 
   const taxonomyLine = [card.family, card.order].filter(Boolean).join(" · ");
+  const order = card.order ?? UNCLASSIFIED_LABEL;
 
   return (
     <div className="flex flex-col flex-1 items-center bg-zinc-50">
@@ -28,10 +30,11 @@ export default async function DuduPage({
         className="flex flex-1 w-full max-w-2xl flex-col items-stretch py-16 px-6 bg-white"
       >
         <Link
-          href="/"
+          href={`/orders/${orderSlug(order)}`}
+          data-testid="dudu-breadcrumb"
           className="text-sm text-zinc-500 hover:underline"
         >
-          ← All dudus
+          ← Back to {order}
         </Link>
 
         <h1 className="mt-4 text-2xl font-semibold tracking-tight">

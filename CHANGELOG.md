@@ -6,6 +6,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.7.1] - 2026-08-09
+
+### Fixed
+
+- The dudu detail page's breadcrumb now takes you back to that dudu's own order page
+  (`/orders/[order]`) instead of the homepage, matching the order-buttons browse flow from #23.
+  Covered by two new cases in `e2e/test_dudu_detail.py` (closes #25)
+
+tag: `v0.7.1`
+
 ## [0.7.0] - 2026-08-09
 
 ### Changed
