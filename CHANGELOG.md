@@ -6,6 +6,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.7.0] - 2026-08-09
+
+### Changed
+
+- Home page now shows one button per taxonomic order (plus a fallback button for any dudu whose
+  order isn't yet identified) instead of inline per-order grids, each with a small tagline of
+  example dudus in that order (e.g. "bees, wasps and ants" for Hymenoptera). Clicking a button
+  opens a new dedicated `/orders/[order]` page with that order's dudus, at roughly half the
+  thumbnail size of the old inline grid. Covered by `e2e/test_browse_by_order.py` (closes #23)
+
+tag: `v0.7.0`
+
 ## [0.6.1] - 2026-08-08
 
 ### Security
