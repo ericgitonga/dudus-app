@@ -1,25 +1,9 @@
 import Link from "next/link";
 import cards from "@/data/card_index.json";
 import type { Card } from "@/types/card";
-import DuduGridCard from "@/components/DuduGridCard";
+import { groupByOrder, orderTagline } from "@/lib/orders";
 
 const allCards = cards as Card[];
-const UNCLASSIFIED_LABEL = "Order not yet identified";
-
-function groupByOrder(cards: Card[]) {
-  const groups = new Map<string, Card[]>();
-  for (const card of cards) {
-    const key = card.order ?? UNCLASSIFIED_LABEL;
-    const group = groups.get(key) ?? [];
-    group.push(card);
-    groups.set(key, group);
-  }
-  const orders = [...groups.keys()]
-    .filter((order) => order !== UNCLASSIFIED_LABEL)
-    .sort((a, b) => a.localeCompare(b));
-  if (groups.has(UNCLASSIFIED_LABEL)) orders.push(UNCLASSIFIED_LABEL);
-  return orders.map((order) => ({ order, cards: groups.get(order)! }));
-}
 
 export default function Home() {
   const groups = groupByOrder(allCards);
@@ -50,16 +34,22 @@ export default function Home() {
           Kenyan arthropods, grouped by taxonomic order.
         </p>
 
-        <div className="mt-8 flex flex-col gap-10">
-          {groups.map(({ order, cards }) => (
-            <section key={order} data-testid="order-group" data-order={order}>
-              <h2 className="text-xl font-semibold text-zinc-900">{order}</h2>
-              <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {cards.map((card) => (
-                  <DuduGridCard key={card.id} card={card} />
-                ))}
-              </div>
-            </section>
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {groups.map(({ order, slug }) => (
+            <Link
+              key={order}
+              href={`/orders/${slug}`}
+              data-testid="order-button"
+              data-order={order}
+              className="flex flex-col rounded-lg border border-zinc-200 bg-white p-5 shadow-sm transition hover:shadow-md"
+            >
+              <span className="text-lg font-semibold text-zinc-900">
+                {order}
+              </span>
+              <span className="mt-1 text-xs text-zinc-500">
+                {orderTagline(order)}
+              </span>
+            </Link>
           ))}
         </div>
       </main>
