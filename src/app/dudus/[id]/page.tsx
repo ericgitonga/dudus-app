@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import Image from "next/image";
 import cards from "@/data/card_index.json";
 import type { Card } from "@/types/card";
 import { UNCLASSIFIED_LABEL, orderSlug } from "@/lib/orders";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const allCards = cards as Card[];
 
@@ -29,15 +29,16 @@ export default async function DuduPage({
         data-testid="dudu-detail"
         className="flex flex-1 w-full max-w-2xl flex-col items-stretch py-16 px-6 bg-white"
       >
-        <Link
-          href={`/orders/${orderSlug(order)}`}
+        <Breadcrumb
           data-testid="dudu-breadcrumb"
-          className="text-sm text-zinc-500 hover:underline"
-        >
-          ← Back to {order}
-        </Link>
+          items={[
+            { label: "Dudus", href: "/" },
+            { label: order, href: `/orders/${orderSlug(order)}` },
+            { label: card.common_name },
+          ]}
+        />
 
-        <h1 className="mt-4 text-2xl font-semibold tracking-tight">
+        <h1 className="text-2xl font-semibold tracking-tight">
           {card.common_name}
         </h1>
         {card.scientific_name && (

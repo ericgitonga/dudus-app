@@ -4,7 +4,7 @@ from the actual bundled card index at test time — orders and counts are never 
 _common.py).
 """
 
-from _common import CARDS, browser_page
+from _common import BASE_URL, CARDS, browser_page
 
 UNCLASSIFIED_LABEL = "Order not yet identified"
 
@@ -74,11 +74,24 @@ def test_grid_card_on_order_page_links_to_its_detail_page():
         assert page.url.rstrip("/").endswith(f"/dudus/{card['id']}")
 
 
+def test_order_page_breadcrumb_shows_trail_and_links_home():
+    order = next(c["order"] for c in CARDS if c["order"])
+    with browser_page() as page:
+        page.goto(f"/orders/{_order_slug(order)}")
+        text = page.locator('[data-testid="order-breadcrumb"]').text_content()
+        assert "Dudus" in text
+        assert order in text
+        page.click('[data-testid="order-breadcrumb-item"]')
+        page.wait_for_selector('[data-testid="browse-page"]')
+        assert page.url.rstrip("/") == BASE_URL
+
+
 TESTS = [
     test_only_orders_present_in_data_are_listed,
     test_order_button_navigates_to_its_own_page_with_only_its_dudus,
     test_unclassified_dudus_grouped_under_fallback_button,
     test_grid_card_on_order_page_links_to_its_detail_page,
+    test_order_page_breadcrumb_shows_trail_and_links_home,
 ]
 
 if __name__ == "__main__":
