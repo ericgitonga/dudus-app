@@ -6,6 +6,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.9.0] - 2026-08-09
+
+### Added
+
+- New card: White-Ringed Atlas Moth (*Epiphora mythimnia*), the site's first Lepidoptera entry
+  — sourced from an existing `/dudusonline` research pass in `Dudus/White-Ringed Atlas Moth/`.
+  Added a "moths and butterflies" tagline for Lepidoptera to the order buttons (closes #29)
+
+tag: `v0.9.0`
+
 ## [0.8.0] - 2026-08-09
 
 ### Changed

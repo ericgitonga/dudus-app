@@ -526,5 +526,51 @@
     "photo_ref": "/photos/orchard-orbweaver.jpg",
     "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
     "reviewed_at": "2026-08-07"
+  },
+  {
+    "id": "white-ringed-atlas-moth",
+    "common_name": "White-Ringed Atlas Moth",
+    "scientific_name": "Epiphora mythimnia",
+    "family": "Saturniidae",
+    "order": "Lepidoptera",
+    "taxon_rank": "species",
+    "sourcing": "/dudusonline",
+    "sections": [
+      {
+        "heading": "What Is It?",
+        "body": "The white-ringed atlas moth is an African emperor moth in the silkmoth family Saturniidae — not a true Attacus atlas moth, which lives only in Asia. Its scientific name, Epiphora mythimnia, was coined in 1849, before the genus Epiphora itself even existed; the moth that later gave that genus its name turned out to be this exact species under a different label. Its closest genetic relatives, oddly, live in Asia and North America rather than Africa, hinting the whole African lineage may descend from a single ancient long-distance crossing."
+      },
+      {
+        "heading": "What Does It Look Like?",
+        "body": "Despite 175 years of scientific attention, no rigorous published measurement of its wingspan or wing pattern could be found. What is documented is a family trait: an eyespot near the wingtip detailed enough to mimic a vertebrate eye, likely giving a hungry bird pause — probably the source of the 'ringed' in its name, though no source confirms that link directly. The moth's broad, feathery, comb-like antennae (as opposed to a female's slimmer, thread-like ones) mark it out as male, tuned to detect a female's scent from miles away."
+      },
+      {
+        "heading": "How Does It Live?",
+        "body": "Its basic biology — egg counts, moult stages, time in the cocoon, generations per year — has never been rigorously documented, a striking gap for a species named in 1849. What is confirmed is its diet: caterpillars feed mainly on jujube-type trees in the buckthorn genus Ziziphus, with occasional use of croton trees and one flowering-tree genus, Fernandoa — three of the confirmed feeding records specifically from East Africa."
+      },
+      {
+        "heading": "Where Does It Live, and What Does It Eat?",
+        "body": "Global occurrence records place this moth in ten African countries, with South Africa holding the majority of sightings and Kenya running second at 27 confirmed records — spanning Nairobi's highland gardens, Nyeri, the coastal lowlands around Kilifi and Taita Taveta, and semi-arid country near Kibwezi and Kasigau. Its wider genus, Epiphora, holds around 20 species, all found only in Africa."
+      },
+      {
+        "heading": "Why Does It Matter?",
+        "body": "A recent Kenyan survey of edible emperor-and-silk moths across 15 farming zones turned up seven species people eat or could harvest commercially — this one wasn't among them. No conservation status has been confirmed either way, so its ecological or economic weight remains, for now, an open question rather than a settled answer."
+      },
+      {
+        "heading": "A Scientific Plot Twist",
+        "body": "This species was named in 1849 under a description borrowed from an unrelated moth family, then formally rehomed in 1860 into a brand-new genus built around a specimen that turned out to be the very same species under another name — while its true genetic relatives turned up on two continents it has never lived on."
+      },
+      {
+        "heading": "What's the Kenya Connection?",
+        "body": "Kenya is a genuine, well-documented part of this moth's range, with records running from Nairobi's high-altitude gardens to the hot coastal bush near Kilifi and out into the dry country near Kibwezi — mostly drawn from decades of private and museum lepidopterist collections, plus more recent citizen sightings around Nairobi."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "White-Ringed Atlas Moth/wram-web.pdf",
+      "lay": "White-Ringed Atlas Moth/wram-web-la.pdf"
+    },
+    "photo_ref": "/photos/white-ringed-atlas-moth.jpg",
+    "reviewed_by": "claude (spot-check review pass, dudus-app#29)",
+    "reviewed_at": "2026-08-09"
   }
 ]

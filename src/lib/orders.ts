@@ -41,6 +41,7 @@ const ORDER_TAGLINES: Record<string, string> = {
   Diptera: "flies and mosquitoes",
   Hemiptera: "true bugs, cicadas and aphids",
   Hymenoptera: "bees, wasps and ants",
+  Lepidoptera: "moths and butterflies",
   Orthoptera: "grasshoppers, crickets and locusts",
   Phasmatodea: "stick and leaf insects",
   Trombidiformes: "mites and chiggers",
