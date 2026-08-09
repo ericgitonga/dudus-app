@@ -51,11 +51,39 @@ def test_browser_link_navigates_to_its_own_detail_page():
         ).text_content()
 
 
+def test_breadcrumb_returns_to_its_own_order_page_not_the_homepage():
+    card = next(c for c in CARDS if c["order"])
+    order_slug = card["order"].lower()
+    with browser_page() as page:
+        page.goto(f"/dudus/{card['id']}")
+        page.click('[data-testid="dudu-breadcrumb"]')
+        page.wait_for_selector('[data-testid="order-page"]')
+        assert page.url.rstrip("/").endswith(f"/orders/{order_slug}")
+        assert page.get_attribute('[data-testid="order-page"]', "data-order") == card["order"]
+
+
+def test_breadcrumb_for_unclassified_dudu_returns_to_unclassified_order_page():
+    card = next((c for c in CARDS if not c["order"]), None)
+    if card is None:
+        print(
+            "SKIP test_breadcrumb_for_unclassified_dudu_returns_to_unclassified_order_page: "
+            "every card has an order"
+        )
+        return
+    with browser_page() as page:
+        page.goto(f"/dudus/{card['id']}")
+        page.click('[data-testid="dudu-breadcrumb"]')
+        page.wait_for_selector('[data-testid="order-page"]')
+        assert page.url.rstrip("/").endswith("/orders/unclassified")
+
+
 TESTS = [
     test_detail_page_renders_taxonomy_and_sections,
     test_detail_page_handles_missing_scientific_name,
     test_unknown_dudu_id_404s,
     test_browser_link_navigates_to_its_own_detail_page,
+    test_breadcrumb_returns_to_its_own_order_page_not_the_homepage,
+    test_breadcrumb_for_unclassified_dudu_returns_to_unclassified_order_page,
 ]
 
 if __name__ == "__main__":
