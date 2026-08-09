@@ -15,21 +15,29 @@ From the repo root:
 conda run -n ds streamlit run tools/dudu-intake/app.py
 ```
 
-Dependencies (`streamlit`, `pillow`) live in the `ds` conda environment — install with
+Dependencies (`streamlit`, `pillow`, `pymupdf`) live in the `ds` conda environment — install with
 `conda run -n ds pip install -r tools/dudu-intake/requirements.txt` if they're ever missing.
 
 ## What it does
 
-- **Add new card**: structured fields matching `Card`/`CardSection` in `src/types/card.ts`,
-  plus a repeatable list of section heading/body pairs. Section text is meant to be pasted in
-  from an already-completed `/dudus` or `/dudusonline` research pass — this tool doesn't
-  research anything itself (Constraint 1 on #15).
+- **Add new card** — exactly three inputs:
+  1. **Lay report PDF** (from an already-completed `/dudus` or `/dudusonline` pass — this tool
+     doesn't research anything itself, Constraint 1 on #15). Parsed directly with PyMuPDF: the
+     report's own title becomes `common_name`/`id`, each bold heading starts a new section, and
+     the regular-weight text under it becomes that section's body — mirroring exactly how
+     `md_to_pdf_rl.py` styles H1/H2/body when it originally generated the PDF. A leading "The/A/An"
+     is stripped from the title (some reports phrase it as a sentence; no existing common name
+     starts with an article). `source_report_ref.lay` is set from the filename; the sibling
+     technical PDF (same name minus `-la`) is looked up automatically in `Dudus/<CommonName>/`
+     on this machine and used for `source_report_ref.technical` if found.
+  2. **Photo** (optional) — unchanged: EXIF/GPS-stripped, orientation-corrected, padded to 3:2.
+  3. **Order** — dropdown of orders already in use, plus "Unknown (fix later)" → `null` (same
+     "Order not yet identified" grouping the site already falls back to for unclassified cards).
+
+  `scientific_name`, `family`, `taxon_rank` (defaults to `"species"`), and `sourcing` (left
+  blank) have no edit UI yet — only photos do — so they land as clear placeholders, not guesses.
 - **Existing cards**: lists every card with its current photo (or "no photo yet"), with inline
   add/replace/remove.
-- Uploaded photos are stripped of EXIF/GPS metadata and orientation-corrected (mirroring
-  `stripPhotoMetadata.ts`, #10), then padded to exact 3:2 if narrower — the same convention
-  documented in `SKILL.md`. The tool never crops; if a photo is already wider than 3:2 it warns
-  instead of guessing where the subject is.
 
 ## After using it
 
