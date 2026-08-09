@@ -6,6 +6,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.8.0] - 2026-08-09
+
+### Changed
+
+- Replaced the single "back" link on `/dudus/[id]` and `/orders/[order]` with a full breadcrumb
+  trail (`Dudus / <Order> / <Dudu>` and `Dudus / <Order>`), matching the convention already used
+  on `umoja-voices` — earlier segments are links, the current page is plain bold text. Built as
+  a reusable `src/components/Breadcrumb.tsx`, now also carried into the `/newproject` scaffold
+  template for future Next.js projects. Covered by new cases in `e2e/test_dudu_detail.py` and
+  `e2e/test_browse_by_order.py` (closes #27)
+
+tag: `v0.8.0`
+
 ## [0.7.1] - 2026-08-09
 
 ### Fixed

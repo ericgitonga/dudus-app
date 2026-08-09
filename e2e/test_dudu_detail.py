@@ -8,7 +8,7 @@ Locators scoped to the [data-testid="dudu-detail"] container, never bare body te
 _common.py's docstring on why an unscoped body-text assertion is unreliable on this app.
 """
 
-from _common import CARDS, browser_page
+from _common import BASE_URL, CARDS, browser_page
 
 
 def test_detail_page_renders_taxonomy_and_sections():
@@ -51,15 +51,35 @@ def test_browser_link_navigates_to_its_own_detail_page():
         ).text_content()
 
 
-def test_breadcrumb_returns_to_its_own_order_page_not_the_homepage():
+def test_breadcrumb_shows_full_trail():
+    card = next(c for c in CARDS if c["order"])
+    with browser_page() as page:
+        page.goto(f"/dudus/{card['id']}")
+        text = page.locator('[data-testid="dudu-breadcrumb"]').text_content()
+        assert "Dudus" in text
+        assert card["order"] in text
+        assert card["common_name"] in text
+
+
+def test_breadcrumb_order_link_returns_to_its_own_order_page_not_the_homepage():
     card = next(c for c in CARDS if c["order"])
     order_slug = card["order"].lower()
     with browser_page() as page:
         page.goto(f"/dudus/{card['id']}")
-        page.click('[data-testid="dudu-breadcrumb"]')
+        # items: [0] "Dudus" -> home, [1] the order -> its order page, [2] common name (no link)
+        page.locator('[data-testid="dudu-breadcrumb-item"]').nth(1).click()
         page.wait_for_selector('[data-testid="order-page"]')
         assert page.url.rstrip("/").endswith(f"/orders/{order_slug}")
         assert page.get_attribute('[data-testid="order-page"]', "data-order") == card["order"]
+
+
+def test_breadcrumb_dudus_link_returns_home():
+    card = next(c for c in CARDS if c["order"])
+    with browser_page() as page:
+        page.goto(f"/dudus/{card['id']}")
+        page.locator('[data-testid="dudu-breadcrumb-item"]').nth(0).click()
+        page.wait_for_selector('[data-testid="browse-page"]')
+        assert page.url.rstrip("/") == BASE_URL
 
 
 def test_breadcrumb_for_unclassified_dudu_returns_to_unclassified_order_page():
@@ -72,7 +92,7 @@ def test_breadcrumb_for_unclassified_dudu_returns_to_unclassified_order_page():
         return
     with browser_page() as page:
         page.goto(f"/dudus/{card['id']}")
-        page.click('[data-testid="dudu-breadcrumb"]')
+        page.locator('[data-testid="dudu-breadcrumb-item"]').nth(1).click()
         page.wait_for_selector('[data-testid="order-page"]')
         assert page.url.rstrip("/").endswith("/orders/unclassified")
 
@@ -82,7 +102,9 @@ TESTS = [
     test_detail_page_handles_missing_scientific_name,
     test_unknown_dudu_id_404s,
     test_browser_link_navigates_to_its_own_detail_page,
-    test_breadcrumb_returns_to_its_own_order_page_not_the_homepage,
+    test_breadcrumb_shows_full_trail,
+    test_breadcrumb_order_link_returns_to_its_own_order_page_not_the_homepage,
+    test_breadcrumb_dudus_link_returns_home,
     test_breadcrumb_for_unclassified_dudu_returns_to_unclassified_order_page,
 ]
 

@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import cards from "@/data/card_index.json";
 import type { Card } from "@/types/card";
 import DuduGridCard from "@/components/DuduGridCard";
+import Breadcrumb from "@/components/Breadcrumb";
 import { groupByOrder, orderTagline } from "@/lib/orders";
 
 const allCards = cards as Card[];
@@ -23,11 +23,12 @@ export default async function OrderPage({
   return (
     <div className="min-h-screen bg-zinc-50" data-testid="order-page" data-order={group.order}>
       <main className="mx-auto max-w-5xl px-4 py-10">
-        <Link href="/" className="text-sm text-zinc-500 hover:underline">
-          ← All orders
-        </Link>
+        <Breadcrumb
+          data-testid="order-breadcrumb"
+          items={[{ label: "Dudus", href: "/" }, { label: group.order }]}
+        />
 
-        <h1 className="mt-4 text-2xl font-semibold tracking-tight text-zinc-900">
+        <h1 className="text-2xl font-semibold tracking-tight text-zinc-900">
           {group.order}
         </h1>
         <p className="mt-1 text-sm text-zinc-600">{orderTagline(group.order)}</p>
