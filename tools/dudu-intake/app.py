@@ -4,8 +4,11 @@ Local-only admin tool for dudus-app (issue #31, scoped in #15).
 Adds a new card to src/data/card_index.json (with an optional photo) and lets an existing
 card's photo be added, replaced, or removed. Never deployed — lives outside the Next.js build
 (nothing under tools/ is imported by the app or referenced by next.config.ts), reachable only by
-running it locally. It edits the working tree directly; committing/PR'ing the result goes
-through the normal repo workflow (ONBOARDING.md), same as any other change.
+running it locally. Each action publishes itself to the live site automatically (issue #34): a
+throwaway git worktree (never the live working directory a running instance of this tool might
+be serving out of) carries the change through a real branch -> PR -> e2e -> squash-merge cycle,
+skipping the VERSION/CHANGELOG/tag ceremony and per-change issue that a code change would need,
+since this is content, not a release — see ONBOARDING.md's "Automated content publishing" note.
 
 Run from the repo root:
     conda run -n ds streamlit run tools/dudu-intake/app.py
@@ -13,6 +16,11 @@ Run from the repo root:
 
 import json
 import re
+import shutil
+import subprocess
+import tempfile
+import time
+import uuid
 from pathlib import Path
 
 import fitz
@@ -23,6 +31,10 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 CARD_INDEX_PATH = REPO_ROOT / "src" / "data" / "card_index.json"
 PHOTOS_DIR = REPO_ROOT / "public" / "photos"
 DUDUS_ROOT = REPO_ROOT.parent / "Dudus"
+
+GITHUB_REPO = "ericgitonga/dudus-app"
+CI_POLL_INTERVAL_SECONDS = 8
+CI_POLL_TIMEOUT_SECONDS = 600
 
 CARD_KEY_ORDER = [
     "id",
@@ -61,9 +73,13 @@ def load_cards():
         return json.load(f)
 
 
+def serialize_cards(cards):
+    return (json.dumps(cards, indent=2, ensure_ascii=False) + "\n").encode()
+
+
 def save_cards(cards):
-    with open(CARD_INDEX_PATH, "w") as f:
-        f.write(json.dumps(cards, indent=2, ensure_ascii=False) + "\n")
+    with open(CARD_INDEX_PATH, "wb") as f:
+        f.write(serialize_cards(cards))
 
 
 def slugify(text):
@@ -180,6 +196,123 @@ def delete_photo(photo_ref):
         path.unlink()
 
 
+def run_cmd(args, cwd, check=True):
+    result = subprocess.run(args, cwd=str(cwd), capture_output=True, text=True)
+    if check and result.returncode != 0:
+        raise RuntimeError(
+            f"`{' '.join(args)}` failed (exit {result.returncode}):\n{result.stdout}\n{result.stderr}"
+        )
+    return result.stdout.strip()
+
+
+def publish_content_change(files, commit_message, pr_title, pr_body, log):
+    """
+    Drive the existing branch -> PR -> e2e -> squash-merge pipeline for a content-only change,
+    so using this tool actually publishes to the live site (#34) without VERSION/CHANGELOG/tag
+    ceremony or a per-change issue — same reasoning as career-transition's per-client CV/plan
+    exemption from issue-first (this is content, not a codebase change).
+
+    `files` maps repo-relative paths to new bytes, or None to delete that path. Runs entirely in
+    a throwaway git worktree on its own branch — never checks out anything in REPO_ROOT itself,
+    so a concurrently-running instance of this same tool (or an admin's own unrelated local
+    edits) in the live working directory is never disturbed.
+
+    Returns (published: bool, pr_url: str | None, detail: str).
+    """
+    branch = f"intake/{uuid.uuid4().hex[:10]}"
+    worktree_dir = Path(tempfile.mkdtemp(prefix="dudu-intake-publish-"))
+    pr_url = None
+    try:
+        log("Fetching latest `main`…")
+        run_cmd(["git", "fetch", "origin", "main"], REPO_ROOT)
+
+        log(f"Preparing an isolated worktree on `{branch}`…")
+        run_cmd(["git", "worktree", "add", "-b", branch, str(worktree_dir), "origin/main"], REPO_ROOT)
+
+        for rel_path, content in files.items():
+            dest = worktree_dir / rel_path
+            if content is None:
+                if dest.exists():
+                    dest.unlink()
+            else:
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.write_bytes(content)
+            run_cmd(["git", "add", "--", rel_path], worktree_dir)
+
+        run_cmd(["git", "commit", "-m", commit_message], worktree_dir)
+
+        log("Pushing…")
+        run_cmd(["git", "push", "-u", "origin", branch], worktree_dir)
+
+        log("Opening PR…")
+        pr_url = run_cmd(
+            [
+                "gh", "pr", "create", "--repo", GITHUB_REPO,
+                "--title", pr_title, "--body", pr_body, "--head", branch,
+            ],
+            worktree_dir,
+        )
+        pr_number = pr_url.rstrip("/").split("/")[-1]
+
+        log(f"PR {pr_url} opened — waiting for checks…")
+        deadline = time.time() + CI_POLL_TIMEOUT_SECONDS
+        checks = []
+        while time.time() < deadline:
+            checks_raw = run_cmd(
+                ["gh", "pr", "checks", pr_number, "--repo", GITHUB_REPO, "--json", "name,bucket"],
+                worktree_dir,
+                check=False,
+            )
+            checks = json.loads(checks_raw) if checks_raw else []
+            if checks and all(c["bucket"] != "pending" for c in checks):
+                break
+            time.sleep(CI_POLL_INTERVAL_SECONDS)
+        else:
+            return False, pr_url, "Timed out waiting for checks — PR left open for manual review."
+
+        failed = [c["name"] for c in checks if c["bucket"] not in ("pass", "skipping")]
+        if failed:
+            return False, pr_url, f"Checks failed ({', '.join(failed)}) — PR left open, not merged."
+
+        log("Checks green — merging…")
+        run_cmd(
+            ["gh", "pr", "merge", pr_number, "--repo", GITHUB_REPO, "--squash", "--delete-branch"],
+            worktree_dir,
+        )
+        return True, pr_url, "Published to the live site."
+    finally:
+        log("Cleaning up the temporary worktree…")
+        run_cmd(["git", "worktree", "remove", "--force", str(worktree_dir)], REPO_ROOT, check=False)
+        shutil.rmtree(worktree_dir, ignore_errors=True)
+        # Best-effort: if this succeeded, the live working directory's own copy of these files
+        # already matches what was just merged (we published its exact current bytes), so this
+        # is just bookkeeping to mark it clean — never something to block or error the UI on. Only
+        # when REPO_ROOT is actually on `main` — if it's sitting on some other branch (e.g. a dev
+        # session working on the tool itself), silently pulling there would be exactly the kind
+        # of surprise branch-state change this worktree approach exists to avoid.
+        current_branch = run_cmd(["git", "branch", "--show-current"], REPO_ROOT, check=False)
+        if current_branch == "main":
+            run_cmd(["git", "pull", "--ff-only"], REPO_ROOT, check=False)
+
+
+def do_publish(files, commit_message, pr_title, pr_body):
+    with st.status("Publishing to the live site…", expanded=True) as status:
+        try:
+            published, pr_url, detail = publish_content_change(
+                files, commit_message, pr_title, pr_body, status.write
+            )
+        except Exception as e:
+            status.update(label="Publish failed", state="error")
+            st.error(f"Publish failed: {e}")
+            return False
+        status.update(
+            label="Published" if published else "Not published",
+            state="complete" if published else "error",
+        )
+        (st.success if published else st.warning)(f"{detail}\n\n{pr_url}" if pr_url else detail)
+        return published
+
+
 st.set_page_config(page_title="dudus-app intake", layout="wide")
 st.title("dudus-app admin intake")
 st.caption(
@@ -286,6 +419,17 @@ with tab_new:
             )
             existing_cards.append(new_card)
             save_cards(existing_cards)
+
+            publish_files = {"src/data/card_index.json": serialize_cards(existing_cards)}
+            if photo_ref:
+                publish_files[f"public{photo_ref}"] = (PHOTOS_DIR / Path(photo_ref).name).read_bytes()
+            do_publish(
+                publish_files,
+                commit_message=f"Add card: {parsed_title} ({card_id})",
+                pr_title=f"Add card: {parsed_title}",
+                pr_body=f"Automated content-only PR from tools/dudu-intake — no version bump (see #34). Adds '{parsed_title}' ({card_id}).",
+            )
+
             st.session_state.photo_uploader_version += 1
             st.session_state.lay_report_uploader_version += 1
             # st.rerun() below aborts this script run immediately, so a message shown here would
@@ -325,10 +469,27 @@ with tab_existing:
                     if warn:
                         st.warning(warn)
                     if st.button("Save photo", key=f"save_{card['id']}"):
-                        delete_photo(card["photo_ref"])
+                        old_photo_ref = card["photo_ref"]
+                        delete_photo(old_photo_ref)
                         ext = "png" if replacement.type == "image/png" else "jpg"
                         card["photo_ref"] = save_photo(new_img, card["id"], ext)
                         save_cards(cards)
+
+                        publish_files = {
+                            "src/data/card_index.json": serialize_cards(cards),
+                            f"public{card['photo_ref']}": (
+                                PHOTOS_DIR / Path(card["photo_ref"]).name
+                            ).read_bytes(),
+                        }
+                        if old_photo_ref and old_photo_ref != card["photo_ref"]:
+                            publish_files[f"public{old_photo_ref}"] = None
+                        do_publish(
+                            publish_files,
+                            commit_message=f"Update photo: {card['common_name']} ({card['id']})",
+                            pr_title=f"Update photo: {card['common_name']}",
+                            pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34).",
+                        )
+
                         st.session_state.existing_card_message = f"Photo saved for {card['common_name']}."
                         st.rerun()
 
@@ -337,9 +498,21 @@ with tab_existing:
                     if st.button(
                         "Remove photo", key=f"remove_{card['id']}", disabled=not confirm
                     ):
-                        delete_photo(card["photo_ref"])
+                        old_photo_ref = card["photo_ref"]
+                        delete_photo(old_photo_ref)
                         card["photo_ref"] = None
                         save_cards(cards)
+
+                        do_publish(
+                            {
+                                "src/data/card_index.json": serialize_cards(cards),
+                                f"public{old_photo_ref}": None,
+                            },
+                            commit_message=f"Remove photo: {card['common_name']} ({card['id']})",
+                            pr_title=f"Remove photo: {card['common_name']}",
+                            pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34).",
+                        )
+
                         st.session_state.existing_card_message = f"Photo removed for {card['common_name']}."
                         st.rerun()
 
@@ -353,9 +526,21 @@ with tab_existing:
                 key=f"delete_{card['id']}",
                 disabled=not confirm_delete,
             ):
-                delete_photo(card["photo_ref"])
+                old_photo_ref = card["photo_ref"]
+                delete_photo(old_photo_ref)
                 remaining = [c for c in cards if c["id"] != card["id"]]
                 save_cards(remaining)
+
+                publish_files = {"src/data/card_index.json": serialize_cards(remaining)}
+                if old_photo_ref:
+                    publish_files[f"public{old_photo_ref}"] = None
+                do_publish(
+                    publish_files,
+                    commit_message=f"Delete card: {card['common_name']} ({card['id']})",
+                    pr_title=f"Delete card: {card['common_name']}",
+                    pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34).",
+                )
+
                 st.session_state.existing_card_message = (
                     f"Deleted '{card['common_name']}' ({card['id']})."
                 )
