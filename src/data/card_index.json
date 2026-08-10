@@ -46,56 +46,6 @@
     "reviewed_at": "2026-08-07"
   },
   {
-    "id": "wolf-spiders",
-    "common_name": "Wolf Spiders",
-    "scientific_name": null,
-    "family": "Lycosidae",
-    "order": "Araneae",
-    "taxon_rank": "family",
-    "sourcing": "/dudus",
-    "sections": [
-      {
-        "heading": "What Are Wolf Spiders?",
-        "body": "Wolf spiders are widespread, ancient ground-dwelling hunters that actively chase down prey on foot rather than sitting in a web — solitary predators found on every continent except Antarctica. There are roughly 2,400 known species in the family Lycosidae across about 120 genera, ranging from barely a centimetre long to several centimetres in the large genus Hogna; despite their fearsome reputation, they are entirely harmless to people."
-      },
-      {
-        "heading": "What Do They Look Like?",
-        "body": "Typically brown, grey, or sandy for ground camouflage, stocky, hairy, and fast-moving. The real giveaway is their eyes: four small eyes in a bottom row, two large forward-facing eyes in the middle, and two even larger eyes on top of the head — a three-row arrangement giving genuinely good vision most spiders lack. The body divides into a front cephalothorax (legs, eyes, mouthparts) and a rounder rear abdomen holding the silk-spinning spinnerets."
-      },
-      {
-        "heading": "The Eyes Have It — Night Hunting with Built-In Torches",
-        "body": "A mirror-like reflective layer behind the rear eyes (the tapetum lucidum, the same structure behind a cat's glowing eyes) makes wolf spiders' eyes blaze back green or amber under torchlight at night, letting experienced collectors simply spot and harvest them by eye. This amplifies dim light and dramatically improves their ability to detect prey and predators in near-darkness."
-      },
-      {
-        "heading": "Life as a Hunter",
-        "body": "Wolf spiders don't build webs to catch prey; they wander the ground through leaf litter, soil, and grass, actively stalking or ambushing insects, beetles, ants, and small grasshoppers. Some genera (Hogna, Geolycosa) dig burrows as a daytime retreat; others are fully nomadic. In farmland they are one of the most important natural pest controllers, significantly suppressing aphids and other damaging insects in rice, wheat, and other crops."
-      },
-      {
-        "heading": "The Dancing Mama — Maternal Care Unique in the Spider World",
-        "body": "After mating, the female spins a silk egg sac and attaches it to her spinnerets, carrying it beneath her abdomen everywhere she goes and never putting it down. When the eggs hatch, dozens of spiderlings climb onto her back and ride there for days to weeks. This dorsal-carrying behaviour is found nowhere else among the world's roughly 40,000 spider species — it's exclusive to Lycosidae."
-      },
-      {
-        "heading": "Where Do They Live?",
-        "body": "Wolf spiders are ecologically flexible, thriving in grasslands, forest floors, sandy deserts, high-altitude scree, wetland margins, farmland, and city gardens and pavements. Several Pardosa species are especially comfortable in urban environments, sometimes wandering into ground-floor rooms."
-      },
-      {
-        "heading": "Are They Dangerous?",
-        "body": "No — their venom has no medically significant effect on humans; a rare, defensive bite may cause brief local pain comparable to a wasp sting with no lasting effects. The famous medieval 'tarantula of Taranto,' blamed for a supposed dancing madness, was in fact a large wolf spider (Hogna radiata), not a true tarantula — the panic was cultural, not medical."
-      },
-      {
-        "heading": "Why Do They Matter?",
-        "body": "Beyond pest control, wolf spiders (particularly the genus Pardosa) are widely used by scientists as bioindicators — a healthy, diverse wolf spider population signals a clean, ecologically intact habitat, and their sensitivity to soil contamination and pesticides makes them valuable environmental monitors."
-      }
-    ],
-    "source_report_ref": {
-      "technical": "Wolf Spiders/ws.pdf",
-      "lay": "Wolf Spiders/ws-la.pdf"
-    },
-    "photo_ref": "/photos/wolf-spiders.jpg",
-    "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
-    "reviewed_at": "2026-08-07"
-  },
-  {
     "id": "assassin-bug",
     "common_name": "Assassin Bug",
     "scientific_name": null,
