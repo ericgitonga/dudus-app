@@ -46,56 +46,6 @@
     "reviewed_at": "2026-08-07"
   },
   {
-    "id": "wolf-spiders",
-    "common_name": "Wolf Spiders",
-    "scientific_name": null,
-    "family": "Lycosidae",
-    "order": "Araneae",
-    "taxon_rank": "family",
-    "sourcing": "/dudus",
-    "sections": [
-      {
-        "heading": "What Are Wolf Spiders?",
-        "body": "Wolf spiders are widespread, ancient ground-dwelling hunters that actively chase down prey on foot rather than sitting in a web — solitary predators found on every continent except Antarctica. There are roughly 2,400 known species in the family Lycosidae across about 120 genera, ranging from barely a centimetre long to several centimetres in the large genus Hogna; despite their fearsome reputation, they are entirely harmless to people."
-      },
-      {
-        "heading": "What Do They Look Like?",
-        "body": "Typically brown, grey, or sandy for ground camouflage, stocky, hairy, and fast-moving. The real giveaway is their eyes: four small eyes in a bottom row, two large forward-facing eyes in the middle, and two even larger eyes on top of the head — a three-row arrangement giving genuinely good vision most spiders lack. The body divides into a front cephalothorax (legs, eyes, mouthparts) and a rounder rear abdomen holding the silk-spinning spinnerets."
-      },
-      {
-        "heading": "The Eyes Have It — Night Hunting with Built-In Torches",
-        "body": "A mirror-like reflective layer behind the rear eyes (the tapetum lucidum, the same structure behind a cat's glowing eyes) makes wolf spiders' eyes blaze back green or amber under torchlight at night, letting experienced collectors simply spot and harvest them by eye. This amplifies dim light and dramatically improves their ability to detect prey and predators in near-darkness."
-      },
-      {
-        "heading": "Life as a Hunter",
-        "body": "Wolf spiders don't build webs to catch prey; they wander the ground through leaf litter, soil, and grass, actively stalking or ambushing insects, beetles, ants, and small grasshoppers. Some genera (Hogna, Geolycosa) dig burrows as a daytime retreat; others are fully nomadic. In farmland they are one of the most important natural pest controllers, significantly suppressing aphids and other damaging insects in rice, wheat, and other crops."
-      },
-      {
-        "heading": "The Dancing Mama — Maternal Care Unique in the Spider World",
-        "body": "After mating, the female spins a silk egg sac and attaches it to her spinnerets, carrying it beneath her abdomen everywhere she goes and never putting it down. When the eggs hatch, dozens of spiderlings climb onto her back and ride there for days to weeks. This dorsal-carrying behaviour is found nowhere else among the world's roughly 40,000 spider species — it's exclusive to Lycosidae."
-      },
-      {
-        "heading": "Where Do They Live?",
-        "body": "Wolf spiders are ecologically flexible, thriving in grasslands, forest floors, sandy deserts, high-altitude scree, wetland margins, farmland, and city gardens and pavements. Several Pardosa species are especially comfortable in urban environments, sometimes wandering into ground-floor rooms."
-      },
-      {
-        "heading": "Are They Dangerous?",
-        "body": "No — their venom has no medically significant effect on humans; a rare, defensive bite may cause brief local pain comparable to a wasp sting with no lasting effects. The famous medieval 'tarantula of Taranto,' blamed for a supposed dancing madness, was in fact a large wolf spider (Hogna radiata), not a true tarantula — the panic was cultural, not medical."
-      },
-      {
-        "heading": "Why Do They Matter?",
-        "body": "Beyond pest control, wolf spiders (particularly the genus Pardosa) are widely used by scientists as bioindicators — a healthy, diverse wolf spider population signals a clean, ecologically intact habitat, and their sensitivity to soil contamination and pesticides makes them valuable environmental monitors."
-      }
-    ],
-    "source_report_ref": {
-      "technical": "Wolf Spiders/ws.pdf",
-      "lay": "Wolf Spiders/ws-la.pdf"
-    },
-    "photo_ref": "/photos/wolf-spiders.jpg",
-    "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
-    "reviewed_at": "2026-08-07"
-  },
-  {
     "id": "assassin-bug",
     "common_name": "Assassin Bug",
     "scientific_name": null,
@@ -230,106 +180,6 @@
     "reviewed_at": "2026-08-07"
   },
   {
-    "id": "stick-insects",
-    "common_name": "Stick Insects",
-    "scientific_name": null,
-    "family": "Diapheromeridae",
-    "order": "Phasmatodea",
-    "taxon_rank": "genus",
-    "sourcing": "/dudusonline",
-    "sections": [
-      {
-        "heading": "What Are They?",
-        "body": "Stick insects (order Phasmatodea) are a worldwide group of over 3,600 known species whose slender bodies and thin legs let them pass as twigs, as seen in a specimen photographed among Acacia thorns in Kenya. The genus most likely responsible for this Acacia camouflage in East Africa is Bactrododema, large spiny stick insects formerly classified under the name Palophus before that name was folded into Bactrododema in 2005, though some databases still disagree on the correct name."
-      },
-      {
-        "heading": "What Do They Look Like?",
-        "body": "Stick insects have long cylindrical bodies, thin legs, and usually reduced or absent wings, with simple chewing mouthparts and long thread-like antennae, and their main defence is simply not being seen. In one newly described southern African species, Macynia mcgregororum, females (73-84 mm) are noticeably larger than males (57-64 mm) and carry pale bumpy tubercles the males lack; some species also carry internal chemical-spray glands that CT scans show vary greatly in size and shape across the order."
-      },
-      {
-        "heading": "How Do They Live?",
-        "body": "Stick insects develop through a simple egg-nymph-adult life cycle without a caterpillar stage or cocoon, and in several species females can reproduce without mating, as in the well-studied Indian walking stick, whose eggs take 10-12 weeks to hatch. All stick insects are strict plant-eaters, and the Acacia-associated genus Bactrododema appears to feed specifically on Acacia foliage, though the underlying diet research was behind a paywall and so is noted as well-supported but not fully double-checked."
-      },
-      {
-        "heading": "The Ultimate Game of Pretend",
-        "body": "Beyond looking like a stick, many species sway gently to mimic a twig moving in the wind, and if grabbed by a predator, some can snap off a trapped leg at a weak point to escape, later regrowing it slightly smaller than before. Some species also release a foul-smelling chemical spray from thoracic glands when threatened."
-      },
-      {
-        "heading": "A Kenyan Detective Story",
-        "body": "Museum specimens of Bactrododema collected near Lake Turkana in 1905 and Taveta in 1912 are echoed by modern iNaturalist sightings of the same genus in Laikipia and Narok counties in 2024, with other Kenyan records spanning Mount Elgon, Kitale, Isiolo, Tsavo, Amboseli, and the coast near Kilifi and Kwale. This suggests these camouflaged insects have persisted across a wide stretch of Kenya for over a century, largely unnoticed."
-      },
-      {
-        "heading": "Are They Pests? Are They Useful?",
-        "body": "Available scientific literature shows no evidence of stick insects being pests in Kenya or anywhere in Africa, unlike well-documented outbreaks elsewhere such as North America, Australia, Pacific islands, China, Colombia, and India. The only African mention found was an introduced pet-trade species causing a minor nuisance in South African gardens, though the report notes the absence of evidence may simply reflect a lack of study."
-      },
-      {
-        "heading": "How Do People Deal With Outbreaks (Elsewhere)?",
-        "body": "Where stick insects have become pests outside Africa, control methods have included parasitic wasps and flies, general predators, insecticides (some now recognised as environmentally harmful and largely abandoned), sticky trunk bands, smoking palm fronds, and clearing ground litter to expose eggs. For small-scale nuisances like an unwanted pet stick insect, the simplest approach is picking them off by hand and freezing any eggs for a week."
-      },
-      {
-        "heading": "Notable Facts",
-        "body": "The first stick insect formally named in this African group, Palophus centaurus (now Bactrododema centaurum), was described from a specimen collected in Old Calabar, Nigeria, not East or southern Africa. The world's longest known insect overall is a stick insect, Chan's Megastick, whose type specimen is held at the Natural History Museum in London, and a regrown leg always emerges slightly smaller than the original, serving as a permanent record of an escaped predator attack."
-      }
-    ],
-    "source_report_ref": {
-      "technical": "Stick Insects/si-web.pdf",
-      "lay": "Stick Insects/si-web-la.pdf"
-    },
-    "photo_ref": "/photos/stick-insects.jpg",
-    "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
-    "reviewed_at": "2026-08-07"
-  },
-  {
-    "id": "aedes-mosquitoes",
-    "common_name": "Aedes Mosquitoes",
-    "scientific_name": null,
-    "family": null,
-    "order": "Diptera",
-    "taxon_rank": "genus",
-    "sourcing": "/dudusonline",
-    "sections": [
-      {
-        "heading": "What Are They?",
-        "body": "Aedes is a huge genus of mosquitoes — nearly 1,000 species found on every continent except Antarctica — including Aedes aegypti (the yellow fever mosquito) and Aedes albopictus (the Asian tiger mosquito), which together spread dengue, Zika, chikungunya, and yellow fever to hundreds of millions of people yearly. Genetic studies have found that the roughly 932 species lumped under 'Aedes' don't all share one common ancestor, meaning the genus as currently defined isn't a single clean lineage, and untangling it is ongoing work."
-      },
-      {
-        "heading": "What Do They Look Like?",
-        "body": "Aedes mosquitoes have narrow, dark bodies with sharp black-and-white or silver scale patterns, especially pronounced in the striped Ae. albopictus ('tiger mosquito'). Wing length changes with rearing temperature — wings grown at 15°C were around 30% longer than those grown at 35°C. Yellow fever mosquitoes exist as a pale, city-loving form and a darker wild form that interbreed so freely (over 40% of family groups in one Senegal study contained both) that they're now considered one flexible species rather than two."
-      },
-      {
-        "heading": "How Do They Feed and Breed?",
-        "body": "Females need blood to make eggs and favor laying them in small man-made water containers — buckets, flowerpots, gutters, and especially old tires, which accounted for over 85% of larval sites in one Cameroon survey. Ae. aegypti bites and lays eggs most eagerly around 30°C, while the cooler-climate Ae. albopictus peaks around 25°C."
-      },
-      {
-        "heading": "Growing Up — From Egg to Adult",
-        "body": "Like all mosquitoes, Aedes passes through egg, larva, pupa, and adult stages, with the journey from egg to flying adult taking as little as 7 to 10 days under good conditions. In a narrow two-hour window roughly 11 to 13 hours after being laid, the egg builds a tough chitin-armored coating (serosal cuticle) that lets it survive months of drying out and still hatch once wetted — a trait suited to the temporary puddles Aedes favors."
-      },
-      {
-        "heading": "Where Are They Found?",
-        "body": "Aedes mosquitoes are found nearly worldwide except Antarctica, but the two star species behave differently within that range: in a Cameroon survey, the yellow fever mosquito was found everywhere researchers looked, while the Asian tiger mosquito was confined to the wetter south. Genetic fingerprinting there found nearly 80% of tiger mosquitoes shared the same genetic signature, consistent with a recent, rapidly spreading founder population."
-      },
-      {
-        "heading": "Why Do They Matter?",
-        "body": "Aedes aegypti is the world's primary dengue carrier; reported global cases climbed from about half a million in 2000 to a record 14.6 million in 2024, likely an undercount. Zika, chikungunya, and yellow fever ride the same mosquitoes, which stay infectious for life once infected and can pick up a virus from a person before that person feels sick."
-      },
-      {
-        "heading": "A Few Things Worth Knowing",
-        "body": "One taxonomic study scored 172 physical features across every life stage of 119 species, leading scientists to split Aedes aegypti and Aedes albopictus into their own genus, Stegomyia, for a time, though many still call them Aedes. The egg's drought-survival switch flips in a precise two-hour window (hour 11 to 13), and old tire piles left in the rain can be among the most productive mosquito nurseries in a landscape."
-      },
-      {
-        "heading": "In Summary",
-        "body": "Aedes mosquitoes are a sprawling, still-being-sorted-out group whose two most famous members have turned old tires and rain puddles into launch pads for fast-growing infectious diseases. Their drought-proof eggs and knack for exploiting man-made puddles make them formidable, adaptable survivors and a persistent public health challenge."
-      }
-    ],
-    "source_report_ref": {
-      "technical": "Aedes Mosquitoes/am-web.pdf",
-      "lay": "Aedes Mosquitoes/am-web-la.pdf"
-    },
-    "photo_ref": "/photos/aedes-mosquitoes.jpg",
-    "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
-    "reviewed_at": "2026-08-07"
-  },
-  {
     "id": "armoured-katydid",
     "common_name": "Armoured Katydid",
     "scientific_name": "Acanthoplus discoidalis",
@@ -386,98 +236,6 @@
       ]
     },
     "photo_ref": "/photos/armoured-katydid.png",
-    "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
-    "reviewed_at": "2026-08-07"
-  },
-  {
-    "id": "click-beetles",
-    "common_name": "Click Beetles",
-    "scientific_name": null,
-    "family": "Elateridae",
-    "order": "Coleoptera",
-    "taxon_rank": "family",
-    "sourcing": "/dudusonline",
-    "sections": [
-      {
-        "heading": "What Are They?",
-        "body": "Click beetles are a family, Elateridae, likely holding over 10,000 species worldwide, named for their trick of righting themselves with an audible click when flipped onto their back. They belong to the beetle order Coleoptera, the largest group of animals on Earth, and are essentially tiny spring-loaded machines."
-      },
-      {
-        "heading": "What Do They Look Like?",
-        "body": "Adults are long, narrow, and plain — usually brown, black, or grey — with a loosely hinged join between the front body section and the rest, ending in two backward-pointing spikes. Their larvae, called wireworms, are thin, hard, shiny, wire-like grubs that live underground and can take two to eleven years to mature depending on species."
-      },
-      {
-        "heading": "How Does the 'Click' Trick Actually Work?",
-        "body": "A small peg on the beetle's underside locks into a matching ledge as it slowly bends its body, like cocking a crossbow; releasing it snaps the hinge straight in a fraction of a second, flinging the beetle upright and producing the click. A handful of tropical species glow continuously from body spots (unrelated to firefly flashing), and genetic studies show fireflies are actually nested within the click beetle family tree — essentially specialized click beetles that gave up clicking for glowing."
-      },
-      {
-        "heading": "Where Are They Found?",
-        "body": "Click beetles live almost everywhere on land, with larvae thriving in agricultural soil, grassland, and forest litter. A survey of sub-Saharan Africa catalogued 945 species in 75 genera; in Kenya, confirmed sightings include the genus Tetralobus around Amboseli and the Maasai Mara, an Alaus species near Watamu, and other genera in the Taita Hills, Wasini Island, and Turkana — Kenya has the best-documented click-beetle records in East Africa, though still fewer than 1,500 confirmed sightings."
-      },
-      {
-        "heading": "Why Do They Matter?",
-        "body": "Wireworm larvae are among the most damaging soil pests worldwide, chewing through roots, seeds, and tubers of crops like maize, potatoes, wheat, and sugarcane, and are hard to monitor or control because of their long underground lives. But some genera, especially the large Alaus ('eyed elater') click beetles, have predatory larvae that eat other pest beetles in rotting wood — one larva was recorded eating over 200 wood-boring grubs before maturing."
-      },
-      {
-        "heading": "A Few Things Worth Knowing",
-        "body": "Genetic testing shows some wireworms thought to be a single species are actually several nearly identical 'hidden' species that split apart tens of thousands of years ago. The eyespots on an Alaus click beetle's back are a bluff meant to startle predators into thinking they face something bigger, and the beetle's signature click is primarily a defensive move — startle, right itself, and escape in one motion."
-      },
-      {
-        "heading": "In Summary",
-        "body": "The click beetle's identity centers on a spring-loaded hinge that turns being flipped onto its back into a minor inconvenience. Above ground the adults are unassuming; below ground their long-lived larvae are both costly crop pests and, in some genera, quiet pest controllers."
-      }
-    ],
-    "source_report_ref": {
-      "technical": "Click Beetles/clb-web.pdf",
-      "lay": "Click Beetles/clb-web-la.pdf"
-    },
-    "photo_ref": "/photos/click-beetles.jpg",
-    "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
-    "reviewed_at": "2026-08-07"
-  },
-  {
-    "id": "crane-flies",
-    "common_name": "Crane Flies",
-    "scientific_name": null,
-    "family": "Tipulidae",
-    "order": "Diptera",
-    "taxon_rank": "family",
-    "sourcing": "/dudus",
-    "sections": [
-      {
-        "heading": "What Are They?",
-        "body": "A crane fly is the large, spindly insect that blunders into lights on summer evenings, often mistaken for an oversized mosquito, but it is entirely harmless — its reduced mouthparts mean it cannot bite, sting, or feed at all. Adults live only a few days, mostly to find a mate, and belong to the family Tipulidae, the single largest fly family on Earth under the broadest count, with roughly 14,000 species found on every continent."
-      },
-      {
-        "heading": "What Do They Look Like?",
-        "body": "The adult is essentially a set of exceptionally long legs on a thin brown body; the legs break off easily at special joints, possibly helping the fly escape predators. Its halteres (balance organs) are proportionally the largest of any fly, exceeding 12% of forewing length versus about 6% in a mosquito, making crane flies unusually nimble fliers. Uniquely among flies, their eyes lack a light-focusing crystalline cone, and they retain a primitive adhesive foot pad (arolium) that all other flies have replaced."
-      },
-      {
-        "heading": "The Hidden Life: Leatherjackets",
-        "body": "Soil-dwelling crane fly larvae, called leatherjackets, have thick, rubbery skin and spend months or years feeding on plant roots and organic matter underground. In British pastures and lawns, Tipula paludosa and Tipula oleracea are serious agricultural pests, and about 2,000 species of parasitic wasps have been recorded attacking Tipulidae. Aquatic larvae, by contrast, live in fast-flowing streams and are powerful wood processors — one study found them fragmenting over 90% of decayed alder wood in a stream within a year."
-      },
-      {
-        "heading": "Breathing Underwater",
-        "body": "Aquatic larvae breathe via spiracles lined with water-repelling hairs that trap a thin air film, letting oxygen diffuse in and carbon dioxide out continuously without surfacing — the same principle as a diving beetle's air bubble, but built into the cuticle. Some species carry this further at the pupal stage, growing branching gill filaments that let them stay fully submerged while transforming from larva to adult."
-      },
-      {
-        "heading": "Arctic Survivors",
-        "body": "In the High Arctic, crane flies are among the last insect families present; nearly a quarter of Arctic North American species have reduced or lost their wings, mostly in females, saving energy in a cold, windy climate while males typically keep full wings to find mates. Tipula carinifrons, at the northern edge of its range, abandons plant material entirely and grazes on cyanobacteria mats on the tundra."
-      },
-      {
-        "heading": "A Surprising Social Life",
-        "body": "Crane flies mate in aerial swarms, loose male aggregations gathering above a landmark such as a rock or grass tuft. Females use the same landmark cues as males — in a lab experiment a lone female tracked an artificial swarm marker just as a swarming male would, suggesting both sexes share identical rules for finding mating sites."
-      },
-      {
-        "heading": "Why They Matter",
-        "body": "Migratory Arctic-breeding waders — dunlins, sandpipers, phalaropes, turnstones, many of which winter along East Africa's Rift Valley lakes and coastal mudflats — time their Arctic arrival to the brief summer flush of Tipulidae and chironomid midges, without which they could not provision chicks fast enough. Crane fly larvae shred leaves, process soil, break down wood, and feed everything from parasitic wasps to Arctic sandpipers, making them significant if unglamorous recyclers."
-      }
-    ],
-    "source_report_ref": {
-      "technical": "Crane Flies/cf.pdf",
-      "lay": "Crane Flies/cf-la.pdf"
-    },
-    "photo_ref": "/photos/crane-flies.jpg",
     "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
     "reviewed_at": "2026-08-07"
   },
@@ -572,5 +330,259 @@
     "photo_ref": "/photos/white-ringed-atlas-moth.jpg",
     "reviewed_by": "claude (spot-check review pass, dudus-app#29)",
     "reviewed_at": "2026-08-09"
+  },
+  {
+    "id": "wolf-spiders",
+    "common_name": "Wolf Spiders",
+    "scientific_name": null,
+    "family": null,
+    "order": "Araneae",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "1. What Are Wolf Spiders?",
+        "body": "Wolf spiders are among the most widespread, abundant, and ancient hunters on land. Unlike most spiders — which sit motionless in a web and wait — wolf spiders actively chase down their prey on foot, like their namesake. They are ground-dwelling, solitary predators found on every continent except Antarctica, and they outnumber almost every other ground-living arthropod in grasslands, forests, farms, and city gardens alike. There are roughly 2,400 known species in the family Lycosidae, spread across about 120 genera. Some species are barely a centimetre long; others — like the large Hogna — are imposing creatures that can reach several centimetres in body length. Despite their fearsome reputation, wolf spiders are entirely harmless to people."
+      },
+      {
+        "heading": "2. What Do They Look Like?",
+        "body": "Wolf spiders are typically brown, grey, or sandy in colour — excellent camouflage for life on the ground. They are stocky, hairy, and fast-moving, and if you see one dash across a floor, you will understand why people sometimes panic. But the real giveaway is their eyes. All spiders have eight eyes, but wolf spiders arrange theirs in a uniquely dramatic way: four small eyes in a bottom row, two large forward-facing eyes in the middle, and two even larger eyes perched on top of the head like a second pair of headlights. This three-row arrangement gives wolf spiders genuinely good vision — they can detect movement and judge distance far better than most spiders, which are nearly blind outside their webs. The body, like all spiders, is divided into two sections: a front half (the cephalothorax) carrying the legs, eyes, and mouthparts, joined by a slender waist to a rounder rear half (the abdomen) where the silk-spinning spinnerets sit."
+      },
+      {
+        "heading": "3. The Eyes Have It — Night Hunting with Built-In",
+        "body": ""
+      },
+      {
+        "heading": "Torches",
+        "body": "The most astonishing feature of wolf spiders is invisible during the day: a mirror-like reflective layer behind the rear eyes called the tapetum lucidum (the same structure that makes cats' eyes glow in headlights). At night, shine a torch at the ground in any grassy or leafy habitat, and wolf spiders reveal themselves instantly — their eyes blaze back at you in brilliant green or amber, like tiny scattered embers in the dark. Experienced collectors simply walk slowly with a headlamp and harvest them by eye. This reflective layer is not just a party trick. It amplifies dim light and dramatically improves the spider's ability to detect prey and predators in near-darkness, making wolf spiders highly effective nocturnal hunters."
+      },
+      {
+        "heading": "4. Life as a Hunter",
+        "body": "Wolf spiders do not build webs to catch prey. They wander the ground — through leaf litter, across soil, under stones, and through grass — actively stalking or ambushing any arthropod small enough to overpower. Their diet consists mostly of insects: flies, beetles, ants, small grasshoppers, and whatever else moves within reach. Some genera dig burrows in the soil (particularly the large Hogna and Geolycosa species), using these as a daytime retreat from which they emerge to hunt at night. Others are nomadic, with no fixed home at all. In farmland, wolf spiders are one of the most important natural pest controllers in existence. Studies across rice, wheat, and other crops have shown that wolf spiders — present in enormous numbers in agricultural soil — significantly suppress populations of aphids and other damaging insects. They are, in the truest sense, the farmer's friend."
+      },
+      {
+        "heading": "5. The Dancing Mama — Maternal Care Unique in",
+        "body": ""
+      },
+      {
+        "heading": "the Spider World",
+        "body": "Here is where wolf spiders do something truly extraordinary. After mating, the female spins a silk egg sac around her fertilised eggs and attaches it directly to her spinnerets, carrying it tucked beneath her abdomen wherever she goes. She never puts it down. She drags it through vegetation, over rocks, and into burrows, keeping her eggs warm and protected against her body. When the eggs hatch, the story gets even more remarkable. The spiderlings — dozens of tiny, perfect miniature spiders — crawl out of the egg sac and immediately climb onto their mother's back, packing themselves across her abdomen in a dense, rustling cargo. She carries them like this for several days to weeks, with no web, no nest, and no fixed home — just a mother on the move with her entire family on her back. This behaviour — carrying spiderlings on the dorsum — is found nowhere else among the world's roughly 40,000 spider species. It is exclusive to Lycosidae, and it represents one of the most developed forms of parental investment recorded across all of Arachnida."
+      },
+      {
+        "heading": "6. Where Do They Live?",
+        "body": "Wolf spiders are one of the most ecologically flexible animals on Earth. They thrive in: • Grasslands and meadows (often the dominant predatory arthropod) • Forest floors and leaf litter • Sandy deserts and high-altitude mountain scree • Wetland margins and riverbanks • Agricultural fields • City gardens, parks, waste ground, and the edges of pavements Several Pardosa species are particularly comfortable in urban environments, sometimes even wandering into ground-floor rooms of buildings — which tends to alarm residents far more than is warranted."
+      },
+      {
+        "heading": "7. Are They Dangerous?",
+        "body": "No. Wolf spiders are venomous in the sense that all spiders are — they use venom to immobilise prey — but their venom has no medically significant effect on humans. A bite (which is rare and defensive) may cause brief local pain, roughly comparable to a wasp sting, with no lasting effects. Their reputation has not always been fair. The famous \"tarantula\" of Taranto in southern Italy — whose supposed bite was believed in medieval times to cause a frenetic dancing madness curable only by the tarantella — was in fact a large wolf spider, Hogna radiata. It is a Lycosidae, not a true tarantula. The panic was almost certainly a cultural phenomenon rather than a medical one."
+      },
+      {
+        "heading": "8. Why Do They Matter?",
+        "body": "Beyond their role as pest controllers in agriculture, wolf spiders — particularly the genus Pardosa — are widely used by scientists as bioindicators: if the wolf spider population in a field or woodland is healthy and diverse, the habitat is likely clean and ecologically intact. If it collapses, something is wrong. Their sensitivity to soil contamination, pesticide use, and habitat degradation makes them invaluable environmental monitors. They are also a reminder that not everything that looks alarming is a threat. The wolf spider carrying dozens of babies on her back is one of the natural world's most devoted mothers — and one of its most capable, accomplished predators."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Wolf Spiders/ws.pdf",
+      "lay": "Wolf Spiders/ws-la.pdf"
+    },
+    "photo_ref": "/photos/wolf-spiders.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "crane-flies",
+    "common_name": "Crane Flies",
+    "scientific_name": null,
+    "family": null,
+    "order": "Diptera",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "On a warm summer evening, something large and spindly blunders into your kitchen light, bounces off the ceiling, and lands on the wall in a tangle of improbably long legs. Most people's first instinct is alarm — it looks vaguely like a mosquito scaled up to nightmare proportions. In fact, it's a crane fly, and it is entirely harmless. Its mouthparts are so reduced that it cannot bite, sting, or feed at all. The adult crane fly lives for only a few days and spends most of that brief life doing exactly one thing: finding a mate. Crane flies belong to the family Tipulidae — which, under the broadest count, is the single largest family of flies on Earth, with roughly 14,000 species worldwide. They are found on every continent, in habitats ranging from Arctic tundra to desert margins, from fast-flowing mountain streams to the rotting wood of forest floors."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "The adult is essentially a set of legs held together by a thin brown body. The legs are exceptionally long and break off easily at specialised joints — a feature that may help the fly escape predators who grab a leg rather than the body. The wings are long and narrow; many species hold them out at rest like a biplane's wings. The halteres — the club-shaped structures behind the wings that all flies use as gyroscopes for balance during flight — are notably large in crane flies, proportionally the longest of any fly. In a mosquito, the haltere is about 6% of the forewing length; in a crane fly it exceeds 12%. This makes crane flies particularly nimble fliers, able to track and correct their course with exceptional sensitivity. Two further anatomical oddities set crane flies apart from almost all other flies. First, their eyes lack the crystalline cone that gives most compound eyes their light-focusing ability — an unusual condition shared, among insects, mainly with plant bugs. Second, and most surprisingly, crane flies are the only flies that still have the primitive smooth adhesive pad (arolium) between their claws, which all other flies replaced long ago with a different structure. In this one feature, a crane fly's foot more closely resembles a bee's foot than a housefly's. The largest crane flies are remarkable in scale. The giant tropical genus Ctenacroselis reaches a wingspan of 10 cm — wider than many small birds. The largest North American species, Holorusia rubiginosa, has a 7.5 cm wingspan. Most species, however, are unremarkable brown insects of modest size."
+      },
+      {
+        "heading": "The Hidden Life: Leatherjackets",
+        "body": "While adults are short-lived and fragile, the larvae are tough, long-lived, and surprisingly consequential. Soil-dwelling crane fly larvae are called leatherjackets — and the name is apt. Their skin is thick, brownish-grey, and rubbery, an adaptation to life underground where they spend months or years feeding on plant roots and organic matter. In British pastures and lawns, leatherjackets of Tipula paludosa and Tipula oleracea are serious agricultural pests, damaging turf and grain crops in numbers that can make whole fields go brown. A remarkable 2,000 species of parasitic wasps have been recorded attacking Tipulidae — evidence of just how ecologically embedded, and well-hunted, these larvae are. But not all crane fly larvae live in soil. Aquatic species live in fast-flowing streams, burrowing into leaf packs and waterlogged wood. These underwater larvae are among the most powerful wood-processing insects known: in one documented case, aquatic tipulid larvae fragmented more than 90% of decayed alder wood in a stream in a single year. Others tolerate the most oxygen-depleted micro-habitats that other stream insects cannot — the stagnant water trapped inside old plant bracts where mosquitoes struggle and crane flies thrive."
+      },
+      {
+        "heading": "Breathing Underwater",
+        "body": "Aquatic crane fly larvae have evolved an elegant solution to the problem of breathing without access to the surface. Their breathing pores (spiracles) are lined with a mesh of hydrophobic (water-repelling) hairs that trap a thin film of air. This film acts as a physical gill: oxygen diffuses in from the surrounding water and carbon dioxide diffuses out, continuously refreshing the air supply without the larva ever needing to surface. It is the same principle as the air bubble carried by a diving beetle — but built into the cuticle rather than held by a separate structure. In the pupal stage, some species carry this further, growing elaborate branching gill filaments from their abdominal breathing pores that allow them to remain completely submerged even while transforming from larva to adult — a stage when most insects are entirely helpless and would drown."
+      },
+      {
+        "heading": "Arctic Survivors",
+        "body": "In the High Arctic, where the insect fauna is stripped to the essentials, crane flies are among the last families standing. Nearly a quarter of all Arctic North American crane fly species have reduced or lost their wings entirely — a strategy that saves energy in a cold climate where flight is costly and winds are strong enough to blow a small insect far off course. Most of these brachypterous (short-winged) species are females; the males typically retain full wings to find mates. At the very edge of their range, crane flies push dietary limits in ways that would be unrecognisable to their temperate relatives. Tipula carinifrons, at the northernmost extent of its distribution, abandons plant material entirely and grazes instead on mats of cyanobacteria (blue-green bacteria) on the tundra surface — one of the most energy-poor diets available to any insect. For Arctic-breeding birds, crane flies are not a curiosity but a necessity. Migratory waders — dunlins, sandpipers, phalaropes, turnstones — many of which winter along East Africa's Rift Valley lakes and coastal mudflats before making the journey north, time their Arctic arrival to coincide with the brief summer flush of Tipulidae and chironomid midges. Without this pulse of insect biomass, the birds cannot provision their chicks fast enough during the compressed Arctic breeding season."
+      },
+      {
+        "heading": "A Surprising Social Life",
+        "body": "Crane flies mate in aerial swarms — loose aggregations of males that gather above a specific landmark (a rock, a tuft of grass, a shadow) and fly in tight patterns waiting for females to arrive. What is surprising is that females use exactly the same cues as males. In a laboratory experiment, a lone female flying above an artificial swarm marker tracked it across the ground just as a swarming male would — suggesting that the two sexes have identical rules for finding aggregation sites, and that mating swarms are essentially a shared solution to the problem of finding a partner in a vast, featureless landscape."
+      },
+      {
+        "heading": "Why They Matter",
+        "body": "The gangly, apparently purposeless crane fly at your window is the adult tip of a much larger ecological iceberg. Below ground, underwater, and in decaying wood, its larvae are shredding leaves, breaking down wood, processing soil, and feeding everything from parasitic wasps to Arctic sandpipers. They are one of the planet's great recyclers — unglamorous, efficient, and essential."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Crane Flies/cf.pdf",
+      "lay": "Crane Flies/cf-la.pdf"
+    },
+    "photo_ref": "/photos/crane-flies.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "stick-insects",
+    "common_name": "Stick Insects",
+    "scientific_name": null,
+    "family": null,
+    "order": "Phasmatodea",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "Meet nature's most convincing disguise artist: an insect built entirely to be mistaken for a twig. Stick insects (order Phasmatodea) are a worldwide group of over 3,600 known species, and they've turned \"looking exactly like a piece of a plant\" into a full-time survival strategy — slender bodies, thin jointed legs, and in the photograph that inspired this summary, a specimen perched among the thorns of an Acacia tree in Kenya, all but invisible against the twigs around it. The genus most likely responsible for that kind of Acacia camouflage act in East Africa is Bactrododema — big, spiny stick insects that used to be classified under an older name, Palophus, before taxonomists folded that name into Bactrododema in 2005. Confusingly, some databases still disagree about which name is \"correct\" — even the experts haven't fully settled this one."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "•  Built like a twig, literally: a long, cylindrical body, thin legs, and (in most species) reduced or absent wings, all adding up to a shape that could pass for a stem or branch at a glance. •  Simple mouthparts built for chewing plant material, and long, thread-like antennae. •  No big fighting equipment: instead of a stinger or hard shell, its whole defense plan starts with not being seen. •  One striking size difference: in a newly described southern African species, Macynia mcgregororum, females (73–84 mm) are noticeably bigger than males (57–64 mm), and only females carry pale, bumpy tubercles along the thorax. •  Some species carry hidden chemical-spray glands in the thorax — recent CT-scan research found these glands come in at least four different internal shapes across the order, some over 100 times bigger in volume than others."
+      },
+      {
+        "heading": "How Do They Live?",
+        "body": "Stick insects go through a simple three-stage life: egg, nymph, adult — no caterpillar-style transformation, no cocoon. A nymph just looks like a small, wingless version of the adult and grows into that shape gradually, molting its way up. One especially strange trick shows up in several species: females can reproduce without ever mating. In the well-studied Indian walking stick, females lay several hundred eggs across their lifetime entirely on their own — males of that species are so rare that scientists still don't fully understand what causes one to appear at all. Eggs take 10–12 weeks to hatch, and the young insects reach adulthood in as little as a month. All stick insects are strict plant-eaters. The Acacia-associated genus Bactrododema appears to feed specifically on Acacia foliage — which fits neatly with a photograph of one clinging to an Acacia branch, thorn and all, though the underlying research paper on this diet link was behind a paywall, so it's carried here as a well-supported but not fully double-checked detail."
+      },
+      {
+        "heading": "The Ultimate Game of Pretend",
+        "body": "Camouflage is this insect's whole personality. Beyond just looking like a stick, many species sway gently back and forth as they walk or rest, mimicking a twig stirred by the wind — motion that would otherwise give away a stationary \"twig\" to a sharp-eyed bird. If that fails and a predator actually grabs hold, some species have a backup plan: they can snap off the trapped leg entirely at a built-in weak point near the base, sacrificing a limb to escape with their life. The lost leg does grow back after the next few molts — but the replacement is always a little smaller than the original, a permanent, readable scar of a close call. Some species also carry chemical weapons: glands in the thorax that release a foul-smelling spray when the insect is threatened, on top of the camouflage and the leg-dropping trick."
+      },
+      {
+        "heading": "A Kenyan Detective Story",
+        "body": "Museum shelves and modern smartphone photos turn out to tell the same story about these insects in Kenya, a century apart. A Bactrododema specimen collected near Lake Turkana back in 1905 — labeled, in the colonial naming of the day, \"Lac Rodolphe\" — sits in a museum alongside records from Taveta collected in 1912. Fast-forward to 2024, and casual nature-photo apps like iNaturalist are picking up the very same genus again, spotted by ordinary observers in Laikipia and Narok counties. Other Kenyan stick-insect records turn up scattered from Mount Elgon and Kitale in the west, to Isiolo in the north, down to the Tsavo and Amboseli areas, and even the Kenyan coast near Kilifi and Kwale — evidence that these camouflaged twig-mimics have quietly persisted across a huge stretch of the country for well over 100 years, even though almost nobody's looking for them."
+      },
+      {
+        "heading": "Are They Pests? Are They Useful?",
+        "body": "Surprisingly — no, not in Kenya, or anywhere in Africa, as far as the available scientific literature shows. A major worldwide review of stick-insect crop damage found real, well-documented outbreaks in North America (on oak and hickory trees), Australia (stripping eucalyptus forests bare in some years), Pacific islands (attacking coconut palms), China, Colombia, and even India (on black pepper vines) — but turned up no African, Kenyan, or Acacia-related pest damage at all. The one African-continent mention in that whole review was an introduced pet-trade species causing a minor nuisance in South African gardens, nothing like a crop pest. That's a small but real reminder from science itself: not finding evidence of a problem is different from proving there isn't one — it may simply be that nobody's studied African stick insects as agricultural pests very much yet."
+      },
+      {
+        "heading": "How Do People Deal With Outbreaks (Elsewhere)?",
+        "body": "Where stick insects really have become forest or crop pests — mostly outside Africa — people have tried a wide range of fixes over the decades: parasitic wasps and flies that attack the eggs, general predators like spiders and birds, old-school insecticides (some, like DDT and lead arsenate, now recognized as environmentally harmful and largely abandoned), sticky bands wrapped around tree trunks to stop climbing nymphs in their tracks, smoking palm fronds to drive the insects out, and even just clearing away ground litter so eggs are exposed to hungry predators and drying sun. For a much smaller-scale nuisance — like a pet stick insect that's outgrown its welcome in a home garden — the simplest advice is just picking them off by hand and freezing any leftover eggs for a week to make sure none hatch."
+      },
+      {
+        "heading": "Notable Facts",
+        "body": "•  The very first stick insect ever formally named in this African group, Palophus centaurus (now Bactrododema centaurum), was described from a specimen collected all the way over in Old Calabar, Nigeria — not East or southern Africa, where the group is now most famous. •  The world's longest known insect overall is a stick insect, Chan's Megastick, whose type specimen is kept at the Natural History Museum in London — one of the three largest stick-insect collections on Earth. •  A regenerated leg is a permanent record-keeper: because it always regrows slightly smaller than the original, scientists (and a sharp-eyed observer) can actually tell, just by looking, that an individual once escaped a predator by leaving a leg behind."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Stick Insects/si-web.pdf",
+      "lay": "Stick Insects/si-web-la.pdf"
+    },
+    "photo_ref": "/photos/stick-insects.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "click-beetle-the-insect-that-flips-itself",
+    "common_name": "Click Beetle — The Insect That Flips Itself",
+    "scientific_name": null,
+    "family": null,
+    "order": null,
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "With a Snap",
+        "body": ""
+      },
+      {
+        "heading": "What Are They?",
+        "body": "Flip this beetle onto its back and it doesn't scramble around helplessly like most insects do. Instead, it goes still for a couple of seconds, arches its body like a bent bow — and then, with an audible click, launches itself into the air and lands back on its feet. That one trick gives the whole family its name: click beetles, in the scientific family Elateridae, a group so large it likely holds well over 10,000 species worldwide. They belong to the beetle order (Coleoptera), the single biggest group of animals on Earth, and within that they occupy their own strange niche: an elongated, hinged-body beetle that is essentially a tiny spring-loaded machine."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "Adult click beetles are long, narrow, and fairly plain-looking at first glance — usually brown, black, or grey, and built for stealth rather than showing off. The giveaway is the join between the front section (behind the head) and the rest of the body: it's loosely hinged, not rigid like in most beetles, and the back corners of that front section stick out into two backward-pointing spikes. Their young, called wireworms, look nothing like the adults. They're thin, hard, shiny, wire-like grubs — brown or yellowish — that live underground and can take anywhere from two to eleven years to finish growing up, depending on the species. That's an extraordinarily long childhood for an insect."
+      },
+      {
+        "heading": "How Does the \"Click\" Trick Actually Work?",
+        "body": "This is the beetle's whole claim to fame, and scientists have taken it seriously enough to study it under microscopes with nanometer-level precision. Tucked into the beetle's underside is a small peg, and just ahead of it sits a matching ledge. When the beetle wants to right itself, it slowly bends its body until that peg locks into the ledge — like cocking a crossbow. Then it lets go. The stored energy releases in a fraction of a second, snapping the hinge straight, flinging the beetle upward, and producing the click you hear. Researchers who measured this in the lab found beetles ranging from about the size of a grain of rice to over an inch and a half long all using the same basic mechanism, just tuned differently — smaller species have shorter, stiffer pegs than larger ones. It's such an elegant, compact way of storing and releasing force that engineers building tiny robots have looked to it as a design model for miniature mechanical latches. Some click beetles take this even further: a handful of tropical species (mostly in Central and South America, plus a separate group recently discovered in Asia) glow continuously in the dark from spots on their body, unrelated to fireflies' on-off flashing. Oddly enough, genetic studies show fireflies are actually nested inside the click beetle family tree — meaning, biologically speaking, fireflies are essentially specialized click beetles that gave up clicking for glowing."
+      },
+      {
+        "heading": "Where Are They Found?",
+        "body": "Click beetles live almost everywhere on land, but their below-ground larvae in particular thrive in agricultural soil, grassland, and forest litter across the globe. Africa has its own rich, mostly homegrown cast: a dedicated survey of the continent south of the Sahara catalogued 945 species in 75 genera — a huge, largely underappreciated diversity. In Kenya specifically, confirmed sightings include a large fanged-antenna genus called Tetralobus around Amboseli and the Maasai Mara, an Alaus species (a predatory type, more on that below) near Watamu on the coast, and several other genera turning up in the Taita Hills, Wasini Island, and the Turkana region. Kenya actually has the best documented click-beetle records of any East African country in the international occurrence databases — though \"best documented\" here still means fewer than 1,500 confirmed sightings total, so there's almost certainly much more out there than has been recorded. One thing we couldn't find anywhere in the scientific literature: a local Swahili or other vernacular name for these beetles specifically — if one exists, it hasn't made it into print yet."
+      },
+      {
+        "heading": "Why Do They Matter?",
+        "body": "Most of the family's real-world importance happens underground, out of sight. Wireworm larvae are widely described as some of the most damaging soil pests on the planet, chewing through the roots, seeds, and tubers of crops like maize, potatoes, wheat, and sugarcane — sometimes for years before ever becoming an adult beetle. Because they live buried deep in soil and are so long-lived, they're notoriously hard to monitor and control, and farmers around the world have leaned on everything from crop rotation and tillage to fungal diseases, parasitic worms, and pheromone-baited traps to manage them. But it's not all bad news from this one family. Some genera, especially the large Alaus click beetles (nicknamed \"eyed elaters\" for the big fake eyespots on their backs), have larvae that are voracious predators of other pest beetles living in rotting wood — one study recorded a single larva eating over 200 wood-boring grubs before it finished growing. So within one family, you get both some of agriculture's worst underground pests and some of its quiet underground allies."
+      },
+      {
+        "heading": "A Few Things Worth Knowing",
+        "body": "Genetic testing has revealed that some wireworms considered a single species are actually several nearly identical \"hidden\" species that look the same to the naked eye but split apart from each other tens of thousands of years ago — a reminder that appearances can be deceiving even among insects scientists have studied for over a century. The eyespots on an Alaus click beetle's back are a bluff: bold black-and-white circles meant to startle a bird or lizard into thinking they're looking at the eyes of something much bigger and scarier. And that famous click? It isn't just for show — it's primarily a defense move. Startle a predator, right yourself, and get away, all in one motion that takes a fraction of a second."
+      },
+      {
+        "heading": "In Summary",
+        "body": "The click beetle's entire identity is built around one ingenious piece of body engineering: a spring-loaded hinge that turns \"flipped onto your back\" from a death sentence into a minor inconvenience. Above ground, the adults are unassuming background insects; below ground, their long-lived larvae quietly shape the fate of crops and forests alike — some as costly pests, others as unpaid pest controllers. It's a family that does most of its most important work where nobody's watching."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "",
+      "lay": "Click Beetle — The Insect That Flips Itself/clb-web-la.pdf"
+    },
+    "photo_ref": "/photos/click-beetle-the-insect-that-flips-itself.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "aedes-mosquitoes",
+    "common_name": "Aedes Mosquitoes",
+    "scientific_name": null,
+    "family": null,
+    "order": "Diptera",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "Meet the mosquito that outsmarts drought. Aedes is a huge group of mosquitoes — nearly a thousand species strong, found on every continent except Antarctica — and it includes two of the most infamous insects on the planet: Aedes aegypti, the yellow fever mosquito, and Aedes albopictus, the Asian tiger mosquito. Between them, these two species are responsible for spreading dengue, Zika, chikungunya, and yellow fever to hundreds of millions of people every year. Here's the twist: scientists studying their family tree recently discovered that \"Aedes\" isn't really one clean, unified genus at all. Genetically, the roughly 932 species lumped under that name don't all share one common ancestor to the exclusion of everything else — it's a bit like discovering that a \"family\" you thought was one bloodline is actually several different families that got mixed up in the paperwork. Untangling it properly is still ongoing work."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "•  Signature style: Narrow, dark bodies decorated with sharp black-and-white or silver scale patterns on the back and legs — think of them as the zebra-striped mosquitoes, especially Ae. albopictus, whose \"tiger\" nickname comes straight from those stripes. •  A body that stretches with the weather: Remarkably, the mosquitoes' own wing length changes depending on how warm it was while they were growing up — cooler nurseries produce noticeably bigger-winged adults. In lab tests, wings grown at a cool 15°C (59°F) were around 30% longer than wings grown at a hot 35°F (95°F). •  Not one species, but two disguised as one: Yellow fever mosquitoes come in a pale, city-loving form and a darker, wild form, and a genetic study in Senegal found the two forms interbreed and mix so freely — over 40% of family groups contained both — that scientists now think of it as one flexible, shape-shifting species rather than two separate ones."
+      },
+      {
+        "heading": "How Do They Feed and Breed?",
+        "body": "Female Aedes mosquitoes need blood to make eggs, and they're expert opportunists about where they lay them: rather than ponds or lakes, they favor tiny puddles of water sitting in man-made containers — buckets, flowerpots, gutters, and, overwhelmingly, old discarded tires. In one large survey across Cameroon, old tires alone accounted for over 85% of every spot where mosquito larvae were actually found — dwarfing every natural water source combined. It turns out a mosquito nursery is often hiding in a junkyard, not a wetland. Their feeding and breeding habits shift with the thermometer too: Ae. aegypti bites most eagerly and lays the most eggs around 30°C (86°F), while the cooler-climate Ae. albopictus peaks a bit lower, around 25°C (77°F) — a small but telling difference that traces back to their different evolutionary homelands."
+      },
+      {
+        "heading": "Growing Up — From Egg to Adult",
+        "body": "Like all mosquitoes, Aedes passes through four life stages — egg, larva, pupa, adult — with the first three spent in or near water and only the adult taking to the air. Under good conditions, the whole journey from egg to flying adult takes as little as 7 to 10 days. But the real party trick happens right at the very start. A freshly laid Aedes egg is fragile and will shrivel up if it dries out — for about the first half-day of its existence. Then, in a narrow two-hour window roughly 11 to 13 hours after being laid, the embryo suddenly builds itself a tough, chitin-armored raincoat called a serosal cuticle. Flip the switch before that window and the egg dies in dry air; flip it after, and that same egg can sit bone-dry for months and still hatch perfectly fine once it gets wet again. This is exactly why Aedes mosquitoes thrive around temporary puddles that come and go with the rain — their eggs are built to simply wait out the dry spells."
+      },
+      {
+        "heading": "Where Are They Found?",
+        "body": "Aedes mosquitoes have colonized virtually the entire planet, missing only Antarctica. But within that huge range, the two star species behave quite differently. In a detailed survey of Cameroon, the yellow fever mosquito was found absolutely everywhere researchers looked, while the Asian tiger mosquito was confined to the wetter south, stopping short at an invisible climate boundary further north. Genetic fingerprinting of the tiger mosquitoes there told an even more striking story: nearly 80% of all individuals sampled carried the exact same genetic signature — the kind of pattern you'd expect if the entire population sprang from just a handful of founding mosquitoes that arrived relatively recently and then spread like wildfire."
+      },
+      {
+        "heading": "Why Do They Matter?",
+        "body": "This is where the story turns serious. Aedes aegypti is the world's primary carrier of dengue fever, and the numbers are staggering: reported global cases climbed from about half a million in the year 2000 to a record 14.6 million in 2024 — nearly a thirty-fold jump in under 25 years — and that's likely an undercount, since many affected countries struggle to track and report every case. Zika, chikungunya, and yellow fever ride on the same mosquitoes' backs. A single infected mosquito stays infectious for the rest of its life once it picks up a virus, and it can pick that virus up from a person days before that person even feels sick."
+      },
+      {
+        "heading": "A Few Things Worth Knowing",
+        "body": "•  Their family tree is a mess — on purpose, sort of: To sort out how all these mosquito species relate to each other, one research team scored 172 different physical features across every single life stage — egg, larva, pupa, and adults of both sexes — of 119 different species. That level of detail is almost unheard of in insect taxonomy, and it's what led scientists to split Aedes aegypti and Aedes albopictus off into their own genus, Stegomyia, for a while (though many researchers still just call them Aedes out of habit and convenience). •  A two-hour biological switch flips their entire survival strategy: Before hour 11, a mosquito egg is basically a water balloon. After hour 13, it's a tiny drought-proof capsule. Nothing else about the egg changes much — just that one armor-plated raincoat. •  Old tires are secretly ecological hotspots — for all the wrong reasons: A pile of abandoned tires in the rain isn't just an eyesore; it may be one of the most productive mosquito nurseries in the entire landscape."
+      },
+      {
+        "heading": "In Summary",
+        "body": "Aedes mosquitoes are a sprawling, still-being-sorted-out group whose two most famous members — the yellow fever mosquito and the Asian tiger mosquito — have turned old tires and rain puddles into launch pads for some of the world's fastest-growing infectious diseases. Their eggs' astonishing drought-proofing trick, and their knack for exploiting whatever man-made puddle happens to be lying around, are exactly what makes them such formidable, adaptable survivors — and such a persistent public health challenge."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Aedes Mosquitoes/am-web.pdf",
+      "lay": "Aedes Mosquitoes/am-web-la.pdf"
+    },
+    "photo_ref": "/photos/aedes-mosquitoes.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
