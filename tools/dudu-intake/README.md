@@ -41,9 +41,14 @@ Dependencies (`streamlit`, `pillow`, `pymupdf`) live in the `ds` conda environme
 
   `scientific_name`, `family`, `taxon_rank` (defaults to `"species"`), and `sourcing` (left
   blank) have no edit UI yet — only photos do — so they land as clear placeholders, not guesses.
-- **Existing cards**: lists every card with its current photo (or "no photo yet"), with inline
-  photo add/replace/remove, plus a confirm-gated "Delete card permanently" that removes the card
-  entry and its photo file together.
+- **Existing cards** (#52): lists every card with its current photo (or "no photo yet"), with
+  inline photo add/replace/remove; a way to replace the lay-report PDF (re-parses `common_name`/
+  `sections`/`source_report_ref` the same way "Add new card" does, leaving `id`/`photo_ref`/
+  `order`/other metadata untouched, and clearing `reviewed_by`/`reviewed_at` since the old review
+  no longer describes the new content); an order picker (same auto-detect/write-in as above,
+  defaulting to the card's current order) that only shows a publish button once actually changed;
+  and a confirm-gated "Delete card permanently" that removes the card entry and its photo file
+  together.
 - **Batch** (#40): add several cards (multi-file lay-report upload, each with its own order/photo,
   same auto-detection as above) or delete several existing cards (checkboxes) in one queued
   session. The whole batch publishes as a **single combined PR** — one CI run instead of one per

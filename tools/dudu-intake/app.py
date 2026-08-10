@@ -532,6 +532,7 @@ with tab_existing:
         st.success(st.session_state.pop("existing_card_message"))
 
     cards = load_cards()
+    known_orders_existing = sorted({c["order"] for c in cards if c["order"]})
     if not cards:
         st.info("No cards yet.")
     for card in cards:
@@ -605,6 +606,71 @@ with tab_existing:
 
                         st.session_state.existing_card_message = f"Photo removed for {card['common_name']}."
                         st.rerun()
+
+            st.divider()
+            st.write("**Update content from a corrected/revised report**")
+            content_update = st.file_uploader(
+                "Replace lay report",
+                type=["pdf"],
+                key=f"content_update_{card['id']}",
+            )
+            if content_update is not None:
+                new_title, new_sections, content_parse_err = parse_lay_report(content_update.getvalue())
+                if content_parse_err:
+                    st.error(content_parse_err)
+                else:
+                    st.success(f"Parsed '{new_title}' — {len(new_sections)} section(s).")
+                    with st.expander("Preview parsed sections"):
+                        for s in new_sections:
+                            st.markdown(f"**{s['heading']}**")
+                            st.write(s["body"])
+                    st.caption(
+                        f"Keeps id (`{card['id']}`), photo, order, and other metadata unchanged — "
+                        "only common_name, sections, and source_report_ref.lay/technical are replaced."
+                    )
+                    if st.button("Update card content", key=f"update_content_{card['id']}"):
+                        card["common_name"] = new_title
+                        card["sections"] = new_sections
+                        card["source_report_ref"] = {
+                            "technical": find_technical_ref(new_title, content_update.name),
+                            "lay": f"{new_title}/{content_update.name}",
+                        }
+                        # The old review no longer describes this content — stale until re-reviewed.
+                        card["reviewed_by"] = None
+                        card["reviewed_at"] = None
+                        save_cards(cards)
+
+                        do_publish(
+                            {"src/data/card_index.json": serialize_cards(cards)},
+                            commit_message=f"Update card content: {new_title} ({card['id']})",
+                            pr_title=f"Update card content: {new_title}",
+                            pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34/#52).",
+                        )
+
+                        st.session_state.existing_card_message = f"Content updated for {new_title}."
+                        st.rerun()
+
+            st.divider()
+            st.write("**Order**")
+            technical_ref = card["source_report_ref"].get("technical")
+            technical_path_existing = None
+            if isinstance(technical_ref, str) and technical_ref:
+                candidate = DUDUS_ROOT / technical_ref
+                technical_path_existing = candidate if candidate.exists() else None
+            order_default = card["order"] or guess_order_from_technical(technical_path_existing)
+            new_order = order_picker(f"existing_{card['id']}", known_orders_existing, order_default)
+            if new_order != card["order"]:
+                if st.button("Update order", key=f"update_order_{card['id']}"):
+                    card["order"] = new_order
+                    save_cards(cards)
+                    do_publish(
+                        {"src/data/card_index.json": serialize_cards(cards)},
+                        commit_message=f"Update order: {card['common_name']} ({card['id']}) -> {new_order}",
+                        pr_title=f"Update order: {card['common_name']}",
+                        pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34/#52).",
+                    )
+                    st.session_state.existing_card_message = f"Order updated for {card['common_name']}."
+                    st.rerun()
 
             st.divider()
             confirm_delete = st.checkbox(

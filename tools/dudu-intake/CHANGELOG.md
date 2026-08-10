@@ -6,6 +6,22 @@ schedule rather than moving in lockstep with site releases. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); [Semantic Versioning](https://semver.org),
 pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*` tags.
 
+## [0.5.0] - 2026-08-10
+
+### Added
+
+- **Existing cards can now have their content and order updated directly** (#52), not just
+  photos. Uploading a replacement lay-report PDF re-parses it (`parse_lay_report`, same as
+  "Add new card") and replaces `common_name`/`sections`/`source_report_ref.lay`/`.technical` —
+  `id`, `photo_ref`, `order`, and other metadata are left untouched. `reviewed_by`/`reviewed_at`
+  are cleared, since the prior review no longer describes the new content. Order gets its own
+  picker (reusing `order_picker` from #40) defaulting to the card's current order, or a guess
+  from its technical report if the order was never set; a button to publish only appears once
+  a real change is made. Both are their own "Update card: X" / "Update order: X" content-only
+  PRs, same #34 exemption as every other action.
+
+tag: `intake-v0.5.0`
+
 ## [0.4.0] - 2026-08-10
 
 ### Changed
