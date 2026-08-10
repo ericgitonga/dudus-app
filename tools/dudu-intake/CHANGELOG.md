@@ -6,6 +6,43 @@ schedule rather than moving in lockstep with site releases. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); [Semantic Versioning](https://semver.org),
 pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*` tags.
 
+## [0.4.0] - 2026-08-10
+
+### Changed
+
+- **Batch tab now publishes as a single combined PR** (#40), not one PR per card as first
+  shipped — explicit preference after trying the per-card version: one CI run per batch instead
+  of N, at the cost that one failed check now blocks every card in that batch together rather
+  than isolating the failure. `do_publish`'s existing revert-on-failure behavior means a failed
+  batch cleanly reverts the whole thing back to `HEAD`, not a partial mix.
+- **Order dropdown now auto-detects from the technical report** when one exists locally
+  (`Dudus/<CommonName>/`): every technical report states its taxonomic order in prose during
+  "Taxonomy and Classification" (e.g. "Order Hemiptera") — regexed out and pre-selected. Added a
+  write-in "Other (type manually)" option, pre-filled with the detected value, for orders not
+  yet in the dropdown (the exact gap Stick Insects hit: Phasmatodea couldn't be selected because
+  no existing card used it yet). Applies to both the single-add and batch-add flows.
+
+tag: `intake-v0.4.0`
+
+## [0.3.0] - 2026-08-10
+
+### Added
+
+- New "Batch" tab (#40): add several cards or delete several existing cards in one queued
+  session instead of one at a time. Each card still publishes as its own PR (one after another,
+  via the same #34 pipeline) rather than combining into a single PR — a bad PDF or a failed
+  check on one card doesn't block the others, at the cost of not saving any CI wall-clock time
+  over doing them individually. Duplicate ids (already live, or repeated within the same batch)
+  are caught before publishing. A failed publish now reverts that card's local file changes back
+  to `HEAD` (a gap that existed in the single-card flows too — fixed generally in `do_publish`,
+  not just for batch), so one failure can never leave the working tree ahead of `main` in a way
+  that corrupts the next action's starting point. Validated with two real throwaway species,
+  added then removed as a batch, before considering it done.
+
+tag: `intake-v0.3.0`
+
+
+
 ## [0.2.0] - 2026-08-10
 
 ### Added

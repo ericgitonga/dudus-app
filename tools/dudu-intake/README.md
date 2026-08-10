@@ -33,13 +33,22 @@ Dependencies (`streamlit`, `pillow`, `pymupdf`) live in the `ds` conda environme
      on this machine and used for `source_report_ref.technical` if found.
   2. **Photo** (optional) — unchanged: EXIF/GPS-stripped, orientation-corrected, padded to 3:2.
   3. **Order** — dropdown of orders already in use, plus "Unknown (fix later)" → `null` (same
-     "Order not yet identified" grouping the site already falls back to for unclassified cards).
+     "Order not yet identified" grouping the site already falls back to for unclassified cards),
+     plus a write-in "Other (type manually)" option for an order not yet in the dropdown. When a
+     technical report exists locally (`Dudus/<CommonName>/`), its stated order (every technical
+     report says "Order X" somewhere in its Taxonomy and Classification section) is auto-detected
+     and pre-selected — or pre-fills the write-in field if it's a genuinely new order.
 
   `scientific_name`, `family`, `taxon_rank` (defaults to `"species"`), and `sourcing` (left
   blank) have no edit UI yet — only photos do — so they land as clear placeholders, not guesses.
 - **Existing cards**: lists every card with its current photo (or "no photo yet"), with inline
   photo add/replace/remove, plus a confirm-gated "Delete card permanently" that removes the card
   entry and its photo file together.
+- **Batch** (#40): add several cards (multi-file lay-report upload, each with its own order/photo,
+  same auto-detection as above) or delete several existing cards (checkboxes) in one queued
+  session. The whole batch publishes as a **single combined PR** — one CI run instead of one per
+  card, at the cost that a failed check blocks every card in that batch together rather than
+  isolating the failure (an explicit preference, after trying one-PR-per-card first).
 
 ## Publishing to the live site
 
