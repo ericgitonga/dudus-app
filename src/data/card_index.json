@@ -530,5 +530,55 @@
     "photo_ref": "/photos/crane-flies.jpg",
     "reviewed_by": null,
     "reviewed_at": null
+  },
+  {
+    "id": "stick-insects",
+    "common_name": "Stick Insects",
+    "scientific_name": null,
+    "family": null,
+    "order": null,
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "Meet nature's most convincing disguise artist: an insect built entirely to be mistaken for a twig. Stick insects (order Phasmatodea) are a worldwide group of over 3,600 known species, and they've turned \"looking exactly like a piece of a plant\" into a full-time survival strategy — slender bodies, thin jointed legs, and in the photograph that inspired this summary, a specimen perched among the thorns of an Acacia tree in Kenya, all but invisible against the twigs around it. The genus most likely responsible for that kind of Acacia camouflage act in East Africa is Bactrododema — big, spiny stick insects that used to be classified under an older name, Palophus, before taxonomists folded that name into Bactrododema in 2005. Confusingly, some databases still disagree about which name is \"correct\" — even the experts haven't fully settled this one."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "•  Built like a twig, literally: a long, cylindrical body, thin legs, and (in most species) reduced or absent wings, all adding up to a shape that could pass for a stem or branch at a glance. •  Simple mouthparts built for chewing plant material, and long, thread-like antennae. •  No big fighting equipment: instead of a stinger or hard shell, its whole defense plan starts with not being seen. •  One striking size difference: in a newly described southern African species, Macynia mcgregororum, females (73–84 mm) are noticeably bigger than males (57–64 mm), and only females carry pale, bumpy tubercles along the thorax. •  Some species carry hidden chemical-spray glands in the thorax — recent CT-scan research found these glands come in at least four different internal shapes across the order, some over 100 times bigger in volume than others."
+      },
+      {
+        "heading": "How Do They Live?",
+        "body": "Stick insects go through a simple three-stage life: egg, nymph, adult — no caterpillar-style transformation, no cocoon. A nymph just looks like a small, wingless version of the adult and grows into that shape gradually, molting its way up. One especially strange trick shows up in several species: females can reproduce without ever mating. In the well-studied Indian walking stick, females lay several hundred eggs across their lifetime entirely on their own — males of that species are so rare that scientists still don't fully understand what causes one to appear at all. Eggs take 10–12 weeks to hatch, and the young insects reach adulthood in as little as a month. All stick insects are strict plant-eaters. The Acacia-associated genus Bactrododema appears to feed specifically on Acacia foliage — which fits neatly with a photograph of one clinging to an Acacia branch, thorn and all, though the underlying research paper on this diet link was behind a paywall, so it's carried here as a well-supported but not fully double-checked detail."
+      },
+      {
+        "heading": "The Ultimate Game of Pretend",
+        "body": "Camouflage is this insect's whole personality. Beyond just looking like a stick, many species sway gently back and forth as they walk or rest, mimicking a twig stirred by the wind — motion that would otherwise give away a stationary \"twig\" to a sharp-eyed bird. If that fails and a predator actually grabs hold, some species have a backup plan: they can snap off the trapped leg entirely at a built-in weak point near the base, sacrificing a limb to escape with their life. The lost leg does grow back after the next few molts — but the replacement is always a little smaller than the original, a permanent, readable scar of a close call. Some species also carry chemical weapons: glands in the thorax that release a foul-smelling spray when the insect is threatened, on top of the camouflage and the leg-dropping trick."
+      },
+      {
+        "heading": "A Kenyan Detective Story",
+        "body": "Museum shelves and modern smartphone photos turn out to tell the same story about these insects in Kenya, a century apart. A Bactrododema specimen collected near Lake Turkana back in 1905 — labeled, in the colonial naming of the day, \"Lac Rodolphe\" — sits in a museum alongside records from Taveta collected in 1912. Fast-forward to 2024, and casual nature-photo apps like iNaturalist are picking up the very same genus again, spotted by ordinary observers in Laikipia and Narok counties. Other Kenyan stick-insect records turn up scattered from Mount Elgon and Kitale in the west, to Isiolo in the north, down to the Tsavo and Amboseli areas, and even the Kenyan coast near Kilifi and Kwale — evidence that these camouflaged twig-mimics have quietly persisted across a huge stretch of the country for well over 100 years, even though almost nobody's looking for them."
+      },
+      {
+        "heading": "Are They Pests? Are They Useful?",
+        "body": "Surprisingly — no, not in Kenya, or anywhere in Africa, as far as the available scientific literature shows. A major worldwide review of stick-insect crop damage found real, well-documented outbreaks in North America (on oak and hickory trees), Australia (stripping eucalyptus forests bare in some years), Pacific islands (attacking coconut palms), China, Colombia, and even India (on black pepper vines) — but turned up no African, Kenyan, or Acacia-related pest damage at all. The one African-continent mention in that whole review was an introduced pet-trade species causing a minor nuisance in South African gardens, nothing like a crop pest. That's a small but real reminder from science itself: not finding evidence of a problem is different from proving there isn't one — it may simply be that nobody's studied African stick insects as agricultural pests very much yet."
+      },
+      {
+        "heading": "How Do People Deal With Outbreaks (Elsewhere)?",
+        "body": "Where stick insects really have become forest or crop pests — mostly outside Africa — people have tried a wide range of fixes over the decades: parasitic wasps and flies that attack the eggs, general predators like spiders and birds, old-school insecticides (some, like DDT and lead arsenate, now recognized as environmentally harmful and largely abandoned), sticky bands wrapped around tree trunks to stop climbing nymphs in their tracks, smoking palm fronds to drive the insects out, and even just clearing away ground litter so eggs are exposed to hungry predators and drying sun. For a much smaller-scale nuisance — like a pet stick insect that's outgrown its welcome in a home garden — the simplest advice is just picking them off by hand and freezing any leftover eggs for a week to make sure none hatch."
+      },
+      {
+        "heading": "Notable Facts",
+        "body": "•  The very first stick insect ever formally named in this African group, Palophus centaurus (now Bactrododema centaurum), was described from a specimen collected all the way over in Old Calabar, Nigeria — not East or southern Africa, where the group is now most famous. •  The world's longest known insect overall is a stick insect, Chan's Megastick, whose type specimen is kept at the Natural History Museum in London — one of the three largest stick-insect collections on Earth. •  A regenerated leg is a permanent record-keeper: because it always regrows slightly smaller than the original, scientists (and a sharp-eyed observer) can actually tell, just by looking, that an individual once escaped a predator by leaving a leg behind."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Stick Insects/si-web.pdf",
+      "lay": "Stick Insects/si-web-la.pdf"
+    },
+    "photo_ref": "/photos/stick-insects.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
