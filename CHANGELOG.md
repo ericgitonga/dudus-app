@@ -6,6 +6,20 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.10.0] - 2026-08-10
+
+### Removed
+
+- "Identify a dudu" homepage link — the underlying capture flow (`/identify`, `PhotoCapture`)
+  isn't a working identification feature yet (taxon-guessing #8 and index-matching #9 are still
+  unbuilt), so it's misleading to link to it as if it were. Search remains the only homepage
+  link. The `/identify` route, `PhotoCapture` component, and its EXIF-stripping regression test
+  (`e2e/test_photo_capture.py`, #10) are all left in place — this only removes the entry point,
+  not the feature's progress. Re-add the link once #8/#9 land and `/identify` is actually usable
+  (closes #61)
+
+tag: `v0.10.0`
+
 ## [0.9.0] - 2026-08-09
 
 ### Added

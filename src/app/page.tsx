@@ -22,12 +22,6 @@ export default function Home() {
             >
               Search
             </Link>
-            <Link
-              href="/identify"
-              className="text-sm font-medium underline hover:opacity-70"
-            >
-              Identify a dudu
-            </Link>
           </div>
         </div>
         <p className="mt-1 text-sm text-zinc-600">
