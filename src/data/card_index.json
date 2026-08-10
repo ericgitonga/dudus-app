@@ -584,5 +584,51 @@
     "photo_ref": "/photos/aedes-mosquitoes.jpg",
     "reviewed_by": null,
     "reviewed_at": null
+  },
+  {
+    "id": "tropical-bont-tick",
+    "common_name": "Tropical Bont Tick",
+    "scientific_name": null,
+    "family": null,
+    "order": "Ixodida",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Is It?",
+        "body": "Picture a tick the size of a nutmeg, with a gold, mottled shield on its back so ornate it looks almost hand-painted. That's the tropical bont tick — one of the largest, most colorful, and most dangerous ticks in Africa. Its name comes from the Afrikaans word \"bont,\" meaning spotted or mottled, describing that gold-and-brown pattern. This isn't just any tick. It's a major threat to cattle across sub-Saharan Africa, and Kenya is officially listed among the countries where it's found. It carries at least one disease that can kill up to 8 in 10 infected animals if untreated — making it one of the most economically important arthropods a Kenyan farmer might encounter, even if they've never heard its name."
+      },
+      {
+        "heading": "What Does It Look Like?",
+        "body": "• Size: A fed female can swell to roughly 2-3 centimeters — genuinely nutmeg-sized, several times the size of an unfed tick. • Color and pattern: Males wear a bright yellow-gold, ornately patterned shield. Females are plainer brown with a pale patch near the rear. • The business end: Its mouthparts are unusually long and thick, letting it dig in deep and hang on firmly — which is part of why it does so much physical damage to the skin it feeds through. • The eyes: Distinctly bulging and dome-shaped, another feature that helps tell it apart from other ticks under a closer look."
+      },
+      {
+        "heading": "How Does It Live?",
+        "body": "A female tropical bont tick can lay up to 30,000 eggs in one go — an almost absurd number for a single arachnid. Once hatched, the young tick goes through three life stages — larva, nymph, and adult — and in a pattern typical of its whole tick family, it needs a fresh host animal at each stage, dropping off to molt in the environment between meals. Here's the surprising part: despite spending its whole life trying to find a host, an individual tick spends at most about 15 days per stage actually attached to one. The rest of the time — which can add up to months or even years — it's just waiting in grass and soil for its next opportunity. That patience is exactly why it's so hard to eradicate: clear an area of ticks, and unfed survivors can still be lurking a year or more later. Adult males also do something unusual for a tick: they release a chemical signal (a pheromone) on the host's skin that calls females in to feed and mate right there. A female typically won't even attach until a male has already been on the host for three days or more — a rare case of tick \"teamwork.\""
+      },
+      {
+        "heading": "Where Does It Live, and What Does It Eat?",
+        "body": "Adult tropical bont ticks favor large animals — cattle, sheep, goats, camels, dogs, horses, and wild antelope and buffalo — clustering in the softest, hardest-to-reach spots: the belly, under the tail, and around the genitals. The younger stages (larvae and nymphs) prefer smaller animals, and — interestingly — ground-feeding birds, especially the cattle egret, the same bright white bird you'll often see stalking around grazing cattle in East Africa. That egret connection turns out to matter a lot. A study that tagged over a thousand cattle egrets in the Caribbean found that these birds occasionally carry young ticks with them when they fly between islands — meaning a bird looking for insects near a cow's feet can end up spreading this pest to a whole new island. It's a reminder that pest species don't always travel by the routes we'd expect. The tick is tough and adaptable, living comfortably in everything from dry savannah to humid forest — though, like most ticks, it doesn't cope well with extreme heat or cold."
+      },
+      {
+        "heading": "Why Does It Matter?",
+        "body": "This is where the tropical bont tick earns its reputation as one of the most economically damaging arthropods in African livestock farming. It's the primary carrier of heartwater (also called cowdriosis), a bacterial disease that can kill up to 80% of susceptible cattle, sheep, and goats. Once a tick picks up the infection from one animal, it passes it forward the next time it molts and feeds again — meaning a single infected tick can keep spreading disease across its whole remaining lifespan, for well over a year. It also makes cattle far more vulnerable to a nasty skin condition called dermatophilosis (sometimes known elsewhere as \"rain rot\"). The tick doesn't spread the bacteria that cause it directly — instead, its bite wounds and locally weakened skin give the real culprit, a soil-and-skin bacterium, the opening it needs to take hold. The result: damaged hides, lower milk yields, weight loss, and in bad cases, death. Even without disease, a heavy infestation is brutal on its own: hundreds of ticks can attach to one animal, each female draining up to 20 milliliters of blood and leaving festering wounds behind. Weight-loss studies from Zambia found each engorged female tick costs an animal roughly 45-60 grams of body weight — which adds up fast when hundreds are attached at once."
+      },
+      {
+        "heading": "How Do People Fight It?",
+        "body": "The frontline tool is still the acaricide — a chemical tick-killer applied as a dip, spray, pour-on, or slow-release device, usually timed to when ticks are most active on the animal. Some populations of this tick have already developed resistance to two commonly used chemical classes across parts of East and West Africa, which is exactly why farmers are increasingly told not to rely on chemicals alone. That's led to a broader strategy sometimes called integrated tick management — mixing chemical control with tick-resistant cattle breeds, smarter grazing rotations, and even planting grasses that naturally repel ticks. Biological control has been tried too: a tiny parasitic wasp that attacks tick nymphs showed promise in one trial but couldn't sustain its own population long-term, and fungal or bacterial tick-killers have so far had limited success. For heartwater itself, researchers agree that a genuinely practical vaccine — cheap, safe, and effective — is really the only long-term fix, but as of the most recent authoritative review found for this piece, no such vaccine had yet reached the market despite over a decade of experimental work."
+      },
+      {
+        "heading": "A Few Surprising Facts",
+        "body": "• 30,000 eggs from one female — for comparison, that's roughly the population of a small town, laid by a single arachnid barely bigger than a coffee bean before feeding. • A hitchhiker on wings: this tick's spread across Caribbean islands is partly blamed on cattle egrets — meaning a bird, not a mammal, may be one of its best travel agents. • It came from cattle, literally: its establishment in the Caribbean traces back to actual cattle shipped from Senegal in the 1800s — an old-fashioned case of accidental biological importation, over a century before \"invasive species\" was even a familiar phrase. • Mostly absent, not mostly attached: even though it can be devastating to livestock, an individual tick spends the overwhelming majority of its life off the animal entirely, waiting in grass — which is part of why simply treating the animals isn't always enough to solve an infestation."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Tropical Bont Tick/tbt-web.pdf",
+      "lay": "Tropical Bont Tick/tbt-web-la.pdf"
+    },
+    "photo_ref": "/photos/tropical-bont-tick.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
