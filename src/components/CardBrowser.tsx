@@ -4,21 +4,18 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Card } from "@/types/card";
+import { filterCardsByQuery, sortCardsByCommonName } from "@/lib/cardIndex";
 import NotYetResearched from "@/components/NotYetResearched";
 
 export default function CardBrowser({ cards }: { cards: Card[] }) {
   const [query, setQuery] = useState("");
 
-  const sorted = useMemo(
-    () => [...cards].sort((a, b) => a.common_name.localeCompare(b.common_name)),
-    [cards],
-  );
+  const sorted = useMemo(() => sortCardsByCommonName(cards), [cards]);
 
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return sorted;
-    return sorted.filter((card) => card.common_name.toLowerCase().includes(q));
-  }, [sorted, query]);
+  const filtered = useMemo(
+    () => filterCardsByQuery(sorted, query),
+    [sorted, query],
+  );
 
   return (
     <div className="w-full">

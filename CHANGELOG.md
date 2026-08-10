@@ -6,6 +6,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.11.0] - 2026-08-10
+
+### Added
+
+- Unit test suite (Vitest, `.test.ts` colocated with the module it covers) for the card-index
+  lookup/filter logic (extracted out of `CardBrowser.tsx` into `src/lib/cardIndex.ts` to make it
+  directly testable), alongside — not instead of — the existing `e2e/` Playwright suite. Gated
+  in CI via a new required check, `.github/workflows/unit.yml` (closes #57)
+
+tag: `v0.11.0`
+
 ## [0.10.0] - 2026-08-10
 
 ### Removed
