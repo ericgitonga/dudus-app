@@ -572,51 +572,5 @@
     "photo_ref": "/photos/white-ringed-atlas-moth.jpg",
     "reviewed_by": "claude (spot-check review pass, dudus-app#29)",
     "reviewed_at": "2026-08-09"
-  },
-  {
-    "id": "investigated-ermine",
-    "common_name": "Investigated Ermine",
-    "scientific_name": null,
-    "family": null,
-    "order": "Lepidoptera",
-    "taxon_rank": "species",
-    "sourcing": "",
-    "sections": [
-      {
-        "heading": "What Is It?",
-        "body": "Meet a moth with a detective's name. Alpenus investigatorum — its formal scientific title — literally translates to something like \"of the investigator,\" and it turns out that's fitting, because this species has spent over a century getting mixed up with its own doubles. It's a tiger moth (a member of a huge, flashy group of moths called Arctiinae, most famous for wearing bold warning colors that say \"don't eat me\"), first described in 1898 from a mountain expedition in what's now Tanzania. Online science calls it the \"Investigated Ermine\" — ermine moths get their name from an old comparison to the white fur trimmed with black spots that European royalty once wore, and one look at this moth's fuzzy white body dotted with black spots explains the resemblance instantly."
-      },
-      {
-        "heading": "What Does It Look Like?",
-        "body": "•  Color: Snow-white wings and a white, teddy-bear-fuzzy body, scattered with bold black spots — exactly the \"ermine fur\" look that gives the group its name. •  Legs: A surprising splash of warm mustard-yellow at the base of each leg, peeking out from under all that white fluff. •  Antennae: Long, thread-like antennae that curl backward in a graceful sweep. •  A gap in the record: Here's an odd twist — despite this moth having a name, a genus, and a place on the family tree since 1898, no rigorous published measurement of its wingspan, or description of how males and females might differ, could be found anywhere in the accessible scientific literature. The one book that would likely have those details (a 1995 monograph on African tiger moths) exists only in print, off the internet's radar. Even a well-named species can still have blank pages in the public record."
-      },
-      {
-        "heading": "How Does It Live?",
-        "body": "This is where the \"investigator\" in its name starts to feel ironic — nobody seems to have investigated its full life story yet, at least not in anything indexed online. How many eggs it lays, how many molts its caterpillar goes through, how long it takes to grow up: none of that has surfaced in a citable source. What has been documented is remarkable in its own right: this moth's caterpillar will eat almost anything. Recorded meals include papaya, sweet potato, cabbage, castor bean, maize, cotton, mulberry, groundnuts, tobacco, and a whole shopping list of garden flowers like dahlias, zinnias, and cosmos. That's an enormous range for one caterpillar species — most moth larvae are picky eaters, tied to just one or two plant families. This one apparently shrugs and eats the buffet."
-      },
-      {
-        "heading": "Where Does It Live, and What Does It Eat?",
-        "body": "The scientific catalogue of African tiger moths places this species across a broad swath of eastern and southern Africa — Ethiopia, Somalia, Kenya, Uganda, Tanzania, Mozambique, Malawi, Angola, and even Ghana. Its very first specimen was collected near Bagamoyo, on the Tanzanian coast, making it an East African moth by birthright. For a while, that Kenyan connection was only on paper: the newest crowdsourced sighting records online (the kind gathered from people's own nature photos) all clustered in Zimbabwe, Namibia, and Zambia — nowhere near Kenya. But the photo attached to this very report changes that. It was taken right in Nairobi — real, on-the-ground proof that this fuzzy, garden-devouring moth does indeed call Kenya home, exactly as the old catalogues said it should."
-      },
-      {
-        "heading": "Why Does It Matter?",
-        "body": "Despite eating practically everything in a vegetable garden, this moth has never once shown up on a pest-alert list, a crop-damage report, or an agricultural database. Its wildly generalist appetite, which would normally be a farmer's nightmare, seems to have simply never added up to a real-world problem worth flagging. Sometimes a species can have an alarming resume and still turn out to be nobody's headache."
-      },
-      {
-        "heading": "A Scientific Plot Twist",
-        "body": "Here's the detective story hiding in this moth's own paperwork. Between 1898 and 1903, three different scientists in three different expeditions to what's now Tanzania each stumbled onto this moth and gave it three completely different names — one from Bagamoyo, two more from a place called Mhonda, just a few years apart. Each scientist thought they'd found something new. It took until 1920 for someone to finally lay all three specimens side by side and realize: same moth, three names, one big case of mistaken identity. And it wasn't until 1995 — nearly a century after the moth was first spotted — that researchers gave it the scientific name it carries today. For a moth literally named \"the investigator,\" it took the scientific community an awfully long time to solve its own case."
-      },
-      {
-        "heading": "What's the Kenya Connection?",
-        "body": "Kenya sits right in the middle of this moth's documented range, alongside its East African neighbors — and now it has a face to go with the paperwork. The photograph that accompanies this report was taken in Nairobi, giving this species a confirmed, on-the-ground Kenyan sighting that the online occurrence databases hadn't caught up to yet. Somewhere in a Nairobi garden, this fuzzy white \"investigator\" is quietly living up to its enormous, unpicky appetite — and, for once, someone actually noticed and got the photo."
-      }
-    ],
-    "source_report_ref": {
-      "technical": "",
-      "lay": "Investigated Ermine/ie-web-la.pdf"
-    },
-    "photo_ref": "/photos/investigated-ermine.jpg",
-    "reviewed_by": null,
-    "reviewed_at": null
   }
 ]
