@@ -336,52 +336,6 @@
     "reviewed_at": "2026-08-07"
   },
   {
-    "id": "crane-flies",
-    "common_name": "Crane Flies",
-    "scientific_name": null,
-    "family": "Tipulidae",
-    "order": "Diptera",
-    "taxon_rank": "family",
-    "sourcing": "/dudus",
-    "sections": [
-      {
-        "heading": "What Are They?",
-        "body": "A crane fly is the large, spindly insect that blunders into lights on summer evenings, often mistaken for an oversized mosquito, but it is entirely harmless — its reduced mouthparts mean it cannot bite, sting, or feed at all. Adults live only a few days, mostly to find a mate, and belong to the family Tipulidae, the single largest fly family on Earth under the broadest count, with roughly 14,000 species found on every continent."
-      },
-      {
-        "heading": "What Do They Look Like?",
-        "body": "The adult is essentially a set of exceptionally long legs on a thin brown body; the legs break off easily at special joints, possibly helping the fly escape predators. Its halteres (balance organs) are proportionally the largest of any fly, exceeding 12% of forewing length versus about 6% in a mosquito, making crane flies unusually nimble fliers. Uniquely among flies, their eyes lack a light-focusing crystalline cone, and they retain a primitive adhesive foot pad (arolium) that all other flies have replaced."
-      },
-      {
-        "heading": "The Hidden Life: Leatherjackets",
-        "body": "Soil-dwelling crane fly larvae, called leatherjackets, have thick, rubbery skin and spend months or years feeding on plant roots and organic matter underground. In British pastures and lawns, Tipula paludosa and Tipula oleracea are serious agricultural pests, and about 2,000 species of parasitic wasps have been recorded attacking Tipulidae. Aquatic larvae, by contrast, live in fast-flowing streams and are powerful wood processors — one study found them fragmenting over 90% of decayed alder wood in a stream within a year."
-      },
-      {
-        "heading": "Breathing Underwater",
-        "body": "Aquatic larvae breathe via spiracles lined with water-repelling hairs that trap a thin air film, letting oxygen diffuse in and carbon dioxide out continuously without surfacing — the same principle as a diving beetle's air bubble, but built into the cuticle. Some species carry this further at the pupal stage, growing branching gill filaments that let them stay fully submerged while transforming from larva to adult."
-      },
-      {
-        "heading": "Arctic Survivors",
-        "body": "In the High Arctic, crane flies are among the last insect families present; nearly a quarter of Arctic North American species have reduced or lost their wings, mostly in females, saving energy in a cold, windy climate while males typically keep full wings to find mates. Tipula carinifrons, at the northern edge of its range, abandons plant material entirely and grazes on cyanobacteria mats on the tundra."
-      },
-      {
-        "heading": "A Surprising Social Life",
-        "body": "Crane flies mate in aerial swarms, loose male aggregations gathering above a landmark such as a rock or grass tuft. Females use the same landmark cues as males — in a lab experiment a lone female tracked an artificial swarm marker just as a swarming male would, suggesting both sexes share identical rules for finding mating sites."
-      },
-      {
-        "heading": "Why They Matter",
-        "body": "Migratory Arctic-breeding waders — dunlins, sandpipers, phalaropes, turnstones, many of which winter along East Africa's Rift Valley lakes and coastal mudflats — time their Arctic arrival to the brief summer flush of Tipulidae and chironomid midges, without which they could not provision chicks fast enough. Crane fly larvae shred leaves, process soil, break down wood, and feed everything from parasitic wasps to Arctic sandpipers, making them significant if unglamorous recyclers."
-      }
-    ],
-    "source_report_ref": {
-      "technical": "Crane Flies/cf.pdf",
-      "lay": "Crane Flies/cf-la.pdf"
-    },
-    "photo_ref": "/photos/crane-flies.jpg",
-    "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
-    "reviewed_at": "2026-08-07"
-  },
-  {
     "id": "orchard-orbweaver",
     "common_name": "Orchard Orbweaver",
     "scientific_name": null,
