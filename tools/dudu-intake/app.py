@@ -362,6 +362,21 @@ def do_publish(files, commit_message, pr_title, pr_body):
         return published
 
 
+def resolve_order_default_index(known_orders, detected_order):
+    """
+    The index-resolution half of `order_picker`, pulled out as a pure function so it's testable
+    without a Streamlit widget context: exactly `known_orders.index(detected_order)` when
+    `detected_order` is already a known order, the "Other (type manually)" slot when it's a
+    detected-but-new order, or the "Unknown" slot when nothing was detected at all.
+    """
+    if detected_order and detected_order in known_orders:
+        return known_orders.index(detected_order)
+    elif detected_order:
+        return len(known_orders) + 1  # ORDER_OTHER_LABEL
+    else:
+        return len(known_orders)  # ORDER_UNKNOWN_LABEL
+
+
 def order_picker(key_prefix, known_orders, detected_order):
     """
     Selectbox over orders already in use, plus "Unknown" and a manual write-in — because a
@@ -372,12 +387,7 @@ def order_picker(key_prefix, known_orders, detected_order):
     only has to confirm, not retype.
     """
     options = known_orders + [ORDER_UNKNOWN_LABEL, ORDER_OTHER_LABEL]
-    if detected_order and detected_order in known_orders:
-        default_index = known_orders.index(detected_order)
-    elif detected_order:
-        default_index = len(known_orders) + 1  # ORDER_OTHER_LABEL
-    else:
-        default_index = len(known_orders)  # ORDER_UNKNOWN_LABEL
+    default_index = resolve_order_default_index(known_orders, detected_order)
 
     # Keyed on detected_order too, not just key_prefix: st.selectbox only honours a fresh
     # `index=` the first time a given key renders — a new PDF upload landing on the *same* key

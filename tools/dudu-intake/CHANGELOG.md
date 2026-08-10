@@ -6,6 +6,20 @@ schedule rather than moving in lockstep with site releases. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); [Semantic Versioning](https://semver.org),
 pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*` tags.
 
+## [0.7.0] - 2026-08-10
+
+### Added
+
+- Unit test suite (`pytest`, `tests/test_app.py`) for `app.py`'s pure parsing/lookup logic —
+  `slugify`, `serialize_cards`, `parse_lay_report`, `guess_order_from_technical`,
+  `find_technical_pdf_path`/`find_technical_ref` — alongside the tool's existing
+  `streamlit.testing.v1.AppTest`/manual end-to-end verification. `order_picker`'s
+  default-selection logic is extracted into a new pure `resolve_order_default_index` function so
+  it's directly testable too, with no behaviour change. Gated in CI via a new required check,
+  `.github/workflows/unit-dudu-intake.yml` (closes #53)
+
+tag: `intake-v0.7.0`
+
 ## [0.6.0] - 2026-08-10
 
 ### Removed
