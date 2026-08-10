@@ -426,5 +426,63 @@
     "photo_ref": "/photos/white-ringed-atlas-moth.jpg",
     "reviewed_by": "claude (spot-check review pass, dudus-app#29)",
     "reviewed_at": "2026-08-09"
+  },
+  {
+    "id": "wolf-spiders",
+    "common_name": "Wolf Spiders",
+    "scientific_name": null,
+    "family": null,
+    "order": "Araneae",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "1. What Are Wolf Spiders?",
+        "body": "Wolf spiders are among the most widespread, abundant, and ancient hunters on land. Unlike most spiders — which sit motionless in a web and wait — wolf spiders actively chase down their prey on foot, like their namesake. They are ground-dwelling, solitary predators found on every continent except Antarctica, and they outnumber almost every other ground-living arthropod in grasslands, forests, farms, and city gardens alike. There are roughly 2,400 known species in the family Lycosidae, spread across about 120 genera. Some species are barely a centimetre long; others — like the large Hogna — are imposing creatures that can reach several centimetres in body length. Despite their fearsome reputation, wolf spiders are entirely harmless to people."
+      },
+      {
+        "heading": "2. What Do They Look Like?",
+        "body": "Wolf spiders are typically brown, grey, or sandy in colour — excellent camouflage for life on the ground. They are stocky, hairy, and fast-moving, and if you see one dash across a floor, you will understand why people sometimes panic. But the real giveaway is their eyes. All spiders have eight eyes, but wolf spiders arrange theirs in a uniquely dramatic way: four small eyes in a bottom row, two large forward-facing eyes in the middle, and two even larger eyes perched on top of the head like a second pair of headlights. This three-row arrangement gives wolf spiders genuinely good vision — they can detect movement and judge distance far better than most spiders, which are nearly blind outside their webs. The body, like all spiders, is divided into two sections: a front half (the cephalothorax) carrying the legs, eyes, and mouthparts, joined by a slender waist to a rounder rear half (the abdomen) where the silk-spinning spinnerets sit."
+      },
+      {
+        "heading": "3. The Eyes Have It — Night Hunting with Built-In",
+        "body": ""
+      },
+      {
+        "heading": "Torches",
+        "body": "The most astonishing feature of wolf spiders is invisible during the day: a mirror-like reflective layer behind the rear eyes called the tapetum lucidum (the same structure that makes cats' eyes glow in headlights). At night, shine a torch at the ground in any grassy or leafy habitat, and wolf spiders reveal themselves instantly — their eyes blaze back at you in brilliant green or amber, like tiny scattered embers in the dark. Experienced collectors simply walk slowly with a headlamp and harvest them by eye. This reflective layer is not just a party trick. It amplifies dim light and dramatically improves the spider's ability to detect prey and predators in near-darkness, making wolf spiders highly effective nocturnal hunters."
+      },
+      {
+        "heading": "4. Life as a Hunter",
+        "body": "Wolf spiders do not build webs to catch prey. They wander the ground — through leaf litter, across soil, under stones, and through grass — actively stalking or ambushing any arthropod small enough to overpower. Their diet consists mostly of insects: flies, beetles, ants, small grasshoppers, and whatever else moves within reach. Some genera dig burrows in the soil (particularly the large Hogna and Geolycosa species), using these as a daytime retreat from which they emerge to hunt at night. Others are nomadic, with no fixed home at all. In farmland, wolf spiders are one of the most important natural pest controllers in existence. Studies across rice, wheat, and other crops have shown that wolf spiders — present in enormous numbers in agricultural soil — significantly suppress populations of aphids and other damaging insects. They are, in the truest sense, the farmer's friend."
+      },
+      {
+        "heading": "5. The Dancing Mama — Maternal Care Unique in",
+        "body": ""
+      },
+      {
+        "heading": "the Spider World",
+        "body": "Here is where wolf spiders do something truly extraordinary. After mating, the female spins a silk egg sac around her fertilised eggs and attaches it directly to her spinnerets, carrying it tucked beneath her abdomen wherever she goes. She never puts it down. She drags it through vegetation, over rocks, and into burrows, keeping her eggs warm and protected against her body. When the eggs hatch, the story gets even more remarkable. The spiderlings — dozens of tiny, perfect miniature spiders — crawl out of the egg sac and immediately climb onto their mother's back, packing themselves across her abdomen in a dense, rustling cargo. She carries them like this for several days to weeks, with no web, no nest, and no fixed home — just a mother on the move with her entire family on her back. This behaviour — carrying spiderlings on the dorsum — is found nowhere else among the world's roughly 40,000 spider species. It is exclusive to Lycosidae, and it represents one of the most developed forms of parental investment recorded across all of Arachnida."
+      },
+      {
+        "heading": "6. Where Do They Live?",
+        "body": "Wolf spiders are one of the most ecologically flexible animals on Earth. They thrive in: • Grasslands and meadows (often the dominant predatory arthropod) • Forest floors and leaf litter • Sandy deserts and high-altitude mountain scree • Wetland margins and riverbanks • Agricultural fields • City gardens, parks, waste ground, and the edges of pavements Several Pardosa species are particularly comfortable in urban environments, sometimes even wandering into ground-floor rooms of buildings — which tends to alarm residents far more than is warranted."
+      },
+      {
+        "heading": "7. Are They Dangerous?",
+        "body": "No. Wolf spiders are venomous in the sense that all spiders are — they use venom to immobilise prey — but their venom has no medically significant effect on humans. A bite (which is rare and defensive) may cause brief local pain, roughly comparable to a wasp sting, with no lasting effects. Their reputation has not always been fair. The famous \"tarantula\" of Taranto in southern Italy — whose supposed bite was believed in medieval times to cause a frenetic dancing madness curable only by the tarantella — was in fact a large wolf spider, Hogna radiata. It is a Lycosidae, not a true tarantula. The panic was almost certainly a cultural phenomenon rather than a medical one."
+      },
+      {
+        "heading": "8. Why Do They Matter?",
+        "body": "Beyond their role as pest controllers in agriculture, wolf spiders — particularly the genus Pardosa — are widely used by scientists as bioindicators: if the wolf spider population in a field or woodland is healthy and diverse, the habitat is likely clean and ecologically intact. If it collapses, something is wrong. Their sensitivity to soil contamination, pesticide use, and habitat degradation makes them invaluable environmental monitors. They are also a reminder that not everything that looks alarming is a threat. The wolf spider carrying dozens of babies on her back is one of the natural world's most devoted mothers — and one of its most capable, accomplished predators."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Wolf Spiders/ws.pdf",
+      "lay": "Wolf Spiders/ws-la.pdf"
+    },
+    "photo_ref": "/photos/wolf-spiders.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
