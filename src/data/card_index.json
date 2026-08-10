@@ -594,5 +594,27 @@
     "photo_ref": null,
     "reviewed_by": null,
     "reviewed_at": null
+  },
+  {
+    "id": "batch-test-beta",
+    "common_name": "Batch Test Beta",
+    "scientific_name": null,
+    "family": null,
+    "order": null,
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Is It?",
+        "body": "A second fictional test species used to exercise the batch-add flow end to end."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "",
+      "lay": "Batch Test Beta/batch-test-beta-la.pdf"
+    },
+    "photo_ref": null,
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
