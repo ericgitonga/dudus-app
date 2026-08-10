@@ -21,6 +21,7 @@ import subprocess
 import tempfile
 import time
 import uuid
+from collections import Counter
 from pathlib import Path
 
 import fitz
@@ -57,6 +58,7 @@ DEFAULT_TAXON_RANK = "species"
 DEFAULT_SOURCING = ""
 
 ORDER_UNKNOWN_LABEL = "Unknown (fix later)"
+ORDER_OTHER_LABEL = "Other (type manually)"
 
 TARGET_RATIO = 3 / 2
 RATIO_TOLERANCE = 0.02
@@ -134,15 +136,40 @@ def parse_lay_report(pdf_bytes):
     return title, [{"heading": s["heading"], "body": " ".join(s["body"])} for s in sections], None
 
 
-def find_technical_ref(common_name, lay_filename):
+def find_technical_pdf_path(common_name, lay_filename):
     """Look for the sibling technical PDF (same name minus "-la") in Dudus/<common_name>/, per
-    the naming convention every existing report follows. Empty string (not None — the schema
-    doesn't allow null here) if this machine has no Dudus/ checkout or no match is found."""
+    the naming convention every existing report follows. None if this machine has no Dudus/
+    checkout or no match is found."""
     technical_filename = lay_filename.replace("-la.pdf", ".pdf")
     if technical_filename == lay_filename:
-        return ""
+        return None
     candidate = DUDUS_ROOT / common_name / technical_filename
-    return f"{common_name}/{technical_filename}" if candidate.exists() else ""
+    return candidate if candidate.exists() else None
+
+
+def find_technical_ref(common_name, lay_filename):
+    """String form of find_technical_pdf_path for source_report_ref — empty string (not None,
+    the schema doesn't allow null here) if there's no match."""
+    path = find_technical_pdf_path(common_name, lay_filename)
+    return f"{common_name}/{path.name}" if path else ""
+
+
+def guess_order_from_technical(technical_path):
+    """
+    Every technical report states the taxonomic order in prose during its "Taxonomy and
+    Classification" section (e.g. "Order Hemiptera", "belong to Order Araneae") — consistent
+    enough across the corpus to regex for, though it's a heuristic over free text, not a
+    structured field. Returns the most common match, or None if the file is missing or the
+    pattern isn't found (caller falls back to manual entry either way).
+    """
+    if not technical_path:
+        return None
+    doc = fitz.open(str(technical_path))
+    text = "\n".join(page.get_text() for page in doc)
+    matches = re.findall(r"\bOrder\s+([A-Z][a-zA-Z]+)\b", text)
+    if not matches:
+        return None
+    return Counter(matches).most_common(1)[0][0]
 
 
 def order_card(card):
@@ -335,6 +362,44 @@ def do_publish(files, commit_message, pr_title, pr_body):
         return published
 
 
+def order_picker(key_prefix, known_orders, detected_order):
+    """
+    Selectbox over orders already in use, plus "Unknown" and a manual write-in — because a
+    genuinely new order (like Phasmatodea for the first stick insect card) won't be in
+    `known_orders` yet, and a dropdown alone can't offer something not already in the data.
+    Pre-selects `detected_order` (from guess_order_from_technical) when there is one: exactly if
+    it's already a known order, or pre-fills the write-in field with it otherwise so the admin
+    only has to confirm, not retype.
+    """
+    options = known_orders + [ORDER_UNKNOWN_LABEL, ORDER_OTHER_LABEL]
+    if detected_order and detected_order in known_orders:
+        default_index = known_orders.index(detected_order)
+    elif detected_order:
+        default_index = len(known_orders) + 1  # ORDER_OTHER_LABEL
+    else:
+        default_index = len(known_orders)  # ORDER_UNKNOWN_LABEL
+
+    # Keyed on detected_order too, not just key_prefix: st.selectbox only honours a fresh
+    # `index=` the first time a given key renders — a new PDF upload landing on the *same* key
+    # (e.g. detected_order going from None to "Phasmatodea") would otherwise keep showing
+    # whatever the first render defaulted to, same class of bug fixed earlier for text_input.
+    choice = st.selectbox(
+        "Order", options, index=default_index, key=f"{key_prefix}_order_select_{detected_order}"
+    )
+    if detected_order and choice == ORDER_OTHER_LABEL:
+        st.caption(f"Detected from the technical report: `{detected_order}`")
+    if choice == ORDER_OTHER_LABEL:
+        manual = st.text_input(
+            "Order (manual entry)",
+            value=detected_order or "",
+            key=f"{key_prefix}_order_manual_{detected_order}",
+        )
+        return manual.strip() or None
+    if choice == ORDER_UNKNOWN_LABEL:
+        return None
+    return choice
+
+
 st.set_page_config(page_title="dudus-app intake", layout="wide")
 st.title("dudus-app admin intake")
 st.caption(
@@ -386,9 +451,12 @@ with tab_new:
             st.warning(photo_warning)
 
     st.subheader("Order")
-    order_choice = st.selectbox(
-        "Order", known_orders + [ORDER_UNKNOWN_LABEL], index=len(known_orders), key="new_order"
-    )
+    detected_order = None
+    if parsed_title and lay_report is not None:
+        detected_order = guess_order_from_technical(
+            find_technical_pdf_path(parsed_title, lay_report.name)
+        )
+    resolved_order = order_picker("new", known_orders, detected_order)
 
     st.caption(
         "Everything else (scientific name, family, taxon rank, sourcing) has no edit UI yet — "
@@ -426,7 +494,7 @@ with tab_new:
                     "common_name": parsed_title,
                     "scientific_name": None,
                     "family": None,
-                    "order": None if order_choice == ORDER_UNKNOWN_LABEL else order_choice,
+                    "order": resolved_order,
                     "taxon_rank": DEFAULT_TAXON_RANK,
                     "sourcing": DEFAULT_SOURCING,
                     "sections": parsed_sections,
@@ -576,8 +644,9 @@ with tab_batch:
 
     st.subheader("Add multiple cards")
     st.caption(
-        "Each PDF publishes as its own PR, one after another — a bad one won't block the "
-        "others, but it also isn't any faster in total than doing them one at a time."
+        "The whole batch publishes as a single PR — one CI run instead of one per card, at the "
+        "cost that a single failed check blocks every card in the batch together, not just the "
+        "one that broke something."
     )
     batch_cards_now = load_cards()
     known_orders_batch = sorted({c["order"] for c in batch_cards_now if c["order"]})
@@ -615,12 +684,10 @@ with tab_batch:
 
                 col_a, col_b = st.columns(2)
                 with col_a:
-                    order_choice = st.selectbox(
-                        "Order",
-                        known_orders_batch + [ORDER_UNKNOWN_LABEL],
-                        index=len(known_orders_batch),
-                        key=f"batch_order_{i}",
+                    detected_order = guess_order_from_technical(
+                        find_technical_pdf_path(title, f.name)
                     )
+                    resolved_order = order_picker(f"batch_{i}", known_orders_batch, detected_order)
                 with col_b:
                     photo_file = st.file_uploader(
                         "Photo (optional)", type=["jpg", "jpeg", "png"], key=f"batch_photo_{i}"
@@ -637,7 +704,7 @@ with tab_batch:
                         "title": title,
                         "sections": sections,
                         "card_id": card_id,
-                        "order_choice": order_choice,
+                        "order": resolved_order,
                         "photo_file": photo_file,
                         "lay_filename": f.name,
                     }
@@ -648,13 +715,13 @@ with tab_batch:
         st.caption(f"{len(valid_batch_rows)} of {len(batch_rows)} ready to publish.")
 
     if st.button("Publish batch", type="primary", disabled=not valid_batch_rows):
-        outcomes = []
+        cards = load_cards()
+        publish_files = {}
+        added = []
+        skipped = []
         for row in valid_batch_rows:
-            st.write(f"### {row['title']}")
-            cards = load_cards()
             if any(c["id"] == row["card_id"] for c in cards):
-                st.warning(f"Skipped — '{row['card_id']}' already exists (published elsewhere just now).")
-                outcomes.append((row["card_id"], False))
+                skipped.append(row["card_id"])
                 continue
 
             photo_ref = None
@@ -662,6 +729,7 @@ with tab_batch:
                 img, _ = process_photo(row["photo_file"])
                 ext = "png" if row["photo_file"].type == "image/png" else "jpg"
                 photo_ref = save_photo(img, row["card_id"], ext)
+                publish_files[f"public{photo_ref}"] = (PHOTOS_DIR / Path(photo_ref).name).read_bytes()
 
             new_card = order_card(
                 {
@@ -669,7 +737,7 @@ with tab_batch:
                     "common_name": row["title"],
                     "scientific_name": None,
                     "family": None,
-                    "order": None if row["order_choice"] == ORDER_UNKNOWN_LABEL else row["order_choice"],
+                    "order": row["order"],
                     "taxon_rank": DEFAULT_TAXON_RANK,
                     "sourcing": DEFAULT_SOURCING,
                     "sections": row["sections"],
@@ -683,26 +751,34 @@ with tab_batch:
                 }
             )
             cards.append(new_card)
-            save_cards(cards)
+            added.append(f"{row['title']} ({row['card_id']})")
 
-            publish_files = {"src/data/card_index.json": serialize_cards(cards)}
-            if photo_ref:
-                publish_files[f"public{photo_ref}"] = (PHOTOS_DIR / Path(photo_ref).name).read_bytes()
+        for card_id in skipped:
+            st.warning(f"Skipped — '{card_id}' already exists (published elsewhere just now).")
+
+        st.session_state.batch_lay_uploader_version += 1
+        if added:
+            save_cards(cards)
+            publish_files["src/data/card_index.json"] = serialize_cards(cards)
             ok = do_publish(
                 publish_files,
-                commit_message=f"Add card: {row['title']} ({row['card_id']})",
-                pr_title=f"Add card: {row['title']}",
-                pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34/#40).",
+                commit_message="Add cards: " + ", ".join(added),
+                pr_title=f"Add {len(added)} card(s): " + ", ".join(added),
+                pr_body=(
+                    "Automated content-only PR from tools/dudu-intake — no version bump "
+                    f"(see #34/#40). Adds: {', '.join(added)}."
+                ),
             )
-            outcomes.append((row["card_id"], ok))
-
-        succeeded = sum(1 for _, ok in outcomes if ok)
-        st.session_state.batch_lay_uploader_version += 1
-        st.session_state.batch_message = f"Batch add: {succeeded}/{len(outcomes)} published."
+            st.session_state.batch_message = (
+                f"Batch add: {'published' if ok else 'not published'} ({len(added)} card(s))."
+            )
+        else:
+            st.session_state.batch_message = "Nothing to publish — every card already existed."
         st.rerun()
 
     st.divider()
     st.subheader("Remove multiple cards")
+    st.caption("The whole batch publishes as a single PR, same tradeoff as adding.")
 
     removal_candidates = load_cards()
     selected_for_removal = [
@@ -716,32 +792,36 @@ with tab_batch:
             key="confirm_batch_delete",
         )
         if st.button("Delete selected cards", disabled=not confirm_batch_delete):
-            outcomes = []
+            cards = load_cards()
+            publish_files = {}
+            removed = []
+            selected_ids = {t["id"] for t in selected_for_removal}
             for target in selected_for_removal:
-                st.write(f"### {target['common_name']}")
-                cards = load_cards()
                 card = next((c for c in cards if c["id"] == target["id"]), None)
                 if card is None:
                     st.warning(f"Skipped — '{target['id']}' no longer exists (removed elsewhere just now).")
-                    outcomes.append((target["id"], False))
                     continue
+                if card["photo_ref"]:
+                    delete_photo(card["photo_ref"])
+                    publish_files[f"public{card['photo_ref']}"] = None
+                removed.append(f"{card['common_name']} ({card['id']})")
 
-                old_photo_ref = card["photo_ref"]
-                delete_photo(old_photo_ref)
-                remaining = [c for c in cards if c["id"] != card["id"]]
+            if removed:
+                remaining = [c for c in cards if c["id"] not in selected_ids]
                 save_cards(remaining)
-
-                publish_files = {"src/data/card_index.json": serialize_cards(remaining)}
-                if old_photo_ref:
-                    publish_files[f"public{old_photo_ref}"] = None
+                publish_files["src/data/card_index.json"] = serialize_cards(remaining)
                 ok = do_publish(
                     publish_files,
-                    commit_message=f"Delete card: {card['common_name']} ({card['id']})",
-                    pr_title=f"Delete card: {card['common_name']}",
-                    pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34/#40).",
+                    commit_message="Delete cards: " + ", ".join(removed),
+                    pr_title=f"Delete {len(removed)} card(s): " + ", ".join(removed),
+                    pr_body=(
+                        "Automated content-only PR from tools/dudu-intake — no version bump "
+                        f"(see #34/#40). Removes: {', '.join(removed)}."
+                    ),
                 )
-                outcomes.append((card["id"], ok))
-
-            succeeded = sum(1 for _, ok in outcomes if ok)
-            st.session_state.batch_message = f"Batch delete: {succeeded}/{len(outcomes)} published."
+                st.session_state.batch_message = (
+                    f"Batch delete: {'published' if ok else 'not published'} ({len(removed)} card(s))."
+                )
+            else:
+                st.session_state.batch_message = "Nothing to publish — no selected card still existed."
             st.rerun()
