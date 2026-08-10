@@ -180,56 +180,6 @@
     "reviewed_at": "2026-08-07"
   },
   {
-    "id": "stick-insects",
-    "common_name": "Stick Insects",
-    "scientific_name": null,
-    "family": "Diapheromeridae",
-    "order": "Phasmatodea",
-    "taxon_rank": "genus",
-    "sourcing": "/dudusonline",
-    "sections": [
-      {
-        "heading": "What Are They?",
-        "body": "Stick insects (order Phasmatodea) are a worldwide group of over 3,600 known species whose slender bodies and thin legs let them pass as twigs, as seen in a specimen photographed among Acacia thorns in Kenya. The genus most likely responsible for this Acacia camouflage in East Africa is Bactrododema, large spiny stick insects formerly classified under the name Palophus before that name was folded into Bactrododema in 2005, though some databases still disagree on the correct name."
-      },
-      {
-        "heading": "What Do They Look Like?",
-        "body": "Stick insects have long cylindrical bodies, thin legs, and usually reduced or absent wings, with simple chewing mouthparts and long thread-like antennae, and their main defence is simply not being seen. In one newly described southern African species, Macynia mcgregororum, females (73-84 mm) are noticeably larger than males (57-64 mm) and carry pale bumpy tubercles the males lack; some species also carry internal chemical-spray glands that CT scans show vary greatly in size and shape across the order."
-      },
-      {
-        "heading": "How Do They Live?",
-        "body": "Stick insects develop through a simple egg-nymph-adult life cycle without a caterpillar stage or cocoon, and in several species females can reproduce without mating, as in the well-studied Indian walking stick, whose eggs take 10-12 weeks to hatch. All stick insects are strict plant-eaters, and the Acacia-associated genus Bactrododema appears to feed specifically on Acacia foliage, though the underlying diet research was behind a paywall and so is noted as well-supported but not fully double-checked."
-      },
-      {
-        "heading": "The Ultimate Game of Pretend",
-        "body": "Beyond looking like a stick, many species sway gently to mimic a twig moving in the wind, and if grabbed by a predator, some can snap off a trapped leg at a weak point to escape, later regrowing it slightly smaller than before. Some species also release a foul-smelling chemical spray from thoracic glands when threatened."
-      },
-      {
-        "heading": "A Kenyan Detective Story",
-        "body": "Museum specimens of Bactrododema collected near Lake Turkana in 1905 and Taveta in 1912 are echoed by modern iNaturalist sightings of the same genus in Laikipia and Narok counties in 2024, with other Kenyan records spanning Mount Elgon, Kitale, Isiolo, Tsavo, Amboseli, and the coast near Kilifi and Kwale. This suggests these camouflaged insects have persisted across a wide stretch of Kenya for over a century, largely unnoticed."
-      },
-      {
-        "heading": "Are They Pests? Are They Useful?",
-        "body": "Available scientific literature shows no evidence of stick insects being pests in Kenya or anywhere in Africa, unlike well-documented outbreaks elsewhere such as North America, Australia, Pacific islands, China, Colombia, and India. The only African mention found was an introduced pet-trade species causing a minor nuisance in South African gardens, though the report notes the absence of evidence may simply reflect a lack of study."
-      },
-      {
-        "heading": "How Do People Deal With Outbreaks (Elsewhere)?",
-        "body": "Where stick insects have become pests outside Africa, control methods have included parasitic wasps and flies, general predators, insecticides (some now recognised as environmentally harmful and largely abandoned), sticky trunk bands, smoking palm fronds, and clearing ground litter to expose eggs. For small-scale nuisances like an unwanted pet stick insect, the simplest approach is picking them off by hand and freezing any eggs for a week."
-      },
-      {
-        "heading": "Notable Facts",
-        "body": "The first stick insect formally named in this African group, Palophus centaurus (now Bactrododema centaurum), was described from a specimen collected in Old Calabar, Nigeria, not East or southern Africa. The world's longest known insect overall is a stick insect, Chan's Megastick, whose type specimen is held at the Natural History Museum in London, and a regrown leg always emerges slightly smaller than the original, serving as a permanent record of an escaped predator attack."
-      }
-    ],
-    "source_report_ref": {
-      "technical": "Stick Insects/si-web.pdf",
-      "lay": "Stick Insects/si-web-la.pdf"
-    },
-    "photo_ref": "/photos/stick-insects.jpg",
-    "reviewed_by": "claude (spot-check review pass, dudus-app#3)",
-    "reviewed_at": "2026-08-07"
-  },
-  {
     "id": "aedes-mosquitoes",
     "common_name": "Aedes Mosquitoes",
     "scientific_name": null,
