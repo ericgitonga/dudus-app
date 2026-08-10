@@ -584,5 +584,27 @@
     "photo_ref": "/photos/aedes-mosquitoes.jpg",
     "reviewed_by": null,
     "reviewed_at": null
+  },
+  {
+    "id": "card-processing-test-58",
+    "common_name": "Card Processing Test 58",
+    "scientific_name": null,
+    "family": null,
+    "order": null,
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Is It?",
+        "body": "A throwaway test species used to validate the Card Processing consolidation (issue 58)."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "",
+      "lay": "Card Processing Test 58/card-processing-test-58-la.pdf"
+    },
+    "photo_ref": null,
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
