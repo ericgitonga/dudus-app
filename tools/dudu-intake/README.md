@@ -1,8 +1,8 @@
 # dudu intake tool
 
-Local-only admin tool for adding a new card to `src/data/card_index.json` (with an optional
-photo) and for adding/replacing/removing an existing card's photo. Scoped in #15, built in
-#31/#32, connected to the live site in #34.
+Local-only admin tool for adding, updating, and deleting cards in `src/data/card_index.json` and
+their photos. Scoped in #15, built in #31/#32, connected to the live site in #34, consolidated
+into a single "Card Processing" page in #58.
 
 **Not part of the deployed app.** Nothing under `tools/` is imported by the Next.js app or
 referenced by its build config — this only runs when you start it yourself, on your own
@@ -21,40 +21,33 @@ Dependencies (`streamlit`, `pillow`, `pymupdf`) live in the `ds` conda environme
 
 ## What it does
 
-- **Add new card** — exactly three inputs:
-  1. **Lay report PDF** (from an already-completed `/dudus` or `/dudusonline` pass — this tool
-     doesn't research anything itself, Constraint 1 on #15). Parsed directly with PyMuPDF: the
-     report's own title becomes `common_name`/`id`, each bold heading starts a new section, and
-     the regular-weight text under it becomes that section's body — mirroring exactly how
-     `md_to_pdf_rl.py` styles H1/H2/body when it originally generated the PDF. A leading "The/A/An"
-     is stripped from the title (some reports phrase it as a sentence; no existing common name
-     starts with an article). `source_report_ref.lay` is set from the filename; the sibling
-     technical PDF (same name minus `-la`) is looked up automatically in `Dudus/<CommonName>/`
-     on this machine and used for `source_report_ref.technical` if found.
-  2. **Photo** (optional) — unchanged: EXIF/GPS-stripped, orientation-corrected, padded to 3:2.
-  3. **Order** — dropdown of orders already in use, plus "Unknown (fix later)" → `null` (same
-     "Order not yet identified" grouping the site already falls back to for unclassified cards),
-     plus a write-in "Other (type manually)" option for an order not yet in the dropdown. When a
-     technical report exists locally (`Dudus/<CommonName>/`), its stated order (every technical
-     report says "Order X" somewhere in its Taxonomy and Classification section) is auto-detected
-     and pre-selected — or pre-fills the write-in field if it's a genuinely new order.
+One page, "Card Processing" (#58) — no tabs, no single-card add form. Three sections top to
+bottom:
 
-  `scientific_name`, `family`, `taxon_rank` (defaults to `"species"`), and `sourcing` (left
-  blank) have no edit UI yet — only photos do — so they land as clear placeholders, not guesses.
-- **Existing cards** (#52): lists every card with its current photo (or "no photo yet"), with a
-  photo uploader, a lay-report-replace uploader, and an order picker (same auto-detect/write-in
-  as above, defaulting to the card's current order) all behind **one "Update" button** — submit
-  any combination and only that combination gets applied, in a single "Update card: X" PR.
-  Replacing the lay report re-parses it the same way "Add new card" does (`common_name`/
-  `sections`/`source_report_ref`), leaving `id`/`photo_ref`/`order`/other metadata untouched
-  unless also changed in the same click, and clears `reviewed_by`/`reviewed_at` since the old
-  review no longer describes new content. "Remove photo" and "Delete card permanently" stay as
-  their own separate, confirm-gated actions.
-- **Batch** (#40): add several cards (multi-file lay-report upload, each with its own order/photo,
-  same auto-detection as above) or delete several existing cards (checkboxes) in one queued
-  session. The whole batch publishes as a **single combined PR** — one CI run instead of one per
-  card, at the cost that a failed check blocks every card in that batch together rather than
-  isolating the failure (an explicit preference, after trying one-PR-per-card first).
+- **Add cards** (#40) — multi-file lay-report upload, the *only* way to add a card, even one at
+  a time. Each PDF is parsed independently with PyMuPDF: the report's own title becomes
+  `common_name`/`id`, each bold heading starts a new section, and the regular-weight text under
+  it becomes that section's body — mirroring exactly how `md_to_pdf_rl.py` styles H1/H2/body when
+  it originally generated the PDF. A leading "The/A/An" is stripped from the title. Each row gets
+  its own optional photo and an order picker: a dropdown of orders already in use, plus "Unknown
+  (fix later)" → `null`, plus a write-in "Other (type manually)" for a genuinely new order — every
+  technical report states its order in prose ("Order X" in its Taxonomy and Classification
+  section), auto-detected from the sibling technical PDF in `Dudus/<CommonName>/` when present,
+  pre-selecting or pre-filling accordingly. Duplicate ids (already live, or repeated within the
+  batch) are caught before publishing. The whole batch publishes as **one combined PR** — one CI
+  run instead of one per card, at the cost that a failed check blocks every card in that batch
+  together. `scientific_name`, `family`, `taxon_rank` (defaults `"species"`), and `sourcing`
+  (left blank) have no edit UI yet, so they land as clear placeholders, not guesses.
+- **Existing cards** (#52) — lists every card with its current photo, a photo uploader, a
+  lay-report-replace uploader, and an order picker, all behind **one "Update" button**: submit
+  any combination of the three and only that combination is applied, as a single "Update card: X"
+  PR. Replacing the lay report re-parses it the same way as adding, leaving `id`/`photo_ref`/
+  `order`/other metadata untouched unless also changed in the same click, and clears
+  `reviewed_by`/`reviewed_at` since the old review no longer describes new content. "Remove
+  photo" and "Delete card permanently" stay as their own separate, confirm-gated destructive
+  actions, not folded into "Update".
+- **Remove multiple cards** (#40) — checkboxes over the same card list, one confirm step, one
+  combined-PR delete.
 
 ## Publishing to the live site
 

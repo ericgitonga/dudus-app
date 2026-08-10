@@ -407,490 +407,376 @@ st.caption(
     "/dudusonline), not for researching a species itself."
 )
 
-tab_new, tab_existing, tab_batch = st.tabs(["Add new card", "Existing cards", "Batch"])
+st.header("Card Processing")
+st.caption(
+    "Adding, updating, and deleting cards all happen here. Adding is batch-only — "
+    "there is no single-card add form."
+)
 
-with tab_new:
-    if "new_card_message" in st.session_state:
-        st.success(st.session_state.pop("new_card_message"))
+if "batch_message" in st.session_state:
+    st.success(st.session_state.pop("batch_message"))
+if "existing_card_message" in st.session_state:
+    st.success(st.session_state.pop("existing_card_message"))
 
-    st.session_state.setdefault("photo_uploader_version", 0)
-    st.session_state.setdefault("lay_report_uploader_version", 0)
+st.session_state.setdefault("batch_lay_uploader_version", 0)
 
-    existing_cards = load_cards()
-    known_orders = sorted({c["order"] for c in existing_cards if c["order"]})
+st.subheader("Add cards")
+st.caption(
+    "The whole batch publishes as a single PR — one CI run instead of one per card, at the "
+    "cost that a single failed check blocks every card in the batch together, not just the "
+    "one that broke something."
+)
+batch_cards_now = load_cards()
+known_orders_batch = sorted({c["order"] for c in batch_cards_now if c["order"]})
 
-    st.subheader("Lay report")
-    lay_report = st.file_uploader(
-        "Upload the lay-audience PDF (from /dudus or /dudusonline)",
-        type=["pdf"],
-        key=f"new_lay_report_{st.session_state.lay_report_uploader_version}",
-    )
-    parsed_title, parsed_sections, parse_error = None, [], None
-    if lay_report is not None:
-        parsed_title, parsed_sections, parse_error = parse_lay_report(lay_report.getvalue())
-        if parse_error:
-            st.error(parse_error)
-        else:
-            st.success(f"Parsed '{parsed_title}' — {len(parsed_sections)} section(s).")
-            with st.expander("Preview parsed sections"):
-                for s in parsed_sections:
-                    st.markdown(f"**{s['heading']}**")
-                    st.write(s["body"])
+batch_files = st.file_uploader(
+    "Upload multiple lay-audience PDFs",
+    type=["pdf"],
+    accept_multiple_files=True,
+    key=f"batch_lay_reports_{st.session_state.batch_lay_uploader_version}",
+)
 
-    st.subheader("Photo")
-    uploaded_photo = st.file_uploader(
-        "Upload a pre-cropped photo (optional)",
-        type=["jpg", "jpeg", "png"],
-        key=f"new_photo_{st.session_state.photo_uploader_version}",
-    )
-    preview_img, photo_warning = (None, None)
-    if uploaded_photo is not None:
-        preview_img, photo_warning = process_photo(uploaded_photo)
-        st.image(preview_img, caption="After metadata strip + 3:2 pad", width=400)
-        if photo_warning:
-            st.warning(photo_warning)
+batch_rows = []
+seen_ids_this_batch = set()
+if batch_files:
+    for i, f in enumerate(batch_files):
+        title, sections, parse_err = parse_lay_report(f.getvalue())
+        with st.container(border=True):
+            st.write(f"**{f.name}**")
+            if parse_err:
+                st.error(parse_err)
+                batch_rows.append({"error": parse_err})
+                continue
 
-    st.subheader("Order")
-    detected_order = None
-    if parsed_title and lay_report is not None:
-        detected_order = guess_order_from_technical(
-            find_technical_pdf_path(parsed_title, lay_report.name)
-        )
-    resolved_order = order_picker("new", known_orders, detected_order)
+            card_id = slugify(title)
+            dup_err = None
+            if any(c["id"] == card_id for c in batch_cards_now):
+                dup_err = f"id '{card_id}' already exists on the live site."
+            elif card_id in seen_ids_this_batch:
+                dup_err = f"id '{card_id}' is duplicated within this batch."
+            seen_ids_this_batch.add(card_id)
 
-    st.caption(
-        "Everything else (scientific name, family, taxon rank, sourcing) has no edit UI yet — "
-        "left as placeholder values for now, to fill in by hand until that exists."
-    )
+            st.caption(f"Parsed '{title}' — {len(sections)} section(s).")
+            if dup_err:
+                st.error(dup_err)
 
-    st.divider()
-    if st.button("Create card", type="primary"):
-        errors = []
-        if lay_report is None:
-            errors.append("A lay report PDF is required.")
-        elif parse_error:
-            errors.append(parse_error)
-
-        card_id = None
-        if parsed_title:
-            card_id = slugify(parsed_title)
-            if not card_id:
-                errors.append(f"Couldn't derive a usable id from title '{parsed_title}'.")
-            elif any(c["id"] == card_id for c in existing_cards):
-                errors.append(f"A card with id '{card_id}' already exists (from title '{parsed_title}').")
-
-        if errors:
-            for e in errors:
-                st.error(e)
-        else:
-            photo_ref = None
-            if uploaded_photo is not None:
-                ext = "png" if uploaded_photo.type == "image/png" else "jpg"
-                photo_ref = save_photo(preview_img, card_id, ext)
-
-            new_card = order_card(
-                {
-                    "id": card_id,
-                    "common_name": parsed_title,
-                    "scientific_name": None,
-                    "family": None,
-                    "order": resolved_order,
-                    "taxon_rank": DEFAULT_TAXON_RANK,
-                    "sourcing": DEFAULT_SOURCING,
-                    "sections": parsed_sections,
-                    "source_report_ref": {
-                        "technical": find_technical_ref(parsed_title, lay_report.name),
-                        "lay": f"{parsed_title}/{lay_report.name}",
-                    },
-                    "photo_ref": photo_ref,
-                    "reviewed_by": None,
-                    "reviewed_at": None,
-                }
-            )
-            existing_cards.append(new_card)
-            save_cards(existing_cards)
-
-            publish_files = {"src/data/card_index.json": serialize_cards(existing_cards)}
-            if photo_ref:
-                publish_files[f"public{photo_ref}"] = (PHOTOS_DIR / Path(photo_ref).name).read_bytes()
-            do_publish(
-                publish_files,
-                commit_message=f"Add card: {parsed_title} ({card_id})",
-                pr_title=f"Add card: {parsed_title}",
-                pr_body=f"Automated content-only PR from tools/dudu-intake — no version bump (see #34). Adds '{parsed_title}' ({card_id}).",
-            )
-
-            st.session_state.photo_uploader_version += 1
-            st.session_state.lay_report_uploader_version += 1
-            # st.rerun() below aborts this script run immediately, so a message shown here would
-            # never actually reach the browser — stash it and show it after the rerun instead.
-            st.session_state.new_card_message = f"Added '{parsed_title}' ({card_id}) to card_index.json."
-            st.rerun()
-
-with tab_existing:
-    if "existing_card_message" in st.session_state:
-        st.success(st.session_state.pop("existing_card_message"))
-
-    cards = load_cards()
-    known_orders_existing = sorted({c["order"] for c in cards if c["order"]})
-    if not cards:
-        st.info("No cards yet.")
-    for card in cards:
-        with st.expander(f"{card['common_name']} ({card['id']})"):
-            left, right = st.columns([1, 2])
-            with left:
-                if card["photo_ref"]:
-                    photo_path = REPO_ROOT / "public" / card["photo_ref"].lstrip("/")
-                    if photo_path.exists():
-                        st.image(str(photo_path), width=250)
-                    else:
-                        st.warning(f"photo_ref set but file missing: {card['photo_ref']}")
-                else:
-                    st.write("No photo yet.")
-
-            with right:
-                replacement = st.file_uploader(
-                    "Add / replace photo",
-                    type=["jpg", "jpeg", "png"],
-                    key=f"upload_{card['id']}",
+            col_a, col_b = st.columns(2)
+            with col_a:
+                detected_order = guess_order_from_technical(
+                    find_technical_pdf_path(title, f.name)
                 )
-                new_img = None
-                if replacement is not None:
-                    new_img, warn = process_photo(replacement)
-                    st.image(new_img, caption="After metadata strip + 3:2 pad", width=300)
+                resolved_order = order_picker(f"batch_{i}", known_orders_batch, detected_order)
+            with col_b:
+                photo_file = st.file_uploader(
+                    "Photo (optional)", type=["jpg", "jpeg", "png"], key=f"batch_photo_{i}"
+                )
+                if photo_file is not None:
+                    preview, warn = process_photo(photo_file)
+                    st.image(preview, caption="After metadata strip + 3:2 pad", width=250)
                     if warn:
                         st.warning(warn)
 
-                if card["photo_ref"]:
-                    confirm = st.checkbox("Confirm removal", key=f"confirm_{card['id']}")
-                    if st.button(
-                        "Remove photo", key=f"remove_{card['id']}", disabled=not confirm
-                    ):
-                        old_photo_ref = card["photo_ref"]
-                        delete_photo(old_photo_ref)
-                        card["photo_ref"] = None
-                        save_cards(cards)
-
-                        do_publish(
-                            {
-                                "src/data/card_index.json": serialize_cards(cards),
-                                f"public{old_photo_ref}": None,
-                            },
-                            commit_message=f"Remove photo: {card['common_name']} ({card['id']})",
-                            pr_title=f"Remove photo: {card['common_name']}",
-                            pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34).",
-                        )
-
-                        st.session_state.existing_card_message = f"Photo removed for {card['common_name']}."
-                        st.rerun()
-
-            st.divider()
-            st.write("**Update content from a corrected/revised report**")
-            content_update = st.file_uploader(
-                "Replace lay report",
-                type=["pdf"],
-                key=f"content_update_{card['id']}",
+            batch_rows.append(
+                {
+                    "error": dup_err,
+                    "title": title,
+                    "sections": sections,
+                    "card_id": card_id,
+                    "order": resolved_order,
+                    "photo_file": photo_file,
+                    "lay_filename": f.name,
+                }
             )
-            new_title, new_sections, content_parse_err = None, None, None
-            if content_update is not None:
-                new_title, new_sections, content_parse_err = parse_lay_report(content_update.getvalue())
-                if content_parse_err:
-                    st.error(content_parse_err)
+
+valid_batch_rows = [r for r in batch_rows if not r["error"]]
+if batch_rows:
+    st.caption(f"{len(valid_batch_rows)} of {len(batch_rows)} ready to publish.")
+
+if st.button("Publish batch", type="primary", disabled=not valid_batch_rows):
+    cards = load_cards()
+    publish_files = {}
+    added = []
+    skipped = []
+    for row in valid_batch_rows:
+        if any(c["id"] == row["card_id"] for c in cards):
+            skipped.append(row["card_id"])
+            continue
+
+        photo_ref = None
+        if row["photo_file"] is not None:
+            img, _ = process_photo(row["photo_file"])
+            ext = "png" if row["photo_file"].type == "image/png" else "jpg"
+            photo_ref = save_photo(img, row["card_id"], ext)
+            publish_files[f"public{photo_ref}"] = (PHOTOS_DIR / Path(photo_ref).name).read_bytes()
+
+        new_card = order_card(
+            {
+                "id": row["card_id"],
+                "common_name": row["title"],
+                "scientific_name": None,
+                "family": None,
+                "order": row["order"],
+                "taxon_rank": DEFAULT_TAXON_RANK,
+                "sourcing": DEFAULT_SOURCING,
+                "sections": row["sections"],
+                "source_report_ref": {
+                    "technical": find_technical_ref(row["title"], row["lay_filename"]),
+                    "lay": f"{row['title']}/{row['lay_filename']}",
+                },
+                "photo_ref": photo_ref,
+                "reviewed_by": None,
+                "reviewed_at": None,
+            }
+        )
+        cards.append(new_card)
+        added.append(f"{row['title']} ({row['card_id']})")
+
+    for card_id in skipped:
+        st.warning(f"Skipped — '{card_id}' already exists (published elsewhere just now).")
+
+    st.session_state.batch_lay_uploader_version += 1
+    if added:
+        save_cards(cards)
+        publish_files["src/data/card_index.json"] = serialize_cards(cards)
+        ok = do_publish(
+            publish_files,
+            commit_message="Add cards: " + ", ".join(added),
+            pr_title=f"Add {len(added)} card(s): " + ", ".join(added),
+            pr_body=(
+                "Automated content-only PR from tools/dudu-intake — no version bump "
+                f"(see #34/#40). Adds: {', '.join(added)}."
+            ),
+        )
+        st.session_state.batch_message = (
+            f"Batch add: {'published' if ok else 'not published'} ({len(added)} card(s))."
+        )
+    else:
+        st.session_state.batch_message = "Nothing to publish — every card already existed."
+    st.rerun()
+
+st.divider()
+st.subheader("Existing cards")
+
+cards = load_cards()
+known_orders_existing = sorted({c["order"] for c in cards if c["order"]})
+if not cards:
+    st.info("No cards yet.")
+for card in cards:
+    with st.expander(f"{card['common_name']} ({card['id']})"):
+        left, right = st.columns([1, 2])
+        with left:
+            if card["photo_ref"]:
+                photo_path = REPO_ROOT / "public" / card["photo_ref"].lstrip("/")
+                if photo_path.exists():
+                    st.image(str(photo_path), width=250)
                 else:
-                    st.success(f"Parsed '{new_title}' — {len(new_sections)} section(s).")
-                    with st.expander("Preview parsed sections"):
-                        for s in new_sections:
-                            st.markdown(f"**{s['heading']}**")
-                            st.write(s["body"])
-                    st.caption(
-                        f"Keeps id (`{card['id']}`), photo, order, and other metadata unchanged — "
-                        "only common_name, sections, and source_report_ref.lay/technical are replaced."
-                    )
+                    st.warning(f"photo_ref set but file missing: {card['photo_ref']}")
+            else:
+                st.write("No photo yet.")
 
-            st.divider()
-            st.write("**Order**")
-            technical_ref = card["source_report_ref"].get("technical")
-            technical_path_existing = None
-            if isinstance(technical_ref, str) and technical_ref:
-                candidate = DUDUS_ROOT / technical_ref
-                technical_path_existing = candidate if candidate.exists() else None
-            order_default = card["order"] or guess_order_from_technical(technical_path_existing)
-            new_order = order_picker(f"existing_{card['id']}", known_orders_existing, order_default)
+        with right:
+            replacement = st.file_uploader(
+                "Add / replace photo",
+                type=["jpg", "jpeg", "png"],
+                key=f"upload_{card['id']}",
+            )
+            new_img = None
+            if replacement is not None:
+                new_img, warn = process_photo(replacement)
+                st.image(new_img, caption="After metadata strip + 3:2 pad", width=300)
+                if warn:
+                    st.warning(warn)
 
-            st.divider()
-            update_blocked = bool(content_update is not None and content_parse_err)
-            if update_blocked:
-                st.error("Fix or remove the lay report above before updating.")
-            if st.button("Update", key=f"update_{card['id']}", type="primary", disabled=update_blocked):
-                changes = []
-                publish_files = {}
-
-                if replacement is not None:
+            if card["photo_ref"]:
+                confirm = st.checkbox("Confirm removal", key=f"confirm_{card['id']}")
+                if st.button(
+                    "Remove photo", key=f"remove_{card['id']}", disabled=not confirm
+                ):
                     old_photo_ref = card["photo_ref"]
                     delete_photo(old_photo_ref)
-                    ext = "png" if replacement.type == "image/png" else "jpg"
-                    card["photo_ref"] = save_photo(new_img, card["id"], ext)
-                    publish_files[f"public{card['photo_ref']}"] = (
-                        PHOTOS_DIR / Path(card["photo_ref"]).name
-                    ).read_bytes()
-                    if old_photo_ref and old_photo_ref != card["photo_ref"]:
-                        publish_files[f"public{old_photo_ref}"] = None
-                    changes.append("photo")
-
-                if content_update is not None and not content_parse_err:
-                    card["common_name"] = new_title
-                    card["sections"] = new_sections
-                    card["source_report_ref"] = {
-                        "technical": find_technical_ref(new_title, content_update.name),
-                        "lay": f"{new_title}/{content_update.name}",
-                    }
-                    # The old review no longer describes this content — stale until re-reviewed.
-                    card["reviewed_by"] = None
-                    card["reviewed_at"] = None
-                    changes.append("content")
-
-                if new_order != card["order"]:
-                    card["order"] = new_order
-                    changes.append("order")
-
-                if not changes:
-                    st.warning("Nothing to update — upload a photo/report or change the order first.")
-                else:
+                    card["photo_ref"] = None
                     save_cards(cards)
-                    publish_files["src/data/card_index.json"] = serialize_cards(cards)
+
                     do_publish(
-                        publish_files,
-                        commit_message=(
-                            f"Update card: {card['common_name']} ({card['id']}) — "
-                            + ", ".join(changes)
-                        ),
-                        pr_title=f"Update card: {card['common_name']}",
-                        pr_body=(
-                            "Automated content-only PR from tools/dudu-intake — no version bump "
-                            f"(see #34/#52). Updated: {', '.join(changes)}."
-                        ),
+                        {
+                            "src/data/card_index.json": serialize_cards(cards),
+                            f"public{old_photo_ref}": None,
+                        },
+                        commit_message=f"Remove photo: {card['common_name']} ({card['id']})",
+                        pr_title=f"Remove photo: {card['common_name']}",
+                        pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34).",
                     )
-                    st.session_state.existing_card_message = (
-                        f"Updated {', '.join(changes)} for {card['common_name']}."
-                    )
+
+                    st.session_state.existing_card_message = f"Photo removed for {card['common_name']}."
                     st.rerun()
 
-            st.divider()
-            confirm_delete = st.checkbox(
-                "Confirm deletion — removes this card and its photo file",
-                key=f"confirm_delete_{card['id']}",
-            )
-            if st.button(
-                "Delete card permanently",
-                key=f"delete_{card['id']}",
-                disabled=not confirm_delete,
-            ):
-                old_photo_ref = card["photo_ref"]
-                delete_photo(old_photo_ref)
-                remaining = [c for c in cards if c["id"] != card["id"]]
-                save_cards(remaining)
-
-                publish_files = {"src/data/card_index.json": serialize_cards(remaining)}
-                if old_photo_ref:
-                    publish_files[f"public{old_photo_ref}"] = None
-                do_publish(
-                    publish_files,
-                    commit_message=f"Delete card: {card['common_name']} ({card['id']})",
-                    pr_title=f"Delete card: {card['common_name']}",
-                    pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34).",
+        st.divider()
+        st.write("**Update content from a corrected/revised report**")
+        content_update = st.file_uploader(
+            "Replace lay report",
+            type=["pdf"],
+            key=f"content_update_{card['id']}",
+        )
+        new_title, new_sections, content_parse_err = None, None, None
+        if content_update is not None:
+            new_title, new_sections, content_parse_err = parse_lay_report(content_update.getvalue())
+            if content_parse_err:
+                st.error(content_parse_err)
+            else:
+                st.success(f"Parsed '{new_title}' — {len(new_sections)} section(s).")
+                with st.expander("Preview parsed sections"):
+                    for s in new_sections:
+                        st.markdown(f"**{s['heading']}**")
+                        st.write(s["body"])
+                st.caption(
+                    f"Keeps id (`{card['id']}`), photo, order, and other metadata unchanged — "
+                    "only common_name, sections, and source_report_ref.lay/technical are replaced."
                 )
 
+        st.divider()
+        st.write("**Order**")
+        technical_ref = card["source_report_ref"].get("technical")
+        technical_path_existing = None
+        if isinstance(technical_ref, str) and technical_ref:
+            candidate = DUDUS_ROOT / technical_ref
+            technical_path_existing = candidate if candidate.exists() else None
+        order_default = card["order"] or guess_order_from_technical(technical_path_existing)
+        new_order = order_picker(f"existing_{card['id']}", known_orders_existing, order_default)
+
+        st.divider()
+        update_blocked = bool(content_update is not None and content_parse_err)
+        if update_blocked:
+            st.error("Fix or remove the lay report above before updating.")
+        if st.button("Update", key=f"update_{card['id']}", type="primary", disabled=update_blocked):
+            changes = []
+            publish_files = {}
+
+            if replacement is not None:
+                old_photo_ref = card["photo_ref"]
+                delete_photo(old_photo_ref)
+                ext = "png" if replacement.type == "image/png" else "jpg"
+                card["photo_ref"] = save_photo(new_img, card["id"], ext)
+                publish_files[f"public{card['photo_ref']}"] = (
+                    PHOTOS_DIR / Path(card["photo_ref"]).name
+                ).read_bytes()
+                if old_photo_ref and old_photo_ref != card["photo_ref"]:
+                    publish_files[f"public{old_photo_ref}"] = None
+                changes.append("photo")
+
+            if content_update is not None and not content_parse_err:
+                card["common_name"] = new_title
+                card["sections"] = new_sections
+                card["source_report_ref"] = {
+                    "technical": find_technical_ref(new_title, content_update.name),
+                    "lay": f"{new_title}/{content_update.name}",
+                }
+                # The old review no longer describes this content — stale until re-reviewed.
+                card["reviewed_by"] = None
+                card["reviewed_at"] = None
+                changes.append("content")
+
+            if new_order != card["order"]:
+                card["order"] = new_order
+                changes.append("order")
+
+            if not changes:
+                st.warning("Nothing to update — upload a photo/report or change the order first.")
+            else:
+                save_cards(cards)
+                publish_files["src/data/card_index.json"] = serialize_cards(cards)
+                do_publish(
+                    publish_files,
+                    commit_message=(
+                        f"Update card: {card['common_name']} ({card['id']}) — "
+                        + ", ".join(changes)
+                    ),
+                    pr_title=f"Update card: {card['common_name']}",
+                    pr_body=(
+                        "Automated content-only PR from tools/dudu-intake — no version bump "
+                        f"(see #34/#52). Updated: {', '.join(changes)}."
+                    ),
+                )
                 st.session_state.existing_card_message = (
-                    f"Deleted '{card['common_name']}' ({card['id']})."
+                    f"Updated {', '.join(changes)} for {card['common_name']}."
                 )
                 st.rerun()
 
-with tab_batch:
-    if "batch_message" in st.session_state:
-        st.success(st.session_state.pop("batch_message"))
+        st.divider()
+        confirm_delete = st.checkbox(
+            "Confirm deletion — removes this card and its photo file",
+            key=f"confirm_delete_{card['id']}",
+        )
+        if st.button(
+            "Delete card permanently",
+            key=f"delete_{card['id']}",
+            disabled=not confirm_delete,
+        ):
+            old_photo_ref = card["photo_ref"]
+            delete_photo(old_photo_ref)
+            remaining = [c for c in cards if c["id"] != card["id"]]
+            save_cards(remaining)
 
-    st.session_state.setdefault("batch_lay_uploader_version", 0)
+            publish_files = {"src/data/card_index.json": serialize_cards(remaining)}
+            if old_photo_ref:
+                publish_files[f"public{old_photo_ref}"] = None
+            do_publish(
+                publish_files,
+                commit_message=f"Delete card: {card['common_name']} ({card['id']})",
+                pr_title=f"Delete card: {card['common_name']}",
+                pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34).",
+            )
 
-    st.subheader("Add multiple cards")
-    st.caption(
-        "The whole batch publishes as a single PR — one CI run instead of one per card, at the "
-        "cost that a single failed check blocks every card in the batch together, not just the "
-        "one that broke something."
+            st.session_state.existing_card_message = (
+                f"Deleted '{card['common_name']}' ({card['id']})."
+            )
+            st.rerun()
+
+st.divider()
+st.subheader("Remove multiple cards")
+st.caption("The whole batch publishes as a single PR, same tradeoff as adding.")
+
+removal_candidates = load_cards()
+selected_for_removal = [
+    c for c in removal_candidates
+    if st.checkbox(f"{c['common_name']} ({c['id']})", key=f"batch_remove_{c['id']}")
+]
+
+if selected_for_removal:
+    confirm_batch_delete = st.checkbox(
+        f"Confirm deletion of {len(selected_for_removal)} card(s) and their photos",
+        key="confirm_batch_delete",
     )
-    batch_cards_now = load_cards()
-    known_orders_batch = sorted({c["order"] for c in batch_cards_now if c["order"]})
-
-    batch_files = st.file_uploader(
-        "Upload multiple lay-audience PDFs",
-        type=["pdf"],
-        accept_multiple_files=True,
-        key=f"batch_lay_reports_{st.session_state.batch_lay_uploader_version}",
-    )
-
-    batch_rows = []
-    seen_ids_this_batch = set()
-    if batch_files:
-        for i, f in enumerate(batch_files):
-            title, sections, parse_err = parse_lay_report(f.getvalue())
-            with st.container(border=True):
-                st.write(f"**{f.name}**")
-                if parse_err:
-                    st.error(parse_err)
-                    batch_rows.append({"error": parse_err})
-                    continue
-
-                card_id = slugify(title)
-                dup_err = None
-                if any(c["id"] == card_id for c in batch_cards_now):
-                    dup_err = f"id '{card_id}' already exists on the live site."
-                elif card_id in seen_ids_this_batch:
-                    dup_err = f"id '{card_id}' is duplicated within this batch."
-                seen_ids_this_batch.add(card_id)
-
-                st.caption(f"Parsed '{title}' — {len(sections)} section(s).")
-                if dup_err:
-                    st.error(dup_err)
-
-                col_a, col_b = st.columns(2)
-                with col_a:
-                    detected_order = guess_order_from_technical(
-                        find_technical_pdf_path(title, f.name)
-                    )
-                    resolved_order = order_picker(f"batch_{i}", known_orders_batch, detected_order)
-                with col_b:
-                    photo_file = st.file_uploader(
-                        "Photo (optional)", type=["jpg", "jpeg", "png"], key=f"batch_photo_{i}"
-                    )
-                    if photo_file is not None:
-                        preview, warn = process_photo(photo_file)
-                        st.image(preview, caption="After metadata strip + 3:2 pad", width=250)
-                        if warn:
-                            st.warning(warn)
-
-                batch_rows.append(
-                    {
-                        "error": dup_err,
-                        "title": title,
-                        "sections": sections,
-                        "card_id": card_id,
-                        "order": resolved_order,
-                        "photo_file": photo_file,
-                        "lay_filename": f.name,
-                    }
-                )
-
-    valid_batch_rows = [r for r in batch_rows if not r["error"]]
-    if batch_rows:
-        st.caption(f"{len(valid_batch_rows)} of {len(batch_rows)} ready to publish.")
-
-    if st.button("Publish batch", type="primary", disabled=not valid_batch_rows):
+    if st.button("Delete selected cards", disabled=not confirm_batch_delete):
         cards = load_cards()
         publish_files = {}
-        added = []
-        skipped = []
-        for row in valid_batch_rows:
-            if any(c["id"] == row["card_id"] for c in cards):
-                skipped.append(row["card_id"])
+        removed = []
+        selected_ids = {t["id"] for t in selected_for_removal}
+        for target in selected_for_removal:
+            card = next((c for c in cards if c["id"] == target["id"]), None)
+            if card is None:
+                st.warning(f"Skipped — '{target['id']}' no longer exists (removed elsewhere just now).")
                 continue
+            if card["photo_ref"]:
+                delete_photo(card["photo_ref"])
+                publish_files[f"public{card['photo_ref']}"] = None
+            removed.append(f"{card['common_name']} ({card['id']})")
 
-            photo_ref = None
-            if row["photo_file"] is not None:
-                img, _ = process_photo(row["photo_file"])
-                ext = "png" if row["photo_file"].type == "image/png" else "jpg"
-                photo_ref = save_photo(img, row["card_id"], ext)
-                publish_files[f"public{photo_ref}"] = (PHOTOS_DIR / Path(photo_ref).name).read_bytes()
-
-            new_card = order_card(
-                {
-                    "id": row["card_id"],
-                    "common_name": row["title"],
-                    "scientific_name": None,
-                    "family": None,
-                    "order": row["order"],
-                    "taxon_rank": DEFAULT_TAXON_RANK,
-                    "sourcing": DEFAULT_SOURCING,
-                    "sections": row["sections"],
-                    "source_report_ref": {
-                        "technical": find_technical_ref(row["title"], row["lay_filename"]),
-                        "lay": f"{row['title']}/{row['lay_filename']}",
-                    },
-                    "photo_ref": photo_ref,
-                    "reviewed_by": None,
-                    "reviewed_at": None,
-                }
-            )
-            cards.append(new_card)
-            added.append(f"{row['title']} ({row['card_id']})")
-
-        for card_id in skipped:
-            st.warning(f"Skipped — '{card_id}' already exists (published elsewhere just now).")
-
-        st.session_state.batch_lay_uploader_version += 1
-        if added:
-            save_cards(cards)
-            publish_files["src/data/card_index.json"] = serialize_cards(cards)
+        if removed:
+            remaining = [c for c in cards if c["id"] not in selected_ids]
+            save_cards(remaining)
+            publish_files["src/data/card_index.json"] = serialize_cards(remaining)
             ok = do_publish(
                 publish_files,
-                commit_message="Add cards: " + ", ".join(added),
-                pr_title=f"Add {len(added)} card(s): " + ", ".join(added),
+                commit_message="Delete cards: " + ", ".join(removed),
+                pr_title=f"Delete {len(removed)} card(s): " + ", ".join(removed),
                 pr_body=(
                     "Automated content-only PR from tools/dudu-intake — no version bump "
-                    f"(see #34/#40). Adds: {', '.join(added)}."
+                    f"(see #34/#40). Removes: {', '.join(removed)}."
                 ),
             )
             st.session_state.batch_message = (
-                f"Batch add: {'published' if ok else 'not published'} ({len(added)} card(s))."
+                f"Batch delete: {'published' if ok else 'not published'} ({len(removed)} card(s))."
             )
         else:
-            st.session_state.batch_message = "Nothing to publish — every card already existed."
+            st.session_state.batch_message = "Nothing to publish — no selected card still existed."
         st.rerun()
-
-    st.divider()
-    st.subheader("Remove multiple cards")
-    st.caption("The whole batch publishes as a single PR, same tradeoff as adding.")
-
-    removal_candidates = load_cards()
-    selected_for_removal = [
-        c for c in removal_candidates
-        if st.checkbox(f"{c['common_name']} ({c['id']})", key=f"batch_remove_{c['id']}")
-    ]
-
-    if selected_for_removal:
-        confirm_batch_delete = st.checkbox(
-            f"Confirm deletion of {len(selected_for_removal)} card(s) and their photos",
-            key="confirm_batch_delete",
-        )
-        if st.button("Delete selected cards", disabled=not confirm_batch_delete):
-            cards = load_cards()
-            publish_files = {}
-            removed = []
-            selected_ids = {t["id"] for t in selected_for_removal}
-            for target in selected_for_removal:
-                card = next((c for c in cards if c["id"] == target["id"]), None)
-                if card is None:
-                    st.warning(f"Skipped — '{target['id']}' no longer exists (removed elsewhere just now).")
-                    continue
-                if card["photo_ref"]:
-                    delete_photo(card["photo_ref"])
-                    publish_files[f"public{card['photo_ref']}"] = None
-                removed.append(f"{card['common_name']} ({card['id']})")
-
-            if removed:
-                remaining = [c for c in cards if c["id"] not in selected_ids]
-                save_cards(remaining)
-                publish_files["src/data/card_index.json"] = serialize_cards(remaining)
-                ok = do_publish(
-                    publish_files,
-                    commit_message="Delete cards: " + ", ".join(removed),
-                    pr_title=f"Delete {len(removed)} card(s): " + ", ".join(removed),
-                    pr_body=(
-                        "Automated content-only PR from tools/dudu-intake — no version bump "
-                        f"(see #34/#40). Removes: {', '.join(removed)}."
-                    ),
-                )
-                st.session_state.batch_message = (
-                    f"Batch delete: {'published' if ok else 'not published'} ({len(removed)} card(s))."
-                )
-            else:
-                st.session_state.batch_message = "Nothing to publish — no selected card still existed."
-            st.rerun()

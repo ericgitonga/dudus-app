@@ -6,6 +6,23 @@ schedule rather than moving in lockstep with site releases. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); [Semantic Versioning](https://semver.org),
 pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*` tags.
 
+## [0.6.0] - 2026-08-10
+
+### Removed
+
+- **Single-card "Add new card" form removed entirely** (#58) — batch add (previously an
+  alternative) is now the only way to add a card, even for one at a time.
+
+### Changed
+
+- **Collapsed the three tabs into one page, "Card Processing"** — no more tab-switching between
+  Add/Existing/Batch. One flowing page: Add cards (batch, now the sole add path), Existing cards
+  (unchanged: single Update button for photo/content/order, delete), Remove multiple cards
+  (unchanged batch delete). Validated end-to-end against the real repo: added and removed a
+  throwaway species through the new layout before considering it done.
+
+tag: `intake-v0.6.0`
+
 ## [0.5.0] - 2026-08-10
 
 ### Added
