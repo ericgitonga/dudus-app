@@ -38,16 +38,18 @@ bottom:
   run instead of one per card, at the cost that a failed check blocks every card in that batch
   together. `scientific_name`, `family`, `taxon_rank` (defaults `"species"`), and `sourcing`
   (left blank) have no edit UI yet, so they land as clear placeholders, not guesses.
-- **Existing cards** (#52) — lists every card with its current photo, a photo uploader, a
-  lay-report-replace uploader, and an order picker, all behind **one "Update" button**: submit
-  any combination of the three and only that combination is applied, as a single "Update card: X"
-  PR. Replacing the lay report re-parses it the same way as adding, leaving `id`/`photo_ref`/
-  `order`/other metadata untouched unless also changed in the same click, and clears
-  `reviewed_by`/`reviewed_at` since the old review no longer describes new content. "Remove
-  photo" and "Delete card permanently" stay as their own separate, confirm-gated destructive
-  actions, not folded into "Update".
-- **Remove multiple cards** (#40) — checkboxes over the same card list, one confirm step, one
-  combined-PR delete.
+- **Existing cards** (#52, #58) — defaults **collapsed**, behind a "Show existing cards" button
+  (the reverse toggles it back to "Hide"). Once shown: every card gets a "Select for deletion"
+  checkbox above its own expander (checkable without opening the card) plus, inside the
+  expander, a photo uploader, a lay-report-replace uploader, and an order picker all behind
+  **one "Update" button** — submit any combination of the three and only that combination is
+  applied, as a single "Update card: X" PR. Replacing the lay report re-parses it the same way
+  as adding, leaving `id`/`photo_ref`/`order`/other metadata untouched unless also changed in the
+  same click, and clears `reviewed_by`/`reviewed_at` since the old review no longer describes new
+  content. "Remove photo" and "Delete card permanently" stay as their own separate, confirm-gated
+  destructive actions, not folded into "Update". After the full card list, checking any
+  "Select for deletion" boxes reveals **one aggregate "Delete selected cards" button** — no
+  separate "Remove multiple cards" section anymore, this replaces it entirely.
 
 ## Publishing to the live site
 

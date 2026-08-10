@@ -16,10 +16,19 @@ pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*
 ### Changed
 
 - **Collapsed the three tabs into one page, "Card Processing"** — no more tab-switching between
-  Add/Existing/Batch. One flowing page: Add cards (batch, now the sole add path), Existing cards
-  (unchanged: single Update button for photo/content/order, delete), Remove multiple cards
-  (unchanged batch delete). Validated end-to-end against the real repo: added and removed a
-  throwaway species through the new layout before considering it done.
+  Add/Existing/Batch. One flowing page: Add cards (batch, now the sole add path), Existing cards,
+  Remove multiple cards.
+- **"Existing cards" now defaults collapsed**, behind a "Show existing cards" button — the full
+  per-card list (photo/content/order Update, individual delete) only renders once shown.
+- **"Remove multiple cards" folded into "Existing cards"** rather than staying a separate
+  section: each card gets a "Select for deletion" checkbox above its own expander (checkable
+  without opening the card), and one aggregate "Delete selected cards" button after the list
+  publishes the whole selection as a single combined PR — same underlying logic as the old
+  standalone section, just without a second duplicate list of card names to scroll through.
+
+Validated end-to-end against the real repo twice: once for the tab consolidation, once for the
+collapse/fold rework — each added then removed a throwaway species through the actual UI before
+considering it done.
 
 tag: `intake-v0.6.0`
 
