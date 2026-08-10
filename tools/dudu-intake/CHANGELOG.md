@@ -6,6 +6,22 @@ schedule rather than moving in lockstep with site releases. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); [Semantic Versioning](https://semver.org),
 pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*` tags.
 
+## [0.2.0] - 2026-08-10
+
+### Added
+
+- Every action (add card, delete card, save/remove photo) now automatically publishes to the
+  live site (#34): commits the touched files in an isolated `git worktree`, pushes, opens a PR,
+  waits for the required `e2e` check, and squash-merges if green. No VERSION/CHANGELOG/tag bump
+  and no separate GitHub issue for these — content-only changes are now explicitly exempt from
+  that ceremony (documented in `ONBOARDING.md`/`SKILL.md`). Failed checks leave the PR open
+  rather than merging. Runs in a throwaway worktree specifically so it never disrupts whatever
+  branch this working directory is actually on. Validated with two real end-to-end publishes
+  (a throwaway marker file, created then removed) before wiring it into real content changes.
+  Long-term direction (card data out of git entirely, for instant updates) tracked in #33.
+
+tag: `intake-v0.2.0`
+
 ## [0.1.0] - 2026-08-09
 
 ### Added

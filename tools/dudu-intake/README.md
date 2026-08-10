@@ -1,7 +1,8 @@
 # dudu intake tool
 
 Local-only admin tool for adding a new card to `src/data/card_index.json` (with an optional
-photo) and for adding/replacing/removing an existing card's photo. Scoped in #15, built in #31.
+photo) and for adding/replacing/removing an existing card's photo. Scoped in #15, built in
+#31/#32, connected to the live site in #34.
 
 **Not part of the deployed app.** Nothing under `tools/` is imported by the Next.js app or
 referenced by its build config — this only runs when you start it yourself, on your own
@@ -40,9 +41,19 @@ Dependencies (`streamlit`, `pillow`, `pymupdf`) live in the `ds` conda environme
   photo add/replace/remove, plus a confirm-gated "Delete card permanently" that removes the card
   entry and its photo file together.
 
-## After using it
+## Publishing to the live site
 
-The tool edits `src/data/card_index.json` and `public/photos/` directly in your working tree.
-Review the diff (`git status` / `git diff`), then commit and open a PR through the normal
-branch → PR → e2e → merge workflow (`ONBOARDING.md`) like any other change — the tool itself
-never commits, pushes, or deploys anything.
+Every action (add card, delete card, save/remove photo) edits `src/data/card_index.json` /
+`public/photos/` in your working tree for instant local feedback, then automatically publishes:
+it creates a real branch, commits just the files that action touched, pushes, opens a PR, waits
+for the required `e2e` check, and squash-merges if green — no VERSION/CHANGELOG/tag bump and no
+separate GitHub issue for this, since it's content rather than a code release (see
+`ONBOARDING.md`'s "automated content publishing" exception). If checks fail, the PR is left open
+instead of merged, with the failure shown in the tool.
+
+This runs entirely in a throwaway `git worktree`, never by checking out a different branch in
+this working directory — so it can't disrupt whatever this checkout is currently doing (e.g. a
+concurrent dev session working on the tool's own code), and it's safe to use even while another
+change is mid-publish. Each publish takes roughly as long as CI does (a minute or two), not
+instant — the eventual instant-update version (card data out of git entirely) is tracked
+separately in #33.
