@@ -484,5 +484,51 @@
     "photo_ref": "/photos/wolf-spiders.jpg",
     "reviewed_by": null,
     "reviewed_at": null
+  },
+  {
+    "id": "crane-flies",
+    "common_name": "Crane Flies",
+    "scientific_name": null,
+    "family": null,
+    "order": "Diptera",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "On a warm summer evening, something large and spindly blunders into your kitchen light, bounces off the ceiling, and lands on the wall in a tangle of improbably long legs. Most people's first instinct is alarm — it looks vaguely like a mosquito scaled up to nightmare proportions. In fact, it's a crane fly, and it is entirely harmless. Its mouthparts are so reduced that it cannot bite, sting, or feed at all. The adult crane fly lives for only a few days and spends most of that brief life doing exactly one thing: finding a mate. Crane flies belong to the family Tipulidae — which, under the broadest count, is the single largest family of flies on Earth, with roughly 14,000 species worldwide. They are found on every continent, in habitats ranging from Arctic tundra to desert margins, from fast-flowing mountain streams to the rotting wood of forest floors."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "The adult is essentially a set of legs held together by a thin brown body. The legs are exceptionally long and break off easily at specialised joints — a feature that may help the fly escape predators who grab a leg rather than the body. The wings are long and narrow; many species hold them out at rest like a biplane's wings. The halteres — the club-shaped structures behind the wings that all flies use as gyroscopes for balance during flight — are notably large in crane flies, proportionally the longest of any fly. In a mosquito, the haltere is about 6% of the forewing length; in a crane fly it exceeds 12%. This makes crane flies particularly nimble fliers, able to track and correct their course with exceptional sensitivity. Two further anatomical oddities set crane flies apart from almost all other flies. First, their eyes lack the crystalline cone that gives most compound eyes their light-focusing ability — an unusual condition shared, among insects, mainly with plant bugs. Second, and most surprisingly, crane flies are the only flies that still have the primitive smooth adhesive pad (arolium) between their claws, which all other flies replaced long ago with a different structure. In this one feature, a crane fly's foot more closely resembles a bee's foot than a housefly's. The largest crane flies are remarkable in scale. The giant tropical genus Ctenacroselis reaches a wingspan of 10 cm — wider than many small birds. The largest North American species, Holorusia rubiginosa, has a 7.5 cm wingspan. Most species, however, are unremarkable brown insects of modest size."
+      },
+      {
+        "heading": "The Hidden Life: Leatherjackets",
+        "body": "While adults are short-lived and fragile, the larvae are tough, long-lived, and surprisingly consequential. Soil-dwelling crane fly larvae are called leatherjackets — and the name is apt. Their skin is thick, brownish-grey, and rubbery, an adaptation to life underground where they spend months or years feeding on plant roots and organic matter. In British pastures and lawns, leatherjackets of Tipula paludosa and Tipula oleracea are serious agricultural pests, damaging turf and grain crops in numbers that can make whole fields go brown. A remarkable 2,000 species of parasitic wasps have been recorded attacking Tipulidae — evidence of just how ecologically embedded, and well-hunted, these larvae are. But not all crane fly larvae live in soil. Aquatic species live in fast-flowing streams, burrowing into leaf packs and waterlogged wood. These underwater larvae are among the most powerful wood-processing insects known: in one documented case, aquatic tipulid larvae fragmented more than 90% of decayed alder wood in a stream in a single year. Others tolerate the most oxygen-depleted micro-habitats that other stream insects cannot — the stagnant water trapped inside old plant bracts where mosquitoes struggle and crane flies thrive."
+      },
+      {
+        "heading": "Breathing Underwater",
+        "body": "Aquatic crane fly larvae have evolved an elegant solution to the problem of breathing without access to the surface. Their breathing pores (spiracles) are lined with a mesh of hydrophobic (water-repelling) hairs that trap a thin film of air. This film acts as a physical gill: oxygen diffuses in from the surrounding water and carbon dioxide diffuses out, continuously refreshing the air supply without the larva ever needing to surface. It is the same principle as the air bubble carried by a diving beetle — but built into the cuticle rather than held by a separate structure. In the pupal stage, some species carry this further, growing elaborate branching gill filaments from their abdominal breathing pores that allow them to remain completely submerged even while transforming from larva to adult — a stage when most insects are entirely helpless and would drown."
+      },
+      {
+        "heading": "Arctic Survivors",
+        "body": "In the High Arctic, where the insect fauna is stripped to the essentials, crane flies are among the last families standing. Nearly a quarter of all Arctic North American crane fly species have reduced or lost their wings entirely — a strategy that saves energy in a cold climate where flight is costly and winds are strong enough to blow a small insect far off course. Most of these brachypterous (short-winged) species are females; the males typically retain full wings to find mates. At the very edge of their range, crane flies push dietary limits in ways that would be unrecognisable to their temperate relatives. Tipula carinifrons, at the northernmost extent of its distribution, abandons plant material entirely and grazes instead on mats of cyanobacteria (blue-green bacteria) on the tundra surface — one of the most energy-poor diets available to any insect. For Arctic-breeding birds, crane flies are not a curiosity but a necessity. Migratory waders — dunlins, sandpipers, phalaropes, turnstones — many of which winter along East Africa's Rift Valley lakes and coastal mudflats before making the journey north, time their Arctic arrival to coincide with the brief summer flush of Tipulidae and chironomid midges. Without this pulse of insect biomass, the birds cannot provision their chicks fast enough during the compressed Arctic breeding season."
+      },
+      {
+        "heading": "A Surprising Social Life",
+        "body": "Crane flies mate in aerial swarms — loose aggregations of males that gather above a specific landmark (a rock, a tuft of grass, a shadow) and fly in tight patterns waiting for females to arrive. What is surprising is that females use exactly the same cues as males. In a laboratory experiment, a lone female flying above an artificial swarm marker tracked it across the ground just as a swarming male would — suggesting that the two sexes have identical rules for finding aggregation sites, and that mating swarms are essentially a shared solution to the problem of finding a partner in a vast, featureless landscape."
+      },
+      {
+        "heading": "Why They Matter",
+        "body": "The gangly, apparently purposeless crane fly at your window is the adult tip of a much larger ecological iceberg. Below ground, underwater, and in decaying wood, its larvae are shredding leaves, breaking down wood, processing soil, and feeding everything from parasitic wasps to Arctic sandpipers. They are one of the planet's great recyclers — unglamorous, efficient, and essential."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Crane Flies/cf.pdf",
+      "lay": "Crane Flies/cf-la.pdf"
+    },
+    "photo_ref": "/photos/crane-flies.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
