@@ -40,6 +40,10 @@ Dependencies (`streamlit`, `pillow`, `pymupdf`) live in the `ds` conda environme
 - **Existing cards**: lists every card with its current photo (or "no photo yet"), with inline
   photo add/replace/remove, plus a confirm-gated "Delete card permanently" that removes the card
   entry and its photo file together.
+- **Batch** (#40): add several cards (multi-file lay-report upload, each with its own order/photo)
+  or delete several existing cards (checkboxes) in one queued session. Each card still publishes
+  as its own PR, one after another — isolates failures (one bad PDF doesn't block the rest) but
+  doesn't save wall-clock time over doing them individually.
 
 ## Publishing to the live site
 

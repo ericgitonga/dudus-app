@@ -6,6 +6,23 @@ schedule rather than moving in lockstep with site releases. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); [Semantic Versioning](https://semver.org),
 pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*` tags.
 
+## [0.3.0] - 2026-08-10
+
+### Added
+
+- New "Batch" tab (#40): add several cards or delete several existing cards in one queued
+  session instead of one at a time. Each card still publishes as its own PR (one after another,
+  via the same #34 pipeline) rather than combining into a single PR — a bad PDF or a failed
+  check on one card doesn't block the others, at the cost of not saving any CI wall-clock time
+  over doing them individually. Duplicate ids (already live, or repeated within the same batch)
+  are caught before publishing. A failed publish now reverts that card's local file changes back
+  to `HEAD` (a gap that existed in the single-card flows too — fixed generally in `do_publish`,
+  not just for batch), so one failure can never leave the working tree ahead of `main` in a way
+  that corrupts the next action's starting point. Validated with two real throwaway species,
+  added then removed as a batch, before considering it done.
+
+tag: `intake-v0.3.0`
+
 ## [0.2.0] - 2026-08-10
 
 ### Added
