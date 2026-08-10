@@ -554,35 +554,12 @@ with tab_existing:
                     type=["jpg", "jpeg", "png"],
                     key=f"upload_{card['id']}",
                 )
+                new_img = None
                 if replacement is not None:
                     new_img, warn = process_photo(replacement)
                     st.image(new_img, caption="After metadata strip + 3:2 pad", width=300)
                     if warn:
                         st.warning(warn)
-                    if st.button("Save photo", key=f"save_{card['id']}"):
-                        old_photo_ref = card["photo_ref"]
-                        delete_photo(old_photo_ref)
-                        ext = "png" if replacement.type == "image/png" else "jpg"
-                        card["photo_ref"] = save_photo(new_img, card["id"], ext)
-                        save_cards(cards)
-
-                        publish_files = {
-                            "src/data/card_index.json": serialize_cards(cards),
-                            f"public{card['photo_ref']}": (
-                                PHOTOS_DIR / Path(card["photo_ref"]).name
-                            ).read_bytes(),
-                        }
-                        if old_photo_ref and old_photo_ref != card["photo_ref"]:
-                            publish_files[f"public{old_photo_ref}"] = None
-                        do_publish(
-                            publish_files,
-                            commit_message=f"Update photo: {card['common_name']} ({card['id']})",
-                            pr_title=f"Update photo: {card['common_name']}",
-                            pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34).",
-                        )
-
-                        st.session_state.existing_card_message = f"Photo saved for {card['common_name']}."
-                        st.rerun()
 
                 if card["photo_ref"]:
                     confirm = st.checkbox("Confirm removal", key=f"confirm_{card['id']}")
@@ -614,6 +591,7 @@ with tab_existing:
                 type=["pdf"],
                 key=f"content_update_{card['id']}",
             )
+            new_title, new_sections, content_parse_err = None, None, None
             if content_update is not None:
                 new_title, new_sections, content_parse_err = parse_lay_report(content_update.getvalue())
                 if content_parse_err:
@@ -628,27 +606,6 @@ with tab_existing:
                         f"Keeps id (`{card['id']}`), photo, order, and other metadata unchanged — "
                         "only common_name, sections, and source_report_ref.lay/technical are replaced."
                     )
-                    if st.button("Update card content", key=f"update_content_{card['id']}"):
-                        card["common_name"] = new_title
-                        card["sections"] = new_sections
-                        card["source_report_ref"] = {
-                            "technical": find_technical_ref(new_title, content_update.name),
-                            "lay": f"{new_title}/{content_update.name}",
-                        }
-                        # The old review no longer describes this content — stale until re-reviewed.
-                        card["reviewed_by"] = None
-                        card["reviewed_at"] = None
-                        save_cards(cards)
-
-                        do_publish(
-                            {"src/data/card_index.json": serialize_cards(cards)},
-                            commit_message=f"Update card content: {new_title} ({card['id']})",
-                            pr_title=f"Update card content: {new_title}",
-                            pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34/#52).",
-                        )
-
-                        st.session_state.existing_card_message = f"Content updated for {new_title}."
-                        st.rerun()
 
             st.divider()
             st.write("**Order**")
@@ -659,17 +616,63 @@ with tab_existing:
                 technical_path_existing = candidate if candidate.exists() else None
             order_default = card["order"] or guess_order_from_technical(technical_path_existing)
             new_order = order_picker(f"existing_{card['id']}", known_orders_existing, order_default)
-            if new_order != card["order"]:
-                if st.button("Update order", key=f"update_order_{card['id']}"):
+
+            st.divider()
+            update_blocked = bool(content_update is not None and content_parse_err)
+            if update_blocked:
+                st.error("Fix or remove the lay report above before updating.")
+            if st.button("Update", key=f"update_{card['id']}", type="primary", disabled=update_blocked):
+                changes = []
+                publish_files = {}
+
+                if replacement is not None:
+                    old_photo_ref = card["photo_ref"]
+                    delete_photo(old_photo_ref)
+                    ext = "png" if replacement.type == "image/png" else "jpg"
+                    card["photo_ref"] = save_photo(new_img, card["id"], ext)
+                    publish_files[f"public{card['photo_ref']}"] = (
+                        PHOTOS_DIR / Path(card["photo_ref"]).name
+                    ).read_bytes()
+                    if old_photo_ref and old_photo_ref != card["photo_ref"]:
+                        publish_files[f"public{old_photo_ref}"] = None
+                    changes.append("photo")
+
+                if content_update is not None and not content_parse_err:
+                    card["common_name"] = new_title
+                    card["sections"] = new_sections
+                    card["source_report_ref"] = {
+                        "technical": find_technical_ref(new_title, content_update.name),
+                        "lay": f"{new_title}/{content_update.name}",
+                    }
+                    # The old review no longer describes this content — stale until re-reviewed.
+                    card["reviewed_by"] = None
+                    card["reviewed_at"] = None
+                    changes.append("content")
+
+                if new_order != card["order"]:
                     card["order"] = new_order
+                    changes.append("order")
+
+                if not changes:
+                    st.warning("Nothing to update — upload a photo/report or change the order first.")
+                else:
                     save_cards(cards)
+                    publish_files["src/data/card_index.json"] = serialize_cards(cards)
                     do_publish(
-                        {"src/data/card_index.json": serialize_cards(cards)},
-                        commit_message=f"Update order: {card['common_name']} ({card['id']}) -> {new_order}",
-                        pr_title=f"Update order: {card['common_name']}",
-                        pr_body="Automated content-only PR from tools/dudu-intake — no version bump (see #34/#52).",
+                        publish_files,
+                        commit_message=(
+                            f"Update card: {card['common_name']} ({card['id']}) — "
+                            + ", ".join(changes)
+                        ),
+                        pr_title=f"Update card: {card['common_name']}",
+                        pr_body=(
+                            "Automated content-only PR from tools/dudu-intake — no version bump "
+                            f"(see #34/#52). Updated: {', '.join(changes)}."
+                        ),
                     )
-                    st.session_state.existing_card_message = f"Order updated for {card['common_name']}."
+                    st.session_state.existing_card_message = (
+                        f"Updated {', '.join(changes)} for {card['common_name']}."
+                    )
                     st.rerun()
 
             st.divider()

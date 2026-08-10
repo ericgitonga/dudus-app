@@ -10,15 +10,19 @@ pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*
 
 ### Added
 
-- **Existing cards can now have their content and order updated directly** (#52), not just
-  photos. Uploading a replacement lay-report PDF re-parses it (`parse_lay_report`, same as
-  "Add new card") and replaces `common_name`/`sections`/`source_report_ref.lay`/`.technical` —
-  `id`, `photo_ref`, `order`, and other metadata are left untouched. `reviewed_by`/`reviewed_at`
-  are cleared, since the prior review no longer describes the new content. Order gets its own
-  picker (reusing `order_picker` from #40) defaulting to the card's current order, or a guess
-  from its technical report if the order was never set; a button to publish only appears once
-  a real change is made. Both are their own "Update card: X" / "Update order: X" content-only
-  PRs, same #34 exemption as every other action.
+- **Existing cards can now have their photo, content, and order updated directly** (#52), not
+  just photos alone — all three behind a **single "Update" button** per card: whichever of
+  photo / lay-report-file / order was actually submitted or changed gets applied, and only
+  those; the confirmation message names exactly what changed (e.g. "Updated photo, order for
+  X"). Uploading a replacement lay-report PDF re-parses it (`parse_lay_report`, same as "Add new
+  card") and replaces `common_name`/`sections`/`source_report_ref.lay`/`.technical` — `id`,
+  `photo_ref`, `order`, and other metadata are left untouched unless also submitted in the same
+  click. `reviewed_by`/`reviewed_at` are cleared on a content update, since the prior review no
+  longer describes the new content. Order reuses `order_picker` from #40, defaulting to the
+  card's current order or a guess from its technical report if never set. All combinations
+  publish as a single "Update card: X" content-only PR, same #34 exemption as every other
+  action. "Remove photo" and "Delete card permanently" remain separate, since they're
+  destructive rather than update actions.
 
 tag: `intake-v0.5.0`
 
