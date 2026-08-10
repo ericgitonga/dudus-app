@@ -572,5 +572,27 @@
     "photo_ref": "/photos/white-ringed-atlas-moth.jpg",
     "reviewed_by": "claude (spot-check review pass, dudus-app#29)",
     "reviewed_at": "2026-08-09"
+  },
+  {
+    "id": "batch-test-alpha",
+    "common_name": "Batch Test Alpha",
+    "scientific_name": null,
+    "family": null,
+    "order": null,
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Is It?",
+        "body": "A fictional test species used to exercise the batch-add flow end to end."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "",
+      "lay": "Batch Test Alpha/batch-test-alpha-la.pdf"
+    },
+    "photo_ref": null,
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
