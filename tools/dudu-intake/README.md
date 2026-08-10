@@ -37,7 +37,8 @@ Dependencies (`streamlit`, `pillow`, `pymupdf`) live in the `ds` conda environme
   `scientific_name`, `family`, `taxon_rank` (defaults to `"species"`), and `sourcing` (left
   blank) have no edit UI yet — only photos do — so they land as clear placeholders, not guesses.
 - **Existing cards**: lists every card with its current photo (or "no photo yet"), with inline
-  add/replace/remove.
+  photo add/replace/remove, plus a confirm-gated "Delete card permanently" that removes the card
+  entry and its photo file together.
 
 ## After using it
 

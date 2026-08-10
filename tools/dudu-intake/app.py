@@ -342,3 +342,21 @@ with tab_existing:
                         save_cards(cards)
                         st.session_state.existing_card_message = f"Photo removed for {card['common_name']}."
                         st.rerun()
+
+            st.divider()
+            confirm_delete = st.checkbox(
+                "Confirm deletion — removes this card and its photo file",
+                key=f"confirm_delete_{card['id']}",
+            )
+            if st.button(
+                "Delete card permanently",
+                key=f"delete_{card['id']}",
+                disabled=not confirm_delete,
+            ):
+                delete_photo(card["photo_ref"])
+                remaining = [c for c in cards if c["id"] != card["id"]]
+                save_cards(remaining)
+                st.session_state.existing_card_message = (
+                    f"Deleted '{card['common_name']}' ({card['id']})."
+                )
+                st.rerun()

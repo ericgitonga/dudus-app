@@ -16,6 +16,8 @@ pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*
   optional photo (pad-to-3:2 + EXIF/GPS strip, mirroring `stripPhotoMetadata.ts` from #10 and
   SKILL.md's photo convention), and an order dropdown ("Unknown (fix later)" → `null`, matching
   the site's existing unclassified-order fallback). "Existing cards" lists every card with
-  inline photo add/replace/remove.
+  inline photo add/replace/remove, plus a confirm-gated permanent card delete (removes the card
+  entry and its photo file together) — added after manual testing found no way back from an
+  add-card mistake short of hand-editing `card_index.json`.
 
 tag: `intake-v0.1.0`
