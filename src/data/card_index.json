@@ -434,5 +434,155 @@
     "photo_ref": "/photos/crane-flies.jpg",
     "reviewed_by": null,
     "reviewed_at": null
+  },
+  {
+    "id": "stick-insects",
+    "common_name": "Stick Insects",
+    "scientific_name": null,
+    "family": null,
+    "order": "Phasmatodea",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "Meet nature's most convincing disguise artist: an insect built entirely to be mistaken for a twig. Stick insects (order Phasmatodea) are a worldwide group of over 3,600 known species, and they've turned \"looking exactly like a piece of a plant\" into a full-time survival strategy — slender bodies, thin jointed legs, and in the photograph that inspired this summary, a specimen perched among the thorns of an Acacia tree in Kenya, all but invisible against the twigs around it. The genus most likely responsible for that kind of Acacia camouflage act in East Africa is Bactrododema — big, spiny stick insects that used to be classified under an older name, Palophus, before taxonomists folded that name into Bactrododema in 2005. Confusingly, some databases still disagree about which name is \"correct\" — even the experts haven't fully settled this one."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "•  Built like a twig, literally: a long, cylindrical body, thin legs, and (in most species) reduced or absent wings, all adding up to a shape that could pass for a stem or branch at a glance. •  Simple mouthparts built for chewing plant material, and long, thread-like antennae. •  No big fighting equipment: instead of a stinger or hard shell, its whole defense plan starts with not being seen. •  One striking size difference: in a newly described southern African species, Macynia mcgregororum, females (73–84 mm) are noticeably bigger than males (57–64 mm), and only females carry pale, bumpy tubercles along the thorax. •  Some species carry hidden chemical-spray glands in the thorax — recent CT-scan research found these glands come in at least four different internal shapes across the order, some over 100 times bigger in volume than others."
+      },
+      {
+        "heading": "How Do They Live?",
+        "body": "Stick insects go through a simple three-stage life: egg, nymph, adult — no caterpillar-style transformation, no cocoon. A nymph just looks like a small, wingless version of the adult and grows into that shape gradually, molting its way up. One especially strange trick shows up in several species: females can reproduce without ever mating. In the well-studied Indian walking stick, females lay several hundred eggs across their lifetime entirely on their own — males of that species are so rare that scientists still don't fully understand what causes one to appear at all. Eggs take 10–12 weeks to hatch, and the young insects reach adulthood in as little as a month. All stick insects are strict plant-eaters. The Acacia-associated genus Bactrododema appears to feed specifically on Acacia foliage — which fits neatly with a photograph of one clinging to an Acacia branch, thorn and all, though the underlying research paper on this diet link was behind a paywall, so it's carried here as a well-supported but not fully double-checked detail."
+      },
+      {
+        "heading": "The Ultimate Game of Pretend",
+        "body": "Camouflage is this insect's whole personality. Beyond just looking like a stick, many species sway gently back and forth as they walk or rest, mimicking a twig stirred by the wind — motion that would otherwise give away a stationary \"twig\" to a sharp-eyed bird. If that fails and a predator actually grabs hold, some species have a backup plan: they can snap off the trapped leg entirely at a built-in weak point near the base, sacrificing a limb to escape with their life. The lost leg does grow back after the next few molts — but the replacement is always a little smaller than the original, a permanent, readable scar of a close call. Some species also carry chemical weapons: glands in the thorax that release a foul-smelling spray when the insect is threatened, on top of the camouflage and the leg-dropping trick."
+      },
+      {
+        "heading": "A Kenyan Detective Story",
+        "body": "Museum shelves and modern smartphone photos turn out to tell the same story about these insects in Kenya, a century apart. A Bactrododema specimen collected near Lake Turkana back in 1905 — labeled, in the colonial naming of the day, \"Lac Rodolphe\" — sits in a museum alongside records from Taveta collected in 1912. Fast-forward to 2024, and casual nature-photo apps like iNaturalist are picking up the very same genus again, spotted by ordinary observers in Laikipia and Narok counties. Other Kenyan stick-insect records turn up scattered from Mount Elgon and Kitale in the west, to Isiolo in the north, down to the Tsavo and Amboseli areas, and even the Kenyan coast near Kilifi and Kwale — evidence that these camouflaged twig-mimics have quietly persisted across a huge stretch of the country for well over 100 years, even though almost nobody's looking for them."
+      },
+      {
+        "heading": "Are They Pests? Are They Useful?",
+        "body": "Surprisingly — no, not in Kenya, or anywhere in Africa, as far as the available scientific literature shows. A major worldwide review of stick-insect crop damage found real, well-documented outbreaks in North America (on oak and hickory trees), Australia (stripping eucalyptus forests bare in some years), Pacific islands (attacking coconut palms), China, Colombia, and even India (on black pepper vines) — but turned up no African, Kenyan, or Acacia-related pest damage at all. The one African-continent mention in that whole review was an introduced pet-trade species causing a minor nuisance in South African gardens, nothing like a crop pest. That's a small but real reminder from science itself: not finding evidence of a problem is different from proving there isn't one — it may simply be that nobody's studied African stick insects as agricultural pests very much yet."
+      },
+      {
+        "heading": "How Do People Deal With Outbreaks (Elsewhere)?",
+        "body": "Where stick insects really have become forest or crop pests — mostly outside Africa — people have tried a wide range of fixes over the decades: parasitic wasps and flies that attack the eggs, general predators like spiders and birds, old-school insecticides (some, like DDT and lead arsenate, now recognized as environmentally harmful and largely abandoned), sticky bands wrapped around tree trunks to stop climbing nymphs in their tracks, smoking palm fronds to drive the insects out, and even just clearing away ground litter so eggs are exposed to hungry predators and drying sun. For a much smaller-scale nuisance — like a pet stick insect that's outgrown its welcome in a home garden — the simplest advice is just picking them off by hand and freezing any leftover eggs for a week to make sure none hatch."
+      },
+      {
+        "heading": "Notable Facts",
+        "body": "•  The very first stick insect ever formally named in this African group, Palophus centaurus (now Bactrododema centaurum), was described from a specimen collected all the way over in Old Calabar, Nigeria — not East or southern Africa, where the group is now most famous. •  The world's longest known insect overall is a stick insect, Chan's Megastick, whose type specimen is kept at the Natural History Museum in London — one of the three largest stick-insect collections on Earth. •  A regenerated leg is a permanent record-keeper: because it always regrows slightly smaller than the original, scientists (and a sharp-eyed observer) can actually tell, just by looking, that an individual once escaped a predator by leaving a leg behind."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Stick Insects/si-web.pdf",
+      "lay": "Stick Insects/si-web-la.pdf"
+    },
+    "photo_ref": "/photos/stick-insects.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "click-beetle-the-insect-that-flips-itself",
+    "common_name": "Click Beetle — The Insect That Flips Itself",
+    "scientific_name": null,
+    "family": null,
+    "order": null,
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "With a Snap",
+        "body": ""
+      },
+      {
+        "heading": "What Are They?",
+        "body": "Flip this beetle onto its back and it doesn't scramble around helplessly like most insects do. Instead, it goes still for a couple of seconds, arches its body like a bent bow — and then, with an audible click, launches itself into the air and lands back on its feet. That one trick gives the whole family its name: click beetles, in the scientific family Elateridae, a group so large it likely holds well over 10,000 species worldwide. They belong to the beetle order (Coleoptera), the single biggest group of animals on Earth, and within that they occupy their own strange niche: an elongated, hinged-body beetle that is essentially a tiny spring-loaded machine."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "Adult click beetles are long, narrow, and fairly plain-looking at first glance — usually brown, black, or grey, and built for stealth rather than showing off. The giveaway is the join between the front section (behind the head) and the rest of the body: it's loosely hinged, not rigid like in most beetles, and the back corners of that front section stick out into two backward-pointing spikes. Their young, called wireworms, look nothing like the adults. They're thin, hard, shiny, wire-like grubs — brown or yellowish — that live underground and can take anywhere from two to eleven years to finish growing up, depending on the species. That's an extraordinarily long childhood for an insect."
+      },
+      {
+        "heading": "How Does the \"Click\" Trick Actually Work?",
+        "body": "This is the beetle's whole claim to fame, and scientists have taken it seriously enough to study it under microscopes with nanometer-level precision. Tucked into the beetle's underside is a small peg, and just ahead of it sits a matching ledge. When the beetle wants to right itself, it slowly bends its body until that peg locks into the ledge — like cocking a crossbow. Then it lets go. The stored energy releases in a fraction of a second, snapping the hinge straight, flinging the beetle upward, and producing the click you hear. Researchers who measured this in the lab found beetles ranging from about the size of a grain of rice to over an inch and a half long all using the same basic mechanism, just tuned differently — smaller species have shorter, stiffer pegs than larger ones. It's such an elegant, compact way of storing and releasing force that engineers building tiny robots have looked to it as a design model for miniature mechanical latches. Some click beetles take this even further: a handful of tropical species (mostly in Central and South America, plus a separate group recently discovered in Asia) glow continuously in the dark from spots on their body, unrelated to fireflies' on-off flashing. Oddly enough, genetic studies show fireflies are actually nested inside the click beetle family tree — meaning, biologically speaking, fireflies are essentially specialized click beetles that gave up clicking for glowing."
+      },
+      {
+        "heading": "Where Are They Found?",
+        "body": "Click beetles live almost everywhere on land, but their below-ground larvae in particular thrive in agricultural soil, grassland, and forest litter across the globe. Africa has its own rich, mostly homegrown cast: a dedicated survey of the continent south of the Sahara catalogued 945 species in 75 genera — a huge, largely underappreciated diversity. In Kenya specifically, confirmed sightings include a large fanged-antenna genus called Tetralobus around Amboseli and the Maasai Mara, an Alaus species (a predatory type, more on that below) near Watamu on the coast, and several other genera turning up in the Taita Hills, Wasini Island, and the Turkana region. Kenya actually has the best documented click-beetle records of any East African country in the international occurrence databases — though \"best documented\" here still means fewer than 1,500 confirmed sightings total, so there's almost certainly much more out there than has been recorded. One thing we couldn't find anywhere in the scientific literature: a local Swahili or other vernacular name for these beetles specifically — if one exists, it hasn't made it into print yet."
+      },
+      {
+        "heading": "Why Do They Matter?",
+        "body": "Most of the family's real-world importance happens underground, out of sight. Wireworm larvae are widely described as some of the most damaging soil pests on the planet, chewing through the roots, seeds, and tubers of crops like maize, potatoes, wheat, and sugarcane — sometimes for years before ever becoming an adult beetle. Because they live buried deep in soil and are so long-lived, they're notoriously hard to monitor and control, and farmers around the world have leaned on everything from crop rotation and tillage to fungal diseases, parasitic worms, and pheromone-baited traps to manage them. But it's not all bad news from this one family. Some genera, especially the large Alaus click beetles (nicknamed \"eyed elaters\" for the big fake eyespots on their backs), have larvae that are voracious predators of other pest beetles living in rotting wood — one study recorded a single larva eating over 200 wood-boring grubs before it finished growing. So within one family, you get both some of agriculture's worst underground pests and some of its quiet underground allies."
+      },
+      {
+        "heading": "A Few Things Worth Knowing",
+        "body": "Genetic testing has revealed that some wireworms considered a single species are actually several nearly identical \"hidden\" species that look the same to the naked eye but split apart from each other tens of thousands of years ago — a reminder that appearances can be deceiving even among insects scientists have studied for over a century. The eyespots on an Alaus click beetle's back are a bluff: bold black-and-white circles meant to startle a bird or lizard into thinking they're looking at the eyes of something much bigger and scarier. And that famous click? It isn't just for show — it's primarily a defense move. Startle a predator, right yourself, and get away, all in one motion that takes a fraction of a second."
+      },
+      {
+        "heading": "In Summary",
+        "body": "The click beetle's entire identity is built around one ingenious piece of body engineering: a spring-loaded hinge that turns \"flipped onto your back\" from a death sentence into a minor inconvenience. Above ground, the adults are unassuming background insects; below ground, their long-lived larvae quietly shape the fate of crops and forests alike — some as costly pests, others as unpaid pest controllers. It's a family that does most of its most important work where nobody's watching."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "",
+      "lay": "Click Beetle — The Insect That Flips Itself/clb-web-la.pdf"
+    },
+    "photo_ref": "/photos/click-beetle-the-insect-that-flips-itself.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "aedes-mosquitoes",
+    "common_name": "Aedes Mosquitoes",
+    "scientific_name": null,
+    "family": null,
+    "order": "Diptera",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "Meet the mosquito that outsmarts drought. Aedes is a huge group of mosquitoes — nearly a thousand species strong, found on every continent except Antarctica — and it includes two of the most infamous insects on the planet: Aedes aegypti, the yellow fever mosquito, and Aedes albopictus, the Asian tiger mosquito. Between them, these two species are responsible for spreading dengue, Zika, chikungunya, and yellow fever to hundreds of millions of people every year. Here's the twist: scientists studying their family tree recently discovered that \"Aedes\" isn't really one clean, unified genus at all. Genetically, the roughly 932 species lumped under that name don't all share one common ancestor to the exclusion of everything else — it's a bit like discovering that a \"family\" you thought was one bloodline is actually several different families that got mixed up in the paperwork. Untangling it properly is still ongoing work."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "•  Signature style: Narrow, dark bodies decorated with sharp black-and-white or silver scale patterns on the back and legs — think of them as the zebra-striped mosquitoes, especially Ae. albopictus, whose \"tiger\" nickname comes straight from those stripes. •  A body that stretches with the weather: Remarkably, the mosquitoes' own wing length changes depending on how warm it was while they were growing up — cooler nurseries produce noticeably bigger-winged adults. In lab tests, wings grown at a cool 15°C (59°F) were around 30% longer than wings grown at a hot 35°F (95°F). •  Not one species, but two disguised as one: Yellow fever mosquitoes come in a pale, city-loving form and a darker, wild form, and a genetic study in Senegal found the two forms interbreed and mix so freely — over 40% of family groups contained both — that scientists now think of it as one flexible, shape-shifting species rather than two separate ones."
+      },
+      {
+        "heading": "How Do They Feed and Breed?",
+        "body": "Female Aedes mosquitoes need blood to make eggs, and they're expert opportunists about where they lay them: rather than ponds or lakes, they favor tiny puddles of water sitting in man-made containers — buckets, flowerpots, gutters, and, overwhelmingly, old discarded tires. In one large survey across Cameroon, old tires alone accounted for over 85% of every spot where mosquito larvae were actually found — dwarfing every natural water source combined. It turns out a mosquito nursery is often hiding in a junkyard, not a wetland. Their feeding and breeding habits shift with the thermometer too: Ae. aegypti bites most eagerly and lays the most eggs around 30°C (86°F), while the cooler-climate Ae. albopictus peaks a bit lower, around 25°C (77°F) — a small but telling difference that traces back to their different evolutionary homelands."
+      },
+      {
+        "heading": "Growing Up — From Egg to Adult",
+        "body": "Like all mosquitoes, Aedes passes through four life stages — egg, larva, pupa, adult — with the first three spent in or near water and only the adult taking to the air. Under good conditions, the whole journey from egg to flying adult takes as little as 7 to 10 days. But the real party trick happens right at the very start. A freshly laid Aedes egg is fragile and will shrivel up if it dries out — for about the first half-day of its existence. Then, in a narrow two-hour window roughly 11 to 13 hours after being laid, the embryo suddenly builds itself a tough, chitin-armored raincoat called a serosal cuticle. Flip the switch before that window and the egg dies in dry air; flip it after, and that same egg can sit bone-dry for months and still hatch perfectly fine once it gets wet again. This is exactly why Aedes mosquitoes thrive around temporary puddles that come and go with the rain — their eggs are built to simply wait out the dry spells."
+      },
+      {
+        "heading": "Where Are They Found?",
+        "body": "Aedes mosquitoes have colonized virtually the entire planet, missing only Antarctica. But within that huge range, the two star species behave quite differently. In a detailed survey of Cameroon, the yellow fever mosquito was found absolutely everywhere researchers looked, while the Asian tiger mosquito was confined to the wetter south, stopping short at an invisible climate boundary further north. Genetic fingerprinting of the tiger mosquitoes there told an even more striking story: nearly 80% of all individuals sampled carried the exact same genetic signature — the kind of pattern you'd expect if the entire population sprang from just a handful of founding mosquitoes that arrived relatively recently and then spread like wildfire."
+      },
+      {
+        "heading": "Why Do They Matter?",
+        "body": "This is where the story turns serious. Aedes aegypti is the world's primary carrier of dengue fever, and the numbers are staggering: reported global cases climbed from about half a million in the year 2000 to a record 14.6 million in 2024 — nearly a thirty-fold jump in under 25 years — and that's likely an undercount, since many affected countries struggle to track and report every case. Zika, chikungunya, and yellow fever ride on the same mosquitoes' backs. A single infected mosquito stays infectious for the rest of its life once it picks up a virus, and it can pick that virus up from a person days before that person even feels sick."
+      },
+      {
+        "heading": "A Few Things Worth Knowing",
+        "body": "•  Their family tree is a mess — on purpose, sort of: To sort out how all these mosquito species relate to each other, one research team scored 172 different physical features across every single life stage — egg, larva, pupa, and adults of both sexes — of 119 different species. That level of detail is almost unheard of in insect taxonomy, and it's what led scientists to split Aedes aegypti and Aedes albopictus off into their own genus, Stegomyia, for a while (though many researchers still just call them Aedes out of habit and convenience). •  A two-hour biological switch flips their entire survival strategy: Before hour 11, a mosquito egg is basically a water balloon. After hour 13, it's a tiny drought-proof capsule. Nothing else about the egg changes much — just that one armor-plated raincoat. •  Old tires are secretly ecological hotspots — for all the wrong reasons: A pile of abandoned tires in the rain isn't just an eyesore; it may be one of the most productive mosquito nurseries in the entire landscape."
+      },
+      {
+        "heading": "In Summary",
+        "body": "Aedes mosquitoes are a sprawling, still-being-sorted-out group whose two most famous members — the yellow fever mosquito and the Asian tiger mosquito — have turned old tires and rain puddles into launch pads for some of the world's fastest-growing infectious diseases. Their eggs' astonishing drought-proofing trick, and their knack for exploiting whatever man-made puddle happens to be lying around, are exactly what makes them such formidable, adaptable survivors — and such a persistent public health challenge."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Aedes Mosquitoes/am-web.pdf",
+      "lay": "Aedes Mosquitoes/am-web-la.pdf"
+    },
+    "photo_ref": "/photos/aedes-mosquitoes.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
