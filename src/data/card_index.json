@@ -584,5 +584,27 @@
     "photo_ref": "/photos/aedes-mosquitoes.jpg",
     "reviewed_by": null,
     "reviewed_at": null
+  },
+  {
+    "id": "collapse-test-58",
+    "common_name": "Collapse Test 58",
+    "scientific_name": null,
+    "family": null,
+    "order": null,
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Is It?",
+        "body": "A throwaway test species used to validate the collapsible existing-cards redesign."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "",
+      "lay": "Collapse Test 58/collapse-test-58-la.pdf"
+    },
+    "photo_ref": null,
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
