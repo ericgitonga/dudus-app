@@ -31,9 +31,11 @@ def _pdf_bytes(spans):
     return doc.tobytes()
 
 
-def _lay_report_pdf(title, sections):
-    """sections: list of (heading, body) tuples."""
-    spans = [(title, 20, True)]
+def _lay_report_pdf(title, sections, title_lines=None):
+    """sections: list of (heading, body) tuples. `title_lines`, if given, overrides `title` with
+    several consecutive title-sized spans — simulating a wrapped H1 that renders across more
+    than one visual line."""
+    spans = [(line, 20, True) for line in (title_lines or [title])]
     for heading, body in sections:
         spans.append((heading, 15, True))
         spans.append((body, 11, False))
@@ -112,6 +114,18 @@ def test_parse_lay_report_strips_leading_article_from_title(raw_title, expected_
     title, _sections, err = parse_lay_report(pdf)
     assert err is None
     assert title == expected_title
+
+
+def test_parse_lay_report_joins_a_title_wrapped_across_lines():
+    pdf = _lay_report_pdf(
+        None,
+        [("What Are They?", "Body text.")],
+        title_lines=["The Paper Wasp - An Insect That Builds Its", "Nursery Out of Chewed Wood"],
+    )
+    title, sections, err = parse_lay_report(pdf)
+    assert err is None
+    assert title == "Paper Wasp - An Insect That Builds Its Nursery Out of Chewed Wood"
+    assert sections == [{"heading": "What Are They?", "body": "Body text."}]
 
 
 def test_parse_lay_report_errors_when_no_title_found():
