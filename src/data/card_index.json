@@ -487,17 +487,13 @@
   },
   {
     "id": "click-beetle-the-insect-that-flips-itself",
-    "common_name": "Click Beetle — The Insect That Flips Itself",
+    "common_name": "Click Beetle — The Insect That Flips Itself With a Snap",
     "scientific_name": null,
     "family": null,
     "order": "Coleoptera",
     "taxon_rank": "species",
     "sourcing": "",
     "sections": [
-      {
-        "heading": "With a Snap",
-        "body": ""
-      },
       {
         "heading": "What Are They?",
         "body": "Flip this beetle onto its back and it doesn't scramble around helplessly like most insects do. Instead, it goes still for a couple of seconds, arches its body like a bent bow — and then, with an audible click, launches itself into the air and lands back on its feet. That one trick gives the whole family its name: click beetles, in the scientific family Elateridae, a group so large it likely holds well over 10,000 species worldwide. They belong to the beetle order (Coleoptera), the single biggest group of animals on Earth, and within that they occupy their own strange niche: an elongated, hinged-body beetle that is essentially a tiny spring-loaded machine."
@@ -529,7 +525,7 @@
     ],
     "source_report_ref": {
       "technical": "",
-      "lay": "Click Beetle — The Insect That Flips Itself/clb-web-la.pdf"
+      "lay": "Click Beetle — The Insect That Flips Itself With a Snap/clb-web-la.pdf"
     },
     "photo_ref": "/photos/click-beetle-the-insect-that-flips-itself.jpg",
     "reviewed_by": null,
