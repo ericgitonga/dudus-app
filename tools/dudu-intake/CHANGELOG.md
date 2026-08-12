@@ -6,6 +6,16 @@ schedule rather than moving in lockstep with site releases. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); [Semantic Versioning](https://semver.org),
 pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*` tags.
 
+## [0.7.1] - 2026-08-12
+
+### Fixed
+
+- `parse_lay_report` was capturing only the first visual line of a title that wraps across
+  multiple lines in the PDF (e.g. a long H1 spilling onto a second line), mis-filing the
+  remainder as a bogus first section instead of joining it into the title (closes #76)
+
+tag: `intake-v0.7.1`
+
 ## [0.7.0] - 2026-08-10
 
 ### Added
