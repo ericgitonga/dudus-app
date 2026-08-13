@@ -17,7 +17,11 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data:",
       "font-src 'self'",
-      "connect-src 'self'",
+      // 'blob:' needed for connect-src: /identify's capture flow fetches its own
+      // in-memory blob: preview URL to strip EXIF before display (e2e/test_photo_capture.py) —
+      // some browsers (Firefox in particular) don't treat blob: as implicitly same-origin for
+      // fetch() the way they do for an <img src="blob:...">.
+      "connect-src 'self' blob:",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
