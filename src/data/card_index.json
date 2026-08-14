@@ -684,5 +684,55 @@
     "photo_ref": "/photos/paper-wasp-an-insect-that-builds-its.jpg",
     "reviewed_by": null,
     "reviewed_at": null
+  },
+  {
+    "id": "rhinoceros-beetle",
+    "common_name": "Rhinoceros Beetle",
+    "scientific_name": null,
+    "family": null,
+    "order": "Coleoptera",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "Picture a beetle wearing a single, curved horn on its head like a tiny rhino charging into battle — that's exactly where this insect gets its name. It belongs to a huge family of scarab beetles, and its scientific name, Oryctes monoceros, literally nods to that one horn (\"mono\" = one, \"ceros\" = horn). Only the males carry the full-sized horn; females make do with a small bump instead. In Kenya, this species has a long history as a coconut-palm troublemaker — researchers were already studying it on the coast near Mombasa back in the 1920s."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "Adults are stout, glossy, dark brown to black beetles a few centimetres long, built like a small tank. The male's horn curves up and back from the top of the head, and just behind it sits a dished-out patch on the beetle's \"shoulders\" (the pronotum), often with a raised ridge running down the middle. Females lack the prominent horn and have a much shallower dish on their shoulders — a quick way to tell the sexes apart at a glance. The grubs (larvae) look nothing like the adults: pale, plump, C-shaped creatures that spend their whole youth buried in rotting wood, compost, or manure, never seeing daylight until they finally pupate and emerge with wings and a horn."
+      },
+      {
+        "heading": "How Do They Grow Up?",
+        "body": "A female lays her eggs directly into decaying plant material — a felled palm trunk, a compost heap, a pile of manure — anywhere soft and rotting. About a week and a half later, a grub hatches and spends the next few months (roughly three to four) tunnelling through that decaying material, growing through three larval stages as it goes. It then pupates for about two weeks before emerging as a full-grown adult. Start to finish, one generation takes around five months."
+      },
+      {
+        "heading": "Where Do They Live?",
+        "body": "This beetle is a true African success story (much to the annoyance of coconut farmers): confirmed across a huge stretch of the continent, including Kenya, Tanzania, Uganda, South Africa, Madagascar, and many countries in West Africa, plus the Seychelles and Réunion. In Kenya it isn't just a coastal insect either — its larvae have also been documented well inland, in Busia, Bungoma, Trans Nzoia, and Kakamega counties in the west."
+      },
+      {
+        "heading": "What Do They Eat — and Who Eats Them?",
+        "body": "The grubs are recyclers: they feed on decaying wood, compost, and manure, breaking down dead organic matter as they grow. Adults, unfortunately, have different taste — they burrow straight into the crown of a palm tree to chew on the soft, developing tissue at its very centre, leaving telltale triangular notches cut into the young leaves. Turning the tables, in parts of western Kenya people eat the grubs themselves. Far from being just a pest, researchers have found the larvae are packed with protein, healthy fats, and minerals like iron, zinc, and calcium — described as genuinely valuable for fighting malnutrition in communities that gather them as food."
+      },
+      {
+        "heading": "Why Do They Matter?",
+        "body": "To a coconut or oil-palm farmer, this beetle is bad news — adults tunnelling into the crown of a young palm can kill the whole tree by destroying its single growing point, and damage across tropical Africa has been serious enough to earn Oryctes monoceros a reputation as one of the region's most dangerous palm pests. But the very same species that damages plantations also turns up on dinner plates elsewhere in Kenya, making it a rare example of an insect that's simultaneously a major agricultural headache and a nutritious traditional food."
+      },
+      {
+        "heading": "How Do People Control Them?",
+        "body": "Farmers fight back on several fronts at once. The simplest is good housekeeping — clearing away felled palm stems and rotting logs so the beetles have nowhere to breed, or covering them quickly with a fast-growing cover crop. Where adults are already boring into a palm's crown, workers can hook them out with a bent iron rod. Scent also works as a weapon: male beetles release a chemical \"come-hither\" signal that scientists have since bottled and used to lure both sexes into traps — buried plastic-pipe traps loaded with a bit of rotting coconut wood have proven especially effective. The most striking control method, though, is biological: a virus that infects and eventually kills the beetles. Scientists deliberately released infected beetles into wild populations in Tanzania in the 1980s, and years later found the virus had taken hold on its own, infecting well over a third of the wild population without any further human intervention — a rare case of nature doing the pest control for you, long after people stopped actively helping it along."
+      },
+      {
+        "heading": "What's the Most Surprising Fact?",
+        "body": "Rhinoceros beetles are famous for supposedly being able to lift or carry hundreds of times their own body weight — numbers as wild as 850 times have been repeated widely. It's a great story, but when scientists have actually gone looking for solid, direct proof of that exact figure, it's proven surprisingly hard to pin down. The genuinely well-documented feat is arguably even more remarkable: introducing a disease into a wild population of these beetles in Tanzania in the 1980s kept working on its own for years afterward — and in Fiji, a similar release from the 1960s was still measurably reducing beetle damage 35 years later."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Rhinoceros Beetle/rb-web.pdf",
+      "lay": "Rhinoceros Beetle/rb-web-la.pdf"
+    },
+    "photo_ref": "/photos/rhinoceros-beetle.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
