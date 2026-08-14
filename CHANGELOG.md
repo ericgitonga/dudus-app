@@ -6,6 +6,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.11.2] - 2026-08-13
+
+### Security
+
+- Added baseline HTTP security headers (`X-Frame-Options: DENY`, `X-Content-Type-Options:
+  nosniff`, `Referrer-Policy`, and a restrictive `Content-Security-Policy`) via `next.config.ts`,
+  applied to every route. No third-party domains needed in the CSP — the site is fully
+  self-contained (local photos, self-hosted fonts, same-origin Vercel Analytics/Speed Insights
+  beacons). (closes #80)
+
+tag: `v0.11.2`
+
 ## [0.11.1] - 2026-08-11
 
 ### Added

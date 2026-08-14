@@ -6,6 +6,18 @@ schedule rather than moving in lockstep with site releases. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); [Semantic Versioning](https://semver.org),
 pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*` tags.
 
+## [0.7.2] - 2026-08-13
+
+### Security
+
+- Added `.streamlit/config.toml` pinning `server.address = "127.0.0.1"`, so this tool can no
+  longer accidentally bind to `0.0.0.0`/all interfaces regardless of how it's launched. This
+  tool has no login layer and automates branch -> PR -> CI-poll -> squash-merge to `main` using
+  the operator's own `gh`/git credentials, so "local-only" is now an enforced control instead of
+  just a convention (closes #80)
+
+tag: `intake-v0.7.2`
+
 ## [0.7.1] - 2026-08-12
 
 ### Fixed
