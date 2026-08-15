@@ -4,6 +4,7 @@ import cards from "@/data/card_index.json";
 import type { Card } from "@/types/card";
 import { UNCLASSIFIED_LABEL, orderSlug } from "@/lib/orders";
 import Breadcrumb from "@/components/Breadcrumb";
+import TechnicalReportLink from "@/components/TechnicalReportLink";
 
 const allCards = cards as Card[];
 
@@ -73,6 +74,15 @@ export default async function DuduPage({
             </section>
           ))}
         </div>
+
+        {card.technical_sections.length > 0 && (
+          <div className="mt-8 border-t border-zinc-100 pt-6">
+            <TechnicalReportLink
+              commonName={card.common_name}
+              sections={card.technical_sections}
+            />
+          </div>
+        )}
       </main>
     </div>
   );

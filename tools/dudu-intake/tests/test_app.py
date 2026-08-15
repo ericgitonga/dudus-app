@@ -17,16 +17,19 @@ from app import (
     find_technical_ref,
     guess_order_from_technical,
     normalize_photo,
-    parse_lay_report,
+    parse_report_pdf,
     resolve_order_default_index,
+    resolve_species_directory,
+    scan_species_directory,
     serialize_cards,
     slugify,
+    technical_filename_for,
 )
 
 
 def _pdf_bytes(spans):
     """Build a minimal in-memory PDF: `spans` is a list of (text, size, bold) lines, each
-    rendered on its own line, in the same top-to-bottom reading order parse_lay_report expects."""
+    rendered on its own line, in the same top-to-bottom reading order parse_report_pdf expects."""
     doc = fitz.open()
     page = doc.new_page()
     y = 72
@@ -104,9 +107,9 @@ def test_serialize_cards_pretty_prints():
     assert b"\n  " in raw  # indent=2, not compact
 
 
-# ── parse_lay_report ─────────────────────────────────────────────────────────
+# ── parse_report_pdf ─────────────────────────────────────────────────────────
 
-def test_parse_lay_report_extracts_title_and_sections():
+def test_parse_report_pdf_extracts_title_and_sections():
     pdf = _lay_report_pdf(
         "White-Ringed Atlas Moth",
         [
@@ -114,7 +117,7 @@ def test_parse_lay_report_extracts_title_and_sections():
             ("Where Does It Live?", "Forests across East Africa."),
         ],
     )
-    title, sections, err = parse_lay_report(pdf)
+    title, sections, err = parse_report_pdf(pdf)
     assert err is None
     assert title == "White-Ringed Atlas Moth"
     assert sections == [
@@ -131,38 +134,38 @@ def test_parse_lay_report_extracts_title_and_sections():
         ("An Aedes Mosquito", "Aedes Mosquito"),
     ],
 )
-def test_parse_lay_report_strips_leading_article_from_title(raw_title, expected_title):
+def test_parse_report_pdf_strips_leading_article_from_title(raw_title, expected_title):
     pdf = _lay_report_pdf(raw_title, [("What Is It?", "Body text.")])
-    title, _sections, err = parse_lay_report(pdf)
+    title, _sections, err = parse_report_pdf(pdf)
     assert err is None
     assert title == expected_title
 
 
-def test_parse_lay_report_joins_a_title_wrapped_across_lines():
+def test_parse_report_pdf_joins_a_title_wrapped_across_lines():
     pdf = _lay_report_pdf(
         None,
         [("What Are They?", "Body text.")],
         title_lines=["The Paper Wasp - An Insect That Builds Its", "Nursery Out of Chewed Wood"],
     )
-    title, sections, err = parse_lay_report(pdf)
+    title, sections, err = parse_report_pdf(pdf)
     assert err is None
     assert title == "Paper Wasp - An Insect That Builds Its Nursery Out of Chewed Wood"
     assert sections == [{"heading": "What Are They?", "body": "Body text."}]
 
 
-def test_parse_lay_report_errors_when_no_title_found():
+def test_parse_report_pdf_errors_when_no_title_found():
     # No bold text at all, so no candidate title.
     pdf = _pdf_bytes([("Just some regular text.", 11, False)])
-    title, sections, err = parse_lay_report(pdf)
+    title, sections, err = parse_report_pdf(pdf)
     assert title is None
     assert sections == []
     assert err is not None
 
 
-def test_parse_lay_report_errors_when_no_sections_found():
+def test_parse_report_pdf_errors_when_no_sections_found():
     # A title-sized bold heading, but nothing bold after it.
     pdf = _pdf_bytes([("Title Only", 20, True), ("No headings follow.", 11, False)])
-    title, sections, err = parse_lay_report(pdf)
+    title, sections, err = parse_report_pdf(pdf)
     assert title == "Title Only"
     assert sections == []
     assert err is not None
@@ -233,6 +236,88 @@ def test_find_technical_ref_returns_relative_path_string(monkeypatch, tmp_path):
     (species_dir / "tbt-web.pdf").write_bytes(b"%PDF-fake")
 
     assert find_technical_ref("Tropical Bont Tick", "tbt-web-la.pdf") == "Tropical Bont Tick/tbt-web.pdf"
+
+
+# ── technical_filename_for ────────────────────────────────────────────────────
+
+def test_technical_filename_for_strips_la_suffix():
+    assert technical_filename_for("atlas-moth-web-la.pdf") == "atlas-moth-web.pdf"
+
+
+def test_technical_filename_for_returns_none_for_non_lay_filename():
+    assert technical_filename_for("report.pdf") is None
+
+
+# ── scan_species_directory ────────────────────────────────────────────────────
+
+def test_scan_species_directory_pairs_lay_with_its_technical_sibling(tmp_path):
+    (tmp_path / "bm-la.pdf").write_bytes(b"%PDF-fake")
+    (tmp_path / "bm.pdf").write_bytes(b"%PDF-fake")
+    (tmp_path / "photo.jpg").write_bytes(b"fake-jpg")
+
+    result = scan_species_directory(tmp_path)
+    assert result["pairs"] == [(tmp_path / "bm-la.pdf", tmp_path / "bm.pdf")]
+    assert result["photos"] == [tmp_path / "photo.jpg"]
+
+
+def test_scan_species_directory_pair_has_none_technical_when_sibling_missing(tmp_path):
+    (tmp_path / "bm-la.pdf").write_bytes(b"%PDF-fake")
+
+    result = scan_species_directory(tmp_path)
+    assert result["pairs"] == [(tmp_path / "bm-la.pdf", None)]
+
+
+def test_scan_species_directory_finds_multiple_pairs(tmp_path):
+    (tmp_path / "ak-la.pdf").write_bytes(b"%PDF-fake")
+    (tmp_path / "ak.pdf").write_bytes(b"%PDF-fake")
+    (tmp_path / "ak-web-la.pdf").write_bytes(b"%PDF-fake")
+    (tmp_path / "ak-web.pdf").write_bytes(b"%PDF-fake")
+
+    result = scan_species_directory(tmp_path)
+    assert result["pairs"] == [
+        (tmp_path / "ak-la.pdf", tmp_path / "ak.pdf"),
+        (tmp_path / "ak-web-la.pdf", tmp_path / "ak-web.pdf"),
+    ]
+
+
+def test_scan_species_directory_empty_when_nothing_found(tmp_path):
+    result = scan_species_directory(tmp_path)
+    assert result == {"pairs": [], "photos": []}
+
+
+# ── resolve_species_directory ─────────────────────────────────────────────────
+
+def test_resolve_species_directory_resolves_relative_to_dudus_root(monkeypatch, tmp_path):
+    import app
+
+    monkeypatch.setattr(app, "DUDUS_ROOT", tmp_path)
+    species_dir = tmp_path / "Biting Midges"
+    species_dir.mkdir()
+
+    resolved, err = resolve_species_directory("Biting Midges")
+    assert err is None
+    assert resolved == species_dir
+
+
+def test_resolve_species_directory_accepts_absolute_path(tmp_path):
+    resolved, err = resolve_species_directory(str(tmp_path))
+    assert err is None
+    assert resolved == tmp_path
+
+
+def test_resolve_species_directory_errors_on_empty_input():
+    resolved, err = resolve_species_directory("   ")
+    assert resolved is None
+    assert err is not None
+
+
+def test_resolve_species_directory_errors_when_not_a_directory(monkeypatch, tmp_path):
+    import app
+
+    monkeypatch.setattr(app, "DUDUS_ROOT", tmp_path)
+    resolved, err = resolve_species_directory("Nonexistent Species")
+    assert resolved is None
+    assert err is not None
 
 
 # ── resolve_order_default_index ───────────────────────────────────────────────
