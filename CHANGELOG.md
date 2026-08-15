@@ -15,6 +15,9 @@ behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
   itself. Grid cards now show photo + common name only (scientific name dropped too). The detail
   page (the actual lay report) now carries two triggers — one below the photo, one at the bottom
   of the report — both opening the same modal. (closes #91)
+- Grid cards also drop the raw " — tagline" suffix a couple of common_name values carry (Click
+  Beetle, Paper Wasp — both lacking a technical report to link to anyway); the detail page keeps
+  the full name, tagline included. (closes #93)
 
 tag: `v0.12.1`
 

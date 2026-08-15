@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Card } from "@/types/card";
+import { gridCardName } from "@/lib/cardIndex";
 
 export default function DuduGridCard({ card }: { card: Card }) {
   return (
@@ -26,7 +27,7 @@ export default function DuduGridCard({ card }: { card: Card }) {
         </div>
       )}
       <div className="p-4">
-        <p className="font-semibold text-zinc-900">{card.common_name}</p>
+        <p className="font-semibold text-zinc-900">{gridCardName(card.common_name)}</p>
       </div>
     </Link>
   );
