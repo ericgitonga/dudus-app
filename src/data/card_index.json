@@ -826,51 +826,5 @@
     "photo_ref": "/photos/green-lacewing.jpg",
     "reviewed_by": null,
     "reviewed_at": null
-  },
-  {
-    "id": "carpenter-ant",
-    "common_name": "Carpenter Ant",
-    "scientific_name": null,
-    "family": null,
-    "order": null,
-    "taxon_rank": "species",
-    "sourcing": "",
-    "sections": [
-      {
-        "heading": "What Are They?",
-        "body": "This is a carpenter ant — a member of Camponotus, one of the biggest and most successful ant genera on Earth, with anywhere from 600 to over 1,500 named species depending on how you count. They get their common name from an unglamorous habit: hollowing out wood to build their nests. They don't eat the wood like termites do — they just carve it out, gallery by gallery, and leave the sawdust behind."
-      },
-      {
-        "heading": "What Do They Look Like?",
-        "body": "Carpenter ant colonies aren't just one body type. Workers come in different sizes — minor workers with straighter heads, and hefty \"major\" workers (soldiers) with big, rounded heads built for defence and heavy lifting. Telling exact species apart usually needs a full-body photo, since features like the waist shape and hair pattern matter more than overall colour."
-      },
-      {
-        "heading": "How Do They Live?",
-        "body": "Starting a colony is a brutal gamble. A single queen typically strikes out alone, sealing herself away to lay and raise her first handful of workers with no help and no food beyond her own reserves — and in some species, as many as 99 out of 100 of these solo attempts fail before the first workers even hatch. That first tiny batch of workers is oddly special: in at least one species, they grow into a noticeably different body shape than workers born later, with relatively longer antennae — as if nature gave the colony's first employees an upgrade to help them keep up with communicating with their bigger colony-mates to come."
-      },
-      {
-        "heading": "Where Do They Live and Feed?",
-        "body": "Carpenter ants nest in dead wood, soil, or under stones, and some tend \"livestock\" — herding sap-sucking insects like aphids and scale insects to harvest the sweet honeydew they excrete, much like a farmer keeping bees. One African species, Camponotus maculatus, is the most abundant ant in the savanna landscapes where it's been studied, foraging hardest in the hottest, driest months and clearly preferring sugary, moist food over dry scraps."
-      },
-      {
-        "heading": "Why Do They Matter?",
-        "body": "Carpenter ants cut both ways for humans. Some species do real, measurable damage to wooden buildings by excavating extensive galleries inside support beams and walls. But in the wild, the very same excavating habit makes them valuable ecosystem engineers — their nest-digging boosts bacterial activity and small invertebrate life in the surrounding soil, and keeps leaf litter breaking down faster than in undisturbed ground. Some species are also unexpected bodyguards: one North American carpenter ant protects the caterpillars of a critically endangered butterfly in exchange for sugary secretions, and tended caterpillars had a dramatically better survival rate than unprotected ones."
-      },
-      {
-        "heading": "A Few Things Worth Knowing",
-        "body": "Deep inside every Camponotus colony lives a hidden partner: a bacterium called Blochmannia that lives inside the ants' own cells and helps top up their diet — a permanent, built-in food supplement passed down through the colony. A few of this genus's closest relatives take defence to an extreme most animals would never risk. So-called \"exploding ants\" — moved into their own genus in 2016 but once counted as Camponotus — can rupture their own bodies during a fight, releasing a sticky, chemically unusual glue that traps and kills an attacker at the cost of the ant's own life."
-      },
-      {
-        "heading": "In Summary",
-        "body": "A carpenter ant's story is one of contrasts: solitary queens who almost always fail, workers who quietly reshape the soil and forests around them, and a few close cousins willing to blow themselves up rather than lose a fight. Whatever wooden fence post or dead branch you find one patrolling, there's a good chance you're watching one of the more industrious — and occasionally most dramatic — insects in the neighbourhood."
-      }
-    ],
-    "source_report_ref": {
-      "technical": "",
-      "lay": "Carpenter Ant/ca-web-la.pdf"
-    },
-    "photo_ref": "/photos/carpenter-ant.jpg",
-    "reviewed_by": null,
-    "reviewed_at": null
   }
 ]
