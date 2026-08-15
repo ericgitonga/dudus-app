@@ -14,6 +14,7 @@ Run from the repo root:
     conda run -n ds streamlit run tools/dudu-intake/app.py
 """
 
+import io
 import json
 import re
 import shutil
@@ -180,14 +181,14 @@ def order_card(card):
     return {k: card.get(k) for k in CARD_KEY_ORDER}
 
 
-def process_photo(uploaded_file):
+def normalize_photo(img):
     """
     Strip EXIF/GPS metadata and bake in orientation, mirroring stripPhotoMetadata.ts (#10) so
-    admin-uploaded photos get the same treatment as in-app captures. Then apply the pad-to-3:2
-    convention from SKILL.md: only pads (never crops) since "crop tight to the dudu" is a manual
-    judgment call the tool can't make. Returns (image, warning | None).
+    a photo gets the same treatment regardless of where it came from (an admin upload or one
+    extracted straight out of a report PDF, #83). Then apply the pad-to-3:2 convention from
+    SKILL.md: only pads (never crops) since "crop tight to the dudu" is a manual judgment call
+    the tool can't make. Returns (image, warning | None).
     """
-    img = Image.open(uploaded_file)
     img = ImageOps.exif_transpose(img)
     img = img.convert("RGB")
 
@@ -209,6 +210,37 @@ def process_photo(uploaded_file):
         )
 
     return img, warning
+
+
+def process_photo(uploaded_file):
+    """Load an admin-uploaded photo file and normalize it — see normalize_photo()."""
+    return normalize_photo(Image.open(uploaded_file))
+
+
+def extract_embedded_photo(pdf_bytes):
+    """
+    Pull the specimen photo out of a report PDF, if one is embedded (per SKILL.md's Photo line
+    convention — `![](<filename>)` placed right under the taxonomy line). Used so an admin
+    doesn't have to re-upload a photo that's already sitting in the PDF they just gave the tool
+    (#83). Picks the largest embedded raster image by pixel area across the whole document,
+    since that's reliably the specimen photo rather than some incidental artifact. Returns
+    (PIL.Image, ext) — ext is "png" or "jpg" — or (None, None) if the PDF embeds no raster image
+    at all.
+    """
+    doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+    best = None  # (area, xref)
+    for page in doc:
+        for xref, _smask, width, height, *_rest in page.get_images(full=True):
+            area = width * height
+            if best is None or area > best[0]:
+                best = (area, xref)
+    if best is None:
+        return None, None
+
+    base = doc.extract_image(best[1])
+    img = Image.open(io.BytesIO(base["image"]))
+    ext = "png" if base["ext"] == "png" else "jpg"
+    return img, ext
 
 
 def save_photo(img, card_id, ext):
@@ -481,14 +513,26 @@ if batch_files:
                 )
                 resolved_order = order_picker(f"batch_{i}", known_orders_batch, detected_order)
             with col_b:
-                photo_file = st.file_uploader(
-                    "Photo (optional)", type=["jpg", "jpeg", "png"], key=f"batch_photo_{i}"
-                )
-                if photo_file is not None:
-                    preview, warn = process_photo(photo_file)
-                    st.image(preview, caption="After metadata strip + 3:2 pad", width=250)
+                embedded_img, embedded_ext = extract_embedded_photo(f.getvalue())
+                photo_result = None
+                if embedded_img is not None:
+                    preview, warn = normalize_photo(embedded_img)
+                    st.image(preview, caption="Photo embedded in report — used automatically", width=250)
                     if warn:
                         st.warning(warn)
+                    photo_result = (preview, embedded_ext)
+                else:
+                    photo_file = st.file_uploader(
+                        "Photo — this report has no embedded photo, so one is needed",
+                        type=["jpg", "jpeg", "png"],
+                        key=f"batch_photo_{i}",
+                    )
+                    if photo_file is not None:
+                        preview, warn = process_photo(photo_file)
+                        st.image(preview, caption="After metadata strip + 3:2 pad", width=250)
+                        if warn:
+                            st.warning(warn)
+                        photo_result = (preview, "png" if photo_file.type == "image/png" else "jpg")
 
             batch_rows.append(
                 {
@@ -497,7 +541,7 @@ if batch_files:
                     "sections": sections,
                     "card_id": card_id,
                     "order": resolved_order,
-                    "photo_file": photo_file,
+                    "photo_result": photo_result,
                     "lay_filename": f.name,
                 }
             )
@@ -517,9 +561,8 @@ if st.button("Publish batch", type="primary", disabled=not valid_batch_rows):
             continue
 
         photo_ref = None
-        if row["photo_file"] is not None:
-            img, _ = process_photo(row["photo_file"])
-            ext = "png" if row["photo_file"].type == "image/png" else "jpg"
+        if row["photo_result"] is not None:
+            img, ext = row["photo_result"]
             photo_ref = save_photo(img, row["card_id"], ext)
             publish_files[f"public{photo_ref}"] = (PHOTOS_DIR / Path(photo_ref).name).read_bytes()
 

@@ -28,16 +28,19 @@ bottom:
   a time. Each PDF is parsed independently with PyMuPDF: the report's own title becomes
   `common_name`/`id`, each bold heading starts a new section, and the regular-weight text under
   it becomes that section's body — mirroring exactly how `md_to_pdf_rl.py` styles H1/H2/body when
-  it originally generated the PDF. A leading "The/A/An" is stripped from the title. Each row gets
-  its own optional photo and an order picker: a dropdown of orders already in use, plus "Unknown
-  (fix later)" → `null`, plus a write-in "Other (type manually)" for a genuinely new order — every
-  technical report states its order in prose ("Order X" in its Taxonomy and Classification
-  section), auto-detected from the sibling technical PDF in `Dudus/<CommonName>/` when present,
-  pre-selecting or pre-filling accordingly. Duplicate ids (already live, or repeated within the
-  batch) are caught before publishing. The whole batch publishes as **one combined PR** — one CI
-  run instead of one per card, at the cost that a failed check blocks every card in that batch
-  together. `scientific_name`, `family`, `taxon_rank` (defaults `"species"`), and `sourcing`
-  (left blank) have no edit UI yet, so they land as clear placeholders, not guesses.
+  it originally generated the PDF. A leading "The/A/An" is stripped from the title. Each row's
+  photo is taken automatically from whatever the report itself embeds under its taxonomy line
+  (SKILL.md's Photo line convention) — run through the same metadata-strip + 3:2-pad pipeline as
+  a manual upload (#83); only when the PDF has no embedded photo does the row fall back to its
+  own file uploader. Each row also gets an order picker: a dropdown of orders already in use,
+  plus "Unknown (fix later)" → `null`, plus a write-in "Other (type manually)" for a genuinely new
+  order — every technical report states its order in prose ("Order X" in its Taxonomy and
+  Classification section), auto-detected from the sibling technical PDF in `Dudus/<CommonName>/`
+  when present, pre-selecting or pre-filling accordingly. Duplicate ids (already live, or repeated
+  within the batch) are caught before publishing. The whole batch publishes as **one combined
+  PR** — one CI run instead of one per card, at the cost that a failed check blocks every card in
+  that batch together. `scientific_name`, `family`, `taxon_rank` (defaults `"species"`), and
+  `sourcing` (left blank) have no edit UI yet, so they land as clear placeholders, not guesses.
 - **Existing cards** (#52, #58) — defaults **collapsed**, behind a "Show existing cards" button
   (the reverse toggles it back to "Hide"). Once shown: every card gets a "Select for deletion"
   checkbox above its own expander (checkable without opening the card) plus, inside the

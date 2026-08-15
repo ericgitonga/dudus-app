@@ -6,6 +6,19 @@ schedule rather than moving in lockstep with site releases. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); [Semantic Versioning](https://semver.org),
 pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*` tags.
 
+## [0.8.0] - 2026-08-15
+
+### Added
+
+- Add cards now takes a row's photo automatically from whatever the uploaded lay-report PDF
+  already embeds under its taxonomy line (SKILL.md's Photo line convention), running it through
+  the same metadata-strip + 3:2-pad pipeline as a manual upload. The per-row file uploader only
+  appears as a fallback when the PDF has no embedded photo. `process_photo` is split into
+  `normalize_photo` (pure image processing) and the file-loading wrapper, and a new
+  `extract_embedded_photo` picks the largest raster image in the PDF by pixel area (closes #83)
+
+tag: `intake-v0.8.0`
+
 ## [0.7.2] - 2026-08-13
 
 ### Security

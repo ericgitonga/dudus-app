@@ -5,13 +5,18 @@ Fast, no Streamlit widget/network round-trip involved — complements (not repla
 far (#31/#34/#40). Run: pytest (from tools/dudu-intake/, or via CI's unit-dudu-intake job).
 """
 
+import io
+
 import fitz
 import pytest
+from PIL import Image
 
 from app import (
+    extract_embedded_photo,
     find_technical_pdf_path,
     find_technical_ref,
     guess_order_from_technical,
+    normalize_photo,
     parse_lay_report,
     resolve_order_default_index,
     serialize_cards,
@@ -46,6 +51,23 @@ def _technical_pdf(text):
     doc = fitz.open()
     page = doc.new_page()
     page.insert_text((72, 72), text, fontsize=11, fontname="helv")
+    return doc.tobytes()
+
+
+def _pdf_with_images(sizes, fmt="JPEG"):
+    """Build a minimal in-memory PDF embedding one raster image per (width, height) in `sizes`,
+    for testing extract_embedded_photo. Each image is placed in its own small on-page rect —
+    the rect size is independent of the embedded image's actual pixel dimensions, which is what
+    extract_embedded_photo inspects."""
+    doc = fitz.open()
+    page = doc.new_page()
+    y = 0
+    for w, h in sizes:
+        img = Image.new("RGB", (w, h), color=(180, 90, 40))
+        buf = io.BytesIO()
+        img.save(buf, format=fmt)
+        page.insert_image(fitz.Rect(0, y, 100, y + 100), stream=buf.getvalue())
+        y += 110
     return doc.tobytes()
 
 
@@ -230,3 +252,56 @@ def test_resolve_order_default_index_for_no_detected_order():
     known = ["Araneae", "Coleoptera"]
     # "Unknown (fix later)" sits right after the known orders, i.e. len(known).
     assert resolve_order_default_index(known, None) == len(known)
+
+
+# ── normalize_photo ───────────────────────────────────────────────────────────
+
+def test_normalize_photo_pads_narrow_image_to_3_2():
+    img = Image.new("RGB", (100, 100))  # 1:1 — narrower than 3:2
+    normalized, warning = normalize_photo(img)
+    assert warning is None
+    assert normalized.size == (150, 100)
+
+
+def test_normalize_photo_warns_on_wide_image_without_cropping():
+    img = Image.new("RGB", (300, 100))  # 3:1 — wider than 3:2
+    normalized, warning = normalize_photo(img)
+    assert normalized.size == (300, 100)  # left untouched, never cropped
+    assert warning is not None
+
+
+def test_normalize_photo_leaves_3_2_image_untouched():
+    img = Image.new("RGB", (300, 200))  # exactly 3:2
+    normalized, warning = normalize_photo(img)
+    assert normalized.size == (300, 200)
+    assert warning is None
+
+
+# ── extract_embedded_photo ────────────────────────────────────────────────────
+
+def test_extract_embedded_photo_returns_none_when_no_image():
+    pdf = _pdf_bytes([("Just some text, no embedded photo.", 11, False)])
+    img, ext = extract_embedded_photo(pdf)
+    assert img is None
+    assert ext is None
+
+
+def test_extract_embedded_photo_finds_a_single_embedded_image():
+    pdf = _pdf_with_images([(300, 200)])
+    img, ext = extract_embedded_photo(pdf)
+    assert img is not None
+    assert img.size == (300, 200)
+    assert ext == "jpg"
+
+
+def test_extract_embedded_photo_picks_the_largest_by_pixel_area():
+    # A small incidental image plus the real, much larger specimen photo — the larger one wins.
+    pdf = _pdf_with_images([(40, 40), (800, 600)])
+    img, ext = extract_embedded_photo(pdf)
+    assert img.size == (800, 600)
+
+
+def test_extract_embedded_photo_detects_png_extension():
+    pdf = _pdf_with_images([(300, 200)], fmt="PNG")
+    _img, ext = extract_embedded_photo(pdf)
+    assert ext == "png"
