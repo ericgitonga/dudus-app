@@ -65,14 +65,11 @@ def test_unclassified_dudus_grouped_under_fallback_button():
 
 
 def test_grid_card_on_order_page_links_to_its_detail_page():
-    # The card itself is no longer a single anchor (a "Technical report" link/modal trigger now
-    # sits between the photo and the name, issue #88) — click the name link specifically, the
-    # last anchor inside the card, which always navigates regardless of that link's presence.
     card = CARDS[0]
     order_slug = _order_slug(card["order"])
     with browser_page() as page:
         page.goto(f"/orders/{order_slug}")
-        page.click(f'[data-testid="grid-card"][data-dudu-id="{card["id"]}"] a >> nth=-1')
+        page.click(f'[data-testid="grid-card"][data-dudu-id="{card["id"]}"]')
         page.wait_for_selector('[data-testid="dudu-detail"]')
         assert page.url.rstrip("/").endswith(f"/dudus/{card['id']}")
 
