@@ -14,6 +14,7 @@ export interface Card {
   taxon_rank: TaxonRank;
   sourcing: string;
   sections: CardSection[];
+  technical_sections: CardSection[];
   source_report_ref: {
     technical: string | string[];
     lay: string | string[];

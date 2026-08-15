@@ -6,6 +6,21 @@ schedule rather than moving in lockstep with site releases. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); [Semantic Versioning](https://semver.org),
 pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*` tags.
 
+## [0.9.0] - 2026-08-15
+
+### Added
+
+- Add cards now works from a species directory instead of a browser upload: type a directory
+  (under `Dudus/`, or absolute), and the tool scans it for lay/technical report pairs (`*-la.pdf`
+  paired with its non-`-la` sibling) and photo files, letting the admin pick when a folder holds
+  more than one candidate (e.g. book- vs web-sourced). The technical report is now parsed (same
+  H1/H2 convention as the lay report) into a new `technical_sections` field, so the app (#88) can
+  render it in a modal. `parse_lay_report` is renamed `parse_report_pdf` since it's now used for
+  both report shapes. The "Replace lay report" existing-card flow also re-parses the technical
+  sibling on content update. (closes #89)
+
+tag: `intake-v0.9.0`
+
 ## [0.8.0] - 2026-08-15
 
 ### Added

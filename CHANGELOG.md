@@ -6,6 +6,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.12.0] - 2026-08-15
+
+### Added
+
+- Each dudu now surfaces its technical report, not just the lay-audience one: a "Technical
+  report" link below the photo on grid cards (`DuduGridCard`) and another at the bottom of the
+  detail page, both opening the same modal — text only, no photograph — populated from a new
+  `technical_sections` field on `Card`. Existing cards were backfilled from their already-
+  recorded `source_report_ref.technical` path(s) via a one-off local migration. (closes #88)
+
+tag: `v0.12.0`
+
 ## [0.11.2] - 2026-08-13
 
 ### Security

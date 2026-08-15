@@ -12,6 +12,7 @@ function card(id: string, common_name: string): Card {
     taxon_rank: "species",
     sourcing: "",
     sections: [],
+    technical_sections: [],
     source_report_ref: { technical: "", lay: "" },
     photo_ref: null,
     reviewed_by: null,
