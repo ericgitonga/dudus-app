@@ -64,6 +64,15 @@ export default async function DuduPage({
           </div>
         )}
 
+        {card.technical_sections.length > 0 && (
+          <div className="mt-3">
+            <TechnicalReportLink
+              commonName={card.common_name}
+              sections={card.technical_sections}
+            />
+          </div>
+        )}
+
         <div className="mt-8 flex flex-col gap-6">
           {card.sections.map((section) => (
             <section key={section.heading}>

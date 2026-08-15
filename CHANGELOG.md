@@ -6,6 +6,21 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.12.1] - 2026-08-15
+
+### Fixed
+
+- The "Technical report" link moved off the grid-card thumbnail (`DuduGridCard`) — it was
+  confusing there, since the thumbnail is just a navigation card into the report, not the report
+  itself. Grid cards now show photo + common name only (scientific name dropped too). The detail
+  page (the actual lay report) now carries two triggers — one below the photo, one at the bottom
+  of the report — both opening the same modal. (closes #91)
+- Grid cards also drop the raw " — tagline" suffix a couple of common_name values carry (Click
+  Beetle, Paper Wasp — both lacking a technical report to link to anyway); the detail page keeps
+  the full name, tagline included. (closes #93)
+
+tag: `v0.12.1`
+
 ## [0.12.0] - 2026-08-15
 
 ### Added

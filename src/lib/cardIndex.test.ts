@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { filterCardsByQuery, sortCardsByCommonName } from "@/lib/cardIndex";
+import { filterCardsByQuery, gridCardName, sortCardsByCommonName } from "@/lib/cardIndex";
 import type { Card } from "@/types/card";
 
 function card(id: string, common_name: string): Card {
@@ -63,5 +63,21 @@ describe("filterCardsByQuery", () => {
 
   it("returns an empty array when nothing matches", () => {
     expect(filterCardsByQuery(cards, "nonexistent")).toEqual([]);
+  });
+});
+
+describe("gridCardName", () => {
+  it("strips a ' — ' tagline for thumbnail display", () => {
+    expect(gridCardName("Click Beetle — The Insect That Flips Itself With a Snap")).toBe(
+      "Click Beetle",
+    );
+  });
+
+  it("passes through a name with no tagline unchanged", () => {
+    expect(gridCardName("Picasso Bug")).toBe("Picasso Bug");
+  });
+
+  it("leaves a plain hyphen (no surrounding spaces) untouched", () => {
+    expect(gridCardName("White-Ringed Atlas Moth")).toBe("White-Ringed Atlas Moth");
   });
 });
