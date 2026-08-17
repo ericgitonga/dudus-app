@@ -6,6 +6,19 @@ schedule rather than moving in lockstep with site releases. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); [Semantic Versioning](https://semver.org),
 pre-1.0. Tags are prefixed `intake-v` to avoid colliding with the site's own `v*` tags.
 
+## [0.10.0] - 2026-08-17
+
+### Added
+
+- Add cards' "Species directory" field now has a "Browse…" button next to it that opens the
+  OS's native folder picker (via `tkinter.filedialog`), rooted at `Dudus/`, instead of requiring
+  the path to be typed. Guarded behind a `TKINTER_AVAILABLE` check so the tool (and its test
+  suite) still runs in environments without a Tk/display, e.g. CI — the button just doesn't
+  appear there. Picking a folder inside `Dudus/` fills the field with the same relative-path
+  form a typed entry would use. (closes #95)
+
+tag: `intake-v0.10.0`
+
 ## [0.9.0] - 2026-08-15
 
 ### Added
