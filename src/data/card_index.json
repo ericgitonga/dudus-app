@@ -1400,5 +1400,85 @@
     "photo_ref": "/photos/rhinoceros-beetle.jpg",
     "reviewed_by": null,
     "reviewed_at": null
+  },
+  {
+    "id": "armoured-weevil",
+    "common_name": "Armoured Weevil",
+    "scientific_name": null,
+    "family": null,
+    "order": "Coleoptera",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "Meet the armoured weevil — a beetle that looks like it's wearing a suit of ancient, pitted armour plating. It belongs to the genus Brachycerus, part of the weevil family, and it's built completely differently from the beetles most people picture: it can't fly at all. Its wing covers are fused shut into one solid, rugged shell, permanently welded together like a tank hatch that's rusted closed."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "Its whole body is covered in deep pits, warty bumps, and rough furrows — no smooth, shiny beetle shell here. Instead of the sleek curve most beetles have, this one looks almost hand-carved from bark or stone. Out front is a long, thick, downward-curving snout, and its legs are stout and clawed, built for gripping and digging rather than speed. Some species even have a knife-like edge on their front legs. It's a heavyweight among weevils — solidly built, in browns and creams that blend perfectly into dry wood and soil."
+      },
+      {
+        "heading": "How Do They Live?",
+        "body": "The young (larvae) grow up inside the bulbs of wild lily-family plants — things like Crinum, Clivia, and a famous plant called Boophone disticha. The larva burrows into a bulb and feeds from the inside out, using the bulb as both food and shelter until it's ready to emerge as an adult. Beyond that early bulb-feeding stage, though, surprisingly little has actually been documented about how these weevils go through the rest of their life — nobody's published good detail yet on the egg stage, how long they live as adults, or exactly how they reproduce."
+      },
+      {
+        "heading": "Where Do They Live?",
+        "body": "Armoured weevils are an African speciality — around 300 species live mostly in sub-Saharan Africa, with a much smaller cousin population up in North Africa and the Mediterranean. Kenya has confirmed sightings from several very different corners of the country: the dry Kajiado and Laikipia rangelands, the Dakatcha coastal woodlands near Kilifi, the Rift Valley near Nakuru, and Kakamega in the west — meaning this isn't a one-habitat specialist, it turns up across a real spread of Kenyan landscapes. Oddly, the very best place in Africa to find lots of different armoured weevil species isn't the lushest, most plant-rich region — it's the dry, comparatively plain Nama Karoo of southern Africa. Scientists have found more of these flightless weevils there than in famously plant-diverse hotspots like the Cape Floristic Region, which is a genuinely surprising twist: sometimes the toughest, driest places produce the richest weevil diversity, not the greenest ones."
+      },
+      {
+        "heading": "Why Do They Matter?",
+        "body": "A few of this weevil's relatives are considered pest species elsewhere — onion and garlic weevils that trouble crops in parts of the Mediterranean and Middle East. But when scientists recently surveyed the actual soil pests troubling onion and cabbage farms in Kenya, armoured weevils didn't show up on the list at all — so despite the family name, there's no evidence they're currently a farming problem here. Instead, their real significance in this part of the world seems to be cultural: one species and its host bulb plant show up again and again in southern African traditional healing practices, an association that has apparently lasted across generations and several different communities."
+      },
+      {
+        "heading": "Fun Facts",
+        "body": "•  These weevils are so heavily armoured and settled into ground life that they've simply given up flying altogether — their wing covers are fused into one solid, immovable shell. •  Even scientific databases haven't fully sorted out where this genus belongs — some records file it under one weevil family, others under a different one, an inconsistency that's still unresolved today rather than settled history. •  The wider weevil family this beetle belongs to is enormous — an estimated 220,000 species may exist worldwide, of which around 62,000 have actually been described and named so far. •  Unlike most weevils, whose antennae have a sharp \"elbow\" bend, this genus's antennae are short and straight — a quiet reminder that even a very weevil-looking beetle can break the usual rules."
+      }
+    ],
+    "technical_sections": [
+      {
+        "heading": "References",
+        "body": "Source Type Section(s) used GBIF Backbone Taxonomy (genus and species records, live API) Taxonomic authority database 1, 5 GBIF occurrence search (Kenya query, live API) Taxonomic authority database 5 Hickman, Procheş & Ramdhani (2017), Zootaxa 4323(4) Peer-reviewed journal 4, 9 Oberprieler, Marvaldi & Anderson (2007), Zootaxa 1668(1):491–520 Peer-reviewed journal 1, 9 Thornton, R. (2017), Healing the Exposed Being, ch. 9, Wits University Press (via Cambridge Core) Academic monograph, university press 4, 9 SANBI Biodiversity Advisor, Brachycerus oblongus record Government/conservation agency 5 Scientific Reports (2023), Kenya onion/cabbage soil pests, PMC10624810 Peer-reviewed journal 6 Source Type Section(s) used Oberprieler, \"Brachycerus weevils and their host associations\" (journals.co.za, excerpt only) Peer-reviewed journal 1, 3, 4 CABI Compendium datasheets for B. albidentatus, B. muricatus, B. undatus (excerpt only) Agricultural research body 5, 6 ResearchGate-hosted keys on Brachycerinae morphology and Lebanese Brachycerus fauna (excerpt only) Peer-reviewed journal (author-hosted) 1, 2, 5 No relevant online content found for: Topic 7 (Control and management) — CABI's control sections were behind an inaccessible 403 wall on every route tried; Topic 8 (Collection methods) — no Brachycerus-specific coverage found; Topic 3 (Biology and life cycle) — only larval host-feeding confirmed, egg/pupal/reproductive/lifespan detail not found in any accessible whitelisted source."
+      },
+      {
+        "heading": "1. Taxonomy and Classification",
+        "body": "•  Order: Coleoptera (Source: GBIF Backbone Taxonomy, api.gbif.org, 2026). •  Family: The genus Brachycerus is currently accepted by GBIF's backbone taxonomy under family Brachyceridae (common name \"Lily Weevils,\" ~622 subordinate names listed) (Source: GBIF Backbone Taxonomy, api.gbif.org/v1/species/1227966, 2026). Individual species records in the same database, including B. ornatus, are still filed under family Curculionidae with taxonomic status flagged \"DOUBTFUL\" — an unresolved placement visible directly in the live record (Source: GBIF Backbone Taxonomy, api.gbif.org/v1/species/8204693, 2026). •  Subfamily/Tribe: Brachycerus, together with roughly ten smaller related genera, forms the tribe Brachycerini within subfamily Brachycerinae, described as a primitive, largely African weevil element (Source: Oberprieler, Journal of the Entomological Society of Southern Africa, journals.co.za). •  Broader placement: Curculionoidea (the weevil superfamily containing Brachycerinae) is organised into seven main lineages/families (Source: Oberprieler, Marvaldi & Anderson, \"Weevils, weevils, weevils everywhere,\" Zootaxa 1668(1):491–520, 2007). •  Species groups (southern Africa): three main groups are recognised — the B. apterus group (largest; larvae develop in Amaryllidaceae bulbs), the B. asparagi group, and the B. inaequalis group (Source: Oberprieler, journals.co.za). •  Species count: GBIF lists at least 300 accepted species-rank taxa under the genus, with more beyond the first page of records (Source: GBIF Backbone Taxonomy, api.gbif.org/v1/species/1227966/children, 2026). A separate paper on Lebanese Brachycerus fauna states the genus comprises approximately 300 species, mostly in the Ethiopian zoogeographical region, with far fewer (49 species plus two subspecies) in the Palaearctic, primarily North Africa (Source: ResearchGate-hosted paper on Lebanese Brachycerus fauna). •  Genus-level identification of this specimen is well supported; species-level determination could not be confirmed from any whitelisted source using photographic features alone, and is reported as undetermined."
+      },
+      {
+        "heading": "2. Morphology",
+        "body": "•  Robust, flightless, black-bodied weevils; Palaearctic representatives in identification keys range roughly 6–18 mm in body length; rostrum dorsally flattened; cuticle surface strongly furrowed and embossed; elytra fused and coarsely sculptured (Source: Digital-Weevil-Determination key for Curculionoidea of the West Palaearctic, Brachycerinae, ResearchGate). •  Antennae are short, compact, non-geniculate (not elbow-shaped, unlike most other weevils), composed of nine segments (Source: same ResearchGate key). •  Species-level diagnostic characters used in keys include: interstriae 3 and 5 more prominently tuberculate than the others; a pronotal medial groove with a strongly prominent longitudinal carina; in some species the outer distal angle of the fore and mid tibiae is strongly prominent and knife-like; at least one described species shows sexual dimorphism in the shape of the apical elytra (Source: same ResearchGate key)."
+      },
+      {
+        "heading": "3. Biology and Life Cycle",
+        "body": "•  Larvae of the B. apterus species-group develop internally within the bulbs of host Amaryllidaceae, with recorded host genera including Crinum, Ammocharis, Clivia, Cyrtanthus, and Nerine (Source: Oberprieler, journals.co.za). •  No accessible whitelisted source described egg-stage detail, pupation, adult reproductive behaviour, or adult lifespan for this genus; this part of the life cycle is genuinely thin in the available literature rather than omitted for space."
+      },
+      {
+        "heading": "4. Ecology",
+        "body": "•  Within southern Africa, the known host plants of the Brachycerini belong to the broader lily-family group that includes the Amaryllidaceae (Source: Oberprieler, journals.co.za). •  Exceptional species richness of large, flightless, aridity-adapted weevil lineages, including Brachycerus, occurs in the Nama Karoo of southern Africa — a region that is otherwise unremarkable for plant diversity — exceeding richness found in the Succulent Karoo and Cape Floristic Region, both recognised plant-diversity hotspots; grassland/savanna of southeastern Africa also shows elevated richness despite non-arid conditions (Source: Hickman, Procheş & Ramdhani, \"Patterns of species richness in two African-centered, aridity-adapted flightless weevil lineages,\" Zootaxa 4323(4), 2017). •  Brachycerus ornatus and its bulb host Boophone disticha (= Ammocharis coranica) feature recurrently in southern African healing (ngoma) traditions across San, Khoe, Bantu-speaking, and settler-descended communities (Source: Thornton, \"Magical weevils and amaryllis in southern African ritual landscapes,\" in Healing the Exposed Being, Wits University Press, 2017). •  No IUCN Red List entries were found for the genus or for any individual Brachycerus species."
+      },
+      {
+        "heading": "5. Distribution and Diversity",
+        "body": "•  The genus occurs predominantly in Africa; approximately 300 species are found mostly in the Ethiopian zoogeographical region, with about 49 species and two subspecies in the Palaearctic, primarily North Africa (Source: ResearchGate-hosted paper on Lebanese Brachycerus fauna). •  Kenyan occurrence, confirmed directly via live GBIF occurrence records: •  B. ornatus (Reiche, 1857) — Kajiado/Kitengela, February 2022; Laikipia/Mugogodo West, June 2020 •  B. puerilis (Kolbe, 1898) — Kilifi/Dakatcha Woodland, May 2024 •  B. strumosus (Pascoe, 1887) — Nakuru/Rift Valley, June 1962 •  B. kumbanensis (Quedenfeldt, 1888) — Kakamega, Western Province •  Genus-level museum and citizen-science records from Tsavo East National Park/Kitui (1977–1989) and Kikambala/Kilifi (1977) •  (Source: GBIF occurrence search, api.gbif.org, live query, 2026) •  CABI Compendium distribution data for B. albidentatus (onion weevil) lists a broad range including Angola, Egypt, Ethiopia, Israel, Italy, Jordan, Kenya, Libya, Malta, Senegal, Somalia, South Africa, Tanzania, Turkey, UAE, Yemen, and Zimbabwe (Source: CABI Compendium datasheet 9895, excerpt only). •  By contrast, SANBI's Biodiversity Advisor record for B. oblongus shows only South African occurrence (Mpumalanga, KwaZulu-Natal, Gauteng, 1895–2014), illustrating that Kenyan range is species-specific within the genus rather than genus-wide (Source: SANBI Biodiversity Advisor, biodiversityadvisor.sanbi.org, record 6545)."
+      },
+      {
+        "heading": "6. Economic / Ecological Importance",
+        "body": "•  Three Brachycerus species are treated as named agricultural pests in the CABI Compendium: B. albidentatus (onion weevil), B. muricatus (garlic weevil), and B. undatus (garlic weevil) (Source: CABI Compendium datasheets 9895, 9896, 9898, excerpt only). •  A 2023 peer-reviewed survey of emerging soil-dwelling pests of onions and cabbage in Kenya found no mention of Brachycerus at all; the pests identified were Delia platura, Maladera sp., Agriotes sp., Atherigona orientalis, and Urophorus humeralis (Source: Scientific Reports, 2023, PMC10624810). Current published Kenyan pest-surveillance literature accessed for this report does not flag Brachycerus as an economically significant pest within Kenya. •  Ecologically, larvae of at least the B. apterus group act as internal bulb-feeders on wild Amaryllidaceae, a non-crop, wild-plant association rather than a documented Kenyan agricultural one based on sources accessed (Source: Oberprieler, journals.co.za)."
+      },
+      {
+        "heading": "7. Control and Management",
+        "body": "No authoritative coverage could be obtained for this topic. CABI Compendium datasheets nominally include prevention/control sections for the three named pest species, but full text was inaccessible (403 Forbidden) across every route attempted."
+      },
+      {
+        "heading": "9. Notable Facts",
+        "body": "•  Brachycerus ornatus and its host bulb Boophone disticha are documented as recurring elements of southern African ngoma healing traditions spanning multiple ethnic groups over a long historical span (Source: Thornton, Healing the Exposed Being, Wits University Press, 2017). •  For scale, the broader weevil superfamily Curculionoidea, within which Brachycerinae sits, comprises roughly 62,000 described species against an estimated total of 220,000 (Source: Oberprieler, Marvaldi & Anderson, Zootaxa 1668, 2007). •  Large African flightless weevil lineages including Brachycerus reach their greatest species richness in the Nama Karoo, an arid region that is not itself a recognised plant-diversity hotspot — richness there exceeds that of the genuinely plant-diverse Cape Floristic Region and Succulent Karoo (Source: Hickman, Procheş & Ramdhani, Zootaxa 4323(4), 2017). •  GBIF's own current database simultaneously carries the accepted genus record under family Brachyceridae while several individual species, including B. ornatus, remain filed under family Curculionidae with \"DOUBTFUL\" status — a live, present-day taxonomic inconsistency rather than settled history (Source: GBIF Backbone Taxonomy, api.gbif.org, 2026)."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Armoured Weevil/aw-web.pdf",
+      "lay": "Armoured Weevil/aw-web-la.pdf"
+    },
+    "photo_ref": "/photos/armoured-weevil.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
