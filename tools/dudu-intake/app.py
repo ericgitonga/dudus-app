@@ -29,6 +29,14 @@ import fitz
 import streamlit as st
 from PIL import Image, ImageOps
 
+try:
+    import tkinter as tk
+    from tkinter import filedialog
+
+    TKINTER_AVAILABLE = True
+except ImportError:
+    TKINTER_AVAILABLE = False
+
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CARD_INDEX_PATH = REPO_ROOT / "src" / "data" / "card_index.json"
 PHOTOS_DIR = REPO_ROOT / "public" / "photos"
@@ -210,6 +218,34 @@ def resolve_species_directory(raw_input):
     if not candidate.is_dir():
         return None, f"Not a directory: {candidate}"
     return candidate, None
+
+
+def browse_for_species_directory():
+    """Open the OS's native folder picker, rooted at DUDUS_ROOT — safe to shell out to tkinter
+    here since this tool is local-only, always launched and viewed on the admin's own machine
+    (never a remote server), per README. Returns the chosen path relative to DUDUS_ROOT when
+    it's inside it (so it round-trips through resolve_species_directory like a typed relative
+    path), the absolute path otherwise, or None if unavailable or cancelled."""
+    if not TKINTER_AVAILABLE:
+        return None
+    root = tk.Tk()
+    root.withdraw()
+    root.attributes("-topmost", True)
+    try:
+        chosen = filedialog.askdirectory(
+            initialdir=str(DUDUS_ROOT) if DUDUS_ROOT.is_dir() else str(Path.home()),
+            title="Select species directory",
+            parent=root,
+        )
+    finally:
+        root.destroy()
+    if not chosen:
+        return None
+    chosen_path = Path(chosen)
+    try:
+        return str(chosen_path.relative_to(DUDUS_ROOT))
+    except ValueError:
+        return str(chosen_path)
 
 
 def guess_order_from_technical(technical_path):
@@ -529,15 +565,39 @@ st.caption(
 batch_cards_now = load_cards()
 known_orders_batch = sorted({c["order"] for c in batch_cards_now if c["order"]})
 
-dir_input_col, dir_button_col = st.columns([4, 1])
+if TKINTER_AVAILABLE:
+    dir_input_col, browse_col, dir_button_col = st.columns([4, 1, 1])
+else:
+    dir_input_col, dir_button_col = st.columns([5, 1])
+    browse_col = None
 with dir_input_col:
     dir_input = st.text_input(
         "Species directory (relative to Dudus/, or an absolute path)",
         key=f"species_dir_input_{st.session_state.species_dir_input_version}",
     )
+browse_clicked = False
+if browse_col is not None:
+    with browse_col:
+        st.write("")
+        browse_clicked = st.button(
+            "Browse…", icon=":material/folder_open:", key="browse_species_dir_button"
+        )
 with dir_button_col:
     st.write("")
     add_dir_clicked = st.button("Add to batch")
+
+if browse_clicked:
+    try:
+        browsed_dir = browse_for_species_directory()
+    except Exception as exc:
+        browsed_dir = None
+        st.error(f"Couldn't open a folder picker ({exc}) — type the path instead.")
+    if browsed_dir:
+        st.session_state.species_dir_input_version += 1
+        st.session_state[f"species_dir_input_{st.session_state.species_dir_input_version}"] = (
+            browsed_dir
+        )
+        st.rerun()
 
 if add_dir_clicked:
     resolved_dir, dir_err = resolve_species_directory(dir_input)
