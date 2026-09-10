@@ -22,6 +22,12 @@ export default function Home() {
             >
               Search
             </Link>
+            <a
+              href="https://shop.dudus.ericgitonga.com"
+              className="text-sm font-medium text-accent underline hover:opacity-70"
+            >
+              Shop
+            </a>
           </div>
         </div>
         <p className="mt-1 text-sm text-muted">

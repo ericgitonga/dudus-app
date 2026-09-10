@@ -6,6 +6,22 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.15.0] - 2026-09-10
+
+### Changed
+
+- Standardized the persistent "back to ericgitonga.com" bar to match the rest of the family:
+  IBM Plex Mono, top-left, `← ERIC GITONGA / DUDUS` — was a full-width centered bar in a
+  different font/weight (closes #112).
+
+### Added
+
+- A "Shop" link on the home page pointing to `shop.dudus.ericgitonga.com` (dudu-merchandise) —
+  Dudus is meant to be the ecosystem's home page, linking out to its own sub-parts (the
+  informational app itself, and the shop), which this app had no link to before.
+
+tag: `v0.15.0`
+
 ## [0.14.0] - 2026-09-10
 
 ### Added
