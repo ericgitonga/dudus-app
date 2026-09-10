@@ -9,10 +9,10 @@ export default function DuduGridCard({ card }: { card: Card }) {
       href={`/dudus/${card.id}`}
       data-testid="grid-card"
       data-dudu-id={card.id}
-      className="flex flex-col overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition hover:shadow-md"
+      className="flex flex-col overflow-hidden rounded-lg border border-line bg-card shadow-sm transition hover:shadow-md hover:border-accent-dim"
     >
       {card.photo_ref ? (
-        <div className="relative aspect-[4/3] w-full bg-zinc-100">
+        <div className="relative aspect-[4/3] w-full bg-card">
           <Image
             src={card.photo_ref}
             alt={card.common_name}
@@ -22,12 +22,12 @@ export default function DuduGridCard({ card }: { card: Card }) {
           />
         </div>
       ) : (
-        <div className="flex aspect-[4/3] w-full items-center justify-center bg-zinc-100 text-sm text-zinc-400">
+        <div className="flex aspect-[4/3] w-full items-center justify-center bg-card text-sm text-muted">
           No photo yet
         </div>
       )}
       <div className="p-4">
-        <p className="font-semibold text-zinc-900">{gridCardName(card.common_name)}</p>
+        <p className="font-serif italic font-medium text-foreground">{gridCardName(card.common_name)}</p>
       </div>
     </Link>
   );

@@ -25,10 +25,10 @@ export default async function DuduPage({
   const order = card.order ?? UNCLASSIFIED_LABEL;
 
   return (
-    <div className="flex flex-col flex-1 items-center bg-zinc-50">
+    <div className="flex flex-col flex-1 items-center bg-background">
       <main
         data-testid="dudu-detail"
-        className="flex flex-1 w-full max-w-2xl flex-col items-stretch py-16 px-6 bg-white"
+        className="flex flex-1 w-full max-w-2xl flex-col items-stretch py-16 px-6 bg-card"
       >
         <Breadcrumb
           data-testid="dudu-breadcrumb"
@@ -39,15 +39,15 @@ export default async function DuduPage({
           ]}
         />
 
-        <h1 className="text-2xl font-semibold tracking-tight">
+        <h1 className="font-serif italic text-2xl font-medium tracking-tight text-foreground">
           {card.common_name}
         </h1>
         {card.scientific_name && (
-          <p className="mt-1 italic text-zinc-600">
+          <p className="mt-1 italic text-muted">
             {card.scientific_name}
           </p>
         )}
-        <p className="mt-1 text-sm text-zinc-500">
+        <p className="mt-1 text-sm font-mono text-muted">
           {taxonomyLine || `Taxonomy confirmed to ${card.taxon_rank} level only`}
         </p>
 
@@ -76,8 +76,8 @@ export default async function DuduPage({
         <div className="mt-8 flex flex-col gap-6">
           {card.sections.map((section) => (
             <section key={section.heading}>
-              <h2 className="text-lg font-medium">{section.heading}</h2>
-              <p className="mt-1 text-zinc-700">
+              <h2 className="text-lg font-medium text-foreground">{section.heading}</h2>
+              <p className="mt-1 text-foreground">
                 {section.body}
               </p>
             </section>
@@ -85,7 +85,7 @@ export default async function DuduPage({
         </div>
 
         {card.technical_sections.length > 0 && (
-          <div className="mt-8 border-t border-zinc-100 pt-6">
+          <div className="mt-8 border-t border-line pt-6">
             <TechnicalReportLink
               commonName={card.common_name}
               sections={card.technical_sections}

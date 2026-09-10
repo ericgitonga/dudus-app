@@ -21,17 +21,17 @@ export default async function OrderPage({
   if (!group) notFound();
 
   return (
-    <div className="min-h-screen bg-zinc-50" data-testid="order-page" data-order={group.order}>
+    <div className="min-h-screen bg-background" data-testid="order-page" data-order={group.order}>
       <main className="mx-auto max-w-5xl px-4 py-10">
         <Breadcrumb
           data-testid="order-breadcrumb"
           items={[{ label: "Dudus", href: "/" }, { label: group.order }]}
         />
 
-        <h1 className="text-2xl font-semibold tracking-tight text-zinc-900">
+        <h1 className="font-serif italic text-2xl font-medium tracking-tight text-foreground">
           {group.order}
         </h1>
-        <p className="mt-1 text-sm text-zinc-600">{orderTagline(group.order)}</p>
+        <p className="mt-1 text-sm text-muted">{orderTagline(group.order)}</p>
 
         <div className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-6">
           {group.cards.map((card) => (

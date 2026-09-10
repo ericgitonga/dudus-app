@@ -6,6 +6,25 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.13.0] - 2026-09-10
+
+### Changed
+
+- Applied the shared ericgitonga.com brand kit — warm paper-cream ground (`#f3efe3`), dark ink
+  (`#241f16`), verdigris accent (`#3f6b53`), and the Newsreader/Archivo Narrow/IBM Plex Mono
+  type trio — replacing the raw Next.js/Tailwind scaffold defaults (`#ffffff` ground, Geist
+  fonts) the app had shipped with since its creation. Matches `eric-gitonga-links` and
+  `dudu-merchandise` (PR #109), the other two sites adopting the same family visual identity.
+  New Tailwind v4 `@theme` tokens (`bg-background`/`bg-card`, `text-foreground`/`text-muted`,
+  `text-accent`/`border-accent-dim`, `border-line`) replace every hardcoded `zinc`/`white`/
+  `black` Tailwind utility across the app's dozen `.tsx` files; page titles and card titles use
+  the italic serif, numeric/taxonomic metadata (result counts, family/order lines) use the mono
+  face. Also replaces the favicon set (`favicon.ico`, `icon1.png`/`icon2.png`, `apple-icon.png`)
+  with the shared brand-kit icons via the App Router's icon file convention. Visual-identity
+  reskin only — no layout, structure, or behaviour changes. (closes #100)
+
+tag: `v0.13.0`
+
 ## [0.12.1] - 2026-08-15
 
 ### Fixed

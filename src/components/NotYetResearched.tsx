@@ -23,14 +23,14 @@ export default function NotYetResearched({
 }) {
   return (
     <div data-testid="not-yet-researched" className="mt-6">
-      <p className="text-sm text-zinc-700">
+      <p className="text-sm text-foreground">
         {query ? (
           <>&quot;{query}&quot; isn&apos;t in the library yet.</>
         ) : (
           <>This one isn&apos;t in the library yet.</>
         )}
       </p>
-      <p className="mt-1 text-sm text-zinc-500">
+      <p className="mt-1 text-sm text-muted">
         That doesn&apos;t mean it isn&apos;t a real dudu — the library is still growing, one
         researched dudu at a time.
       </p>
@@ -38,12 +38,12 @@ export default function NotYetResearched({
         <button
           type="button"
           onClick={onClear}
-          className="mt-3 text-sm font-medium underline"
+          className="mt-3 text-sm font-medium text-accent underline"
         >
           ← Browse all dudus
         </button>
       ) : (
-        <Link href="/" className="mt-3 inline-block text-sm font-medium underline">
+        <Link href="/" className="mt-3 inline-block text-sm font-medium text-accent underline">
           ← Browse all dudus
         </Link>
       )}
