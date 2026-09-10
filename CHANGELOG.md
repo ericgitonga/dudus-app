@@ -6,6 +6,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.13.2] - 2026-09-10
+
+### Changed
+
+- Bumped `sharp` 0.35.3 → 0.35.4 (Dependabot #105), `js-yaml` 4.3.1 → 4.3.2 (Dependabot #106),
+  and `next` 16.3.0 → 16.3.4, patch bug fixes only (Dependabot #107). Closes #108.
+
+tag: `v0.13.2`
+
 ## [0.13.1] - 2026-09-10
 
 ### Changed
