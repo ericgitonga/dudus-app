@@ -9,22 +9,22 @@ export default function Home() {
   const groups = groupByOrder(allCards);
 
   return (
-    <div className="min-h-screen bg-zinc-50" data-testid="browse-page">
+    <div className="min-h-screen bg-background" data-testid="browse-page">
       <main className="mx-auto max-w-5xl px-4 py-10">
         <div className="flex items-baseline justify-between">
-          <h1 className="text-2xl font-semibold tracking-tight text-zinc-900">
+          <h1 className="font-serif italic text-2xl font-medium tracking-tight text-foreground">
             Dudus
           </h1>
           <div className="flex gap-4">
             <Link
               href="/search"
-              className="text-sm font-medium underline hover:opacity-70"
+              className="text-sm font-medium text-accent underline hover:opacity-70"
             >
               Search
             </Link>
           </div>
         </div>
-        <p className="mt-1 text-sm text-zinc-600">
+        <p className="mt-1 text-sm text-muted">
           Kenyan arthropods, grouped by taxonomic order.
         </p>
 
@@ -35,12 +35,12 @@ export default function Home() {
               href={`/orders/${slug}`}
               data-testid="order-button"
               data-order={order}
-              className="flex flex-col rounded-lg border border-zinc-200 bg-white p-5 shadow-sm transition hover:shadow-md"
+              className="flex flex-col rounded-lg border border-line bg-card p-5 shadow-sm transition hover:shadow-md hover:border-accent-dim"
             >
-              <span className="text-lg font-semibold text-zinc-900">
+              <span className="font-serif italic text-lg font-medium text-foreground">
                 {order}
               </span>
-              <span className="mt-1 text-xs text-zinc-500">
+              <span className="mt-1 text-xs text-muted">
                 {orderTagline(order)}
               </span>
             </Link>
