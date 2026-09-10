@@ -39,6 +39,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${newsreader.variable} ${archivoNarrow.variable} ${ibmPlexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <a
+          href="https://ericgitonga.com"
+          className="block border-b border-line px-4 py-2 text-center font-mono text-xs uppercase tracking-widest text-muted transition-colors hover:text-accent"
+        >
+          ← ericgitonga.com
+        </a>
         {children}
         <Analytics />
         <SpeedInsights />
