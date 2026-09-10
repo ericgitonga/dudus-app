@@ -6,6 +6,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.13.1] - 2026-09-10
+
+### Changed
+
+- Bumped `@vitest/mocker` 4.1.10 → 4.1.11 and its `vitest` ancestor dependency (Dependabot #101,
+  closes #103).
+
+tag: `v0.13.1`
+
 ## [0.13.0] - 2026-09-10
 
 ### Changed
