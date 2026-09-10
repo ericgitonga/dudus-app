@@ -6,6 +6,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.14.0] - 2026-09-10
+
+### Added
+
+- A persistent "← ericgitonga.com" link at the top of every page (`layout.tsx`), since this app
+  now lives at `dudus.ericgitonga.com` nested under the ericgitonga.com hub but previously had
+  no way back to it (closes #110).
+
+tag: `v0.14.0`
+
 ## [0.13.2] - 2026-09-10
 
 ### Changed
