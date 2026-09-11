@@ -6,6 +6,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.15.1] - 2026-09-11
+
+### Changed
+
+- The breadcrumb's DUDUS segment now links to `ericgitonga.com/dudus` (the real Dudus ecosystem
+  landing page, eric-gitonga-links#11) instead of being plain non-interactive text — a visitor
+  can now get back to the ecosystem's home, not just all the way to the site root (closes #115).
+
+tag: `v0.15.1`
+
 ## [0.15.0] - 2026-09-10
 
 ### Changed

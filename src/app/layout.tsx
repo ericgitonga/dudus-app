@@ -44,7 +44,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             ← ERIC GITONGA
           </a>
           <span className="text-muted" aria-hidden="true">/</span>
-          <span>DUDUS</span>
+          <a href="https://ericgitonga.com/dudus" className="transition-colors hover:text-accent">
+            DUDUS
+          </a>
         </div>
         {children}
         <Analytics />
