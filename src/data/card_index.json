@@ -1564,5 +1564,509 @@
     "photo_ref": "/photos/jewel-beetles.jpg",
     "reviewed_by": null,
     "reviewed_at": null
+  },
+  {
+    "id": "stalk-eyed-fly",
+    "common_name": "Stalk-eyed Fly",
+    "scientific_name": null,
+    "family": null,
+    "order": "Diptera",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "Imagine a fly whose eyes sit at the tips of two long rods sticking out sideways from its head — wider, in some species, than the fly's entire body is long. That's a stalk-eyed fly. They belong to the family Diopsidae, a group of around 240 known species worldwide, and Africa is their stronghold: about two-thirds of all described species live here, making a Kenyan encounter with one entirely at home."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "The whole head plan is rearranged around those eyestalks — the eyes and antennae are pushed out to the very ends of diverging rods, rather than sitting flush on the head the way they do in almost every other fly. Not every member of the family goes this far, though: a stalkless subfaimly called the Centrioncinae, found in African montane forests including several Kenyan mountains, keeps its eyes in the ordinary place. Males usually grow noticeably longer eyestalks than females do. Those stalks aren't just decoration — males use them in stand-offs over prized resting spots, sizing each other up before deciding whether to fight, and both sexes appear to size up potential partners by eyestalk length too."
+      },
+      {
+        "heading": "Where Do They Live?",
+        "body": "Most stalk-eyed flies favour damp places — lake shores, riverbanks, and moist forest — where their larvae feed on rotting plant matter as decomposers. A smaller number of species have taken a different path and become stem-borers: their larvae tunnel into living rice plants instead, which is where the family crosses into farmers' lives. One such species, Diopsis longicornis, is documented across sub-Saharan Africa including Kenya and Tanzania."
+      },
+      {
+        "heading": "Why Do They Matter?",
+        "body": "The stem-boring species are a real headache for African rice growers. The larvae burrow down inside the stem toward the growing point, and their feeding dries out the central shoot — a symptom farmers call \"dead-heart.\" Yield losses of 10–15% have been documented where these pests take hold. The good news is that researchers have found some clever, low-chemical ways to fight back. Certain rice varieties actually lure egg-laying females in, only for the variety's own toxicity to kill the larvae once they hatch — a trap crop that does the pest's own instincts against it. Other varieties give off scents that put egg-laying females off entirely. Tiny parasitic wasps that attack the fly's eggs and larvae add another natural line of defence, alongside the more familiar option of insecticide sprays."
+      },
+      {
+        "heading": "Something Worth a Second Look",
+        "body": "Most Diopsidae are quiet decomposers doing useful, unglamorous work breaking down rotting vegetation — it's only a handful of species that turn to farmers' crops. And scientists still haven't finished cataloguing them: roughly 65 African species with a distinctive wing marking are known to exist but have yet to be formally named and described, meaning a good deal of this family's diversity is still waiting to be written up."
+      }
+    ],
+    "technical_sections": [
+      {
+        "heading": "References",
+        "body": "Source Type Section(s) used GBIF Backbone Taxonomy, \"Diopsidae\" Taxonomic database 1 icipe, \"Insect of the Week: Stalk-Eyed Flies (Diopsidae)\" (2023) Research institute 1, 2, 4, 5, 6, 9 Feijen & Feijen, African Invertebrates 53(1) (2012) Peer-reviewed journal 1, 2, 5, 9 Feijen & Feijen, ZooKeys 1144 (2023) Peer-reviewed journal 1, 2, 5 Bocco et al., Insects 16(8):752 (2025) Peer-reviewed journal 3, 4, 7 Pegalepo et al., Insects 16(11):1175 (2025) Peer-reviewed journal 4, 6, 7 CABI Compendium, Diopsis longicornis / Diopsis apicalis datasheets Agricultural research body 2, 5, 6 No relevant online content found for: detailed larval morphology (instar counts, chaetotaxy); numeric life-cycle stage durations; formal conservation status assessment; Diopsidae-specific collection methodology."
+      },
+      {
+        "heading": "1. Taxonomy and Classification",
+        "body": "Class Insecta, Order Diptera, Family Diopsidae, taxonomic status accepted, with 294 descendant taxa recorded (Source: GBIF Backbone Taxonomy, GBIF.org). The family comprises three subfamilies: Diopsinae (the largest), Centrioncinae, and Sphyracephalinae, placed within superfamily Diopsoidea. Approximately 240 described species are recognised in 17 genera, with 66% (157 species) recorded from the Afrotropical region (Source: Insect of the Week: Stalk-Eyed Flies, icipe, 2023). Genus Diopsis Linnaeus, 1775 is the type genus of Diopsinae and is described as very large, requiring comprehensive taxonomic revision; nine provisional species-groups have been proposed, and roughly 65 African species with a large apical wing spot remain undescribed (Source: Feijen & Feijen, African Invertebrates 53(1), 2012). Diopsis phlogodes is a synonym of Diopsis longicornis, a well-known rice stem borer distributed across sub-Saharan Africa including Kenya and Tanzania (Source: Feijen & Feijen, African Invertebrates 53(1), 2012). Subfamily Centrioncinae (\"Afromontane Forest Flies\") consists of small (4–7 mm), stalkless flies endemic to Africa. Its classification history moved from family Sepsidae (1910) to Diopsidae (1950), briefly to its own family Centrioncidae (1983), and back to a subfamily of Diopsidae following further study. Genus Centrioncus Speiser, 1910 contains 10 recognised species, seven of which occur in Eastern Africa, with Kenyan localities at Mount Elgon, the Kasigau Massif, and the Taita Hills (Source: Feijen & Feijen, ZooKeys 1144, 2023). Given the photographed specimen's long, stalked eyes (not the stalkless condition of Centrioncinae) and the documented Kenyan/East African occurrence of Diopsis longicornis, genus Diopsis is the best-supported assignment from available sources; the exact species could not be confirmed without direct specimen examination of the diagnostic wing-spot pattern."
+      },
+      {
+        "heading": "2. Morphology",
+        "body": "The family's diagnostic feature is \"the enormous displacement of the eyes along with the antennae from the rest of the head onto the tip of diverging stalks,\" with stalk length exceeding body length in some species. Centrioncinae is the exception, retaining normally positioned eyes (Source: Insect of the Week, icipe, 2023). The apical wing spot is a key diagnostic character for Diopsis species identification — described as large and rounded brown, with variable shape and extent between species (Source: Feijen & Feijen, African Invertebrates 53(1), 2012). Diopsis longicornis is described as large and robust, with a dorsally pruinose collar and glossy black scutum, and is considered the most important diopsid species affecting agriculture in the region (Source: CABI Compendium, Diopsis longicornis datasheet). Centrioncus species show dark maxillary palps, a central wing spot, incrassate (thickened) fore femora, and distinctive abdominal sclerites (Source: Feijen & Feijen, ZooKeys 1144, 2023). Males typically have longer eyestalks than females, an observed and measurable trait; eyestalks are used by males in visual and physical contests over aggregation sites, and eyestalk length is used by both sexes in mate assessment (Source: Insect of the Week, icipe, 2023)."
+      },
+      {
+        "heading": "3. Biology and Life Cycle",
+        "body": "Larvae of pest Diopsis species bore into rice stems and move down the leaf sheath toward the meristem, where feeding causes drying of the central shoot (the \"dead-heart\" symptom) (Source: Bocco et al., Insects 16(8):752, 2025). Diopsis apicalis females select oviposition sites using olfactory cues from rice leaf volatiles. Some rice accessions are strongly attractive for egg-laying while being toxic to developing larvae, and others chemically repel egg-laying females (Source: Bocco et al., Insects 16(8):752, 2025). Males contest ownership of aggregation/roosting sites, with males of larger eyespan winning a greater proportion of these contests and site-owning males securing more matings (Source: search-indexed content of a whitelisted domain covering Diopsidae behavioural studies; direct full-text access was blocked — reported at moderate confidence)."
+      },
+      {
+        "heading": "4. Ecology",
+        "body": "Diopsids inhabit moist environments such as lake shores and riverine forests. Larvae are primarily saprophagous, feeding on decaying organic matter, though some Diopsis species are phytophagous, boring into living plant tissue such as rice stems (Source: Insect of the Week, icipe, 2023). Diopsis apicalis occurs across all rice ecological zones of tropical Africa but is found preferentially in wet and shady lowland areas and irrigated rice fields (Source: Bocco et al., Insects 16(8):752, 2025). Diopsis longicornis, D. apicalis, and D. collaris use alternative host plants including goosegrass and Johnson grass, sustaining populations outside the rice-growing season (Source: Pegalepo et al., Insects 16(11):1175, 2025)."
+      },
+      {
+        "heading": "5. Distribution and Diversity",
+        "body": "Diopsidae comprises around 240 described species in 17 genera worldwide; 66% are Afrotropical, and the family is most diverse in the Afrotropical and Oriental regions while absent from the Neotropics. Centrioncinae is endemic to Africa (Source: Insect of the Week, icipe, 2023). Diopsis longicornis is distributed across sub-Saharan Africa, including Kenya and Tanzania (Source: Feijen & Feijen, African Invertebrates 53(1), 2012; corroborated by CABI Compendium). Diopsis apicalis is documented predominantly in West and Central Africa (Burkina Faso, Cameroon, Chad, Gabon, Gambia, Ghana, Ivory Coast, Liberia, Mali, Mauritania, Niger, Nigeria, Senegal, Sierra Leone, Togo), a more westerly range than D. longicornis (Source: CABI Compendium, Diopsis apicalis datasheet). Kenyan Centrioncinae occurrences (a stalkless subfamily of Diopsidae) are documented at Mount Elgon, the Kasigau Massif, the Taita Hills, and western Kenya via Centrioncus aberrans (Source: Feijen & Feijen, ZooKeys 1144, 2023). No Kenya-specific occurrence or abundance dataset for stalk-eyed Diopsis is available — Kenyan presence is confirmed at the \"sub-Saharan range includes Kenya\" level only."
+      },
+      {
+        "heading": "6. Economic / Ecological Importance",
+        "body": "Diopsis longicornis, D. apicalis, and D. collaris are significant rice pests across sub-Saharan Africa, causing stunted growth and reduced yield, with documented yield losses in the 10–15% range (Source: Pegalepo et al., Insects 16(11):1175, 2025). D. apicalis is a common stem-boring pest causing severe yield losses in West African rice ecosystems, with damage particularly associated with wet, shady, and irrigated lowland rice (Source: Bocco et al., Insects 16(8):752, 2025). D. longicornis is characterised as the most important diopsid species affecting agriculture in the sub-Saharan African region (Source: CABI Compendium, Diopsis longicornis datasheet). Most Diopsidae, however, are saprophagous decomposers of decaying organic matter in moist habitats, a role distinct from the small number of phytophagous pest species (Source: Insect of the Week, icipe, 2023). No formal conservation-status assessment (IUCN or otherwise) was found for any Diopsidae species in whitelisted sources."
+      },
+      {
+        "heading": "7. Control and Management",
+        "body": "Cultural control includes management of alternative host plants such as goosegrass and Johnson grass, which otherwise sustain pest populations between rice-growing seasons (Source: Pegalepo et al., Insects 16(11):1175, 2025). Host-plant resistance is used as a management tool: rice variety CG14 strongly attracts D. apicalis egg-laying females but is toxic to developing larvae (antibiosis), allowing its use as a perimeter trap crop, while variety RAM55 chemically deters oviposition and can be intercropped with susceptible varieties (Source: Bocco et al., Insects 16(8):752, 2025). Chemical control options include lambda-cyhalothrin, beta-cyfluthrin, chlorantraniliprole, and imidacloprid, applied as foliar sprays at 0.25–0.5 L/ha (Source: Pegalepo et al., Insects 16(11):1175, 2025). Biological control options include the egg parasitoid Trichogramma chilonis and a Cotesia sp. larval parasitoid (Source: Pegalepo et al., Insects 16(11):1175, 2025). An integrated approach combining cultural, biological, resistant-variety, and selective chemical measures is recommended, since reliance on chemical insecticides alone provides no reliable long-term solution and affects non-target organisms (Source: Pegalepo et al., Insects 16(11):1175, 2025)."
+      },
+      {
+        "heading": "8. Collection Methods",
+        "body": "No Diopsidae-specific collection methodology was found in any whitelisted source."
+      },
+      {
+        "heading": "9. Notable Facts",
+        "body": "Diopsidae is one of very few fly families in which females, not only males, bear eyestalks — in Diopsinae both sexes have eyestalks, though male eyestalks are generally longer (Source: Insect of the Week, icipe, 2023). In some Diopsidae species, eyestalk span exceeds the length of the fly's own body (Source: Insect of the Week, icipe, 2023). Approximately 65 African Diopsis species with prominent apical wing spots remain scientifically undescribed, indicating substantial unresolved taxonomic diversity within the genus in Africa (Source: Feijen & Feijen, African Invertebrates 53(1), 2012). Subfamily Centrioncinae represents a taxonomically distinct, stalkless lineage within Diopsidae restricted to African montane forest habitats, including several Kenyan mountain/forest localities — illustrating that not all Diopsidae have the stalk-eyed condition (Source: Feijen & Feijen, ZooKeys 1144, 2023)."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Stalk-eyed Fly/sef-web.pdf",
+      "lay": "Stalk-eyed Fly/sef-web-la.pdf"
+    },
+    "photo_ref": "/photos/stalk-eyed-fly.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "conehead-katydid",
+    "common_name": "Conehead Katydid",
+    "scientific_name": null,
+    "family": null,
+    "order": "Orthoptera",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "Meet the conehead katydid — a wedge-headed grasshopper relative that's one of the most important edible insects in East Africa. In Kenya it's part of the \"senene\" harvest, a katydid so valued as food that entire seasonal trades are built around catching it. Its scientific name, Ruspolia differens, ties it to a whole family of \"conehead\" katydids found around the world — but confusingly, the American coneheads you might read about online belong to completely different, unrelated genera. The one in this photo is the Old World, African branch of the conehead family tree."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "The name \"conehead\" comes from the sharply pointed, wedge-shaped head visible even in a nymph like this one — you can see it clearly in the photo, along with the huge eyes and the long, whip-thin antennae held apart in a wide V. Adults grow to about 5–6 cm long, with wings that stretch past the back legs. They come in a surprising range of colours — green, brown, and striped or blushed versions of both — and males and females look a little different from each other: males are smaller and carry a pair of odd little flap-like structures on the underside of their bodies, while females carry a long, needle-like egg-laying tube called an ovipositor."
+      },
+      {
+        "heading": "How Do They Live?",
+        "body": "From egg to adult takes about five months. Eggs get tucked into damp grass sheaths or maize shoots, and hatch in two to three weeks depending on how wet things are. The nymphs then moult their way through several stages — six for males, seven for females — before becoming adults, feeding mostly on grass flower heads rather than leaves or stems. Twice a year, something remarkable happens: the population swarms, taking to the air in huge, astonishingly predictable mass flights, usually around April–May and again around November–December. Orthopterists consider this level of predictable, synchronized swarming unusual among grasshoppers and katydids generally."
+      },
+      {
+        "heading": "Why Do They Matter?",
+        "body": "This is where the conehead katydid really stands out — it's food. Across more than twenty African countries, people harvest it as a protein-rich delicacy, and in parts of Kenya, Uganda, and Tanzania around Lake Victoria, it's a genuine cash crop, fetching prices comparable to beef or chicken. Nutritionally, it holds up well too: it can be well over half protein by weight, rich in healthy fats, and packed with minerals. But there's a catch — some market samples have also tested positive for concerning bacteria and heavy metals, so how it's harvested, stored, and cooked really matters for safety. Deep-frying, the traditional preparation method, does a good job of cutting down the bacterial load."
+      },
+      {
+        "heading": "How Are They Caught?",
+        "body": "Because they're strongly drawn to light at night, harvesters set up bright lamps — traditionally mercury-vapour bulbs — over oil-coated drums during the swarming seasons. The insects fly in, get disoriented, and drop straight into the collection container. A single good night at one of these traps can bring in the equivalent of eight to ten 100-kilogram sacks — a serious harvest from a creature barely a couple of inches long."
+      },
+      {
+        "heading": "One Persistent Problem",
+        "body": "Given how valuable this insect is, you'd think farming it in captivity would have been solved long ago — but adult conehead katydids have a habit of eating each other when crowded together, and this cannibalism remains one of the biggest unsolved obstacles to scaling up commercial rearing. Researchers have found that giving them live prey, like fly larvae, cuts down on the cannibalism significantly — but for now, most of the harvest still comes from the wild swarms rather than a farm."
+      }
+    ],
+    "technical_sections": [
+      {
+        "heading": "References",
+        "body": "Source Type Section(s) used Orthoptera Species File Taxonomic authority database 1 GBIF (Species API, Occurrence API) Taxonomic authority database 1, 5 Malinga, Opoke & Rutaro — IntechOpen chapter (via Muni University repository) Peer-reviewed book chapter 2, 3, 5, 6 Fombong et al. 2023, Journal of Insects as Food and Feed (via icipe repository) Peer-reviewed journal 4 Zenodo/Zootaxa taxonomic treatment (Massa et al. 2020) Peer-reviewed taxonomic treatment 5, 8 Malinga et al. 2019, Journal of Economic Entomology Peer-reviewed journal 3 Lehtovaara, Roininen & Valtonen 2018, Journal of Economic Entomology Peer-reviewed journal 3 Leonard et al. 2022, Journal of Insect Science Peer-reviewed journal 3 Source Type Section(s) used Kababu et al., Journal of Economic Entomology (review) Peer-reviewed journal 6 No relevant online content found for: Control and Management (no whitelisted source treats R. differens as an agricultural pest requiring active control)."
+      },
+      {
+        "heading": "1. Taxonomy and Classification",
+        "body": "Ruspolia differens (Serville, 1838) belongs to Order Orthoptera, Suborder Ensifera, Family Tettigoniidae, Subfamily Conocephalinae, Tribe Copiphorini, Genus Ruspolia Schulthess, 1898 (Source: Orthoptera Species File, otus/844016; GBIF Species API, api.gbif.org/v1/species/5096598). Taxonomic history: originally described as Conocephalus differens Serville, 1838, later moved through Conocephaloides differens (Kirby, 1906) and Homorocoryphus differens (Karny, 1912) before reaching its current combination, Ruspolia differens (Bailey, 1975). Other synonyms include Conocephalus vicinus Walker, 1869 and Conocephalus exiguus Stål, 1876 (Source: Orthoptera Species File). The type locality is Mauritius, with the lectotype held at the Muséum National d'Histoire Naturelle, Paris (Source: Orthoptera Species File). The genus Ruspolia contains 37 accepted species (GBIF backbone taxonomy) distributed across most of the Old World, and is absent from the Americas and Antarctica (Source: GBIF Species API; Orthoptera Species File genus records). Disambiguation of the common name \"conehead katydid\": the same descriptive name is used independently on both sides of the Old World/New World divide. In the Americas, \"conehead\" refers to unrelated genera Copiphora (Mexico, Central and South America) and Neoconocephalus (Nearctic/Neotropical) — neither occurs in Kenya. Within genus Ruspolia itself, the Palearctic species R. nitidula is also called the \"Large Conehead,\" but it is solitary, restricted to Europe/Asia/North Africa, and not the East African species. The Kenyan/East African \"conehead katydid\" is Ruspolia differens, distinguished from R. nitidula by its swarming behaviour and colour polymorphism (Source: Orthoptera Species File)."
+      },
+      {
+        "heading": "2. Morphology",
+        "body": "Adults measure 52–60 mm in total length, with long wings extending beyond the hind knees and the tip of the ovipositor. The head bears the diagnostic conical/wedge-shaped fastigium that gives the tribe its common name (Source: Orthoptera Species File; synthesis of associated literature). Males possess a pair of tongue-like metathoracic flaps and dorsoventrally bi-lobed cerci, are smaller than females, and show male-biased antennal length. Females are identified by a long, slender ovipositor (Source: Malinga, Opoke & Rutaro, IntechOpen chapter, citing Matojo & Yarro 2010/2013). Colour polymorphism includes six recorded morphs — green, purple-striped green, purple-suffused green, brown, purple-striped brown, and purple-suffused brown — with green and brown predominating; tegmen colour is sex-linked, brown associated with males and green with females (Source: Malinga, Opoke & Rutaro, IntechOpen chapter, citing Matojo & Yarro 2010)."
+      },
+      {
+        "heading": "3. Biology and Life Cycle",
+        "body": "The life cycle proceeds from egg through nymph to adult, spanning roughly 147 days in total. Nymphs pass through 6 instars in males and 7 in females; males mature faster, likely reflecting the shorter developmental path (Source: Malinga, Opoke & Rutaro, IntechOpen chapter, citing Brits & Thornton 1981). Eggs are laid in moist substrates — leaf sheaths of grasses, shoots of Panicum sp., maize seedlings, and Pennisetum sp. in the field, or cotton wool and folded plastic cloth in captivity — and hatch after 11–25 days depending on moisture (Source: Malinga, Opoke & Rutaro, IntechOpen chapter, citing Egonyu et al. 2020, Malinga et al. 2019, Hartley 1967). In mass-rearing trials, females laid roughly 2.5 times more eggs on folded plastic cloth (169.3±18.0 eggs) than on natural Pennisetum purpureum leaf sheath (69.0±13.9 eggs), though hatchability did not differ significantly between the two substrates (overall mean 56.5±4.7%) (Source: Malinga et al. 2019, Journal of Economic Entomology 112(5):2157–2160). Rearing studies establish an optimal temperature near 29°C; at 30°C, development from newly hatched nymph to adult took about 49 days with 86.7% survival, the highest recorded, while maximum adult weight (0.62 g) occurred at 28°C. Harvesting 10 days after the adult moult yielded up to 50% more biomass than immediate harvest (Source: Lehtovaara, Roininen & Valtonen 2018, Journal of Economic Entomology 111(6):2652). On host-plant-based artificial diets, development time ranged 88.8–105.9 days, adult longevity 31–42 days, adult weight 0.46–0.51 g, and fecundity reached up to 45.6 eggs per female on a Megathyrsus maximus-amended diet versus 15.8 on the control diet (Source: Leonard et al. 2022, Journal of Insect Science 22(2):8). R. differens shows a distinct swarming phase, with predictable mass flights typically occurring twice yearly in East Africa — around April–May and again around November–December — alongside a non-swarming \"local population\" phase whose developmental stages persist in the field year-round (Source: Malinga, Opoke & Rutaro, IntechOpen chapter, citing Matojo & Njau 2010). Cannibalism among adults is a documented behavioural trait that complicates captive mass-rearing (see Ecology, below)."
+      },
+      {
+        "heading": "4. Ecology",
+        "body": "R. differens is a facultatively oligophagous grass feeder. Field surveys recorded it on 19 grass species and 2 sedge species, with 99% of nearly 21,000 feeding observations concentrated on seven grasses: Panicum maximum, Brachiaria ruziziensis, Chloris gayana, Hyparrhenia rufa, Cynodon dactylon, Sporobolus pyramidalis, and Pennisetum purpureum; Panicum maximum was the preferred host of the youngest nymphs (Source: cited in Malinga, Opoke & Rutaro, IntechOpen chapter). Feeding is highly selective for inflorescences (97% of observations) over leaves, stems, and inflorescence stalks. Cannibalism among adults reared in captivity has made mass-rearing a persistent challenge; supplying live insect prey such as black soldier fly larvae or armyworms significantly reduced cannibalistic behaviour in both sexes compared with artificial-diet controls (Source: Fombong, Tanga, Nganga, Kinyuru & Vanden Broeck 2023, Journal of Insects as Food and Feed 9(10):1309–1319, via icipe institutional repository). The species is predominantly nocturnal and strongly attracted to artificial light at night, a behaviour directly exploited in commercial harvesting (see Collection Methods, below)."
+      },
+      {
+        "heading": "5. Distribution and Diversity",
+        "body": "The genus Ruspolia comprises 37 accepted species occurring across most of the Old World, absent from the Americas and Antarctica (Source: GBIF Species API; Orthoptera Species File). Ruspolia differens itself has a broad Sub-Saharan African range, with documented occurrence in Kenya, Uganda, Tanzania, Angola, South Africa, Ghana, Central African Republic, DR Congo, Zambia, Rwanda, Burundi, Mauritius (the type locality), Madagascar, and Ivory Coast (Source: Malinga, Opoke & Rutaro, IntechOpen chapter). Kenya and the Lake Victoria basin: the species is documented as a food resource consumed by the Luo of Kenya around the Lake Victoria basin, alongside the Baganda of Uganda and the Haya of Tanzania (Source: Malinga, Opoke & Rutaro, IntechOpen chapter). GBIF's own georeferenced occurrence records for Kenya are notably sparse, limited to a small cluster of 1990s museum specimens around Nairobi, with no georeferenced records found for western Kenya, the Lake Victoria basin, Uganda, or Tanzania — a gap in the occurrence database itself rather than evidence of absence, given the robust ecological and food-science literature documenting the species throughout this region (Source: GBIF Occurrence API queries). Scientific collecting via light trap has also documented the species in Central African Republic (Bangui, Dzanga-Sangha, Dzanga-Ndoki National Park, 2008–2012) (Source: Massa et al. 2020, Zootaxa, via Zenodo)."
+      },
+      {
+        "heading": "6. Economic / Ecological Importance",
+        "body": "Ruspolia differens is one of the most economically and culturally important edible insects in East and Central Africa, consumed in over 20 African countries (Source: Malinga, Opoke & Rutaro, IntechOpen chapter; Kababu et al., Journal of Economic Entomology review). Reported protein content ranges from roughly 34–73% of dry matter, with fat 33–48%, carbohydrate 3–6%, and polyunsaturated fatty acids making up about 89% of the lipid fraction; chitin content is 10–15% (Source: Malinga, Opoke & Rutaro, IntechOpen chapter). A review found flavonoids (quercetin, luteolin) and antioxidant activity (87.00±2.59%) comparable to fruits and vegetables, but also documented food-safety concerns, including pathogenic bacteria (Clostridium, Bacillus, Staphylococcus) in market samples and heavy-metal contamination — lead and cadmium reported at roughly ten-fold above recommended thresholds in some samples — mitigated by proper processing (Source: Kababu et al., Journal of Economic Entomology review). Trade in R. differens is a primary income source for many households in the Lake Victoria basin, with market prices comparable to beef or chicken. Swarming individuals are occasionally noted as minor pests on the developing seeds of cereal crops at the milk stage, but no whitelisted source was found documenting crop-loss data or an economic damage assessment for this."
+      },
+      {
+        "heading": "7. Control and Management",
+        "body": "No whitelisted source was found treating Ruspolia differens as a pest requiring active biological, chemical, or cultural control. The species is overwhelmingly documented in the literature as an edible/farmed resource rather than a pest, and this topic area is reported here as a genuine gap in the available coverage rather than padded with unsupported material."
+      },
+      {
+        "heading": "8. Collection Methods",
+        "body": "The dominant commercial harvesting method exploits the species' strong attraction to artificial light during its two annual swarming seasons. Collectors set up light sources at night — traditionally mercury vapour bulbs positioned over oil-coated metal drums with open tops — so that disoriented insects fall into the containers; high-yield nights can reportedly produce eight to ten sacks of roughly 100 kg each. Scientific specimen collection also relies on light traps, as documented for material collected in the Central African Republic between 2008 and 2012 (Source: Massa et al. 2020, Zootaxa, via Zenodo)."
+      },
+      {
+        "heading": "9. Notable Facts",
+        "body": "The name \"conehead\" is applied independently to Ruspolia on both sides of the Old World/New World divide — Orthoptera Species File itself labels the Palearctic Ruspolia nitidula the \"Large Conehead,\" while the East African literature repeatedly calls R. differens the \"swarming conehead\" — reflecting a shared descriptive term for the wedge-shaped head rather than a single-species or single-continent name (Source: Orthoptera Species File). R. differens shows a biannual swarming phenology described in the literature as highly predictable and exceptional among Orthoptera generally, most of which do not show comparably reliable mass-flight timing. Despite decades of applied research interest in captive mass-rearing as a food-security crop insect, cannibalism remains a persistent, unresolved obstacle to scaling up farming (Source: Fombong et al. 2023, Journal of Insects as Food and Feed). The species is nutritionally comparable to or exceeding many conventional protein sources, yet market samples have also tested positive for concerning levels of heavy metals and pathogenic bacteria, highlighting a real food-safety tension in an otherwise strongly promoted food-security narrative (Source: Kababu et al., Journal of Economic Entomology review)."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Conehead Katydid/ck-web.pdf",
+      "lay": "Conehead Katydid/ck-web-la.pdf"
+    },
+    "photo_ref": "/photos/conehead-katydid.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "elegant-grasshopper",
+    "common_name": "Elegant Grasshopper",
+    "scientific_name": null,
+    "family": null,
+    "order": "Orthoptera",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Is It?",
+        "body": "This bold black-and-yellow insect is a young \"hopper\" (nymph) of the Elegant Grasshopper, Zonocerus elegans — a common East African grasshopper found across Kenya's savannahs, gardens, and farmland. Despite the name confusion with a similar-looking West African cousin (Zonocerus variegatus), records confirm that any black-and-yellow Zonocerus nymph spotted in Kenya is this species, not its western relative."
+      },
+      {
+        "heading": "What Does It Look Like?",
+        "body": "Young nymphs like the one photographed are strikingly patterned in black with bold white or yellow spots and bands — a \"don't eat me\" warning outfit rather than camouflage. As they grow into adults, the colours shift toward a richer mix of yellow, olive, dull red, orange, and black, with orange-red eyes and antennae ringed in black and orange. Most adults keep short wings their whole lives — even the rare individuals with full-length wings are clumsy fliers, so this grasshopper gets around mostly by walking and hopping rather than flying."
+      },
+      {
+        "heading": "How Does It Grow Up?",
+        "body": "Females lay batches of 20 to over 100 eggs in pods in the soil, timed around the rains. The eggs then wait — sometimes for six to nine months — before hatching. Young nymphs hatch out in large groups and stick together, clustering conspicuously at the tips of low plants. This \"safety in numbers\" habit, combined with their loud warning colours, helps deter predators. Adults are more likely to go it alone."
+      },
+      {
+        "heading": "Why Is It Black and Yellow?",
+        "body": "Those colours are advertising, not decoration. This grasshopper (and its West African relative in particular) can produce a foul-smelling defensive fluid from glands on its body, and its bold pattern warns predators to expect an unpleasant surprise if they attack. Some Zonocerus grasshoppers go a step further: they deliberately seek out and eat plants containing toxic chemicals (pyrrolizidine alkaloids), storing the toxins in their own bodies as an extra layer of chemical defence — essentially building their own poison from what they eat."
+      },
+      {
+        "heading": "What Does It Eat?",
+        "body": "This species is a food generalist, feeding on a huge range of plants — onions, amaranth, citrus, coffee, cassava, sweet potato, banana, tobacco, and many more. It thrives in open savannah country and avoids thick forest or true desert."
+      },
+      {
+        "heading": "Why Does It Matter?",
+        "body": "Zonocerus grasshoppers can be a real headache for farmers — the West African relative has been blamed for cassava losses of up to half a crop in bad years, and this East African species is likewise known to nibble away at cassava yields. On the flip side, in parts of South Africa these grasshoppers are also eaten as a nutritious, protein-rich snack. Where control is needed, researchers have developed a natural fungal spray that specifically targets grasshoppers like this one, killing most of a treated population within two to three weeks without harming other wildlife."
+      }
+    ],
+    "technical_sections": [
+      {
+        "heading": "References",
+        "body": "Source Type Section(s) used GBIF (Global Biodiversity Information Facility) Taxonomic authority database 1, 5 Orthoptera Species File Taxonomic authority database 1 CABI Compendium / Invasive Species Compendium (via researchgate.net author-hosted copy) Agricultural research body 2, 3, 4, 6, 7 Journal of Zoology (Wiley) — Bernays, Edgar & Rothschild 1977 Peer-reviewed journal (bibliographic citation only) 4, 9 Biodiversity and Conservation (Springer) Peer-reviewed journal (bibliographic citation only) 6 No relevant online content found for: Topic 8 (Collection Methods) — no whitelisted source describing collection/trapping methodology specific to Zonocerus elegans was located."
+      },
+      {
+        "heading": "1. Taxonomy and Classification",
+        "body": "Kingdom Animalia; Phylum Arthropoda; Class Insecta; Order Orthoptera; Suborder Caelifera; Family Pyrgomorphidae; Genus Zonocerus; Species Zonocerus elegans (Thunberg, 1815) (Source: Orthoptera Species File, orthoptera.speciesfile.org). Two subspecies are recognised: Z. e. elegans and Z. e. angolensis Kevan, 1972, with listed synonyms including atriceps, brevipennis, hova, and roseipennis (Source: Orthoptera Species File). Classification is cross-confirmed by GBIF, which lists the same ranks down to species, with authority \"(Thunberg, 1815)\" and status ACCEPTED (Source: GBIF, gbif.org/species/7197443). The related, more westerly congener is Zonocerus variegatus (Linnaeus, 1758) (Source: GBIF, gbif.org/species/1727818; CABI Compendium 10.1079/cabicompendium.57607)."
+      },
+      {
+        "heading": "2. Morphology",
+        "body": "Nymphs (\"hoppers\") of Z. elegans are mainly black with white or yellow markings, and the pied nymphs are gregarious (Source: CABI Compendium datasheet, \"Elegant grasshopper, Zonocerus elegans\", via researchgate.net author-hosted copy). Adults show aposematic colouring described as predominantly yellow, variegated in olive or bluish-green, dull red, orange and black, with red wing bases, an abdomen ringed yellow-and-black or bluish-black, orange-red eyes, a black head, and antennae alternately banded black and orange (Source: CABI Compendium). Adult females measure roughly 3.8–5.1 cm and males 3.2–4.5 cm. The species is generally brachypterous (short-winged); fully winged (macropterous) adults are comparatively rare, and even those are poor fliers (Source: CABI Compendium)."
+      },
+      {
+        "heading": "3. Biology and Life Cycle",
+        "body": "Life cycle is synchronised with rainfall. Females oviposit 23–116 eggs per pod, with adults migrating to oviposition sites and depositing dense clusters of egg pods. Eggs undergo a diapause of roughly 6–9 months, depending on environmental conditions, before hatching (Source: CABI Compendium). Young nymphs are strongly gregarious, aggregating conspicuously at the tips of low vegetation; adults are less gregarious than nymphs (Source: CABI Compendium)."
+      },
+      {
+        "heading": "4. Ecology",
+        "body": "Z. elegans is a savannah species that avoids dense forest and true desert. It is markedly polyphagous, with recorded host/food plants including onion, amaranth, cashew, pineapple, cruciferous crops, various Citrus, coffee, taro, cucurbits, carrot, yam, sweet potato, cassava, banana, tobacco, frangipani, and the weed Chromolaena odorata (Siam weed) (Source: CABI Compendium). Nymphs and adults produce an odorous defensive secretion from paired abdominal glands, combining with the black-and-yellow warning colouration as a joint chemical–visual antipredator strategy (Source: CABI Compendium). The genus is also documented (primarily in the sister species Z. variegatus) for pharmacophagy — actively seeking and ingesting pyrrolizidine alkaloids (PAs) from plants such as Chromolaena odorata for chemical defense (Source: Bernays, Edgar & Rothschild, Journal of Zoology, 1977, Wiley — bibliographic citation, full text not directly accessible)."
+      },
+      {
+        "heading": "5. Distribution and Diversity",
+        "body": "Z. elegans occurs across central, eastern, and southern Africa, including Madagascar, mainly south of the equator, with its range extending into East Africa, where it is the taxon actually present (Source: CABI Compendium; Orthoptera Species File). GBIF occurrence data confirm 13 Kenyan records spanning Kajiado County (Amboseli Junction, Loitokitok, Ngong), Nakuru/Naivasha, Kiambu (Kikuyu), Makueni (Kilome), Taita Taveta (Tsavo/Voi), and Narok (Maasai Mara) between 2013 and 2026 (Source: GBIF occurrence API, api.gbif.org). By contrast, only 2 Kenyan GBIF records exist for Z. variegatus, both from a single locality (Nyakach, Kisumu County) and a single observer — consistent with the CABI note that East African Z. variegatus reports \"undoubtedly correspond to confusion with Z. elegans\" (Source: CABI Compendium 10.1079/cabicompendium.57607). Z. variegatus itself is native to and a major pest across West and Central Africa (Nigeria, Ghana, Togo, Ivory Coast, Cameroon, Congo-Brazzaville, Benin, Sahel) (Source: CABI Compendium 10.1079/cabicompendium.57607)."
+      },
+      {
+        "heading": "6. Economic / Ecological Importance",
+        "body": "Z. elegans is documented as contributing to cassava root yield losses across parts of its African range (Source: pest-status literature, title located via search — full text not accessible). The sister species Z. variegatus is far better documented as an economically damaging pest, reported to cause up to 50% annual cassava yield loss in Nigeria, damages groundnut and vegetable crops, and has been implicated in transmitting cowpea and okra mosaic viruses and bacterial blight of cassava in West Africa (Source: CABI Compendium 10.1079/cabicompendium.57607). Both species are also consumed as food insects in parts of Africa: Zonocerus spp. (including elegans) are reported eaten in South Africa (notably Limpopo, Mpumalanga, KwaZulu-Natal, North West, and Gauteng), and Z. variegatus is widely consumed in West Africa with high recorded protein content (~54.9% of edible portion) (Source: \"Documenting the biodiversity of edible grasshoppers in South Africa,\" Biodiversity and Conservation, Springer, 2023 — bibliographic citation, full text access blocked by login wall)."
+      },
+      {
+        "heading": "7. Control and Management",
+        "body": "For the Zonocerus pest complex generally, biological control using the entomopathogenic fungus Metarhizium anisopliae (commercial formulation \"Green Muscle\") has been developed and registered in Southern Africa — registered against brown locust in South Africa from 1998, and against desert locust/grasshoppers in nine Sahelian countries from 2001 — reported to cause 70–90% mortality in treated hopper populations within 14–20 days with limited non-target impact (Source: CABI Compendium). Management guidance for Zonocerus egg pods and early aggregated instars (targeting nymphs while still clustered near oviposition sites) is also referenced in CABI/Plantwise pest-management materials (Source: CABI Compendium / Plantwise materials, found via search index; full pages inaccessible)."
+      },
+      {
+        "heading": "9. Notable Facts",
+        "body": "•  The gregarious, brightly aposematic nymphs cluster conspicuously on vegetation, combining visual warning colour with a defensive secretion from paired abdominal glands as an integrated antipredator strategy (Source: CABI Compendium). •  The genus is notable in the chemical-ecology literature for actively-sought pyrrolizidine alkaloid pharmacophagy from toxic host plants — documented in the sister species Z. variegatus feeding on Chromolaena odorata — sequestering the alkaloids for its own chemical defense, a comparatively rare strategy among Orthoptera (Source: Bernays, Edgar & Rothschild, 1977, Journal of Zoology, Wiley). •  Even fully winged (\"macropterous\") adults of Z. elegans are described as poor fliers, meaning the species relies on walking/hopping and gregarious defense far more than flight for survival (Source: CABI Compendium)."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Elegant Grasshopper/eg-web.pdf",
+      "lay": "Elegant Grasshopper/eg-web-la.pdf"
+    },
+    "photo_ref": "/photos/elegant-grasshopper.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "carpenter-bee",
+    "common_name": "Carpenter Bee",
+    "scientific_name": null,
+    "family": null,
+    "order": "Hymenoptera",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "If you've ever seen a big, shiny black bee drilling a perfectly round hole into a fence post, a dead branch, or the eaves of a house, you've met a carpenter bee. They belong to the genus Xylocopa, and Kenya is home to a remarkable number of them — GBIF, the global biodiversity database, has logged over 800 sightings of carpenter bees across the country, spanning at least 15 different named species."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "Carpenter bees are chunky and robust — noticeably bigger than most other bees you'll come across. People often mistake them for bumblebees, but there's one easy way to tell them apart: a bumblebee's abdomen is fuzzy all over, while a carpenter bee's abdomen is smooth, shiny, and almost hairless, like it's been polished. Males and females look slightly different too — males have a pale white or yellow patch on the face, while females' faces are solid dark."
+      },
+      {
+        "heading": "How Do They Build Their Homes?",
+        "body": "This is where the name comes from. A female carpenter bee doesn't build a nest from scratch out of wax like a honeybee — she chews her way into solid wood, using her powerful jaws to carve out a tunnel. In one well-studied relative, females dug tunnels as deep as 40 centimetres for overwintering, and built branching networks of cells for raising young — each one stocked with a ball of pollen and nectar before being sealed shut with chewed wood pulp, like a tiny larder for the next generation. Interestingly, carpenter bees aren't quite \"loners\" the way people often assume. It's common for a nest to be shared by a mother and one of her daughters — one bee stays inside doing guard duty, keeping intruders out and the nest clean, while the other flies out to gather food and lay eggs. Sometimes, remarkably, the daughter can even take over the egg-laying role from her own mother."
+      },
+      {
+        "heading": "Why Do They Matter?",
+        "body": "Carpenter bees have a superpower most bees don't: they can \"buzz\" pollen loose. Some flowers — tomatoes are a great example — keep their pollen locked inside tiny pores instead of leaving it out in the open. A honeybee simply can't get at it. A carpenter bee, though, grips the flower and vibrates its flight muscles so hard the pollen shakes free, like a tiny tuning fork. In studies done in Kakamega, western Kenya, this \"buzz pollination\" from carpenter bees produced noticeably better tomato fruit than honeybees managed — the honeybees, in fact, were caught tearing at the flowers and damaging them just to steal pollen they couldn't otherwise reach. Carpenter bees also turn out to matter a lot to French bean farming near Mount Kenya, one of the country's major smallholder export crops — a study there found that farms closer to the forest, with more carpenter bees around, produced noticeably better bean yields than farms farther away with fewer bees."
+      },
+      {
+        "heading": "Any Surprising Facts?",
+        "body": "Not every carpenter bee plays fair. Some species have worked out a shortcut: instead of pushing into a flower the \"front door\" way and picking up pollen along the way, they slice a little slit straight into the base of the flower with their jaws and drink the nectar directly — no pollination service rendered. And once a carpenter bee has cut that opening, other bees, including honeybees, sometimes sneak in through the same hole afterward. One more thing worth knowing: the same tunnel a carpenter bee digs into a piece of wood doesn't get used just once. Bees can return to it and extend it year after year, generation after generation — some documented tunnels have stretched to nearly 60 centimetres long after years of reuse."
+      }
+    ],
+    "technical_sections": [
+      {
+        "heading": "References",
+        "body": "Source Type Section(s) used He & Zhu (2018), Journal of Insect Science 18(4):2 Peer-reviewed journal 1, 2, 3 Cooley & Vallejo-Marín (2021), Journal of Economic Entomology 114(2) Peer-reviewed journal 4, 6 Elisante et al. (2020), PeerJ 8:e10102 Peer-reviewed journal 4, 9 Hu, X.P. (2022), Alabama Cooperative Extension System University/extension 2, 3, 6, 7, 9 Mawdsley (2017), ZooKeys 655 (title/metadata only) Peer-reviewed journal 1 GBIF.org Taxonomic authority database 1, 5 Museum of Comparative Zoology, Harvard University (specimen MCZ:Ent:810670) Museum/collection 5 Masiga, Kasina et al. (2014), Journal of Pollination Ecology 14 Peer-reviewed journal 6 No relevant online content found for: confirmed species-level identification of the photographed specimen; a Kenyan/Swahili vernacular name for Xylocopa; Kenya-specific documentation of structural wood damage; Kenya-specific kleptoparasite/cuckoo-bee associations; full African subgeneric taxonomic detail (source access blocked — see Manual Retrieval Needed)."
+      },
+      {
+        "heading": "1. Taxonomy and Classification",
+        "body": "Order Hymenoptera; Family Apidae; Subfamily Xylocopinae; Genus Xylocopa Latreille, 1802, with type species Xylocopa violacea Linnaeus, 1758 (Source: Museum of Comparative Zoology, Harvard University, specimen record MCZ:Ent:810670; GBIF Backbone Taxonomy, 2026). Class Insecta is confirmed via the GBIF Backbone Taxonomy classification path (Animalia → Arthropoda → Insecta) (Source: GBIF.org, Backbone Taxonomy). A confirmed placement of a congeneric species reads \"Xylocopa xinjiangensis (Hymenoptera: Apidae: Xylocopinae)\" (Source: He & Zhu, Journal of Insect Science 18(4):2, 2018). At least one African subgenus is documented — Xenoxylocopa Hurd & Moure, 1963 — with a dedicated taxonomic treatment separating its species from other African subgenera of Xylocopa, though the full subgeneric breakdown could not be retrieved from a whitelisted full-text source (Source: Mawdsley, ZooKeys 655:131–139, 2017 — title/metadata level only, full text inaccessible). Gap: no whitelisted, directly-verified source describing the internal tribal structure of Xylocopinae could be accessed — the one relevant peer-reviewed phylogenetics article found was inaccessible (see Manual Retrieval Needed)."
+      },
+      {
+        "heading": "2. Morphology",
+        "body": "Adults have a robust, plump body, larger-bodied than most other bees, with an abdomen that is shiny black and hairless — a feature that distinguishes carpenter bees from the fuzzy-abdomened bumble bees they otherwise superficially resemble (Source: Hu, Alabama Cooperative Extension System, 2022). Sexual dimorphism: males carry a white or yellow blaze on the face, while females have a dark face (Source: Hu, Alabama Cooperative Extension System, 2022). Development proceeds through egg, larval (\"grub\"), pupal, and adult stages inside provisioned brood cells (Source: He & Zhu, Journal of Insect Science 18(4):2, 2018)."
+      },
+      {
+        "heading": "3. Biology and Life Cycle",
+        "body": "Nesting substrate is nearly always dead or dry wood (or bamboo), into which females excavate tunnels using their mandibles; the genus is solitary-to-subsocial rather than truly social — nests are commonly shared by a foraging \"egg layer\" (often the mother) and a non-foraging \"guard\" (often a daughter), with the egg-layer provisioning cells and feeding nestmates while the guard defends and cleans the nest. Reproductive dominance can shift between nestmates over time (Source: He & Zhu, Journal of Insect Science 18(4):2, 2018). In a detailed study of the congener Xylocopa xinjiangensis, two nest architectures were documented: a simple perpendicular \"wintering nest\" (27–40 cm deep) used for overwintering, and a branching or straight-chain \"breeding nest\" in which cells are built sequentially from the outside inward. That population produced one generation per year, with newly emerged females overwintering solitarily before building a breeding nest the following spring and provisioning an average of 8.65 brood cells (range 5–14) across a lifetime; the offspring sex ratio was approximately 0.86 females to 1 male (Source: He & Zhu, Journal of Insect Science 18(4):2, 2018). In a temperate congener (X. virginica), adults overwinter inside old tunnels, mate in spring, and females excavate round entrance holes roughly 1.3 cm wide, building 6–14 brood cells per tunnel, each provisioned with a mixed pollen-nectar ball and sealed with chewed wood pulp; galleries typically run 10–15 cm but can extend up to 60 cm with repeated reuse across years, and new adults emerge in late summer by chewing through the cell partitions (Source: Hu, Alabama Cooperative Extension System, 2022)."
+      },
+      {
+        "heading": "4. Ecology",
+        "body": "Xylocopa is one of the bee genera capable of buzz pollination (floral sonication): the bee vibrates its thoracic flight muscles against a closed, pore-opening (poricidal) anther to dislodge pollen without the flower needing to open in the usual way — a mechanism honeybees (Apis) cannot perform (Source: Cooley & Vallejo-Marín, Journal of Economic Entomology 114(2), 2021). Multiple Xylocopa species are documented to rob nectar by slitting the base of a flower's corolla with their mandibles to reach nectar directly, bypassing the flower's reproductive structures and providing no pollination service on that visit. In a Tanzanian bean-farming study, this robbing behaviour was noted to potentially increase secondary robbing by honeybees through the holes the carpenter bees had already cut (Source: Elisante et al., PeerJ 8:e10102, 2020). Gap: no whitelisted, Kenya-specific documentation of kleptoparasites or cuckoo-bee associates of Xylocopa nests was found."
+      },
+      {
+        "heading": "5. Distribution and Diversity",
+        "body": "GBIF occurrence data queried directly for Kenya (country code KE) return 832 total Xylocopa occurrence records, spanning at least 15 named species/taxa plus a genus-level bucket. The most-recorded named species are X. flavorufa (100 records), X. hottentotta (72), X. caffra (57), X. calens (47), X. inconstans (32), X. flavicollis (30), X. scioensis (30), and X. nigrita (28), with further records for X. gribodoi, X. lugubris, X. lateritia, X. senior, X. imitator, X. torrida, and X. erythrina (Source: GBIF.org, occurrence search, 2026). A museum specimen of Xylocopa lateritia Smith, 1854 was collected at Frere Town, Mombasa, Kenya on 30 May 1923, confirming a documented Kenyan coastal record dating back over a century (Source: Museum of Comparative Zoology, Harvard University, specimen MCZ:Ent:810670)."
+      },
+      {
+        "heading": "6. Economic / Ecological Importance",
+        "body": "In field studies at Kakamega, western Kenya, the main effective pollinators of tomato flowers were buzz-pollinating bees including Xylocopa calens and Halictus species; these released pollen effectively via sonication and produced higher fruit quality than plots where native pollinators were excluded, while honeybees were instead observed tearing and damaging anthers to obtain pollen, behaving as nectar/pollen \"robbers\" rather than effective pollinators (Source: Cooley & Vallejo-Marín, citing Kasina 2007, Journal of Economic Entomology 114(2), 2021). In a study comparing French bean (Phaseolus vulgaris) farms near and far from the Mt Kenya forest edge, bean yield was significantly correlated with carpenter bee abundance, indicating a pollination deficit where carpenter bee density was low; honeybees were the most abundant flower visitors overall, followed by carpenter bees, then leafcutter bees. The study's authors recommended area-wide management and conservation of carpenter bees to support French bean production, a major smallholder export crop in Kenya (Source: Masiga, Kasina et al., Journal of Pollination Ecology 14, 2014). Gap: no whitelisted source documenting structural wood damage from carpenter bees specifically in Kenyan buildings or timber was located."
+      },
+      {
+        "heading": "7. Control and Management",
+        "body": "No Kenya-specific control or management literature was found in whitelisted sources. General (non-Kenya) guidance from a university extension source recommends prevention through painting exposed, unfinished wood surfaces with oil- or polyurethane-based paint (wood stains offer little deterrence), replacing repeatedly-damaged wood with pressure-treated timber or synthetic siding, and timing any intervention to early spring before females lay eggs. Where direct treatment is needed, licensed application of a labelled insecticide into galleries in the evening (when females are inside), followed by sealing the entrance, is recommended — sealing alone without treatment is described as ineffective, since a trapped bee can chew back through caulk (Source: Hu, Alabama Cooperative Extension System, 2022). Given Xylocopa's documented role as an effective agricultural pollinator (see Section 6), this control literature applies to structural-nuisance contexts specifically, not to a general pest designation."
+      },
+      {
+        "heading": "8. Collection Methods",
+        "body": "No topic-specific whitelisted source was directly retrieved and verified for this section; findings from Section 5 (GBIF occurrence data) and Section 6 (field pollination studies) indicate that species records for this genus in Kenya are compiled through direct field observation and museum specimen collection rather than a documented standardised trapping protocol."
+      },
+      {
+        "heading": "9. Notable Facts",
+        "body": "Xylocopa performs buzz pollination by vibrating its thoracic flight muscles against a closed, poricidal anther to dislodge pollen — a mechanism that honeybees cannot perform, making carpenter bees disproportionately effective pollinators of certain crops such as tomato that rely on this pollen-release method (Source: Cooley & Vallejo-Marín, Journal of Economic Entomology 114(2), 2021). Several Xylocopa species rob nectar directly through a slit cut in the flower's corolla base rather than entering through the front of the flower, bypassing pollination entirely on that visit — and this robbing can open a route for other bees, including honeybees, to rob the same flower afterward (Source: Elisante et al., PeerJ 8:e10102, 2020). A single nest gallery bored into wood can be reused and extended across multiple years by successive generations, with total tunnel length reaching up to roughly 60 cm in some documented cases (Source: Hu, Alabama Cooperative Extension System, 2022)."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Carpenter Bee/cb-web.pdf",
+      "lay": "Carpenter Bee/cb-web-la.pdf"
+    },
+    "photo_ref": "/photos/carpenter-bee.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "crab-spider",
+    "common_name": "Crab Spider",
+    "scientific_name": null,
+    "family": null,
+    "order": "Araneae",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "This little ambusher is a crab spider \u0002 most likely from the genus Thomisus, the \"flower crab spiders.\" Rather than spinning a web, it does something far sneakier: it sits perfectly still on a flower and waits for an unsuspecting fly, bee, or other pollinator to land right next to it. By the time the insect notices, it's too late."
+      },
+      {
+        "heading": "Why Does It Walk Sideways?",
+        "body": "Look closely at the legs in the photo \u0002 the front two pairs are much longer and heftier than the back two, and they're held out to the sides rather than pointing forward. That's what gives crab spiders their name: they scuttle sideways and diagonally, crab-style, instead of walking straight ahead like most spiders."
+      },
+      {
+        "heading": "The Disappearing Trick",
+        "body": "Here's the really clever part. Many Thomisus crab spiders can actually change colour to match the flower they're sitting on \u0002 shifting between white, yellow, or pink over the course of about two days. Scientists have found this isn't just a passive trick of the light: it's controlled by hormones, the very same one spiders use to trigger moulting. A spider placed on a yellow flower will gradually turn yellow; move it to white, and it fades back \u0002 though turning yellow happens about twice as fast as fading back to white. Some related species take an even stranger approach: instead of hiding, they reflect ultraviolet light that's invisible to us but creates a glowing beacon to a bee's eyes, essentially advertising \"flower here\" to lure prey in rather than hiding from it."
+      },
+      {
+        "heading": "How Does It Actually Catch Prey?",
+        "body": "A crab spider on a flower detects an approaching insect from about 2 centimetres away and strikes when it's within about half a centimetre. Remarkably, it can overpower prey up to three times its own size \u0002 a single bite behind the head delivers a venom potent enough to subdue something that much bigger, after which digestive juices dissolve the victim's insides so the spider can drink it, leaving only an empty husk behind."
+      },
+      {
+        "heading": "What Do the Young Ones Eat When There's No Prey Around?",
+        "body": "Here's a fact that surprises most people: spiderlings that can't find insect prey for a while don't necessarily starve. Research has shown they can survive by feeding directly on pollen and nectar from the flowers they live on \u0002 a backup food source that's unusual for a predator."
+      },
+      {
+        "heading": "Good Guys in the Garden",
+        "body": "Despite lurking on flowers to ambush visitors, crab spiders are considered beneficial. They prey on aphids, mites, and thrips \u0002 pests that damage crops \u0002 making them a quiet form of natural pest control."
+      },
+      {
+        "heading": "Where Do They Live?",
+        "body": "Crab spiders (the wider family, Thomisidae, of which Thomisus is one genus) are found across almost every habitat in Africa \u0002 grasslands, shrubs, flowers, and trees \u0002 and even use silk threads to \"balloon\" on the wind to disperse to new areas. In Kenya specifically, several Thomisus species have been recorded from Nairobi down to the coast and up to the Rift Valley, and this individual was photographed at Lolldaiga House in the Lolldaiga Conservancy, Laikipia \u0002 a region where closely related crab spiders are also well documented."
+      },
+      {
+        "heading": "Family Life",
+        "body": "Females lay their eggs inside a curled-up leaf and then guard the egg sac fiercely until they die \u0002 without eating anything during that entire watch. It's a one-shot, all-in investment in the next generation."
+      },
+      {
+        "heading": "Worldwide Diversity",
+        "body": "Crab spiders are a big family \u0002 worldwide there are roughly 2,100 known species across some 170 genera, and Thomisus alone makes up more than 130 of them. So while we can't say with certainty exactly which Thomisus species this is just from a photo (that would need a close look under a microscope), we can say with confidence it's a flower crab spider caught doing exactly what its family does best: hiding in plain sight and waiting for lunch to walk by."
+      }
+    ],
+    "technical_sections": [
+      {
+        "heading": "References",
+        "body": "Source Type Section(s) used World Spider Catalog (wsc.nmbe.ch) Taxonomic authority database 1 GBIF occurrence records (gbif.org) Taxonomic authority database 1, 5 ARC South Africa, Spider Research Centre Government/agricultural research body 1, 2, 4, 6 Iziko Museums, Biodiversity Explorer Museum/natural history institution 2, 3, 6, 9 Llandres et al. 2013, Journal of Experimental Biology Peer-reviewed journal 2, 9 Gawryszewski, Llandres & Herberstein 2012, Journal of Experimental Biology Peer-reviewed journal 2, 4, 9 Levy 1970, Journal of Zoology Peer-reviewed journal 3 Vogelei & Greissl 1989, Oecologia Peer-reviewed journal 3, 9 Kioko et al. 2021, African Invertebrates Peer-reviewed journal 1, 5 No relevant online content found for: Topic 7 (Control and management) \u0002 no evidence Thomisidae are treated as pests; Topic 8 (Collection methods) \u0002 only general, non-Thomisidae-specific sampling principles found; a species-specific IUCN conservation assessment."
+      },
+      {
+        "heading": "1. Taxonomy and Classification",
+        "body": "Order Araneae, family Thomisidae Sundevall, 1833 (Source: World Spider Catalog, wsc.nmbe.ch; ARC South Africa, Spider Research Centre; Iziko Museums, Biodiversity Explorer). Thomisidae comprises roughly 170\u0003172 genera and around 2,100\u00032,195 species worldwide (Source: World Spider Catalog / GBIF taxon page, gbif.org). In Southern Africa alone the family runs to 39 genera and about 140 species (Source: ARC South Africa, Thomisidae General Information). The genus Thomisus Walckenaer, 1805 (type species Thomisus onustus) contains over 130 described species worldwide (Source: World Spider Catalog, genus catalog). A related genus in the same family, Runcinia Simon, 1875 (\"grass crab spiders\"), contains 27 species, mostly African and Asian (Source: World Spider Catalog). Other genera within Thomisidae noted for comparison include Xysticus (ground crab spiders), Phrynarachne (bird-dropping crab spiders), Synema (African mask spiders), and Heriaeus (spiky grass crab spiders) (Source: ARC South Africa). Family-level classification has been actively revised: a molecular study recovered four informal lineages within Thomisidae (the Borboropactus, Epidius, Stephanopis, and Thomisus clades), and subsequent morphological work found the traditionally recognised subfamily Stephanopinae's constituent genera Stephanopis and Sidymella not to form a single natural grouping as classically defined (Source: Benjamin, Cladistics, 2008; Springer, Organisms Diversity & Evolution, 2020). Thomisidae's boundaries relative to other families have shifted over time \u0002 Philodromidae has since been excluded from the family, while Aphantochilinae has since been included (Source: World Spider Catalog). Kenya-confirmed Thomisus species via GBIF occurrence records include T. stenningi, T. congoensis, T. scrupeus, and T. daradioides, recorded across Nairobi, Taita Taveta, Kwale, Kajiado, Embu, Nyandarua, Kilifi, and Baringo counties (Source: GBIF occurrence data). Thomisus citrinellus also has historical Kenya specimen records dating to 1944\u00031946, with a range spanning the Mediterranean, Africa, the Seychelles, Yemen, and Socotra (Source: World Spider Catalog species page; Caporiacco 1949). Kenya-confirmed Runcinia species include R. flavida, R. aethiops, and R. carae (Source: GBIF occurrence data). Kenya's overall spider fauna (all families) totals 805 species/subspecies across 57 families recorded through 2018 (Source: Kioko, Marusik, Li, Kioko & Ji, \"Checklist of the spiders (Araneae) of Kenya,\" African Invertebrates 62(1):47\u0002229, 2021). Species-level identification of the photographed individual is not possible from a photograph alone \u0002 it would require examination of the epigyne or palp under magnification \u0002 so this report treats the specimen as genus Thomisus, undetermined species."
+      },
+      {
+        "heading": "2. Morphology",
+        "body": "Body size in Thomisus ranges roughly 3\u000311 mm; across Thomisidae generally, body size spans 3\u000323 mm (Source: ARC South Africa; Iziko Biodiversity Explorer). Thomisids have eight eyes arranged in two rows of four, with the lateral eyes raised on tubercles. The carapace is semicircular to elongate, and in Thomisus the abdomen is triangular and widest toward the rear (Source: ARC South Africa; Iziko Biodiversity Explorer). Legs are laterigrade \u0002 held out to the sides and moved with a sideways, crab-like gait. Legs I and II are usually longer and more robust than legs III and IV, and carry strong spines on the tibiae and metatarsi, used to seize and hold prey (Source: ARC South Africa; Iziko Biodiversity Explorer). Thomisus is capable of reversible colour change between white, yellow, or pink to match the flower it is sitting on, completing the shift in about two days; species that instead live on bark or grass remain cryptically brown and lack this active colour-change ability (Source: Iziko Biodiversity Explorer). The mechanism has been studied in detail in Thomisus onustus: colouration arises from cuticle optics plus pigments in the hypodermis sitting above a white background layer of guanine crystals, with the main yellow pigment being an ommochrome precursor (3-hydroxykynurenine), while tryptophan and kynurenine contribute to white colouration. The shift is triggered primarily by the background flower colour and is under hormonal control \u0002 injections of the moulting hormone 20-hydroxyecdysone reproduced the yellowing response seen from exposure to a yellow background. The white-to-yellow shift occurs roughly twice as fast as the reverse, yellow-to-white transition (Source: Llandres et al., \"Environmental and hormonal factors controlling reversible colour change in crab spiders,\" Journal of Experimental Biology 216(20):3886\u00023895, 2013). An alternative strategy is documented in Thomisus spectabilis: this species is UV-reflective and appears plain white to humans, but creates a strong contrast against UV-absorbing flowers when viewed through a bee's visual system \u0002 a conspicuous rather than purely cryptic strategy. Spiders in better body condition showed stronger UV colour contrast (Source: Gawryszewski, Llandres & Herberstein, \"Relationship between colouration and body condition in a crab spider that lures pollinators,\" Journal of Experimental Biology 215(7):1128\u00021136, 2012). Thomisus shows marked sexual size dimorphism, with females roughly 4\u000310 mm and males only 2\u00037 mm; males across Thomisidae are typically brown to green-yellow and smaller than the larger, colour-changing females (Source: ARC South Africa; genus-level data synthesis)."
+      },
+      {
+        "heading": "3. Biology and Life Cycle",
+        "body": "Females lay eggs in curled or folded leaves and guard the egg sac until death, without feeding during the guarding period (Source: Iziko Biodiversity Explorer). Males mount females prior to mating (Source: Iziko Biodiversity Explorer). The life cycle of Thomisus onustus, the best-studied congener, shows two adult phases annually, with males and females differing in developmental period length such that sibling mating is unlikely in nature. Females maintain a stable one-year cycle, while the length of the male developmental cycle varies according to the phase in which it originates. Males mature after roughly 3\u00035 moults, females after roughly 6\u00039 moults, and instar number and duration are highly variable among spiderlings (Source: Levy, \"The life cycle of Thomisus onustus (Thomisidae: Araneae)...,\" Journal of Zoology 160(4):523\u0002536, 1970). Spiderlings kept on different diets showed significantly higher survival when fed pollen or nectar compared with being starved, demonstrating that pollen and nectar can serve as an alternative energy source over extended periods when insect prey is unavailable (Source: Vogelei & Greissl, \"Survival strategies of the crab spider Thomisus onustus...,\" Oecologia 80:513\u0002515, 1989). No lifespan figure beyond the roughly one-year cycle documented for T. onustus was found for the genus specifically, and it is not established whether Kenyan Thomisus species follow the same annual, temperate-zone pattern."
+      },
+      {
+        "heading": "4. Ecology",
+        "body": "Thomisids are semi-sedentary, sit-and-wait ambush predators, free-living on foliage and flowers rather than building webs, and move with a sideways, crab-like gait (Source: ARC South Africa). In Thomisus, prey is detected from roughly 20 mm away and struck when within 5\u000310 mm range. Prey can be up to three times the spider's own size; victims are bitten behind the head, internally dissolved with digestive enzymes, and then sucked dry, leaving an empty but intact exoskeleton (Source: Iziko Biodiversity Explorer). Despite weak chelicerae, thomisids possess potent venom enabling them to subdue prey several times their own body size (Source: ARC South Africa). Thomisids generally prey on aphids, red spider mites, and thrips, among other invertebrates (Source: ARC South Africa). Crab spiders exploit the plant\u0003pollinator interaction directly by sitting on flowers to ambush visiting insects. Colouration typically resembles the flower's colour, reducing detectability by prey such as honeybees, while some species (e.g. T. spectabilis) instead use UV reflectance to create a contrast attractive to bee vision (Source: Llandres et al. 2013; Gawryszewski, Llandres & Herberstein 2012, Journal of Experimental Biology). Thomisids occupy essentially all biomes across Southern Africa \u0002 grass, shrubs, flowers, and trees \u0002 with wind (\"ballooning\") aiding dispersal (Source: ARC South Africa)."
+      },
+      {
+        "heading": "5. Distribution and Diversity",
+        "body": "Globally, Thomisidae comprises roughly 170\u0003172 genera and 2,100\u00032,195 species; Thomisus alone accounts for over 130 described species, and Runcinia for 27 (Source: World Spider Catalog / GBIF). Southern Africa hosts 39 genera and about 140 species of Thomisidae (Source: ARC South Africa). Kenya: GBIF occurrence records confirm Thomisus stenningi, T. congoensis, T. scrupeus, and T. daradioides from Nairobi (Karen, Kasarani, Langata), Taita Taveta (Mwatate, Taveta), Kwale (Wasini, Lungalunga), Kajiado (Kajiado South), Embu (Manyatta, Nthambo), Nyandarua (Lake Ol'Bolossat), Kilifi (Mida Creek), and Baringo (Kabarnet, Baringo South, Marigat) counties, drawing on 26 total occurrence records (2017\u00032026) combining iNaturalist citizen-science observations with National Museums of Kenya specimen data (Source: GBIF occurrence data). T. daradioides (\"two-spotted Thomisus crab spider\") more broadly ranges from Africa to India, collected mainly from flowers, grass, and shrubs, at elevations of 7\u00032020 m (Source: World Spider Catalog-derived data). Runcinia is also confirmed present in Kenya \u0002 R. flavida, R. aethiops, and R. carae \u0002 recorded from Kajiado, Meru, Laikipia (Mpala Research Centre/ranch), Kakamega Forest, Taita Taveta, Nakuru, Nairobi, Kwale, and Tharaka-Nithi (Source: GBIF occurrence data), confirming the wider Thomisidae family, including genera closely related to the photographed specimen, is well established in Laikipia County, where this individual was photographed (Lolldaiga House, Lolldaiga Conservancy). Kenya's overall spider fauna totals 805 species/subspecies across 57 families recorded through 2018 (Source: Kioko et al. 2021, African Invertebrates)."
+      },
+      {
+        "heading": "6. Economic / Ecological Importance",
+        "body": "Thomisids, including Thomisus, contribute to natural biological control by preying on aphids, red spider mites, and thrips \u0002 common agricultural pests (Source: ARC South Africa). No IUCN Red List assessment was found specifically for Thomisus or Runcinia. A small number of unrelated Thomisidae genus species have been assessed as Least Concern, but comprehensive Red List assessment of the world's spiders, including Thomisidae, remains an ongoing and incomplete process \u0002 Thomisus and Runcinia conservation status should be treated as effectively unassessed."
+      },
+      {
+        "heading": "7. Control and Management",
+        "body": "No evidence was found that Thomisus, Runcinia, or Thomisidae generally are regarded as agricultural or household pests requiring control. To the contrary, whitelisted sources frame the family as beneficial predators of crop pests (Source: ARC South Africa)."
+      },
+      {
+        "heading": "8. Collection Methods",
+        "body": "Coverage here is thin. General arachnological sampling literature indicates that foliage- and flower-dwelling ambush spiders such as thomisids are typically under-represented by ground-based pitfall trapping and are better sampled by direct visual search and hand-collection on flowers and foliage, though no Thomisidae-specific methodological source was fully accessible to confirm this in detail."
+      },
+      {
+        "heading": "9. Notable Facts",
+        "body": "Thomisus undergoes reversible white-to-yellow/pink colour change keyed to the flower colour it is sitting on, completing in about two days, under demonstrated hormonal control (Source: Iziko Biodiversity Explorer; Llandres et al. 2013, Journal of Experimental Biology). At least one species, Thomisus spectabilis, uses UV reflectance rather than colour-matching camouflage to lure pollinators \u0002 exploiting the visual system of its prey rather than concealing itself from it (Source: Gawryszewski, Llandres & Herberstein 2012, Journal of Experimental Biology). Spiderlings of Thomisus onustus can survive extended periods without insect prey by feeding directly on flower pollen and nectar \u0002 an unusual, partially non-carnivorous survival strategy for an ambush predator (Source: Vogelei & Greissl 1989, Oecologia). Despite weak chelicerae, thomisid venom is potent enough to subdue prey two to three times the spider's own body size (Source: ARC South Africa)."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Crab Spider/cs-web.pdf",
+      "lay": "Crab Spider/cs-web-la.pdf"
+    },
+    "photo_ref": "/photos/crab-spider.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "dung-beetle",
+    "common_name": "Dung Beetle",
+    "scientific_name": null,
+    "family": null,
+    "order": "Coleoptera",
+    "taxon_rank": "species",
+    "sourcing": "",
+    "sections": [
+      {
+        "heading": "What Are They?",
+        "body": "If you've ever seen a beetle busily rolling a ball of dung across a path, that's a dung beetle \u0002 but the specimen in this photo belongs to a different branch of the family entirely. Instead of rolling dung away, \"tunneler\" dung beetles dig straight down underneath the dung pile and drag pieces of it into an underground burrow. Dung beetles as a whole are an enormous group \u0002 scientists recognise roughly 7,000 living species worldwide \u0002 and Kenya alone hosts dozens of them, with one well-studied ranch in Laikipia County turning up 79 different species living side by side."
+      },
+      {
+        "heading": "What Do They Look Like?",
+        "body": "This beetle is glossy black and compact, with wing covers etched with neat lengthwise ridges running from front to back. Just behind the head sits a duller, slightly bumpy plate carrying a small horn-like knob, and the front of the head itself is armed with tooth-like points along its edge \u0002 tools built for digging rather than decoration. The front legs are thick and edged with spines, built like little shovels for excavating soil. In many of these tunneling beetles, only the males grow the impressive horns. In one well-studied relative, big males grow a long horn while small males make do with barely a bump \u0002 and it turns out size matters here in an unusual way: rather than growing gradually, a male's horn either stays tiny or suddenly becomes long once he crosses a certain body-size threshold, with almost nothing in between."
+      },
+      {
+        "heading": "How Do They Grow Up?",
+        "body": "Some of these tunneling beetles go to real lengths as parents. In one genus, the female digs the nest and looks after the developing young packed inside dung balls underground, while the male sticks around to help prepare the burrow and stays with her until she's done laying eggs \u0002 a level of teamwork that's unusual among beetles, most of which simply lay eggs and leave."
+      },
+      {
+        "heading": "Where Do They Live, and What Do They Eat?",
+        "body": "Different dung beetles are surprisingly picky eaters. A big study in a Botswana game reserve found that beetles overwhelmingly preferred pig dung, then cattle dung, then elephant dung, with carrion a distant last choice for most \u0002 but a few species bucked the trend entirely: one type ate nothing but carrion, while another showed up almost exclusively on elephant dung. That kind of specialisation likely plays out among Kenya's own dung beetle community too, spread across savannas, ranches, and farmland wherever grazing animals leave something behind."
+      },
+      {
+        "heading": "Why Do They Matter?",
+        "body": "Dung beetles are nature's clean-up crew. By burying dung underground, they recycle nutrients back into the soil, and in doing so they're also used by scientists as an early-warning system: because they're so sensitive to what's in the dung they eat, a drop in local dung beetle numbers can flag a wider problem \u0002 including one caused, ironically, by well-meaning livestock medicine."
+      },
+      {
+        "heading": "Any Downsides?",
+        "body": "Here's the twist: some of the very drugs farmers use to deworm cattle end up poisoning the dung beetles that later feed on that cattle's dung. These \"anti-parasite\" medicines pass through into the manure and can suppress dung beetle populations along with the rest of the insects living in it \u0002 which is why researchers now recommend farmers use these treatments carefully rather than routinely, to avoid quietly wiping out nature's own dung-recycling workforce."
+      },
+      {
+        "heading": "What's the Most Surprising Fact?",
+        "body": "Pound for pound, a close relative of this beetle holds a genuine world record: one tested individual pulled 1,141 times its own body weight \u0002 the equivalent of an average adult hauling around six double-decker buses. Scientists discovered the beetles put that strength to use fighting each other for burrow access, with big, well-fed males using their horns to physically shove rivals out of a tunnel \u0002 while smaller, weaker males skip the fight altogether and instead rely on sneaking in unnoticed to mate."
+      }
+    ],
+    "technical_sections": [
+      {
+        "heading": "References",
+        "body": "Source Type Section(s) used Daniel & Davis (2024), Ann. Entomol. Soc. Am. Peer-reviewed journal 1, 5 Tshikae, Davis & Scholtz (2008), Environmental Entomology Peer-reviewed journal 4, 5 Sugiura, Yamaura & Makihara (2007), Zoological Science Peer-reviewed journal 2, 3 Gordon & Barbero (2008), J. East Afr. Nat. Hist. Peer-reviewed journal 1, 5 Jacobs & Scholtz (2015), Onderstepoort J. Vet. Res. Peer-reviewed veterinary journal 4, 6, 7 Daniel (2020), CULNA, National Museum (Bloemfontein) Museum publication 2, 3, 5 Queen Mary University of London (2010) news release (reporting Knell & Simmons, Proc. R. Soc. B) University (.ac.uk) 9 No relevant online content found for: Collection Methods (Topic 8) \u0002 every source located with specific dung-baited pitfall-trapping methodology resolved to non-whitelisted domains (Frontiers, Cambridge Core, PLOS ONE, Academia.edu, bioRxiv) and was excluded rather than cited."
+      },
+      {
+        "heading": "1. Taxonomy and Classification",
+        "body": "The specimen belongs to order Coleoptera, family Scarabaeidae, subfamily Scarabaeinae \u0002 the true dung beetles (Order, family, and subfamily confirmed: Daniel & Davis, 2024, Annals of the Entomological Society of America). Scarabaeinae currently comprises 20 recognised tribes, 9 subtribes, roughly 270 genera, and about 7,000 extant valid species, plus 23 fossil species (Source: Daniel & Davis, Annals of the Entomological Society of America, 2024). The photographed specimen shows a compact, rounded body, longitudinally ridged elytra, a granular pronotum bearing a horn-like tubercle near the head, a toothed clypeal margin, and stout, spinose forelegs adapted for digging \u0002 a combination consistent with a tunneling (burrowing) rather than a rolling lifestyle. Several tunneler genera are documented from Kenya, including Catharsius, Copris, Onitis, and Proagoderus, but no whitelisted source accessed provided a diagnostic key that could be matched directly against these photographic features. Genus- and species-level identification is therefore reported as undetermined rather than guessed. Scarabaeinae tribal classification is itself actively unsettled: significant polyphyly and paraphyly persist across multiple tribes, with over 100 genera currently incertae sedis pending revision (Source: Daniel & Davis, Annals of the Entomological Society of America, 2024). Relevant tribal placements, where confirmed: \u0003  Catharsius (with Metacatharsius): proposed as a new tribe Catharsiini, currently treated as incertae sedis within Coprini \u0002 its tribal home is explicitly unsettled (Source: Daniel & Davis, Annals of the Entomological Society of America, 2024). \u0003  Copris: placed in the redefined tribe Coprini, which now holds only 5 genera and roughly 300 species, distributed across the Afrotropical, Oriental, Palearctic, Nearctic, and Neotropical regions (Source: Daniel & Davis, Annals of the Entomological Society of America, 2024). \u0003  Onitis: placed in tribe Onitini (18 genera, 238 species), primarily Afrotropical with Palearctic and Oriental extensions (Source: Daniel & Davis, Annals of the Entomological Society of America, 2024). \u0003  Scarabaeus (a roller genus, for contrast): tribe Scarabaeini (11 genera, 172 species), Afro-Eurasian (Source: Daniel & Davis, Annals of the Entomological Society of America, 2024). \u0003  Sisyphus (a roller genus, for contrast): tribe Sisyphini (3 genera, 104 species), Afro-Eurasian with a northern Neotropical extension (Source: Daniel & Davis, Annals of the Entomological Society of America, 2024). \u0003  Proagoderus's tribal placement could not be confirmed from a source that could be fully retrieved and is reported as undetermined. A confirmed Kenyan record illustrating the taxonomic breadth present locally: Copris denticulatus was documented as a new record for Kenya at Laikipia District, alongside six other species newly recorded for the country (Allogymnopleurus indigaceus, Euoniticellus parvus, Gymnopleurus reichei, Oniticellus egregius, Oniticellus pseudoplanatus, Sisyphus tibialis) (Source: Gordon & Barbero, Journal of East African Natural History, 2008)."
+      },
+      {
+        "heading": "2. Morphology",
+        "body": "Sexual dimorphism involving head/pronotal horns is well documented in tunneler genera. In Copris ochus (a well-studied congener of the Kenyan tunneler genera), males possess a long head horn whose length scales discontinuously with body size: a pronotal-width threshold near 13.0 mm separates \"major\" long-horned males from \"minor\" short-horned males. Females instead bear only a low transverse carina, 0.5\u00041.7 mm long, rather than a true horn, and female carina length scales linearly (rather than discontinuously) with body size (Source: Sugiura, Yamaura & Makihara, Zoological Science, 2007). Similar major/minor male horn dimorphism, with disproportionate weapon development in large males used in combat over burrow access, is documented in the related tunneler genus Onthophagus: small males instead develop reduced horns paired with enlarged testes, an alternative reproductive tactic based on sperm competition rather than physical combat (Source: Queen Mary University of London, 2010, reporting Knell & Simmons, Proceedings of the Royal Society B). For comparison, a confirmed roller-type body plan (tribe Sisyphini, e.g. genus Sisyphus, documented in Kenya) is laterally compressed and flattened, especially at the sides of the pronotum, with elytra broad near the base but sharply tapered posteriorly, and distinctly elongated middle and hind legs (Source: Daniel, CULNA, National Museum Bloemfontein, 2020). The photographed specimen's compact, rounded body and non-elongated hind legs are more consistent with a tunneler-type body plan than with this roller pattern. Larval morphology specific to the Kenyan tunneler genera could not be confirmed from any whitelisted source accessed."
+      },
+      {
+        "heading": "3. Biology and Life Cycle",
+        "body": "In genus Copris, the female excavates an underground nest and provisions and cares for offspring within dung balls, while the male assists with nest preparation and remains with the female until oviposition is complete \u0002 a documented case of biparental (subsocial) nesting care within a tunneler genus (Source: Sugiura, Yamaura & Makihara, Zoological Science, 2007). For contrast, tribe Sisyphini (rollers) falls into a distinct nesting group in which dung is rolled away from the source before egg-laying, with three documented variants: brood balls buried before oviposition; eggs laid before burial with only a thin clay coating; or unburied balls with a clay shell deposited directly in vegetation (Source: Daniel, CULNA, National Museum Bloemfontein, 2020). Adult lifespan figures specific to the Kenyan tunneler genera could not be confirmed from any whitelisted source accessed."
+      },
+      {
+        "heading": "4. Ecology",
+        "body": "A detailed trophic-association study from a savanna woodland site comparable to Kenyan ecosystems sampled 67 dung beetle species across five dung-bait types at Chobe National Park, Botswana. Pig dung attracted the largest share of individuals (56%), followed by cattle dung (23.7%), elephant dung (11.3%), sheep dung (8%), and carrion (1%) (Source: Tshikae, Davis & Scholtz, Environmental Entomology, 2008). Within this study, Catharsius melancholicus was collected exclusively on carrion, making it a carrion specialist within that genus; Kheper lamarcki (a roller) was frequently observed on rehydrated elephant dung, indicating a preference for nonruminant-herbivore dung; and Scarabaeus flavicornis and S. zambesianus each showed distinct dung-bait preference patterns. Four trophic clusters were identified overall, including one group of seven species attracted exclusively to elephant dung (Source: Tshikae, Davis & Scholtz, Environmental Entomology, 2008). The Kenyan Laikipia/Mpala Scarabaeinae survey (79 species) explicitly organises its findings around dung preference as a central structuring factor of the local assemblage, though the full methodological detail behind this could not be retrieved beyond the abstract (Source: Gordon & Barbero, Journal of East African Natural History, 2008). Dung beetles are used as bioindicator taxa for assessing the non-target ecological effects of agrochemicals in pastoral and agro-ecosystems (Source: Jacobs & Scholtz, Onderstepoort Journal of Veterinary Research, 2015)."
+      },
+      {
+        "heading": "5. Distribution and Diversity",
+        "body": "Globally, Scarabaeinae comprises roughly 270 genera and about 7,000 extant valid species across 20 tribes and 9 subtribes (Source: Daniel & Davis, Annals of the Entomological Society of America, 2024). Regional distribution by tribe: Coprini (containing Copris) \u0002 Afrotropical, Oriental, Palearctic, Nearctic, and Neotropical; Onitini (containing Onitis) \u0002 primarily Afrotropical with Palearctic and Oriental extensions; Scarabaeini (containing Scarabaeus) \u0002 Afro-Eurasian; Sisyphini (containing Sisyphus) \u0002 Afro-Eurasian plus a northern Neotropical extension, with the genus Nesosisyphus endemic to Mauritius (4 species) (Source: Daniel & Davis, Annals of the Entomological Society of America, 2024; Daniel, CULNA, National Museum Bloemfontein, 2020). In Kenya specifically, 79 Scarabaeinae species were documented at the Mpala Research Centre, Laikipia District, including seven species newly recorded for the country (Source: Gordon & Barbero, Journal of East African Natural History, 2008). As a regional comparator, 67 species were recorded at a single Botswana savanna woodland site, giving a sense of comparable East/Southern African Scarabaeinae richness at the site level (Source: Tshikae, Davis & Scholtz, Environmental Entomology, 2008). Kenya-wide (rather than single-locality) species totals, and country-level richness specifically for Catharsius, Onitis, or Proagoderus, could not be confirmed from any whitelisted source accessed."
+      },
+      {
+        "heading": "6. Economic / Ecological Importance",
+        "body": "Dung beetle populations, and the rate at which they bury dung, are measurably reduced by livestock exposure to macrocyclic lactone anthelmintics (ivermectin, eprinomectin, doramectin, moxidectin), with population-level consequences for the wider dung-dwelling insect assemblage dependent on cattle dung as habitat (Source: Jacobs & Scholtz, Onderstepoort Journal of Veterinary Research, 2015). Correspondingly, dung beetles are used as a bioindicator species for evaluating the non-target ecological risk of veterinary and agricultural chemical use in agro-ecosystems (Source: Jacobs & Scholtz, Onderstepoort Journal of Veterinary Research, 2015). No whitelisted source documented any of Catharsius, Copris, Onitis, or Proagoderus as agricultural pests; every documented economic or ecological role found was beneficial."
+      },
+      {
+        "heading": "7. Control and Management",
+        "body": "No whitelisted source documents these genera as targets of pest control. The only management-relevant finding is precautionary: macrocyclic lactone anthelmintics used to deworm cattle are toxic to dung beetles via residues in treated dung, with toxicity extending to the wider dung-dwelling insect community, implying judicious, selective use of these compounds on pastured livestock to protect dung beetle populations (Source: Jacobs & Scholtz, Onderstepoort Journal of Veterinary Research, 2015)."
+      },
+      {
+        "heading": "9. Notable Facts",
+        "body": "The tunneler dung beetle Onthophagus taurus holds the record for the world's strongest insect by relative pulling force: the strongest tested specimen pulled 1,141 times its own body weight, described as equivalent to a 70 kg person lifting 80 tonnes \u0002 roughly six double-decker buses. Beetles were tested for their ability to resist being pulled from a burrow, reflecting the natural contest between males for tunnel access to females. Diet strongly affected performance, with beetles kept on a poor diet for only a few days becoming markedly weaker. Two male morphotypes were documented: larger horned males that physically fight for burrow access, and smaller males with disproportionately larger testes that instead rely on sperm competition rather than combat (Source: Queen Mary University of London, 2010, reporting Knell & Simmons, Proceedings of the Royal Society B). A finding regarding roller-type dung beetles (genus Scarabaeus) using the band of light from the Milky Way for straight-line orientation while rolling dung balls was identified via a whitelisted journal index, but the full text could not be independently verified due to access restrictions \u0002 its existence and title are noted here, but no further detail is asserted."
+      }
+    ],
+    "source_report_ref": {
+      "technical": "Dung Beetle/db-web.pdf",
+      "lay": "Dung Beetle/db-web-la.pdf"
+    },
+    "photo_ref": "/photos/dung-beetle.jpg",
+    "reviewed_by": null,
+    "reviewed_at": null
   }
 ]
