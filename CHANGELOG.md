@@ -6,6 +6,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.15.3] - 2026-09-11
+
+### Changed
+
+- The persistent breadcrumb bar is now sticky (stays pinned to the top on scroll), matching
+  eric-gitonga-links and dudu-merchandise (closes #119).
+
+tag: `v0.15.3`
+
 ## [0.15.2] - 2026-09-11
 
 ### Changed

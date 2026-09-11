@@ -39,7 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${newsreader.variable} ${archivoNarrow.variable} ${ibmPlexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <div className="flex items-baseline gap-2 border-b border-line px-4 py-3 font-mono text-xs font-medium uppercase tracking-widest text-foreground">
+        <div className="sticky top-0 z-10 flex items-baseline gap-2 border-b border-line bg-background px-4 py-3 font-mono text-xs font-medium uppercase tracking-widest text-foreground">
           <a href="https://ericgitonga.com" className="transition-colors hover:text-accent">
             ← ERIC GITONGA
           </a>
