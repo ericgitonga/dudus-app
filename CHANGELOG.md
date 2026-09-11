@@ -6,6 +6,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.15.2] - 2026-09-11
+
+### Changed
+
+- Added LEARNING as the terminal breadcrumb segment (`← ERIC GITONGA / DUDUS / LEARNING`),
+  matching dudu-merchandise's three-segment pattern (`.../SHOP`) — describes this app's role in
+  the Dudus ecosystem as the informational/ID companion (closes #117).
+
+tag: `v0.15.2`
+
 ## [0.15.1] - 2026-09-11
 
 ### Changed

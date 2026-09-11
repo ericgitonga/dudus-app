@@ -47,6 +47,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <a href="https://ericgitonga.com/dudus" className="transition-colors hover:text-accent">
             DUDUS
           </a>
+          <span className="text-muted" aria-hidden="true">/</span>
+          <span>LEARNING</span>
         </div>
         {children}
         <Analytics />
