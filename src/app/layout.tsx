@@ -39,15 +39,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${newsreader.variable} ${archivoNarrow.variable} ${ibmPlexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <div className="sticky top-0 z-10 flex items-baseline gap-2 border-b border-line bg-background px-4 py-3 font-mono text-xs font-medium uppercase tracking-widest text-foreground">
+        <div className="sticky top-0 z-10 flex items-baseline justify-between border-b border-line bg-background px-4 py-3 font-mono text-xs font-medium uppercase tracking-widest text-foreground">
           <a href="https://ericgitonga.com" className="transition-colors hover:text-accent">
-            ← ERIC GITONGA
+            ERIC GITONGA
           </a>
-          <span className="text-muted" aria-hidden="true">/</span>
-          <a href="https://ericgitonga.com/dudus" className="transition-colors hover:text-accent">
-            DUDUS
-          </a>
-          <span className="text-muted" aria-hidden="true">/</span>
           <span>LEARNING</span>
         </div>
         {children}
